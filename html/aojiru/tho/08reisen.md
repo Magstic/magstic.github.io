@@ -9,7 +9,7 @@ date: 2023-05-16 15:36:06
 <source src="https://magstic.top/aojiru/music/tho/08%20reisentheme_sinfonietta_128.mp3" type="audio/mpeg">
 </audio>
 
-![NULL]()
+![](https://magstic.top/aojiru/music/back/e12oback.jpg)
 
 illustration & Music
 來自Aojiru.
