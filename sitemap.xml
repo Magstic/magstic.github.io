@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://magstic.art/tags/index.html</loc>
+    
+    <lastmod>2024-02-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://magstic.art/html/aojiru/nameless.html</loc>
     
     <lastmod>2024-02-26</lastmod>
@@ -365,15 +374,6 @@
     <loc>https://magstic.art/2023/05/11/01/</loc>
     
     <lastmod>2024-02-02</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://magstic.art/tags/index.html</loc>
-    
-    <lastmod>2023-05-15</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
