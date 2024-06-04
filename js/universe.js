@@ -6,7 +6,7 @@ function fireflies() {
         ctx = canvas.getContext("2d"),
         fireflies = [],
         numFireflies = 50, // 萤火虫的数量
-        fireflySpeed = 0.5, // 萤火虫的速度
+        fireflySpeed = 0.2, // 萤火虫的速度
         fireflySize = 1, // 萤火虫的大小
         fireflyOpacityMin = 0.2, // 萤火虫的最小透明度
         fireflyOpacityMax = 0.5; // 萤火虫的最大透明度

@@ -1,7 +1,7 @@
 .spoiler {
     margin: 5px 0;
     padding: 0 15px;
-    border: 1px solid #4e4e4e80;
+    border: 0.5px solid #4e4e4e80;
     position: relative;
     clear: both;
     border-radius: 3px;
@@ -51,7 +51,7 @@
 }
 
 .spoiler.expanded .spoiler-content {
-    max-height: 3000px;
+    max-height: 8000px;
     overflow: hidden;
 }
 
