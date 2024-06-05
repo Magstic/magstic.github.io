@@ -8,7 +8,7 @@
       <link href="/2024/02/07/03/"/>
       <url>/2024/02/07/03/</url>
       
-        <content type="html"><![CDATA[<h2 id="序曲："><a href="#序曲：" class="headerlink" title="序曲："></a><em><strong>序曲：</strong></em></h2><p>在Emlog經歷數次伺服器死亡之後，我開始尋找穩定性高的方案。<br>我將目光看向了純靜態頁面的Hexo，可以免卻SQ資料庫管理的繁瑣。<br>不過，Git是什麽？我該如何部署？這些特殊名詞如何去理解？這些，都是一道道難題。<br>現在距離Hexo建站之初已有半年之久，我將盡力去回憶每一處過程並記錄。當然，<strong>這不是教學</strong>。</p><h2 id="準備："><a href="#準備：" class="headerlink" title="準備："></a><em><strong>準備：</strong></em></h2><p>若不隨意更改核心軟體的安裝路徑，便可避免許多未知的錯誤。<br>Node.js和Git均為如此。VSCode？本質上是Hexo的管理器罷了。</p><div class='spoiler collapsed'>    <div class='spoiler-title'>        01.Node.js的安裝    </div>    <div class='spoiler-content'>        <div class="note simple"><p>01.打開Node.js的<a href="https://nodejs.org/en/download/">下載頁面</a>；</p></div><div class="note simple"><p>02.選擇Windows Installer X64.msi下載並安裝；</p></div><div class="note simple"><p>03.按照默認路徑&amp;選項安裝，以規避無法部署的風險；</p></div><div class="note simple"><p>04.CDM鍵入“node -v”進行驗證，若出現版本訊息即為安裝成功。</p></div>    </div></div><div class='spoiler collapsed'>    <div class='spoiler-title'>        02.Git的安裝    </div>    <div class='spoiler-content'>        <div class="note simple"><p>01.打開Git的<a href="https://git-scm.com/download/win">下載頁面</a>；</p></div><div class="note simple"><p>02.選擇Windows X64下載並安裝；</p></div><div class="note simple"><p>03.按照默認路徑&amp;選項安裝，以規避無法部署的風險；</p></div><div class="note simple"><p>04.CDM鍵入“git –version””node -v””npm -v”進行驗證，若出現版本訊息即為安裝成功。</p></div>    </div></div><div class='spoiler collapsed'>    <div class='spoiler-title'>        03.VSCode的安裝    </div>    <div class='spoiler-content'>        <div class="note simple"><p>01.打開VSCode的<a href="https://git-scm.com/download/win">下載頁面</a>；</p></div><div class="note simple"><p>02.選擇Windows X64下載並安裝，路徑可隨意選擇盤符；</p></div><div class="note default no-icon flat"><p>P.S.: VSCode本質上作為Hexo的管理器存在，頁面編輯和終端部署均可在其中完成。</p></div>    </div></div><h2 id="部署："><a href="#部署：" class="headerlink" title="部署："></a><em><strong>部署：</strong></em></h2><p>部署包括Hexo的本地部署和Github的通信部署。<br>本地部署仍需遵循不隨意變動默認安裝目錄的準則。<br>若SSH無法使用，那麽切換為HTTPS也是一個不錯的<a href="https://docs.github.com/zh/get-started/getting-started-with-git/managing-remote-repositories">方法</a>。</p><div class='spoiler collapsed'>    <div class='spoiler-title'>        01.Hexo的安裝    </div>    <div class='spoiler-content'>        <div class="note simple"><p>01.打開VSCode，啟動Gitbash終端；</p></div><div class="note simple"><p>02.在終端中鍵入以下指令，若提示鍵入新指令則安裝完成；</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure></div><div class="note simple"><p>03.在C:\Users&lt;用戶名&gt;路徑創建資料夾，用以存放Hexo本地檔案；</p></div><div class="note simple"><p>04.在終端中鍵入”cd &lt;01步驟創建的文件夾名&gt;”，意為進入03步驟創建的目錄；</p></div><div class="note simple"><p>05.在終端中鍵入以下指令，若提示鍵入新指令則安裝完成；</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure></div><div class="note simple"><p>06.在終端中鍵入以下指令進行驗證，若出現版本訊息即為安裝結束。</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure></div><div class="note simple"><p>06.在終端中鍵入”hexo clean &amp;&amp; hexo g &amp;&amp; hexo s”，訪問終端出現的連結，若正確訪問即成功。</p></div><div class="note default no-icon flat"><p>P.S.: 若安裝路徑不為默認，Bash終端將在下一次重載系統後無法調用Hexo指令。</p></div>    </div></div><div class='spoiler collapsed'>    <div class='spoiler-title'>        02.Github的部署    </div>    <div class='spoiler-content'>        <div class="note simple"><p>01.鍵入以下指令，安裝推送部署擴展；</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></div><div class="note simple"><p>02.打開_config.yml文件，修改deploy為如下配置；</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">git@github.com:Magstic/magstic.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure></div><div class="note simple"><p>03.鍵入以下指令，配置SSH密鑰；</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t ed25519 -C &quot;mastic.cn@gmail.com&quot;</span><br></pre></td></tr></table></figure></div><div class="note simple"><p>04.若出現文件路徑，則Enter兩次，鍵入如下命令，複製密鑰至剪貼板；</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clip &lt; ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure></div><div class="note simple"><p>05.訪問Github-Settings-SSH and GPG Keys，將剪貼板上的密鑰添加至SSH key；</p></div><div class="note simple"><p>06.創建名為magstic.github.io的Repositories，勾選Public和Add a README file；</p></div><div class="note simple"><p>07.進入06創建的Repositories，Settings-Page-Branch，選擇main分支。<br>進入06創建的Repositories，Settings-Page-Custom domain，連結域名並使用HTTPS；</p></div><div class="note simple"><p>08.鍵入以下指令，初始化本地Git；</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Git init</span><br></pre></td></tr></table></figure></div><div class="note simple"><p>09.鍵入以下指令，使用個人信息鏈接Git；</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;Magstic&quot;</span><br><span class="line">git config --global user.email &quot;mastic.cn@gmail.com&quot;</span><br></pre></td></tr></table></figure></div><div class="note simple"><p>10.鍵入以下指令，鍵入yes，若出現Hi Magstic…則通信成功。</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure></div>    </div></div><h2 id="寫作："><a href="#寫作：" class="headerlink" title="寫作："></a><em><strong>寫作：</strong></em></h2><p>個人在寫作中的常用指令。建立新的貼文無需指令，複製即可。<br>寫作時會遇見子頁面的需求。新建貼文不是好的方法，因此需要自由頁面。<br>自由頁面並非真正意義上的子頁面——不過，它仍可以被本地搜索引擎檢索。</p><div class='spoiler collapsed'>    <div class='spoiler-title'>        01.常規指令    </div>    <div class='spoiler-content'>        <div class="note default no-icon flat"><p>寫作中的一系列常用指令。</p></div>清理緩存檔案<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>生成靜態頁面<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>部署至本地訪問<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>部署至Git訪問<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>一系列常用的組合指令<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g</span><br></pre></td></tr></table></figure><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g</span><br></pre></td></tr></table></figure><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>    </div></div><div class='spoiler collapsed'>    <div class='spoiler-title'>        02.自由頁面    </div>    <div class='spoiler-content'>        <div class="note default no-icon flat"><p>什麽是“自由頁面”？<br>Hexo會默認渲染通用路徑下的頁面，有時候會為自定義Html帶來困擾。<br>因此，我們需要使頁面規避抑或進行Hexo的渲染，以使最終頁面的結構合理。</p></div><div class="note default no-icon flat"><p>打開_config.yml文件，修改Directory的skip_render項。<br>Skip_Render意為“略過渲染”，在這裡可以使用Glob表達式配對路徑。<br>“source”為資源路徑，在渲染後source中的内容會出現在靜態頁的根目錄。<br>故修改路徑時略過source，直接填寫其下的子資料夾或者文件名即可。</p></div><p>這是一些例子：</p><p>我不想令指定路徑下的一個html被渲染！</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">skip_render:</span> </span><br><span class="line">  <span class="bullet">-</span> <span class="string">&quot;html/aojiru/coll.html&quot;</span></span><br></pre></td></tr></table></figure>我不想令指定路徑下的全部html被渲染！<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">skip_render:</span> </span><br><span class="line">  <span class="bullet">-</span> <span class="string">&quot;html/aojiru/*&quot;</span></span><br></pre></td></tr></table></figure>    </div></div><div class='spoiler collapsed'>    <div class='spoiler-title'>        03.其他事項    </div>    <div class='spoiler-content'>        <div class="note default no-icon flat"><p>合理安排資源路徑比其他任何事情都重要。<br>不論自己能否記清每一檔案的明細，都應做好分類。<br>此外，Hexo是輕量化的靜態頁，應避免在source中直接上載媒體資源。<br>當然，這涉及優化，將在最後一個環節中去總結。</p></div>    </div></div><h2 id="美化："><a href="#美化：" class="headerlink" title="美化："></a><em><strong>美化：</strong></em></h2><p>……</p><div class='spoiler collapsed'>    <div class='spoiler-title'>        01.Butterfly    </div>    <div class='spoiler-content'>        <div class="note default no-icon flat"><p>Butterfly是Hexo的一個主題，由Jerry開發。<br>Butterfly文檔已囊括90%的美化策略，我將在下面記錄該site上所應用的策略。</p></div><br><div class="note default simple"><ol><li>主題安裝</li></ol></div><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-theme-butterfly</span><br></pre></td></tr></table></figure><div class="note default no-icon flat"><p>主題被安裝到該路徑：node_modules&#x2F;hexo-theme-butterfly</p></div><div class="note default no-icon flat"><p>打開_config.yml文件，修改theme項以應用主題。</p></div><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">butterfly</span></span><br></pre></td></tr></table></figure><br><br><div class="note default simple"><ol start="2"><li>插件安裝</li></ol></div><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-renderer-pug hexo-renderer-stylus --save</span><br></pre></td></tr></table></figure><br><br><div class="note default simple"><ol start="3"><li>配置檔路徑</li></ol></div><div class="note default no-icon flat"><p>透過npm安裝的内容均在node_modules目錄下，這不便於管理配置檔。<br>首先，打開該路徑，複製config文件的全部内容：node_modules&#x2F;hexo-theme-butterfly&#x2F;_config.yml；<br>然後，回到根路徑下建立_config.butterfly.yml檔案，將複製的内容貼在該檔案上並保存；<br>最後，可直接使用根路徑下的_config.butterfly.yml檔案配置主題，優先級&gt;主題路徑下的_config.yml。</p></div><br><br><div class="note default simple"><ol start="4"><li>配置主題檔</li></ol></div><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Tittle </span></span><br><span class="line"><span class="attr">nav:</span></span><br><span class="line">  <span class="attr">logo:</span> </span><br><span class="line">  <span class="attr">display_title:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">fixed:</span> <span class="literal">false</span> <span class="comment"># fixed navigation bar</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Menu</span></span><br><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="string">歸類:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-folder-open</span></span><br><span class="line">  <span class="string">關於:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-paper-plane</span></span><br><span class="line">  <span class="string">足跡:</span> <span class="string">/message/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-shoe-prints</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Favicon（網站圖標）</span></span><br><span class="line"><span class="attr">favicon:</span> <span class="string">https://magstic.art/images/avatar.jpg</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Avatar (頭像)</span></span><br><span class="line"><span class="attr">avatar:</span></span><br><span class="line">  <span class="attr">img:</span> <span class="string">https://magstic.art/images/avatar.jpg</span></span><br><span class="line">  <span class="attr">effect:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 關閉頂圖</span></span><br><span class="line"><span class="attr">disable_top_img:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 404自定義</span></span><br><span class="line"><span class="attr">error_404:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">subtitle:</span> <span class="string">&#x27;站點重建中，請訪問主頁。&#x27;</span></span><br><span class="line">  <span class="attr">background:</span> <span class="string">https://s2.loli.net/2023/05/12/V8LgEuI6CnvYe7F.png</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 文章屬性</span></span><br><span class="line"><span class="attr">post_meta:</span></span><br><span class="line">  <span class="attr">page:</span> <span class="comment"># Home Page</span></span><br><span class="line">    <span class="attr">date_type:</span> <span class="string">created</span></span><br><span class="line">    <span class="attr">date_format:</span> <span class="string">date</span></span><br><span class="line">    <span class="attr">categories:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">tags:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">label:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">post:</span></span><br><span class="line">    <span class="attr">date_type:</span> <span class="string">both</span></span><br><span class="line">    <span class="attr">date_format:</span> <span class="string">date</span></span><br><span class="line">    <span class="attr">categories:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">tags:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">label:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 圖片描述文字</span></span><br><span class="line"><span class="attr">photofigcaption:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 複製權</span></span><br><span class="line"><span class="attr">copy:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">copyright:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 文章目錄&amp;版權</span></span><br><span class="line"><span class="attr">toc:</span></span><br><span class="line">  <span class="attr">post:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">page:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">number:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">expand:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">style_simple:</span> <span class="literal">false</span> <span class="comment"># for post</span></span><br><span class="line">  <span class="attr">scroll_percent:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="attr">post_copyright:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">decode:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 頁脚</span></span><br><span class="line"><span class="attr">footer:</span></span><br><span class="line">  <span class="attr">owner:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">since:</span> <span class="number">2020</span></span><br><span class="line">  <span class="attr">custom_text:</span></span><br><span class="line">  <span class="attr">copyright:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 側邊欄</span></span><br><span class="line"><span class="attr">aside:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">hide:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">button:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">mobile:</span> <span class="literal">true</span> <span class="comment"># display on mobile</span></span><br><span class="line">  <span class="attr">position:</span> <span class="string">right</span> <span class="comment"># left or right</span></span><br><span class="line">  <span class="attr">display:</span></span><br><span class="line">    <span class="attr">archive:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">tag:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">category:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">card_author:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">description:</span></span><br><span class="line">    <span class="attr">button:</span></span><br><span class="line">      <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">      <span class="attr">icon:</span> <span class="string">fab</span> <span class="string">fa-google</span></span><br><span class="line">      <span class="attr">text:</span> <span class="string">Gmail</span></span><br><span class="line">      <span class="attr">link:</span> <span class="string">mailto:mastic.cn@gmail.com</span></span><br><span class="line">  <span class="attr">card_recent_post:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">limit:</span> <span class="number">2</span></span><br><span class="line">  <span class="attr">card_archives:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">card_webinfo:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">post_count:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">last_push_date:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 純暗黑</span></span><br><span class="line"><span class="attr">darkmode:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure><p><br><br></p><div class="note default simple"><ol start="5"><li>調整主題檔<br>控制avatar不被滑鼠動作響應。<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//node_modules\hexo-theme-butterfly\source\css\_layout\<span class="selector-tag">aside</span><span class="selector-class">.styl</span></span><br><span class="line"><span class="selector-class">.avatar-img</span></span><br><span class="line">  <span class="attribute">overflow</span>: hidden</span><br><span class="line">  margin: <span class="number">0</span> auto</span><br><span class="line">  width: <span class="number">110px</span></span><br><span class="line">  height: <span class="number">110px</span></span><br><span class="line">  border-radius: <span class="number">70px</span></span><br><span class="line"></span><br><span class="line">  img</span><br><span class="line">    width: <span class="number">100%</span></span><br><span class="line">    height: <span class="number">100%</span></span><br><span class="line">    transition: filter <span class="number">0ms</span> ease-in .<span class="number">0s</span>, transform .<span class="number">0s</span></span><br><span class="line">    object-fit: cover</span><br><span class="line"></span><br><span class="line">    &amp;:hover</span><br><span class="line">      transform: <span class="built_in">rotate</span>(<span class="number">0deg</span>)</span><br></pre></td></tr></table></figure></li></ol></div>    </div></div><div class='spoiler collapsed'>    <div class='spoiler-title'>        02.星空背景    </div>    <div class='spoiler-content'>        <p>網路流行的星空背景，我進行了螢火蟲化。</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">//_config.butterfly.yml</span></span><br><span class="line"><span class="attr">inject:</span></span><br><span class="line">  <span class="attr">head:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;link</span> <span class="string">rel=&quot;stylesheet&quot;</span> <span class="string">href=&quot;/css/universe.css&quot;&gt;</span></span><br><span class="line">  <span class="attr">bottom:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;canvas</span> <span class="string">id=&quot;universe&quot;&gt;&lt;/canvas&gt;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">defer</span> <span class="string">src=&quot;/js/universe.js&quot;&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//node_modules\hexo-theme-butterfly\source\css\universe<span class="selector-class">.css</span></span><br><span class="line"><span class="selector-id">#universe</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: block;</span><br><span class="line">  <span class="attribute">position</span>: fixed;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">outline</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">pointer-events</span>: none;</span><br><span class="line">  <span class="attribute">z-index</span>: -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//node_modules\hexo-theme-butterfly\source\js\universe.js</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">fireflies</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">window</span>.<span class="property">requestAnimationFrame</span> = <span class="variable language_">window</span>.<span class="property">requestAnimationFrame</span> || <span class="variable language_">window</span>.<span class="property">mozRequestAnimationFrame</span> || <span class="variable language_">window</span>.<span class="property">webkitRequestAnimationFrame</span> || <span class="variable language_">window</span>.<span class="property">msRequestAnimationFrame</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> canvas = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;universe&quot;</span>),</span><br><span class="line">        ctx = canvas.<span class="title function_">getContext</span>(<span class="string">&quot;2d&quot;</span>),</span><br><span class="line">        fireflies = [],</span><br><span class="line">        numFireflies = <span class="number">50</span>,</span><br><span class="line">        fireflySpeed = <span class="number">0.2</span>,</span><br><span class="line">        fireflySize = <span class="number">1</span>,</span><br><span class="line">        fireflyOpacityMin = <span class="number">0.2</span>,</span><br><span class="line">        fireflyOpacityMax = <span class="number">0.5</span>;</span><br><span class="line"></span><br><span class="line">    canvas.<span class="property">width</span> = <span class="variable language_">window</span>.<span class="property">innerWidth</span>;</span><br><span class="line">    canvas.<span class="property">height</span> = <span class="variable language_">window</span>.<span class="property">innerHeight</span>;</span><br><span class="line"></span><br><span class="line">    <span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;resize&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">        canvas.<span class="property">width</span> = <span class="variable language_">window</span>.<span class="property">innerWidth</span>;</span><br><span class="line">        canvas.<span class="property">height</span> = <span class="variable language_">window</span>.<span class="property">innerHeight</span>;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">Firefly</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">x</span> = <span class="title class_">Math</span>.<span class="title function_">random</span>() * canvas.<span class="property">width</span>;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">y</span> = <span class="title class_">Math</span>.<span class="title function_">random</span>() * canvas.<span class="property">height</span>;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">dx</span> = (<span class="title class_">Math</span>.<span class="title function_">random</span>() &lt; <span class="number">0.5</span> ? -<span class="number">1</span> : <span class="number">1</span>) * fireflySpeed;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">dy</span> = (<span class="title class_">Math</span>.<span class="title function_">random</span>() &lt; <span class="number">0.5</span> ? -<span class="number">1</span> : <span class="number">1</span>) * fireflySpeed;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">color</span> = <span class="string">&quot;rgba(255, 215, 0, &quot;</span> + (<span class="title class_">Math</span>.<span class="title function_">random</span>() * (fireflyOpacityMax - fireflyOpacityMin) + fireflyOpacityMin) + <span class="string">&quot;)&quot;</span>;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">flashing</span> = <span class="literal">false</span>;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">flashSpeed</span> = <span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">0.2</span> + <span class="number">0.5</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title class_">Firefly</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">update</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">x</span> += <span class="variable language_">this</span>.<span class="property">dx</span>;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">y</span> += <span class="variable language_">this</span>.<span class="property">dy</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">x</span> &lt; <span class="number">0</span> || <span class="variable language_">this</span>.<span class="property">x</span> &gt; canvas.<span class="property">width</span>) <span class="variable language_">this</span>.<span class="property">dx</span> *= -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">y</span> &lt; <span class="number">0</span> || <span class="variable language_">this</span>.<span class="property">y</span> &gt; canvas.<span class="property">height</span>) <span class="variable language_">this</span>.<span class="property">dy</span> *= -<span class="number">1</span>;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="title class_">Firefly</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">draw</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">        ctx.<span class="title function_">beginPath</span>();</span><br><span class="line">        ctx.<span class="title function_">arc</span>(<span class="variable language_">this</span>.<span class="property">x</span>, <span class="variable language_">this</span>.<span class="property">y</span>, fireflySize, <span class="number">0</span>, <span class="number">2</span> * <span class="title class_">Math</span>.<span class="property">PI</span>);</span><br><span class="line">        ctx.<span class="property">fillStyle</span> = <span class="variable language_">this</span>.<span class="property">color</span>;</span><br><span class="line">        ctx.<span class="title function_">fill</span>();</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">animate</span>(<span class="params"></span>) &#123;</span><br><span class="line">        ctx.<span class="title function_">clearRect</span>(<span class="number">0</span>, <span class="number">0</span>, canvas.<span class="property">width</span>, canvas.<span class="property">height</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; fireflies.<span class="property">length</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">var</span> firefly = fireflies[i];</span><br><span class="line">            firefly.<span class="title function_">update</span>();</span><br><span class="line">            firefly.<span class="title function_">draw</span>();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="title function_">requestAnimationFrame</span>(animate);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; numFireflies; i++) &#123;</span><br><span class="line">        fireflies.<span class="title function_">push</span>(<span class="keyword">new</span> <span class="title class_">Firefly</span>());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">animate</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">fireflies</span>();</span><br></pre></td></tr></table></figure>    </div></div><div class='spoiler collapsed'>    <div class='spoiler-title'>        03.本地檢索    </div>    <div class='spoiler-content'>        <p>本地檢索是靜態BLOG的必備之物。</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-search --save</span><br></pre></td></tr></table></figure><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Local search</span></span><br><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">preload:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">top_n_per_article:</span> <span class="number">0</span></span><br><span class="line">  <span class="attr">unescape:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">CDN:</span></span><br></pre></td></tr></table></figure>    </div></div><div class='spoiler collapsed'>    <div class='spoiler-title'>        04.摺叠擴展    </div>    <div class='spoiler-content'>        <p>Hexo的摺叠擴展不被Lazyload規則響應，這不利於優化。<br><a href="https://github.com/fletchto99/hexo-sliding-spoiler">hexo-sliding-spoiler</a>雖不完美，但在優化面前，必須取捨。</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">install hexo-sliding-spoiler --save</span><br></pre></td></tr></table></figure><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">//node_modules\hexo-sliding-spoiler\assets\spoiler<span class="selector-class">.css</span></span><br><span class="line"><span class="selector-class">.spoiler</span> &#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">5px</span> <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">15px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">0.5px</span> solid <span class="number">#4e4e4e80</span>;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">clear</span>: both;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">3px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.spoiler</span> <span class="selector-class">.spoiler-title</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#4e4e4e60</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span> -<span class="number">15px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">5px</span> <span class="number">15px</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#ffffff</span>;</span><br><span class="line">    <span class="attribute">font-weight</span>: bold;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">13px</span>;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">cursor</span>: pointer;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.spoiler</span> <span class="selector-class">.spoiler-title</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">    <span class="attribute">font-weight</span>: bold;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.spoiler</span><span class="selector-class">.collapsed</span> <span class="selector-class">.spoiler-title</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;▶ &quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.spoiler</span><span class="selector-class">.expanded</span> <span class="selector-class">.spoiler-title</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;▼ &quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.spoiler</span> <span class="selector-class">.spoiler-content</span> &#123;</span><br><span class="line">    <span class="attribute">padding-top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding-bottom</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">margin-top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">margin-bottom</span>: <span class="number">0</span>;</span><br><span class="line">    -moz-<span class="attribute">transition-duration</span>: <span class="number">0.1s</span>;</span><br><span class="line">    -webkit-<span class="attribute">transition-duration</span>: <span class="number">0.1s</span>;</span><br><span class="line">    -o-<span class="attribute">transition-duration</span>: <span class="number">0.1s</span>;</span><br><span class="line">    <span class="attribute">transition-duration</span>: <span class="number">0.8s</span>;</span><br><span class="line">    -moz-<span class="attribute">transition-timing-function</span>: ease-in-out;</span><br><span class="line">    -webkit-<span class="attribute">transition-timing-function</span>: ease-in-out;</span><br><span class="line">    -o-<span class="attribute">transition-timing-function</span>: ease-in-out;</span><br><span class="line">    <span class="attribute">transition-timing-function</span>: ease-in-out;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.spoiler</span><span class="selector-class">.collapsed</span> <span class="selector-class">.spoiler-content</span> &#123;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">    <span class="attribute">max-height</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.spoiler</span><span class="selector-class">.expanded</span> <span class="selector-class">.spoiler-content</span> &#123;</span><br><span class="line">    <span class="attribute">max-height</span>: <span class="number">8000px</span>;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.spoiler</span> <span class="selector-class">.spoiler-content</span> <span class="selector-tag">p</span><span class="selector-pseudo">:first</span>-child &#123;</span><br><span class="line">    <span class="attribute">margin-top</span>: <span class="number">0</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>    </div></div><div class='spoiler collapsed'>    <div class='spoiler-title'>        05.留言系統    </div>    <div class='spoiler-content'>        <p>該BLOG使用<a href="https://twikoo.js.org/backend.html#hugging-face-%E9%83%A8%E7%BD%B2">Twikoo</a>進行Hugging Face+MongoDB部署。<br>MongoDB的Free Instance對於一個BLOG的評論區域足矣。<br>我不推薦使用圖像系統，依賴於第三方圖床的服務並不穩定。</p>    </div></div><h2 id="優化："><a href="#優化：" class="headerlink" title="優化："></a><em><strong>優化：</strong></em></h2><p>……</p><div class='spoiler collapsed'>    <div class='spoiler-title'>        01.Lazyload    </div>    <div class='spoiler-content'>        No content to show    </div></div><div class='spoiler collapsed'>    <div class='spoiler-title'>        02.Google Search Console    </div>    <div class='spoiler-content'>        No content to show    </div></div><div class='spoiler collapsed'>    <div class='spoiler-title'>        03.Cloudflare    </div>    <div class='spoiler-content'>        No content to show    </div></div><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+        <content type="html"><![CDATA[<h2 id="序曲："><a href="#序曲：" class="headerlink" title="序曲："></a><em><strong>序曲：</strong></em></h2><p>在Emlog經歷數次伺服器死亡之後，我開始尋找穩定性高的方案。<br>我將目光看向了純靜態頁面的Hexo，可以免卻SQ資料庫管理的繁瑣。<br>不過，Git是什麽？我該如何部署？這些特殊名詞如何去理解？這些，都是一道道難題。<br>現在距離Hexo建站之初已有半年之久，我將盡力去回憶每一處過程並記錄。當然，<strong>這不是教學</strong>。</p><h2 id="準備："><a href="#準備：" class="headerlink" title="準備："></a><em><strong>準備：</strong></em></h2><p>若不隨意更改核心軟體的安裝路徑，便可避免許多未知的錯誤。<br>Node.js和Git均為如此。VSCode？本質上是Hexo的管理器罷了。</p><div class='spoiler collapsed'>    <div class='spoiler-title'>        01.Node.js的安裝    </div>    <div class='spoiler-content'>        <div class="note simple"><p>01.打開Node.js的<a href="https://nodejs.org/en/download/">下載頁面</a>；</p></div><div class="note simple"><p>02.選擇Windows Installer X64.msi下載並安裝；</p></div><div class="note simple"><p>03.按照默認路徑&amp;選項安裝，以規避無法部署的風險；</p></div><div class="note simple"><p>04.CDM鍵入“node -v”進行驗證，若出現版本訊息即為安裝成功。</p></div>    </div></div><div class='spoiler collapsed'>    <div class='spoiler-title'>        02.Git的安裝    </div>    <div class='spoiler-content'>        <div class="note simple"><p>01.打開Git的<a href="https://git-scm.com/download/win">下載頁面</a>；</p></div><div class="note simple"><p>02.選擇Windows X64下載並安裝；</p></div><div class="note simple"><p>03.按照默認路徑&amp;選項安裝，以規避無法部署的風險；</p></div><div class="note simple"><p>04.CDM鍵入“git –version””node -v””npm -v”進行驗證，若出現版本訊息即為安裝成功。</p></div>    </div></div><div class='spoiler collapsed'>    <div class='spoiler-title'>        03.VSCode的安裝    </div>    <div class='spoiler-content'>        <div class="note simple"><p>01.打開VSCode的<a href="https://git-scm.com/download/win">下載頁面</a>；</p></div><div class="note simple"><p>02.選擇Windows X64下載並安裝，路徑可隨意選擇盤符；</p></div><div class="note default no-icon flat"><p>P.S.: VSCode本質上作為Hexo的管理器存在，頁面編輯和終端部署均可在其中完成。</p></div>    </div></div><h2 id="部署："><a href="#部署：" class="headerlink" title="部署："></a><em><strong>部署：</strong></em></h2><p>部署包括Hexo的本地部署和Github的通信部署。<br>本地部署仍需遵循不隨意變動默認安裝目錄的準則。<br>若SSH無法使用，那麽切換為HTTPS也是一個不錯的<a href="https://docs.github.com/zh/get-started/getting-started-with-git/managing-remote-repositories">方法</a>。</p><div class='spoiler collapsed'>    <div class='spoiler-title'>        01.Hexo的安裝    </div>    <div class='spoiler-content'>        <div class="note simple"><p>01.打開VSCode，啟動Gitbash終端；</p></div><div class="note simple"><p>02.在終端中鍵入以下指令，若提示鍵入新指令則安裝完成；</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure></div><div class="note simple"><p>03.在C:\Users&lt;用戶名&gt;路徑創建資料夾，用以存放Hexo本地檔案；</p></div><div class="note simple"><p>04.在終端中鍵入”cd &lt;01步驟創建的文件夾名&gt;”，意為進入03步驟創建的目錄；</p></div><div class="note simple"><p>05.在終端中鍵入以下指令，若提示鍵入新指令則安裝完成；</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure></div><div class="note simple"><p>06.在終端中鍵入以下指令進行驗證，若出現版本訊息即為安裝結束。</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure></div><div class="note simple"><p>06.在終端中鍵入”hexo clean &amp;&amp; hexo g &amp;&amp; hexo s”，訪問終端出現的連結，若正確訪問即成功。</p></div><div class="note default no-icon flat"><p>P.S.: 若安裝路徑不為默認，Bash終端將在下一次重載系統後無法調用Hexo指令。</p></div>    </div></div><div class='spoiler collapsed'>    <div class='spoiler-title'>        02.Github的部署    </div>    <div class='spoiler-content'>        <div class="note simple"><p>01.鍵入以下指令，安裝推送部署擴展；</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></div><div class="note simple"><p>02.打開_config.yml文件，修改deploy為如下配置；</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">git@github.com:Magstic/magstic.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure></div><div class="note simple"><p>03.鍵入以下指令，配置SSH密鑰；</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t ed25519 -C &quot;mastic.cn@gmail.com&quot;</span><br></pre></td></tr></table></figure></div><div class="note simple"><p>04.若出現文件路徑，則Enter兩次，鍵入如下命令，複製密鑰至剪貼板；</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clip &lt; ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure></div><div class="note simple"><p>05.訪問Github-Settings-SSH and GPG Keys，將剪貼板上的密鑰添加至SSH key；</p></div><div class="note simple"><p>06.創建名為magstic.github.io的Repositories，勾選Public和Add a README file；</p></div><div class="note simple"><p>07.進入06創建的Repositories，Settings-Page-Branch，選擇main分支。<br>進入06創建的Repositories，Settings-Page-Custom domain，連結域名並使用HTTPS；</p></div><div class="note simple"><p>08.鍵入以下指令，初始化本地Git；</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Git init</span><br></pre></td></tr></table></figure></div><div class="note simple"><p>09.鍵入以下指令，使用個人信息鏈接Git；</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;Magstic&quot;</span><br><span class="line">git config --global user.email &quot;mastic.cn@gmail.com&quot;</span><br></pre></td></tr></table></figure></div><div class="note simple"><p>10.鍵入以下指令，鍵入yes，若出現Hi Magstic…則通信成功。</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure></div>    </div></div><h2 id="寫作："><a href="#寫作：" class="headerlink" title="寫作："></a><em><strong>寫作：</strong></em></h2><p>個人在寫作中的常用指令。建立新的貼文無需指令，複製即可。<br>寫作時會遇見子頁面的需求。新建貼文不是好的方法，因此需要自由頁面。<br>自由頁面並非真正意義上的子頁面——不過，它仍可以被本地搜索引擎檢索。</p><div class='spoiler collapsed'>    <div class='spoiler-title'>        01.常規指令    </div>    <div class='spoiler-content'>        <div class="note default no-icon flat"><p>寫作中的一系列常用指令。</p></div>清理緩存檔案<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>生成靜態頁面<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>部署至本地訪問<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>部署至Git訪問<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>一系列常用的組合指令<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g</span><br></pre></td></tr></table></figure><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g</span><br></pre></td></tr></table></figure><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>    </div></div><div class='spoiler collapsed'>    <div class='spoiler-title'>        02.自由頁面    </div>    <div class='spoiler-content'>        <div class="note default no-icon flat"><p>什麽是“自由頁面”？<br>Hexo會默認渲染通用路徑下的頁面，有時候會為自定義Html帶來困擾。<br>因此，我們需要使頁面規避抑或進行Hexo的渲染，以使最終頁面的結構合理。</p></div><div class="note default no-icon flat"><p>打開_config.yml文件，修改Directory的skip_render項。<br>Skip_Render意為“略過渲染”，在這裡可以使用Glob表達式配對路徑。<br>“source”為資源路徑，在渲染後source中的内容會出現在靜態頁的根目錄。<br>故修改路徑時略過source，直接填寫其下的子資料夾或者文件名即可。</p></div><p>這是一些例子：</p><p>我不想令指定路徑下的一個html被渲染！</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">skip_render:</span> </span><br><span class="line">  <span class="bullet">-</span> <span class="string">&quot;html/aojiru/coll.html&quot;</span></span><br></pre></td></tr></table></figure>我不想令指定路徑下的全部html被渲染！<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">skip_render:</span> </span><br><span class="line">  <span class="bullet">-</span> <span class="string">&quot;html/aojiru/*&quot;</span></span><br></pre></td></tr></table></figure>    </div></div><div class='spoiler collapsed'>    <div class='spoiler-title'>        03.其他事項    </div>    <div class='spoiler-content'>        <div class="note default no-icon flat"><p>合理安排資源路徑比其他任何事情都重要。<br>不論自己能否記清每一檔案的明細，都應做好分類。<br>此外，Hexo是輕量化的靜態頁，應避免在source中直接上載媒體資源。<br>當然，這涉及優化，將在最後一個環節中去總結。</p></div>    </div></div><h2 id="美化："><a href="#美化：" class="headerlink" title="美化："></a><em><strong>美化：</strong></em></h2><p>我喜歡極簡單，但是極簡亦會使Hexo失去美感。<br>Butterfly無繁雜動態效果的同時，也提供了諸多的美化策略。<br>功能上，檢索與評論功能并不被原生的Hexo支持，我們需要擴展。</p><div class='spoiler collapsed'>    <div class='spoiler-title'>        01.Butterfly    </div>    <div class='spoiler-content'>        <div class="note default no-icon flat"><p>Butterfly是Hexo的一個主題，由Jerry開發。<br>Butterfly文檔已囊括90%的美化策略，我將在下面記錄該site上所應用的策略。</p></div><br><div class="note default simple"><ol><li>主題安裝</li></ol></div><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-theme-butterfly</span><br></pre></td></tr></table></figure><div class="note default no-icon flat"><p>主題被安裝到該路徑：node_modules&#x2F;hexo-theme-butterfly</p></div><div class="note default no-icon flat"><p>打開_config.yml文件，修改theme項以應用主題。</p></div><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">butterfly</span></span><br></pre></td></tr></table></figure><br><br><div class="note default simple"><ol start="2"><li>插件安裝</li></ol></div><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-renderer-pug hexo-renderer-stylus --save</span><br></pre></td></tr></table></figure><br><br><div class="note default simple"><ol start="3"><li>配置檔路徑</li></ol></div><div class="note default no-icon flat"><p>透過npm安裝的内容均在node_modules目錄下，這不便於管理配置檔。<br>首先，打開該路徑，複製config文件的全部内容：node_modules&#x2F;hexo-theme-butterfly&#x2F;_config.yml；<br>然後，回到根路徑下建立_config.butterfly.yml檔案，將複製的内容貼在該檔案上並保存；<br>最後，可直接使用根路徑下的_config.butterfly.yml檔案配置主題，優先級&gt;主題路徑下的_config.yml。</p></div><br><br><div class="note default simple"><ol start="4"><li>配置主題檔</li></ol></div><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Tittle </span></span><br><span class="line"><span class="attr">nav:</span></span><br><span class="line">  <span class="attr">logo:</span> </span><br><span class="line">  <span class="attr">display_title:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">fixed:</span> <span class="literal">false</span> <span class="comment"># fixed navigation bar</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Menu</span></span><br><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="string">歸類:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-folder-open</span></span><br><span class="line">  <span class="string">關於:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-paper-plane</span></span><br><span class="line">  <span class="string">足跡:</span> <span class="string">/message/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-shoe-prints</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Favicon（網站圖標）</span></span><br><span class="line"><span class="attr">favicon:</span> <span class="string">https://magstic.art/images/avatar.jpg</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Avatar (頭像)</span></span><br><span class="line"><span class="attr">avatar:</span></span><br><span class="line">  <span class="attr">img:</span> <span class="string">https://magstic.art/images/avatar.jpg</span></span><br><span class="line">  <span class="attr">effect:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 關閉頂圖</span></span><br><span class="line"><span class="attr">disable_top_img:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 404自定義</span></span><br><span class="line"><span class="attr">error_404:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">subtitle:</span> <span class="string">&#x27;站點重建中，請訪問主頁。&#x27;</span></span><br><span class="line">  <span class="attr">background:</span> <span class="string">https://s2.loli.net/2023/05/12/V8LgEuI6CnvYe7F.png</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 文章屬性</span></span><br><span class="line"><span class="attr">post_meta:</span></span><br><span class="line">  <span class="attr">page:</span> <span class="comment"># Home Page</span></span><br><span class="line">    <span class="attr">date_type:</span> <span class="string">created</span></span><br><span class="line">    <span class="attr">date_format:</span> <span class="string">date</span></span><br><span class="line">    <span class="attr">categories:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">tags:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">label:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">post:</span></span><br><span class="line">    <span class="attr">date_type:</span> <span class="string">both</span></span><br><span class="line">    <span class="attr">date_format:</span> <span class="string">date</span></span><br><span class="line">    <span class="attr">categories:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">tags:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">label:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 圖片描述文字</span></span><br><span class="line"><span class="attr">photofigcaption:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 複製權</span></span><br><span class="line"><span class="attr">copy:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">copyright:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 文章目錄&amp;版權</span></span><br><span class="line"><span class="attr">toc:</span></span><br><span class="line">  <span class="attr">post:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">page:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">number:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">expand:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">style_simple:</span> <span class="literal">false</span> <span class="comment"># for post</span></span><br><span class="line">  <span class="attr">scroll_percent:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="attr">post_copyright:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">decode:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 頁脚</span></span><br><span class="line"><span class="attr">footer:</span></span><br><span class="line">  <span class="attr">owner:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">since:</span> <span class="number">2020</span></span><br><span class="line">  <span class="attr">custom_text:</span></span><br><span class="line">  <span class="attr">copyright:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 側邊欄</span></span><br><span class="line"><span class="attr">aside:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">hide:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">button:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">mobile:</span> <span class="literal">true</span> <span class="comment"># display on mobile</span></span><br><span class="line">  <span class="attr">position:</span> <span class="string">right</span> <span class="comment"># left or right</span></span><br><span class="line">  <span class="attr">display:</span></span><br><span class="line">    <span class="attr">archive:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">tag:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">category:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">card_author:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">description:</span></span><br><span class="line">    <span class="attr">button:</span></span><br><span class="line">      <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">      <span class="attr">icon:</span> <span class="string">fab</span> <span class="string">fa-google</span></span><br><span class="line">      <span class="attr">text:</span> <span class="string">Gmail</span></span><br><span class="line">      <span class="attr">link:</span> <span class="string">mailto:mastic.cn@gmail.com</span></span><br><span class="line">  <span class="attr">card_recent_post:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">limit:</span> <span class="number">2</span></span><br><span class="line">  <span class="attr">card_archives:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">card_webinfo:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">post_count:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">last_push_date:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 純暗黑</span></span><br><span class="line"><span class="attr">darkmode:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure><p><br><br></p><div class="note default simple"><ol start="5"><li>調整主題檔<br>控制avatar不被滑鼠動作響應。<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//node_modules\hexo-theme-butterfly\source\css\_layout\<span class="selector-tag">aside</span><span class="selector-class">.styl</span></span><br><span class="line"><span class="selector-class">.avatar-img</span></span><br><span class="line">  <span class="attribute">overflow</span>: hidden</span><br><span class="line">  margin: <span class="number">0</span> auto</span><br><span class="line">  width: <span class="number">110px</span></span><br><span class="line">  height: <span class="number">110px</span></span><br><span class="line">  border-radius: <span class="number">70px</span></span><br><span class="line"></span><br><span class="line">  img</span><br><span class="line">    width: <span class="number">100%</span></span><br><span class="line">    height: <span class="number">100%</span></span><br><span class="line">    transition: filter <span class="number">0ms</span> ease-in .<span class="number">0s</span>, transform .<span class="number">0s</span></span><br><span class="line">    object-fit: cover</span><br><span class="line"></span><br><span class="line">    &amp;:hover</span><br><span class="line">      transform: <span class="built_in">rotate</span>(<span class="number">0deg</span>)</span><br></pre></td></tr></table></figure></li></ol></div>    </div></div><div class='spoiler collapsed'>    <div class='spoiler-title'>        02.星空背景    </div>    <div class='spoiler-content'>        <p>網路流行的星空背景，我進行了螢火蟲化。</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">//_config.butterfly.yml</span></span><br><span class="line"><span class="attr">inject:</span></span><br><span class="line">  <span class="attr">head:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;link</span> <span class="string">rel=&quot;stylesheet&quot;</span> <span class="string">href=&quot;/css/universe.css&quot;&gt;</span></span><br><span class="line">  <span class="attr">bottom:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;canvas</span> <span class="string">id=&quot;universe&quot;&gt;&lt;/canvas&gt;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">defer</span> <span class="string">src=&quot;/js/universe.js&quot;&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//node_modules\hexo-theme-butterfly\source\css\universe<span class="selector-class">.css</span></span><br><span class="line"><span class="selector-id">#universe</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: block;</span><br><span class="line">  <span class="attribute">position</span>: fixed;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">outline</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">pointer-events</span>: none;</span><br><span class="line">  <span class="attribute">z-index</span>: -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//node_modules\hexo-theme-butterfly\source\js\universe.js</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">fireflies</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">window</span>.<span class="property">requestAnimationFrame</span> = <span class="variable language_">window</span>.<span class="property">requestAnimationFrame</span> || <span class="variable language_">window</span>.<span class="property">mozRequestAnimationFrame</span> || <span class="variable language_">window</span>.<span class="property">webkitRequestAnimationFrame</span> || <span class="variable language_">window</span>.<span class="property">msRequestAnimationFrame</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> canvas = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;universe&quot;</span>),</span><br><span class="line">        ctx = canvas.<span class="title function_">getContext</span>(<span class="string">&quot;2d&quot;</span>),</span><br><span class="line">        fireflies = [],</span><br><span class="line">        numFireflies = <span class="number">50</span>,</span><br><span class="line">        fireflySpeed = <span class="number">0.2</span>,</span><br><span class="line">        fireflySize = <span class="number">1</span>,</span><br><span class="line">        fireflyOpacityMin = <span class="number">0.2</span>,</span><br><span class="line">        fireflyOpacityMax = <span class="number">0.5</span>;</span><br><span class="line"></span><br><span class="line">    canvas.<span class="property">width</span> = <span class="variable language_">window</span>.<span class="property">innerWidth</span>;</span><br><span class="line">    canvas.<span class="property">height</span> = <span class="variable language_">window</span>.<span class="property">innerHeight</span>;</span><br><span class="line"></span><br><span class="line">    <span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;resize&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">        canvas.<span class="property">width</span> = <span class="variable language_">window</span>.<span class="property">innerWidth</span>;</span><br><span class="line">        canvas.<span class="property">height</span> = <span class="variable language_">window</span>.<span class="property">innerHeight</span>;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">Firefly</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">x</span> = <span class="title class_">Math</span>.<span class="title function_">random</span>() * canvas.<span class="property">width</span>;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">y</span> = <span class="title class_">Math</span>.<span class="title function_">random</span>() * canvas.<span class="property">height</span>;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">dx</span> = (<span class="title class_">Math</span>.<span class="title function_">random</span>() &lt; <span class="number">0.5</span> ? -<span class="number">1</span> : <span class="number">1</span>) * fireflySpeed;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">dy</span> = (<span class="title class_">Math</span>.<span class="title function_">random</span>() &lt; <span class="number">0.5</span> ? -<span class="number">1</span> : <span class="number">1</span>) * fireflySpeed;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">color</span> = <span class="string">&quot;rgba(255, 215, 0, &quot;</span> + (<span class="title class_">Math</span>.<span class="title function_">random</span>() * (fireflyOpacityMax - fireflyOpacityMin) + fireflyOpacityMin) + <span class="string">&quot;)&quot;</span>;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">flashing</span> = <span class="literal">false</span>;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">flashSpeed</span> = <span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">0.2</span> + <span class="number">0.5</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title class_">Firefly</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">update</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">x</span> += <span class="variable language_">this</span>.<span class="property">dx</span>;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">y</span> += <span class="variable language_">this</span>.<span class="property">dy</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">x</span> &lt; <span class="number">0</span> || <span class="variable language_">this</span>.<span class="property">x</span> &gt; canvas.<span class="property">width</span>) <span class="variable language_">this</span>.<span class="property">dx</span> *= -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">y</span> &lt; <span class="number">0</span> || <span class="variable language_">this</span>.<span class="property">y</span> &gt; canvas.<span class="property">height</span>) <span class="variable language_">this</span>.<span class="property">dy</span> *= -<span class="number">1</span>;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="title class_">Firefly</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">draw</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">        ctx.<span class="title function_">beginPath</span>();</span><br><span class="line">        ctx.<span class="title function_">arc</span>(<span class="variable language_">this</span>.<span class="property">x</span>, <span class="variable language_">this</span>.<span class="property">y</span>, fireflySize, <span class="number">0</span>, <span class="number">2</span> * <span class="title class_">Math</span>.<span class="property">PI</span>);</span><br><span class="line">        ctx.<span class="property">fillStyle</span> = <span class="variable language_">this</span>.<span class="property">color</span>;</span><br><span class="line">        ctx.<span class="title function_">fill</span>();</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">animate</span>(<span class="params"></span>) &#123;</span><br><span class="line">        ctx.<span class="title function_">clearRect</span>(<span class="number">0</span>, <span class="number">0</span>, canvas.<span class="property">width</span>, canvas.<span class="property">height</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; fireflies.<span class="property">length</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">var</span> firefly = fireflies[i];</span><br><span class="line">            firefly.<span class="title function_">update</span>();</span><br><span class="line">            firefly.<span class="title function_">draw</span>();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="title function_">requestAnimationFrame</span>(animate);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; numFireflies; i++) &#123;</span><br><span class="line">        fireflies.<span class="title function_">push</span>(<span class="keyword">new</span> <span class="title class_">Firefly</span>());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">animate</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">fireflies</span>();</span><br></pre></td></tr></table></figure>    </div></div><div class='spoiler collapsed'>    <div class='spoiler-title'>        03.本地檢索    </div>    <div class='spoiler-content'>        <p>本地檢索是靜態BLOG的必備之物。</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-search --save</span><br></pre></td></tr></table></figure><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Local search</span></span><br><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">preload:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">top_n_per_article:</span> <span class="number">0</span></span><br><span class="line">  <span class="attr">unescape:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">CDN:</span></span><br></pre></td></tr></table></figure>    </div></div><div class='spoiler collapsed'>    <div class='spoiler-title'>        04.摺叠擴展    </div>    <div class='spoiler-content'>        <p>Hexo的摺叠擴展不被Lazyload規則響應，這不利於優化。<br><a href="https://github.com/fletchto99/hexo-sliding-spoiler">hexo-sliding-spoiler</a>雖不完美，但在優化面前，必須取捨。</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">install hexo-sliding-spoiler --save</span><br></pre></td></tr></table></figure><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">//node_modules\hexo-sliding-spoiler\assets\spoiler<span class="selector-class">.css</span></span><br><span class="line"><span class="selector-class">.spoiler</span> &#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">5px</span> <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">15px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">0.5px</span> solid <span class="number">#4e4e4e80</span>;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">clear</span>: both;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">3px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.spoiler</span> <span class="selector-class">.spoiler-title</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#4e4e4e60</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span> -<span class="number">15px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">5px</span> <span class="number">15px</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#ffffff</span>;</span><br><span class="line">    <span class="attribute">font-weight</span>: bold;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">13px</span>;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">cursor</span>: pointer;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.spoiler</span> <span class="selector-class">.spoiler-title</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">    <span class="attribute">font-weight</span>: bold;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.spoiler</span><span class="selector-class">.collapsed</span> <span class="selector-class">.spoiler-title</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;▶ &quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.spoiler</span><span class="selector-class">.expanded</span> <span class="selector-class">.spoiler-title</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;▼ &quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.spoiler</span> <span class="selector-class">.spoiler-content</span> &#123;</span><br><span class="line">    <span class="attribute">padding-top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding-bottom</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">margin-top</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">margin-bottom</span>: <span class="number">0</span>;</span><br><span class="line">    -moz-<span class="attribute">transition-duration</span>: <span class="number">0.1s</span>;</span><br><span class="line">    -webkit-<span class="attribute">transition-duration</span>: <span class="number">0.1s</span>;</span><br><span class="line">    -o-<span class="attribute">transition-duration</span>: <span class="number">0.1s</span>;</span><br><span class="line">    <span class="attribute">transition-duration</span>: <span class="number">0.8s</span>;</span><br><span class="line">    -moz-<span class="attribute">transition-timing-function</span>: ease-in-out;</span><br><span class="line">    -webkit-<span class="attribute">transition-timing-function</span>: ease-in-out;</span><br><span class="line">    -o-<span class="attribute">transition-timing-function</span>: ease-in-out;</span><br><span class="line">    <span class="attribute">transition-timing-function</span>: ease-in-out;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.spoiler</span><span class="selector-class">.collapsed</span> <span class="selector-class">.spoiler-content</span> &#123;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">    <span class="attribute">max-height</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.spoiler</span><span class="selector-class">.expanded</span> <span class="selector-class">.spoiler-content</span> &#123;</span><br><span class="line">    <span class="attribute">max-height</span>: <span class="number">8000px</span>;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.spoiler</span> <span class="selector-class">.spoiler-content</span> <span class="selector-tag">p</span><span class="selector-pseudo">:first</span>-child &#123;</span><br><span class="line">    <span class="attribute">margin-top</span>: <span class="number">0</span> <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>    </div></div><div class='spoiler collapsed'>    <div class='spoiler-title'>        05.留言系統    </div>    <div class='spoiler-content'>        <p>該BLOG使用<a href="https://twikoo.js.org/backend.html#hugging-face-%E9%83%A8%E7%BD%B2">Twikoo</a>進行Hugging Face+MongoDB部署。<br>MongoDB的Free Instance對於一個BLOG的評論區域足矣。<br>我不推薦使用圖像系統，因為依賴於第三方圖床的服務並不穩定。</p>    </div></div><h2 id="優化："><a href="#優化：" class="headerlink" title="優化："></a><em><strong>優化：</strong></em></h2><p>我不想使用Loading動畫，因此我需要使用Lazyload。</p><div class='spoiler collapsed'>    <div class='spoiler-title'>        01.Lazyload    </div>    <div class='spoiler-content'>        <p>使用Butterfly原生的Lazyload即可，因為擴展並不穩定。<br>為了評論區能夠在大陸地區正常訪問，我關閉了評論的Lazyload。</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">//_config.butterfly.yml</span></span><br><span class="line"><span class="comment"># Lazyload (評論懶加載)</span></span><br><span class="line"><span class="attr">comments:</span></span><br><span class="line">  <span class="attr">lazyload:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Lazyload (圖片懶加載)</span></span><br><span class="line"><span class="attr">lazyload:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">placeholder:</span></span><br><span class="line">  <span class="attr">blur:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>    </div></div><div class='spoiler collapsed'>    <div class='spoiler-title'>        02.Google Search Console    </div>    <div class='spoiler-content'>        <p>我不希望Baidu引擎收錄我，因此我使用<a href="https://search.google.com/search-console/about">Google Search Console</a>進行管理。<br>Baidu是最大的中文檢索引擎，但其Console無比糟糕；因此，我注銷了賬戶。<br>我也不希望一些内容被百度索引。因此，我使用Cloudflare的Rules拒絕了一切百度的Spider。</p>    </div></div><div class='spoiler collapsed'>    <div class='spoiler-title'>        03.Cloudflare    </div>    <div class='spoiler-content'>        <p>Cloudflare的面板無比簡潔友好。<br>我主要使用域管理、WAF以及R2存儲桶。</p><div class="note simple"><p>域管理</p></div><p>我使用Art域進行Blog管理，Top域進行資源管理。<br>Git無比方便，我無法捨棄Git Pages去使用CF Pages。<br>如果我使用Actions，這會使部分CSS無法被渲染，同時BLOG的時間綫會紊亂。<br>……總之，我需要使DNS解析至Github。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">【A】185.199.111.153</span><br><span class="line">【A】185.199.110.153</span><br><span class="line">【A】185.199.109.153</span><br><span class="line">【A】185.199.108.153</span><br><span class="line">【CNAME】magstic.github.io</span><br></pre></td></tr></table></figure>Cloudflare的Proxy在大陸地區亦可獲得不錯的訪問速度。<div class="note simple"><p>WAF</p></div><p>我使用Cloudflare的WAF設置防火牆規則。<br>為了Site的安全，我不會釋放全部的WAF規則。<br><code>網路安全</code> - <code>WAF</code>- <code>建立規則</code></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">【使用者代理程式】</span><br><span class="line">【包含】python-requests</span><br><span class="line">【Or】Go-http-client</span><br><span class="line">【Or】baidu</span><br><span class="line">……</span><br></pre></td></tr></table></figure><div class="note simple"><p>R2存儲桶</p></div><p>我使用R2存儲桶存放Blog的檔案。<br>我過去使用七牛雲，但服務極度不穩定。<br>R2提供的Free Plan無比優惠，這使我無比心動。<br>我使用top域綁定了存儲桶，起源是我沒有想到CF提供免費的SSL服務。</p>    </div></div><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
       
       <categories>
@@ -86,28 +86,6 @@
     
     
     <entry>
-      <title>關於</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
-      
-        <content type="html"><![CDATA[<p>你好，我是Magstic，“Wind Dream”管理人。<br>這裡主要上載一些塵封的歷史記憶，同人作品中的蒙塵事物會被記錄。</p><p>意義？我想僅僅是出於對個人的一份懷思。<br>網際網路時代，每個人的資料只不過是虛無縹緲的數字資訊。<br>媒體的便捷與易逝，無時無刻都在將人心拉入未知的淵藪。</p><p>記憶是生命的質料。若此刻不去記錄，來日或許只能面對空白的螢幕惆悵。<br>這個站點作為網際網路的一部分，或許亦會隨時死亡。<br>不過，我相信“永遠”。<br>心安……</p><p>—— Magstic，2022.01.03</p><p><strong>关於管理</strong><br>法隱自命，空耦度世。<br>樂理不通，鍵盤不近。<br>疲於社交，憊於囚籠。<br>偽善自樂，虛妄永遠。<br>粗人一介，莫問何故。</p><p><strong>关於站點</strong><br>過去基於Emlog Pro，現為Hexo。</p><p><strong>聯絡方式</strong><br>E-Mail：<a href="mailto:mastic.cn@gmail.com">mastic.cn@gmail.com</a></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>足跡</title>
-      <link href="/message/index.html"/>
-      <url>/message/index.html</url>
-      
-        <content type="html"><![CDATA[<p><em><strong>這是一塊留言板，歡迎留下您的足跡！</strong></em></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>歸類</title>
       <link href="/categories/index.html"/>
       <url>/categories/index.html</url>
@@ -124,6 +102,17 @@
       <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>足跡</title>
+      <link href="/message/index.html"/>
+      <url>/message/index.html</url>
+      
+        <content type="html"><![CDATA[<p><em><strong>這是一塊留言板，歡迎留下您的足跡！</strong></em></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -152,132 +141,11 @@
     
     
     <entry>
-      <title></title>
-      <link href="/html/aojiru/chen13.html"/>
-      <url>/html/aojiru/chen13.html</url>
+      <title>關於</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
-        <content type="html"><![CDATA[<!DOCTYPE html><html><head><meta charset="utf-8"><title>黄昏</title><link rel="shortcut icon" href="https://magstic.top/Hand.jpg"></head>    <body>        <center>            <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/coll/chen13.jpg" width="800" />            <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/coll/chen13back.jpg" width="800" />        </center>    </body></html><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>狂気の瞳 ～ Invisible Full Moon</title>
-      <link href="/html/aojiru/cd/02.html"/>
-      <url>/html/aojiru/cd/02.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/cd/02/狂気の瞳 ～ Invisible Full Moon.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/02/Jacket.JPG"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>ピアノ協奏曲「レミリア」</title>
-      <link href="/html/aojiru/cd/01.html"/>
-      <url>/html/aojiru/cd/01.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/cd/01/ピアノ協奏曲「レミリア」.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/01/Jacket.jpg"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>運命のダークサイド</title>
-      <link href="/html/aojiru/cd/04.html"/>
-      <url>/html/aojiru/cd/04.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/cd/04/運命のダークサイド.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/04/Jacket.jpg"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>少女綺想曲　～ Dream Battle</title>
-      <link href="/html/aojiru/cd/03.html"/>
-      <url>/html/aojiru/cd/03.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/cd/03/少女綺想曲 ～ Dream Battle.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/03/Jacket.jpg"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>赤より紅い夢</title>
-      <link href="/html/aojiru/cd/06-01.html"/>
-      <url>/html/aojiru/cd/06-01.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/cd/06/赤より紅い夢.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/06/Jacket.jpg"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>フラワリングナイト</title>
-      <link href="/html/aojiru/cd/05-02.html"/>
-      <url>/html/aojiru/cd/05-02.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/cd/05/フラワリングナイト.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/05/Jacket.jpg"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>妖魔夜行</title>
-      <link href="/html/aojiru/cd/05-01.html"/>
-      <url>/html/aojiru/cd/05-01.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/cd/05/妖魔夜行.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/05/Jacket.jpg"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>明治十七年の上海アリス</title>
-      <link href="/html/aojiru/cd/06-02.html"/>
-      <url>/html/aojiru/cd/06-02.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/cd/06/明治十七年の上海アリス.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/06/Jacket.jpg"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>ボーダーオブライフ</title>
-      <link href="/html/aojiru/cd/07-02.html"/>
-      <url>/html/aojiru/cd/07-02.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/cd/07/ボーダーオブライフ.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/07/Jacket.jpg"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>千年幻想郷 ～ History of the Moon</title>
-      <link href="/html/aojiru/cd/08-01.html"/>
-      <url>/html/aojiru/cd/08-01.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/cd/08/千年幻想郷 ～ History of the Moon.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/08/Jacket.jpg"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>妖々夢 ～ Snow or Cherry Petal</title>
-      <link href="/html/aojiru/cd/07-01.html"/>
-      <url>/html/aojiru/cd/07-01.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/cd/07/妖々夢 ～ Snow or Cherry Petal.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/07/Jacket.jpg"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+        <content type="html"><![CDATA[<p>你好，我是Magstic，“Wind Dream”管理人。<br>這裡主要上載一些塵封的歷史記憶，同人作品中的蒙塵事物會被記錄。</p><p>意義？我想僅僅是出於對個人的一份懷思。<br>網際網路時代，每個人的資料只不過是虛無縹緲的數字資訊。<br>媒體的便捷與易逝，無時無刻都在將人心拉入未知的淵藪。</p><p>記憶是生命的質料。若此刻不去記錄，來日或許只能面對空白的螢幕惆悵。<br>這個站點作為網際網路的一部分，或許亦會隨時死亡。<br>不過，我相信“永遠”。<br>心安……</p><p>—— Magstic，2022.01.03</p><p><strong>关於管理</strong><br>法隱自命，空耦度世。<br>樂理不通，鍵盤不近。<br>疲於社交，憊於囚籠。<br>偽善自樂，虛妄永遠。<br>粗人一介，莫問何故。</p><p><strong>关於站點</strong><br>過去基於Emlog Pro，現為Hexo。</p><p><strong>聯絡方式</strong><br>E-Mail：<a href="mailto:mastic.cn@gmail.com">mastic.cn@gmail.com</a></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -295,33 +163,22 @@
     
     
     <entry>
+      <title></title>
+      <link href="/html/aojiru/chen13.html"/>
+      <url>/html/aojiru/chen13.html</url>
+      
+        <content type="html"><![CDATA[<!DOCTYPE html><html><head><meta charset="utf-8"><title>黄昏</title><link rel="shortcut icon" href="https://magstic.top/Hand.jpg"></head>    <body>        <center>            <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/coll/chen13.jpg" width="800" />            <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/coll/chen13back.jpg" width="800" />        </center>    </body></html><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>白と黒の夢郷-絵03</title>
       <link href="/html/aojiru/art/art03.html"/>
       <url>/html/aojiru/art/art03.html</url>
       
         <content type="html"><![CDATA[<div class="note default no-icon flat"><p><strong>頁面插畫數量：15</strong></p></div><div class="gallery">    <div class="fj-gallery lazyload data" data-rowHeight="180" data-limit="15">    <span class="gallery-data">[{"url":"https://magstic.top/Aojiru/name/031Flandre3禁忌「レーヴァテイン」.jpg","alt":"禁忌「レーヴァテイン」"},{"url":"https://magstic.top/Aojiru/name/032Flandre4「禁弾「スターボウブレイク」」.jpg","alt":"禁弾「スターボウブレイク」"},{"url":"https://magstic.top/Aojiru/name/033Flandre5「禁弾「過去を刻む時計」」.jpg","alt":"禁弾「過去を刻む時計」"},{"url":"https://magstic.top/Aojiru/name/034Hidann「秘弾「そして誰もいなくなるか？」」.jpg","alt":"秘弾「そして誰もいなくなるか？」"},{"url":"https://magstic.top/Aojiru/name/035Flandre8「ＱＥＤ「４９５年の波紋」」.jpg","alt":"ＱＥＤ「４９５年の波紋」"},{"url":"https://magstic.top/Aojiru/name/036Flandre11「マ・メール・ロワ」.jpg","alt":"マ・メール・ロワ"},{"url":"https://magstic.top/Aojiru/name/037Flandre_gift『秘められし御伽の紅』.jpg","alt":"秘められし御伽の紅"},{"url":"https://magstic.top/Aojiru/name/038merupo「フランと人形の目」.jpg","alt":"フランと人形の目"},{"url":"https://magstic.top/Aojiru/name/039merupo「破壊衝動」.jpg","alt":"破壊衝動"},{"url":"https://magstic.top/Aojiru/name/040keine8「そして歴史は回帰する」.jpg","alt":"そして歴史は回帰する"},{"url":"https://magstic.top/Aojiru/name/041koakuma1「黒の牝鹿%E3%80%80小悪魔」.jpg","alt":"黒の牝鹿　小悪魔"},{"url":"https://magstic.top/Aojiru/name/042koakuma1「黒の牝鹿%E3%80%80小悪魔-2」.jpg","alt":"黒の牝鹿　小悪魔"},{"url":"https://magstic.top/Aojiru/name/043Letty1「白符「アンデュレイションレイ」」.jpg","alt":"白符「アンデュレイションレイ」"},{"url":"https://magstic.top/Aojiru/name/044mahoutukai1「霧雨%20魔理沙」.jpg","alt":"霧雨 魔理沙"},{"url":"https://magstic.top/Aojiru/name/045Marisa1「霧雨%20魔理沙」.jpg","alt":"霧雨 魔理沙"}]</span>    </div>    <button class="gallery-load-more"><span>載入更多</span><i class="fa-solid fa-arrow-down"></i></button>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>白と黒の夢郷-絵02</title>
-      <link href="/html/aojiru/art/art02.html"/>
-      <url>/html/aojiru/art/art02.html</url>
-      
-        <content type="html"><![CDATA[<div class="note default no-icon flat"><p><strong>頁面插畫數量：15</strong></p></div><div class="gallery">    <div class="fj-gallery lazyload data" data-rowHeight="180" data-limit="15">    <span class="gallery-data">[{"url":"https://magstic.top/Aojiru/name/016Cirno4「チルノ」.jpg","alt":"チルノ"},{"url":"https://magstic.top/Aojiru/name/017Cirno6「チルノ」.jpg","alt":"チルノ"},{"url":"https://magstic.top/Aojiru/name/018Cirno8雹符「ヘイルストーム」.jpg","alt":"雹符「ヘイルストーム」"},{"url":"https://magstic.top/Aojiru/name/019Cirno9凍符「パーフェクトフリーズ」.jpg","alt":"凍符「パーフェクトフリーズ」"},{"url":"https://magstic.top/Aojiru/name/020Cirno10雪符「ダイアモンドブリザード」.jpg","alt":"雪符「ダイアモンドブリザード」"},{"url":"https://magstic.top/Aojiru/name/021Harlequin_Crest「ハーレクイン・クレスト」.jpg","alt":"ハーレクイン・クレスト"},{"url":"https://magstic.top/Aojiru/name/022Memento_mori「氷精死を知る」.jpg","alt":"氷精死を知る"},{"url":"https://magstic.top/Aojiru/name/023merupo「チルノ」.jpg","alt":"チルノ"},{"url":"https://magstic.top/Aojiru/name/024merupo「向日葵に大勝利チルノ」.jpg","alt":"向日葵に大勝利チルノ"},{"url":"https://magstic.top/Aojiru/name/025daiyousei「湖上のおりこうさん」.jpg","alt":"湖上のおりこうさん"},{"url":"https://magstic.top/Aojiru/name/026Eirin5秘術「天文密葬法」.jpg","alt":"天文密葬法"},{"url":"https://magstic.top/Aojiru/name/027Eirin7「壺中の天地%E3%80%80脳内の宇宙」.jpg","alt":"壺中の天地　脳内の宇宙"},{"url":"https://magstic.top/Aojiru/name/028Flandre1「悪魔の妹」.jpg","alt":"悪魔の妹"},{"url":"https://magstic.top/Aojiru/name/029Flandre2「一緒に遊んでくれるのかしら？」.jpg","alt":"一緒に遊んでくれるのかしら？"},{"url":"https://magstic.top/Aojiru/name/030Flandre3「禁忌「フォーオブアカインド」」.jpg","alt":"禁忌「フォーオブアカインド」"}]</span>    </div>    <button class="gallery-load-more"><span>載入更多</span><i class="fa-solid fa-arrow-down"></i></button>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>東方妖怪小町</title>
-      <link href="/html/aojiru/cd/08-02.html"/>
-      <url>/html/aojiru/cd/08-02.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/cd/08/東方妖怪小町.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/08/Jacket.jpg"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -339,11 +196,44 @@
     
     
     <entry>
+      <title>白と黒の夢郷-絵02</title>
+      <link href="/html/aojiru/art/art02.html"/>
+      <url>/html/aojiru/art/art02.html</url>
+      
+        <content type="html"><![CDATA[<div class="note default no-icon flat"><p><strong>頁面插畫數量：15</strong></p></div><div class="gallery">    <div class="fj-gallery lazyload data" data-rowHeight="180" data-limit="15">    <span class="gallery-data">[{"url":"https://magstic.top/Aojiru/name/016Cirno4「チルノ」.jpg","alt":"チルノ"},{"url":"https://magstic.top/Aojiru/name/017Cirno6「チルノ」.jpg","alt":"チルノ"},{"url":"https://magstic.top/Aojiru/name/018Cirno8雹符「ヘイルストーム」.jpg","alt":"雹符「ヘイルストーム」"},{"url":"https://magstic.top/Aojiru/name/019Cirno9凍符「パーフェクトフリーズ」.jpg","alt":"凍符「パーフェクトフリーズ」"},{"url":"https://magstic.top/Aojiru/name/020Cirno10雪符「ダイアモンドブリザード」.jpg","alt":"雪符「ダイアモンドブリザード」"},{"url":"https://magstic.top/Aojiru/name/021Harlequin_Crest「ハーレクイン・クレスト」.jpg","alt":"ハーレクイン・クレスト"},{"url":"https://magstic.top/Aojiru/name/022Memento_mori「氷精死を知る」.jpg","alt":"氷精死を知る"},{"url":"https://magstic.top/Aojiru/name/023merupo「チルノ」.jpg","alt":"チルノ"},{"url":"https://magstic.top/Aojiru/name/024merupo「向日葵に大勝利チルノ」.jpg","alt":"向日葵に大勝利チルノ"},{"url":"https://magstic.top/Aojiru/name/025daiyousei「湖上のおりこうさん」.jpg","alt":"湖上のおりこうさん"},{"url":"https://magstic.top/Aojiru/name/026Eirin5秘術「天文密葬法」.jpg","alt":"天文密葬法"},{"url":"https://magstic.top/Aojiru/name/027Eirin7「壺中の天地%E3%80%80脳内の宇宙」.jpg","alt":"壺中の天地　脳内の宇宙"},{"url":"https://magstic.top/Aojiru/name/028Flandre1「悪魔の妹」.jpg","alt":"悪魔の妹"},{"url":"https://magstic.top/Aojiru/name/029Flandre2「一緒に遊んでくれるのかしら？」.jpg","alt":"一緒に遊んでくれるのかしら？"},{"url":"https://magstic.top/Aojiru/name/030Flandre3「禁忌「フォーオブアカインド」」.jpg","alt":"禁忌「フォーオブアカインド」"}]</span>    </div>    <button class="gallery-load-more"><span>載入更多</span><i class="fa-solid fa-arrow-down"></i></button>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>白と黒の夢郷-絵07</title>
+      <link href="/html/aojiru/art/art07.html"/>
+      <url>/html/aojiru/art/art07.html</url>
+      
+        <content type="html"><![CDATA[<div class="note default no-icon flat"><p><strong>頁面插畫數量：15</strong></p></div><div class="gallery">    <div class="fj-gallery lazyload data" data-rowHeight="180" data-limit="15">    <span class="gallery-data">[{"url":"https://magstic.top/Aojiru/name/091Reimu12「霊夢の結界%20-伽羅色-」.jpg","alt":"霊夢の結界 -伽羅色-"},{"url":"https://magstic.top/Aojiru/name/092sakura「皆吉爽雨詠む」.jpg","alt":"皆吉爽雨詠む"},{"url":"https://magstic.top/Aojiru/name/093merupo「虹の枯れた巫女」.jpg","alt":"虹の枯れた巫女"},{"url":"https://magstic.top/Aojiru/name/094Reisen1「月兎%E3%80%80～%20ルナ・エンシェンツ」.jpg","alt":"月兎　～ ルナ・エンシェンツ"},{"url":"https://magstic.top/Aojiru/name/095Reisen「兎生きろ、蟹は死ね」.jpg","alt":"兎生きろ、蟹は死ね"},{"url":"https://magstic.top/Aojiru/name/096兎と人形.jpg","alt":"兎と人形"},{"url":"https://magstic.top/Aojiru/name/097Remilia1「永遠に紅い幼き月」.jpg","alt":"永遠に紅い幼き月"},{"url":"https://magstic.top/Aojiru/name/098Remilia1「紅い月を背」.jpg","alt":"紅い月を背"},{"url":"https://magstic.top/Aojiru/name/099Remilia2「運命を操る程度の能力」.jpg","alt":"運命を操る程度の能力"},{"url":"https://magstic.top/Aojiru/name/100ruumia11「闇の徘徊」.jpg","alt":"闇の徘徊"},{"url":"https://magstic.top/Aojiru/name/101Ruumia8「闇符「ディマーケイション」」.jpg","alt":"闇符「ディマーケイション」"},{"url":"https://magstic.top/Aojiru/name/102Ruumia10「食人鬼」.jpg","alt":"食人鬼"},{"url":"https://magstic.top/Aojiru/name/103merupo「ルーミアさんの憂鬱」.jpg","alt":"ルーミアさんの憂鬱"},{"url":"https://magstic.top/Aojiru/name/104Ruumia「常夜見の花」.jpg","alt":"常夜見の花"},{"url":"https://magstic.top/Aojiru/name/105Ruumia5「月符「ムーンライトレイ」」.jpg","alt":"月符「ムーンライトレイ」"}]</span>    </div>    <button class="gallery-load-more"><span>載入更多</span><i class="fa-solid fa-arrow-down"></i></button>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>白と黒の夢郷-絵05</title>
       <link href="/html/aojiru/art/art05.html"/>
       <url>/html/aojiru/art/art05.html</url>
       
         <content type="html"><![CDATA[<div class="note default no-icon flat"><p><strong>頁面插畫數量：15</strong></p></div><div class="gallery">    <div class="fj-gallery lazyload data" data-rowHeight="180" data-limit="15">    <span class="gallery-data">[{"url":"https://magstic.top/Aojiru/name/061mokou12「リザレクション」.jpg","alt":"リザレクション"},{"url":"https://magstic.top/Aojiru/name/062Phoenix.jpg","alt":"Phoenix"},{"url":"https://magstic.top/Aojiru/name/063Mystia1「ミスティア・ローレライ」.jpg","alt":"ミスティア・ローレライ"},{"url":"https://magstic.top/Aojiru/name/064Flora's_Lesson「花のソルフェージュ」.jpg","alt":"花のソルフェージュ"},{"url":"https://magstic.top/Aojiru/name/065merupo「ミスティアとランプ」.jpg","alt":"ミスティアとランプ"},{"url":"https://magstic.top/Aojiru/name/066Patchouli2「とっておきの魔法、見せてあげるわ！」.jpg","alt":"とっておきの魔法、見せてあげるわ！"},{"url":"https://magstic.top/Aojiru/name/067Patchouli2「金＆水符「マーキュリポイズン」」.jpg","alt":"金＆水符「マーキュリポイズン」"},{"url":"https://magstic.top/Aojiru/name/068Royal_Flare「日輪のごとき」.jpg","alt":"日輪のごとき"},{"url":"https://magstic.top/Aojiru/name/069Lunasa1「ルナサ・プリズムリバー」.jpg","alt":"ルナサ・プリズムリバー"},{"url":"https://magstic.top/Aojiru/name/070Lyrica1「リリカ・プリズムリバー」.jpg","alt":"リリカ・プリズムリバー"},{"url":"https://magstic.top/Aojiru/name/071Merlin1「メルラン・プリズムリバー」.jpg","alt":"メルラン・プリズムリバー"},{"url":"https://magstic.top/Aojiru/name/072Prismriver1「レイラと三姉妹の追憶」.jpg","alt":"レイラと三姉妹の追憶"},{"url":"https://magstic.top/Aojiru/name/073Lunasa3「グァルネリ・デル・ジェス」.jpg","alt":"グァルネリ・デル・ジェス"},{"url":"https://magstic.top/Aojiru/name/074Lyrica「レイラズ・ラメントバス」.jpg","alt":"レイラズ・ラメントバス"},{"url":"https://magstic.top/Aojiru/name/075merupo「姉さんの呟き」.jpg","alt":"姉さんの呟き"}]</span>    </div>    <button class="gallery-load-more"><span>載入更多</span><i class="fa-solid fa-arrow-down"></i></button>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>白と黒の夢郷-絵08</title>
+      <link href="/html/aojiru/art/art08.html"/>
+      <url>/html/aojiru/art/art08.html</url>
+      
+        <content type="html"><![CDATA[<div class="note default no-icon flat"><p><strong>頁面插畫數量：15</strong></p></div><div class="gallery">    <div class="fj-gallery lazyload data" data-rowHeight="180" data-limit="15">    <span class="gallery-data">[{"url":"https://magstic.top/Aojiru/name/106Ruumia6「夜符「ナイトバード」」.jpg","alt":"夜符「ナイトバード」"},{"url":"https://magstic.top/Aojiru/name/107Ruumia9黄天月夜.jpg","alt":"黄天月夜"},{"url":"https://magstic.top/Aojiru/name/108sakuya1「瀟洒なメイド長」.jpg","alt":"瀟洒なメイド長"},{"url":"https://magstic.top/Aojiru/name/109sakuya2「十六夜%20咲夜」.jpg","alt":"十六夜 咲夜"},{"url":"https://magstic.top/Aojiru/name/110sakuya3「十六夜%20咲夜」.jpg","alt":"十六夜 咲夜"},{"url":"https://magstic.top/Aojiru/name/111Sakuya5「恐怖の片鱗」.jpg","alt":"恐怖の片鱗"},{"url":"https://magstic.top/Aojiru/name/112Key_of_Obedience.jpg","alt":"Key of Obedience"},{"url":"https://magstic.top/Aojiru/name/113Noisy_Silence.jpg","alt":"Noisy Silence"},{"url":"https://magstic.top/Aojiru/name/114Sakuya4「チャールズ・ウォーレン嘲笑」.jpg","alt":"チャールズ・ウォーレン嘲笑"},{"url":"https://magstic.top/Aojiru/name/115STORM_CAUSER.jpg","alt":"STORM CAUSER"},{"url":"https://magstic.top/Aojiru/name/116merupo「吐き気をもよおす邪悪兎」.jpg","alt":"吐き気をもよおす邪悪兎"},{"url":"https://magstic.top/Aojiru/name/117merupo「いたるところにいのちはそんざいするよ」.jpg","alt":"いたるところにいのちはそんざいするよ"},{"url":"https://magstic.top/Aojiru/name/118Wisp_Projector「夜草映える～Wisp%20Projector」.jpg","alt":"夜草映える～Wisp Projector"},{"url":"https://magstic.top/Aojiru/name/119Wriggle3「幻視の夜のリグル」.jpg","alt":"幻視の夜のリグル"},{"url":"https://magstic.top/Aojiru/name/120merupo「サイギョウジズ・ゴースト・リベレーター」.jpg","alt":"サイギョウジズ・ゴースト・リベレーター"}]</span>    </div>    <button class="gallery-load-more"><span>載入更多</span><i class="fa-solid fa-arrow-down"></i></button>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -372,11 +262,11 @@
     
     
     <entry>
-      <title>白と黒の夢郷-絵08</title>
-      <link href="/html/aojiru/art/art08.html"/>
-      <url>/html/aojiru/art/art08.html</url>
+      <title>白と黒の夢郷-未知插畫</title>
+      <link href="/html/aojiru/art/null.html"/>
+      <url>/html/aojiru/art/null.html</url>
       
-        <content type="html"><![CDATA[<div class="note default no-icon flat"><p><strong>頁面插畫數量：15</strong></p></div><div class="gallery">    <div class="fj-gallery lazyload data" data-rowHeight="180" data-limit="15">    <span class="gallery-data">[{"url":"https://magstic.top/Aojiru/name/106Ruumia6「夜符「ナイトバード」」.jpg","alt":"夜符「ナイトバード」"},{"url":"https://magstic.top/Aojiru/name/107Ruumia9黄天月夜.jpg","alt":"黄天月夜"},{"url":"https://magstic.top/Aojiru/name/108sakuya1「瀟洒なメイド長」.jpg","alt":"瀟洒なメイド長"},{"url":"https://magstic.top/Aojiru/name/109sakuya2「十六夜%20咲夜」.jpg","alt":"十六夜 咲夜"},{"url":"https://magstic.top/Aojiru/name/110sakuya3「十六夜%20咲夜」.jpg","alt":"十六夜 咲夜"},{"url":"https://magstic.top/Aojiru/name/111Sakuya5「恐怖の片鱗」.jpg","alt":"恐怖の片鱗"},{"url":"https://magstic.top/Aojiru/name/112Key_of_Obedience.jpg","alt":"Key of Obedience"},{"url":"https://magstic.top/Aojiru/name/113Noisy_Silence.jpg","alt":"Noisy Silence"},{"url":"https://magstic.top/Aojiru/name/114Sakuya4「チャールズ・ウォーレン嘲笑」.jpg","alt":"チャールズ・ウォーレン嘲笑"},{"url":"https://magstic.top/Aojiru/name/115STORM_CAUSER.jpg","alt":"STORM CAUSER"},{"url":"https://magstic.top/Aojiru/name/116merupo「吐き気をもよおす邪悪兎」.jpg","alt":"吐き気をもよおす邪悪兎"},{"url":"https://magstic.top/Aojiru/name/117merupo「いたるところにいのちはそんざいするよ」.jpg","alt":"いたるところにいのちはそんざいするよ"},{"url":"https://magstic.top/Aojiru/name/118Wisp_Projector「夜草映える～Wisp%20Projector」.jpg","alt":"夜草映える～Wisp Projector"},{"url":"https://magstic.top/Aojiru/name/119Wriggle3「幻視の夜のリグル」.jpg","alt":"幻視の夜のリグル"},{"url":"https://magstic.top/Aojiru/name/120merupo「サイギョウジズ・ゴースト・リベレーター」.jpg","alt":"サイギョウジズ・ゴースト・リベレーター"}]</span>    </div>    <button class="gallery-load-more"><span>載入更多</span><i class="fa-solid fa-arrow-down"></i></button>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+        <content type="html"><![CDATA[<div class="note default no-icon flat"><p><strong>頁面插畫數量：21</strong></p></div><div class="gallery">    <div class="fj-gallery lazyload data" data-rowHeight="180" data-limit="8">    <span class="gallery-data">[{"url":"https://magstic.top/Aojiru/null/chen19.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/Cirno11.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/Flandre6.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/Flandre7.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/fuyufuyureimu.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/KAGUYA.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/keltusenn2.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/KOTETSU.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/lili.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/Lyrica2.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/Meiling4.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/Meiling5.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/Merlin1.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/merupo_wriggle.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/mystia14.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/ooona.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/patye1.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/Prismriver2.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/Reimu3.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/wriggle13.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/Yukari16.jpg","alt":""}]</span>    </div>    <button class="gallery-load-more"><span>載入更多</span><i class="fa-solid fa-arrow-down"></i></button>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -394,33 +284,11 @@
     
     
     <entry>
-      <title>白と黒の夢郷-絵10</title>
-      <link href="/html/aojiru/art/art10.html"/>
-      <url>/html/aojiru/art/art10.html</url>
+      <title>Space Battle Ship 130 33KI</title>
+      <link href="/html/aojiru/other/33KI.html"/>
+      <url>/html/aojiru/other/33KI.html</url>
       
-        <content type="html"><![CDATA[<div class="note default no-icon flat"><p><strong>頁面插畫數量：18</strong></p></div><div class="gallery">    <div class="fj-gallery lazyload data" data-rowHeight="180" data-limit="7">    <span class="gallery-data">[{"url":"https://magstic.top/Aojiru/name/136Yuyuko5「幽曲「リポジトリ・オブ・ヒロカワ%20-幻霊-」」.jpg","alt":"幽曲「リポジトリ・オブ・ヒロカワ -幻霊-」"},{"url":"https://magstic.top/Aojiru/name/137Yuyuko6「桜符「完全なる墨染の桜%20-春眠-」」.jpg","alt":"桜符「完全なる墨染の桜 -春眠-」"},{"url":"https://magstic.top/Aojiru/name/138Yuyuko7「反魂蝶%20-八分咲-」.jpg","alt":"反魂蝶 -八分咲-"},{"url":"https://magstic.top/Aojiru/name/139Yuyuko9「桜奇談「260548」」.jpg","alt":"桜奇談「260548」"},{"url":"https://magstic.top/Aojiru/name/140Yuyuko10「十六桜」.jpg","alt":"十六桜"},{"url":"https://magstic.top/Aojiru/name/141keltusenn1「霊夢とレミリア」.jpg","alt":"霊夢とレミリア"},{"url":"https://magstic.top/Aojiru/name/142mikotomahoutukai「霊夢と魔理沙」.jpg","alt":"霊夢と魔理沙"},{"url":"https://magstic.top/Aojiru/name/143Conviction.jpg","alt":"Conviction"},{"url":"https://magstic.top/Aojiru/name/144KOTETSU.jpg","alt":"KOTETSU"},{"url":"https://magstic.top/Aojiru/name/145merupo「レティがあたいに授けてくれたスペルカードだァァーッ」.jpg","alt":"レティがあたいに授けてくれたスペルカードだァァーッ"},{"url":"https://magstic.top/Aojiru/name/146merupo「紫と霊夢」.jpg","alt":"紫と霊夢"},{"url":"https://magstic.top/Aojiru/name/147ikaruga1「斑鳩より森羅と篝」.jpg","alt":"斑鳩より森羅と篝"},{"url":"https://magstic.top/Aojiru/name/148taisa1「怒首領蜂%20大佐」.jpg","alt":"怒首領蜂 大佐"},{"url":"https://magstic.top/Aojiru/name/149koumakyouend1「紅魔鄉その後」.jpg","alt":"紅魔鄉その後"},{"url":"https://magstic.top/Aojiru/name/150koumakyouend2「紅魔鄉その後」.jpg","alt":"紅魔鄉その後"},{"url":"https://magstic.top/Aojiru/name/151koumakyouend4「紅魔鄉その後」.jpg","alt":"紅魔鄉その後"},{"url":"https://magstic.top/Aojiru/name/152yousonogo1「妖々夢その後%20-%20春風の夢」.jpg","alt":"妖々夢その後 - 春風の夢"},{"url":"https://magstic.top/Aojiru/name/153merupo_lumia「だーくぐろー＠ルーミア」.jpg","alt":"だーくぐろー"}]</span>    </div>    <button class="gallery-load-more"><span>載入更多</span><i class="fa-solid fa-arrow-down"></i></button>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>白と黒の夢郷-未知插畫</title>
-      <link href="/html/aojiru/art/null.html"/>
-      <url>/html/aojiru/art/null.html</url>
-      
-        <content type="html"><![CDATA[<div class="note default no-icon flat"><p><strong>頁面插畫數量：21</strong></p></div><div class="gallery">    <div class="fj-gallery lazyload data" data-rowHeight="180" data-limit="8">    <span class="gallery-data">[{"url":"https://magstic.top/Aojiru/null/chen19.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/Cirno11.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/Flandre6.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/Flandre7.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/fuyufuyureimu.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/KAGUYA.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/keltusenn2.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/KOTETSU.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/lili.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/Lyrica2.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/Meiling4.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/Meiling5.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/Merlin1.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/merupo_wriggle.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/mystia14.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/ooona.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/patye1.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/Prismriver2.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/Reimu3.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/wriggle13.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/Yukari16.jpg","alt":""}]</span>    </div>    <button class="gallery-load-more"><span>載入更多</span><i class="fa-solid fa-arrow-down"></i></button>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>白と黒の夢郷-絵07</title>
-      <link href="/html/aojiru/art/art07.html"/>
-      <url>/html/aojiru/art/art07.html</url>
-      
-        <content type="html"><![CDATA[<div class="note default no-icon flat"><p><strong>頁面插畫數量：15</strong></p></div><div class="gallery">    <div class="fj-gallery lazyload data" data-rowHeight="180" data-limit="15">    <span class="gallery-data">[{"url":"https://magstic.top/Aojiru/name/091Reimu12「霊夢の結界%20-伽羅色-」.jpg","alt":"霊夢の結界 -伽羅色-"},{"url":"https://magstic.top/Aojiru/name/092sakura「皆吉爽雨詠む」.jpg","alt":"皆吉爽雨詠む"},{"url":"https://magstic.top/Aojiru/name/093merupo「虹の枯れた巫女」.jpg","alt":"虹の枯れた巫女"},{"url":"https://magstic.top/Aojiru/name/094Reisen1「月兎%E3%80%80～%20ルナ・エンシェンツ」.jpg","alt":"月兎　～ ルナ・エンシェンツ"},{"url":"https://magstic.top/Aojiru/name/095Reisen「兎生きろ、蟹は死ね」.jpg","alt":"兎生きろ、蟹は死ね"},{"url":"https://magstic.top/Aojiru/name/096兎と人形.jpg","alt":"兎と人形"},{"url":"https://magstic.top/Aojiru/name/097Remilia1「永遠に紅い幼き月」.jpg","alt":"永遠に紅い幼き月"},{"url":"https://magstic.top/Aojiru/name/098Remilia1「紅い月を背」.jpg","alt":"紅い月を背"},{"url":"https://magstic.top/Aojiru/name/099Remilia2「運命を操る程度の能力」.jpg","alt":"運命を操る程度の能力"},{"url":"https://magstic.top/Aojiru/name/100ruumia11「闇の徘徊」.jpg","alt":"闇の徘徊"},{"url":"https://magstic.top/Aojiru/name/101Ruumia8「闇符「ディマーケイション」」.jpg","alt":"闇符「ディマーケイション」"},{"url":"https://magstic.top/Aojiru/name/102Ruumia10「食人鬼」.jpg","alt":"食人鬼"},{"url":"https://magstic.top/Aojiru/name/103merupo「ルーミアさんの憂鬱」.jpg","alt":"ルーミアさんの憂鬱"},{"url":"https://magstic.top/Aojiru/name/104Ruumia「常夜見の花」.jpg","alt":"常夜見の花"},{"url":"https://magstic.top/Aojiru/name/105Ruumia5「月符「ムーンライトレイ」」.jpg","alt":"月符「ムーンライトレイ」"}]</span>    </div>    <button class="gallery-load-more"><span>載入更多</span><i class="fa-solid fa-arrow-down"></i></button>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/other/1%20rs9o.mp3" type="audio/mpeg"></audio><p>曲が既に絢爛豪華オケ調なのでHrの音域調整などを少々、例によって大音量でﾄﾞｿﾞｰ</p><p>後前回の銀銃戦艦に反応下さった方ありがとうございますです。<br>やっぱあの曲はシューターの方には人気高いですね実際名曲だけど。<br>5Aシーンをゲーセンでリアルタイムにプレイできたことは自分にも良き思い出。</p><p>さらに海老福さんとこでダイナマイトヘッディーピアノが来てるじゃあないの。<br>自分はトレジャーゲーに馴染んだのは銀銃以降の為未プレイですが…ｲｲ。</p><p>音源の都合で表現しきれなかった原曲のニュアンスを汲み取って再現する、かぁ。<br>そうだよなぁ…編曲の動機の一つであり理想の一つだよなぁ…と、<br>ちょっと考え込みながら耳を傾ける次第。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -449,11 +317,33 @@
     
     
     <entry>
-      <title>Space Battle Ship 130 33KI</title>
-      <link href="/html/aojiru/other/33KI.html"/>
-      <url>/html/aojiru/other/33KI.html</url>
+      <title>仏鉄塊</title>
+      <link href="/html/aojiru/other/Ikaruga3o.html"/>
+      <url>/html/aojiru/other/Ikaruga3o.html</url>
       
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/other/1%20rs9o.mp3" type="audio/mpeg"></audio><p>曲が既に絢爛豪華オケ調なのでHrの音域調整などを少々、例によって大音量でﾄﾞｿﾞｰ</p><p>後前回の銀銃戦艦に反応下さった方ありがとうございますです。<br>やっぱあの曲はシューターの方には人気高いですね実際名曲だけど。<br>5Aシーンをゲーセンでリアルタイムにプレイできたことは自分にも良き思い出。</p><p>さらに海老福さんとこでダイナマイトヘッディーピアノが来てるじゃあないの。<br>自分はトレジャーゲーに馴染んだのは銀銃以降の為未プレイですが…ｲｲ。</p><p>音源の都合で表現しきれなかった原曲のニュアンスを汲み取って再現する、かぁ。<br>そうだよなぁ…編曲の動機の一つであり理想の一つだよなぁ…と、<br>ちょっと考え込みながら耳を傾ける次第。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/ikaruga/Ikaruga3o.mp3" type="audio/mpeg"></audio><p><strong>仏鉄塊</strong><br>質実剛健、余計な音はいらぬとばかりにストイックな白黒ボス曲。<br>いつも以上の劣化編曲ですがコレでもかなり気合入れましたよホント。<br>（この曲に限らず斑鳩の音楽については語りだすと百万言でも足らずなので自重。<br>原曲聴いたこと無いという方はアーケードなり移植作なりで味わって下さい、是非に是非に）</p><p><strong>烏帽子鳥</strong><br>アーケードで斑鳩が稼動してこのかた浅見さんとの戦闘回数は一万回に迫りますが、<br>いざ描く段となると何も観察して無いことに気付かされて俺しょんぼり。<br>というわけで斑鳩新書見ながら作業…うーむ出来上がってみるとデザイン全然違う…。<br>機械を正確に描ける人はスゲーですねと痛感した今日この頃。<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/name/003%E7%83%8F%E5%B8%BD%E5%AD%90%E9%B3%A5.jpg" alt="烏帽子鳥"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>プレインエイジア</title>
+      <link href="/html/aojiru/thc/01e8c.html"/>
+      <url>/html/aojiru/thc/01e8c.html</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://magstic.top/Aojiru/music/thc/k.mp3"><strong>初版音頻</strong></a></p><audio controls><source src="https://magstic.top/Aojiru/music/thc/keinetheme_pianoconcerto_128.mp3" type="audio/mpeg"></audio><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>白と黒の夢郷-絵10</title>
+      <link href="/html/aojiru/art/art10.html"/>
+      <url>/html/aojiru/art/art10.html</url>
+      
+        <content type="html"><![CDATA[<div class="note default no-icon flat"><p><strong>頁面插畫數量：18</strong></p></div><div class="gallery">    <div class="fj-gallery lazyload data" data-rowHeight="180" data-limit="7">    <span class="gallery-data">[{"url":"https://magstic.top/Aojiru/name/136Yuyuko5「幽曲「リポジトリ・オブ・ヒロカワ%20-幻霊-」」.jpg","alt":"幽曲「リポジトリ・オブ・ヒロカワ -幻霊-」"},{"url":"https://magstic.top/Aojiru/name/137Yuyuko6「桜符「完全なる墨染の桜%20-春眠-」」.jpg","alt":"桜符「完全なる墨染の桜 -春眠-」"},{"url":"https://magstic.top/Aojiru/name/138Yuyuko7「反魂蝶%20-八分咲-」.jpg","alt":"反魂蝶 -八分咲-"},{"url":"https://magstic.top/Aojiru/name/139Yuyuko9「桜奇談「260548」」.jpg","alt":"桜奇談「260548」"},{"url":"https://magstic.top/Aojiru/name/140Yuyuko10「十六桜」.jpg","alt":"十六桜"},{"url":"https://magstic.top/Aojiru/name/141keltusenn1「霊夢とレミリア」.jpg","alt":"霊夢とレミリア"},{"url":"https://magstic.top/Aojiru/name/142mikotomahoutukai「霊夢と魔理沙」.jpg","alt":"霊夢と魔理沙"},{"url":"https://magstic.top/Aojiru/name/143Conviction.jpg","alt":"Conviction"},{"url":"https://magstic.top/Aojiru/name/144KOTETSU.jpg","alt":"KOTETSU"},{"url":"https://magstic.top/Aojiru/name/145merupo「レティがあたいに授けてくれたスペルカードだァァーッ」.jpg","alt":"レティがあたいに授けてくれたスペルカードだァァーッ"},{"url":"https://magstic.top/Aojiru/name/146merupo「紫と霊夢」.jpg","alt":"紫と霊夢"},{"url":"https://magstic.top/Aojiru/name/147ikaruga1「斑鳩より森羅と篝」.jpg","alt":"斑鳩より森羅と篝"},{"url":"https://magstic.top/Aojiru/name/148taisa1「怒首領蜂%20大佐」.jpg","alt":"怒首領蜂 大佐"},{"url":"https://magstic.top/Aojiru/name/149koumakyouend1「紅魔鄉その後」.jpg","alt":"紅魔鄉その後"},{"url":"https://magstic.top/Aojiru/name/150koumakyouend2「紅魔鄉その後」.jpg","alt":"紅魔鄉その後"},{"url":"https://magstic.top/Aojiru/name/151koumakyouend4「紅魔鄉その後」.jpg","alt":"紅魔鄉その後"},{"url":"https://magstic.top/Aojiru/name/152yousonogo1「妖々夢その後%20-%20春風の夢」.jpg","alt":"妖々夢その後 - 春風の夢"},{"url":"https://magstic.top/Aojiru/name/153merupo_lumia「だーくぐろー＠ルーミア」.jpg","alt":"だーくぐろー"}]</span>    </div>    <button class="gallery-load-more"><span>載入更多</span><i class="fa-solid fa-arrow-down"></i></button>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -465,17 +355,6 @@
       <url>/html/aojiru/other/Heart_Asks.html</url>
       
         <content type="html"><![CDATA[<p>Music Lost</p><p>新PC導入記念にピアノ曲の中のピアノ曲を一つ。中盤テンポもたり気味だけどｷﾆｼﾅｲ！</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>仏鉄塊</title>
-      <link href="/html/aojiru/other/Ikaruga3o.html"/>
-      <url>/html/aojiru/other/Ikaruga3o.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/ikaruga/Ikaruga3o.mp3" type="audio/mpeg"></audio><p><strong>仏鉄塊</strong><br>質実剛健、余計な音はいらぬとばかりにストイックな白黒ボス曲。<br>いつも以上の劣化編曲ですがコレでもかなり気合入れましたよホント。<br>（この曲に限らず斑鳩の音楽については語りだすと百万言でも足らずなので自重。<br>原曲聴いたこと無いという方はアーケードなり移植作なりで味わって下さい、是非に是非に）</p><p><strong>烏帽子鳥</strong><br>アーケードで斑鳩が稼動してこのかた浅見さんとの戦闘回数は一万回に迫りますが、<br>いざ描く段となると何も観察して無いことに気付かされて俺しょんぼり。<br>というわけで斑鳩新書見ながら作業…うーむ出来上がってみるとデザイン全然違う…。<br>機械を正確に描ける人はスゲーですねと痛感した今日この頃。<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/name/003%E7%83%8F%E5%B8%BD%E5%AD%90%E9%B3%A5.jpg" alt="烏帽子鳥"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -504,17 +383,6 @@
     
     
     <entry>
-      <title>OMEGA ～ 聖戦</title>
-      <link href="/html/aojiru/other/Omega.html"/>
-      <url>/html/aojiru/other/Omega.html</url>
-      
-        <content type="html"><![CDATA[<p>Music Lost</p><p>旧約のアレ聴いたときはスピーカー蛾ぶっ壊れたのかと思いましたでさぁええ。<br>携帯版では曲そのものが削除されてるらしいしつくづく扱いの悪い名曲ですわ…。</p><p>ひなんじょさん、しおりさんどーもです。リグルが可愛すぎて俺もう我慢できｎ</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>井戸（仮）</title>
       <link href="/html/aojiru/other/Well.html"/>
       <url>/html/aojiru/other/Well.html</url>
@@ -531,6 +399,17 @@
       <url>/html/aojiru/other/Raimei.html</url>
       
         <content type="html"><![CDATA[<p>Music Lost</p><p>ああ19XX自分も大好きですよ＆1942JSがまともに流通するよう祈願で一ループでっち上げ。<br>主旋律が白玉過ぎるんでピアノでまともにやろうとしたら分散和音編曲とかが妥当なんでしょうがまあ軽くということで。</p><p>他にもサンチョペドロを筆頭に名曲ぞろいだし、音楽と演出の連動も優れたSTGなんですが。<br>ネームエントリーを時間切れまで粘ってもED曲が途中で切れるのはいただけねーぞカプコンさん…。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>OMEGA ～ 聖戦</title>
+      <link href="/html/aojiru/other/Omega.html"/>
+      <url>/html/aojiru/other/Omega.html</url>
+      
+        <content type="html"><![CDATA[<p>Music Lost</p><p>旧約のアレ聴いたときはスピーカー蛾ぶっ壊れたのかと思いましたでさぁええ。<br>携帯版では曲そのものが削除されてるらしいしつくづく扱いの悪い名曲ですわ…。</p><p>ひなんじょさん、しおりさんどーもです。リグルが可愛すぎて俺もう我慢できｎ</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -559,17 +438,6 @@
     
     
     <entry>
-      <title>永遠の巫女</title>
-      <link href="/html/aojiru/thp/00r2ps.html"/>
-      <url>/html/aojiru/thp/00r2ps.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/thp/00%20r2ps.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/r2psback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Boss B</title>
       <link href="/html/aojiru/other/sf26ps.html"/>
       <url>/html/aojiru/other/sf26ps.html</url>
@@ -581,33 +449,22 @@
     
     
     <entry>
-      <title>プレインエイジア</title>
-      <link href="/html/aojiru/thc/01e8c.html"/>
-      <url>/html/aojiru/thc/01e8c.html</url>
-      
-        <content type="html"><![CDATA[<p><a href="https://magstic.top/Aojiru/music/thc/k.mp3"><strong>初版音頻</strong></a></p><audio controls><source src="https://magstic.top/Aojiru/music/thc/keinetheme_pianoconcerto_128.mp3" type="audio/mpeg"></audio><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>ラクトガール～少女密室</title>
-      <link href="/html/aojiru/thp/02k9ps.html"/>
-      <url>/html/aojiru/thp/02k9ps.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/thp/2%20k9ps.mp3" type="audio/mpeg"></audio><p>というわけで魔法少女達の百年祭といいたいところだが諸事情でこっちです。<br>やっぱこういう私魔女だけど今までの氷精とか門番とか氷精とは一味違うZEという強敵オーラプンプンな曲がないとね。<br>ゲームの流れが引き締まると言いましょうか。</p><p><strong>日輪のごとき</strong><br>久々にEXやってパターン忘却から憤死というのもひとつの流れとなっている昨今ですが、<br>さすがにロイヤルフレアの避けパターン忘れてたときは脳の老化を嘆きましたよええ。<br>第二波は左端から抜けるのが定石でしたねー、と自分のリプ見て賢さが1ポイントあがった！<br>しかしホーミング巫女でクリャンベリーに根気良く付き合ってるわ過去の俺…。<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/name/068Royal_Flare%E3%80%8C%E6%97%A5%E8%BC%AA%E3%81%AE%E3%81%94%E3%81%A8%E3%81%8D%E3%80%8D.jpg" alt="日輪のごとき"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>永遠の巫女（初版）</title>
       <link href="/html/aojiru/thp/00r2pso.html"/>
       <url>/html/aojiru/thp/00r2pso.html</url>
       
         <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/thp/eiennnomiko.mp3" type="audio/mpeg"></audio><p>東方靈異伝より。<br>この曲は蓬莱人形で初めて聴いたのですが、すぐにその雰囲気に魅了されてしまいました。<br>後にこの曲が序盤で使われていたと知り、随分衝撃を受けたものです。<br>（絶対エンディング曲だと思ってたよ…。）<br>で、アレンジなんですが…………普段実際に弾いてるときはもっと表情をつけてるんですが…。<br>そのニュアンスを上手く入力できない自分の修行不足です…。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>永遠の巫女</title>
+      <link href="/html/aojiru/thp/00r2ps.html"/>
+      <url>/html/aojiru/thp/00r2ps.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/thp/00%20r2ps.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/r2psback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -647,33 +504,11 @@
     
     
     <entry>
-      <title>もう歌しか聞こえない</title>
-      <link href="/html/aojiru/thp/06e5ps.html"/>
-      <url>/html/aojiru/thp/06e5ps.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/thp/6%20e5ps.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/e5psback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>広有射怪鳥事　～ Till When?</title>
       <link href="/html/aojiru/thp/05y11ps.html"/>
       <url>/html/aojiru/thp/05y11ps.html</url>
       
         <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/thp/5%20y11ps.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/y11psback.jpg"></p><p><strong>サンダーゴッズ・ヴィガー</strong><br>何で俺が雷神を描くと高木ブーになるのはどうして？<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/name/121merupo%E3%80%8C%E3%82%B5%E3%83%B3%E3%83%80%E3%83%BC%E3%82%B4%E3%83%83%E3%82%BA%E3%83%BB%E3%83%B4%E3%82%A3%E3%82%AC%E3%83%BC%E3%80%8D.jpg" alt="サンダーゴッズ・ヴィガー"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>竹取飛翔　～ Lunatic Princess</title>
-      <link href="/html/aojiru/thp/09e15ps.html"/>
-      <url>/html/aojiru/thp/09e15ps.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/thp/9%20e15ps.mp3" type="audio/mpeg"></audio><p>ラスボス曲としては千年幻想郷がこの上無いほどラスボスしてるのでこちらはロマンティックageて特化してみましたよ。<br>原曲や諸アレンジに比べて鈍重ですが要所ではbrillanteに逝きましょう…でもやっぱ冒頭は原曲同様ｷﾘｯと始めるべきだったかなぁ。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -691,11 +526,33 @@
     
     
     <entry>
-      <title>亡き王女の為のセプテット</title>
-      <link href="/html/aojiru/thp/14k13ps.html"/>
-      <url>/html/aojiru/thp/14k13ps.html</url>
+      <title>ラクトガール～少女密室</title>
+      <link href="/html/aojiru/thp/02k9ps.html"/>
+      <url>/html/aojiru/thp/02k9ps.html</url>
       
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/thp/nakiouzyonotamenoseputeltuto.mp3" type="audio/mpeg"></audio><p>東方紅魔郷より。<br>パヴァーヌは好きなので、タイトルを知ったときはニヤリとしてしまいました。<br>恐らくZUN氏の曲の中では最もピアノ向けではないかと。<br>そう考えている為、構成には手をつけずただただ感情を込めて。<br>後半のアドリブ部分ですが…捏造で済みません。<br>メロが取れたら改正しようと思います。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/thp/2%20k9ps.mp3" type="audio/mpeg"></audio><p>というわけで魔法少女達の百年祭といいたいところだが諸事情でこっちです。<br>やっぱこういう私魔女だけど今までの氷精とか門番とか氷精とは一味違うZEという強敵オーラプンプンな曲がないとね。<br>ゲームの流れが引き締まると言いましょうか。</p><p><strong>日輪のごとき</strong><br>久々にEXやってパターン忘却から憤死というのもひとつの流れとなっている昨今ですが、<br>さすがにロイヤルフレアの避けパターン忘れてたときは脳の老化を嘆きましたよええ。<br>第二波は左端から抜けるのが定石でしたねー、と自分のリプ見て賢さが1ポイントあがった！<br>しかしホーミング巫女でクリャンベリーに根気良く付き合ってるわ過去の俺…。<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/name/068Royal_Flare%E3%80%8C%E6%97%A5%E8%BC%AA%E3%81%AE%E3%81%94%E3%81%A8%E3%81%8D%E3%80%8D.jpg" alt="日輪のごとき"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>もう歌しか聞こえない</title>
+      <link href="/html/aojiru/thp/06e5ps.html"/>
+      <url>/html/aojiru/thp/06e5ps.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/thp/6%20e5ps.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/e5psback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>竹取飛翔　～ Lunatic Princess</title>
+      <link href="/html/aojiru/thp/09e15ps.html"/>
+      <url>/html/aojiru/thp/09e15ps.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/thp/9%20e15ps.mp3" type="audio/mpeg"></audio><p>ラスボス曲としては千年幻想郷がこの上無いほどラスボスしてるのでこちらはロマンティックageて特化してみましたよ。<br>原曲や諸アレンジに比べて鈍重ですが要所ではbrillanteに逝きましょう…でもやっぱ冒頭は原曲同様ｷﾘｯと始めるべきだったかなぁ。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -735,6 +592,17 @@
     
     
     <entry>
+      <title>亡き王女の為のセプテット</title>
+      <link href="/html/aojiru/thp/14k13ps.html"/>
+      <url>/html/aojiru/thp/14k13ps.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/thp/nakiouzyonotamenoseputeltuto.mp3" type="audio/mpeg"></audio><p>東方紅魔郷より。<br>パヴァーヌは好きなので、タイトルを知ったときはニヤリとしてしまいました。<br>恐らくZUN氏の曲の中では最もピアノ向けではないかと。<br>そう考えている為、構成には手をつけずただただ感情を込めて。<br>後半のアドリブ部分ですが…捏造で済みません。<br>メロが取れたら改正しようと思います。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>二色蓮花蝶　～ Ancients</title>
       <link href="/html/aojiru/thp/16s18ps.html"/>
       <url>/html/aojiru/thp/16s18ps.html</url>
@@ -746,176 +614,11 @@
     
     
     <entry>
-      <title>妖魔夜行</title>
-      <link href="/html/aojiru/tho/01k3o.html"/>
-      <url>/html/aojiru/tho/01k3o.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/tho/01%20k3o.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/k3oback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>ツェペシュの幼き末裔</title>
-      <link href="/html/aojiru/tho/03k12o.html"/>
-      <url>/html/aojiru/tho/03k12o.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/tho/03%20k12o.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/k12oback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>東方妖々夢　～ Ancient Temple</title>
-      <link href="/html/aojiru/thp/17y10ps.html"/>
-      <url>/html/aojiru/thp/17y10ps.html</url>
-      
-        <content type="html"><![CDATA[<p>Music Lost</p><p>サクッと一ループ。真面目に練れば実に映える曲だと思います。誰かやれ。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>広有射怪鳥事　～ Till When?</title>
-      <link href="/html/aojiru/tho/07y11o.html"/>
-      <url>/html/aojiru/tho/07y11o.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/tho/07%20y11o.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/y11oback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>おてんば恋娘</title>
-      <link href="/html/aojiru/tho/02k5o.html"/>
-      <url>/html/aojiru/tho/02k5o.html</url>
-      
-        <content type="html"><![CDATA[<p><a href="https://magstic.top/Aojiru/music/tho/cirnotheme_sinfonietta_128.mp3"><strong>初版音頻</strong></a></p><audio controls><source src="https://magstic.top/Aojiru/music/tho/02%20k5o.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/k5oback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>クリスタライズシルバー</title>
-      <link href="/html/aojiru/tho/06y3o.html"/>
-      <url>/html/aojiru/tho/06y3o.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/tho/06%20y3o.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/y3oback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>U.N.オーエンは彼女なのか？</title>
-      <link href="/html/aojiru/tho/05k15o.html"/>
-      <url>/html/aojiru/tho/05k15o.html</url>
-      
-        <content type="html"><![CDATA[<p><a href="https://magstic.top/Aojiru/music/tho/U.N.ownhakanozyonanoka.mid">輕觸下載MIDI源文件</a></p><p>（SC-8850推奨）東方紅魔郷より。<br>ZUN氏のセンスが感じられる曲名です。<br>自分の脳内でフランドールとは地下礼拝所で戦っている、というイメージがあるので、<br>それにあわせて厳かに。聖戦ならぬ聖弾幕ごっこ。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>狂気の瞳　～ Invisible Full Moon</title>
-      <link href="/html/aojiru/tho/08e12o.html"/>
-      <url>/html/aojiru/tho/08e12o.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/tho/08%20reisentheme_sinfonietta_128.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/e12oback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>千年幻想郷　～ History of the Moon</title>
-      <link href="/html/aojiru/tho/09e14o.html"/>
-      <url>/html/aojiru/tho/09e14o.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/tho/09%20e14o.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/e14oback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>さくらさくら　～ Japanize Dream...</title>
-      <link href="/html/aojiru/tho/15y20o.html"/>
-      <url>/html/aojiru/tho/15y20o.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/tho/15%20y20o.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/y20oback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>少女幻葬　～ Necro-Fantasy</title>
-      <link href="/html/aojiru/tho/14y16o.html"/>
-      <url>/html/aojiru/tho/14y16o.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/tho/14%20y16o.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/y16oback.jpg"></p><p>個人的には扱いの非常に難しい曲。藍さまは悩める中間管理式。<br>原曲が何故あそこまでシンプルに纏められてるか随分悩んだ結果ようやく判ったような判らないような…。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>フラワリングナイト</title>
-      <link href="/html/aojiru/tho/16ka4o.html"/>
-      <url>/html/aojiru/tho/16ka4o.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/tho/16%20ka4o.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/ka4oback.jpg"></p><p>お蔵出し。久しぶりにプレイしたら原曲テンポ速過ぎﾜﾛﾀ　花は音楽だけ聴くというのが難しいから脳内テンポとズレがあたかも知れない。<br>特にタイミングによってはレベル2チャージ自転車操業でケツに火がついてる状況なので聴いてる余裕ナッシング、<br>音楽室は長時間再生してるとPC巻き込んで操作不可になるんで如何ともし難い…俺だけか？俺だけ花に嫌われてるのか～？</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>永遠の巫女</title>
       <link href="/html/aojiru/ths/01r2pd.html"/>
       <url>/html/aojiru/ths/01r2pd.html</url>
       
         <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/ths/1%20r2pd.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/r2pdback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>信仰は儚き人間の為に</title>
-      <link href="/html/aojiru/tho/17f11o.html"/>
-      <url>/html/aojiru/tho/17f11o.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/tho/17%20f11o.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/f11oback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>二色蓮花蝶　～ Ancients</title>
-      <link href="/html/aojiru/ths/02s18pd.html"/>
-      <url>/html/aojiru/ths/02s18pd.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/ths/2%20s18pd.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/s18pdback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>ブクレシュティの人形師</title>
-      <link href="/html/aojiru/ths/06y6pq.html"/>
-      <url>/html/aojiru/ths/06y6pq.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/ths/6%20y6pq.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/y6pqback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -944,11 +647,308 @@
     
     
     <entry>
+      <title>東方妖々夢　～ Ancient Temple</title>
+      <link href="/html/aojiru/thp/17y10ps.html"/>
+      <url>/html/aojiru/thp/17y10ps.html</url>
+      
+        <content type="html"><![CDATA[<p>Music Lost</p><p>サクッと一ループ。真面目に練れば実に映える曲だと思います。誰かやれ。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ブクレシュティの人形師</title>
+      <link href="/html/aojiru/ths/06y6pq.html"/>
+      <url>/html/aojiru/ths/06y6pq.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/ths/6%20y6pq.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/y6pqback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>二色蓮花蝶　～ Ancients</title>
+      <link href="/html/aojiru/ths/02s18pd.html"/>
+      <url>/html/aojiru/ths/02s18pd.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/ths/2%20s18pd.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/s18pdback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>妖魔夜行</title>
+      <link href="/html/aojiru/tho/01k3o.html"/>
+      <url>/html/aojiru/tho/01k3o.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/tho/01%20k3o.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/k3oback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>おてんば恋娘</title>
+      <link href="/html/aojiru/tho/02k5o.html"/>
+      <url>/html/aojiru/tho/02k5o.html</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://magstic.top/Aojiru/music/tho/cirnotheme_sinfonietta_128.mp3"><strong>初版音頻</strong></a></p><audio controls><source src="https://magstic.top/Aojiru/music/tho/02%20k5o.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/k5oback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>もう歌しか聞こえない</title>
       <link href="/html/aojiru/ths/08e5sq.html"/>
       <url>/html/aojiru/ths/08e5sq.html</url>
       
         <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/ths/8%20e5sq.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/e5sqback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>U.N.オーエンは彼女なのか？</title>
+      <link href="/html/aojiru/tho/05k15o.html"/>
+      <url>/html/aojiru/tho/05k15o.html</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://magstic.top/Aojiru/music/tho/U.N.ownhakanozyonanoka.mid">輕觸下載MIDI源文件</a></p><p>（SC-8850推奨）東方紅魔郷より。<br>ZUN氏のセンスが感じられる曲名です。<br>自分の脳内でフランドールとは地下礼拝所で戦っている、というイメージがあるので、<br>それにあわせて厳かに。聖戦ならぬ聖弾幕ごっこ。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>クリスタライズシルバー</title>
+      <link href="/html/aojiru/tho/06y3o.html"/>
+      <url>/html/aojiru/tho/06y3o.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/tho/06%20y3o.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/y3oback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>狂気の瞳　～ Invisible Full Moon</title>
+      <link href="/html/aojiru/tho/08e12o.html"/>
+      <url>/html/aojiru/tho/08e12o.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/tho/08%20reisentheme_sinfonietta_128.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/e12oback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>広有射怪鳥事　～ Till When?</title>
+      <link href="/html/aojiru/tho/07y11o.html"/>
+      <url>/html/aojiru/tho/07y11o.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/tho/07%20y11o.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/y11oback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>千年幻想郷　～ History of the Moon</title>
+      <link href="/html/aojiru/tho/09e14o.html"/>
+      <url>/html/aojiru/tho/09e14o.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/tho/09%20e14o.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/e14oback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>少女幻葬　～ Necro-Fantasy</title>
+      <link href="/html/aojiru/tho/14y16o.html"/>
+      <url>/html/aojiru/tho/14y16o.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/tho/14%20y16o.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/y16oback.jpg"></p><p>個人的には扱いの非常に難しい曲。藍さまは悩める中間管理式。<br>原曲が何故あそこまでシンプルに纏められてるか随分悩んだ結果ようやく判ったような判らないような…。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>さくらさくら　～ Japanize Dream...</title>
+      <link href="/html/aojiru/tho/15y20o.html"/>
+      <url>/html/aojiru/tho/15y20o.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/tho/15%20y20o.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/y20oback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>フラワリングナイト</title>
+      <link href="/html/aojiru/tho/16ka4o.html"/>
+      <url>/html/aojiru/tho/16ka4o.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/tho/16%20ka4o.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/ka4oback.jpg"></p><p>お蔵出し。久しぶりにプレイしたら原曲テンポ速過ぎﾜﾛﾀ　花は音楽だけ聴くというのが難しいから脳内テンポとズレがあたかも知れない。<br>特にタイミングによってはレベル2チャージ自転車操業でケツに火がついてる状況なので聴いてる余裕ナッシング、<br>音楽室は長時間再生してるとPC巻き込んで操作不可になるんで如何ともし難い…俺だけか？俺だけ花に嫌われてるのか～？</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>信仰は儚き人間の為に</title>
+      <link href="/html/aojiru/tho/17f11o.html"/>
+      <url>/html/aojiru/tho/17f11o.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/tho/17%20f11o.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/f11oback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ツェペシュの幼き末裔</title>
+      <link href="/html/aojiru/tho/03k12o.html"/>
+      <url>/html/aojiru/tho/03k12o.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/tho/03%20k12o.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/k12oback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ピアノ協奏曲「レミリア」</title>
+      <link href="/html/aojiru/cd/01.html"/>
+      <url>/html/aojiru/cd/01.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/cd/01/ピアノ協奏曲「レミリア」.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/01/Jacket.jpg"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>少女綺想曲　～ Dream Battle</title>
+      <link href="/html/aojiru/cd/03.html"/>
+      <url>/html/aojiru/cd/03.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/cd/03/少女綺想曲 ～ Dream Battle.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/03/Jacket.jpg"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>運命のダークサイド</title>
+      <link href="/html/aojiru/cd/04.html"/>
+      <url>/html/aojiru/cd/04.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/cd/04/運命のダークサイド.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/04/Jacket.jpg"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>フラワリングナイト</title>
+      <link href="/html/aojiru/cd/05-02.html"/>
+      <url>/html/aojiru/cd/05-02.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/cd/05/フラワリングナイト.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/05/Jacket.jpg"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>妖魔夜行</title>
+      <link href="/html/aojiru/cd/05-01.html"/>
+      <url>/html/aojiru/cd/05-01.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/cd/05/妖魔夜行.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/05/Jacket.jpg"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>狂気の瞳 ～ Invisible Full Moon</title>
+      <link href="/html/aojiru/cd/02.html"/>
+      <url>/html/aojiru/cd/02.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/cd/02/狂気の瞳 ～ Invisible Full Moon.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/02/Jacket.JPG"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>赤より紅い夢</title>
+      <link href="/html/aojiru/cd/06-01.html"/>
+      <url>/html/aojiru/cd/06-01.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/cd/06/赤より紅い夢.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/06/Jacket.jpg"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>明治十七年の上海アリス</title>
+      <link href="/html/aojiru/cd/06-02.html"/>
+      <url>/html/aojiru/cd/06-02.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/cd/06/明治十七年の上海アリス.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/06/Jacket.jpg"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>妖々夢 ～ Snow or Cherry Petal</title>
+      <link href="/html/aojiru/cd/07-01.html"/>
+      <url>/html/aojiru/cd/07-01.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/cd/07/妖々夢 ～ Snow or Cherry Petal.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/07/Jacket.jpg"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ボーダーオブライフ</title>
+      <link href="/html/aojiru/cd/07-02.html"/>
+      <url>/html/aojiru/cd/07-02.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/cd/07/ボーダーオブライフ.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/07/Jacket.jpg"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>東方妖怪小町</title>
+      <link href="/html/aojiru/cd/08-02.html"/>
+      <url>/html/aojiru/cd/08-02.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/cd/08/東方妖怪小町.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/08/Jacket.jpg"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>千年幻想郷 ～ History of the Moon</title>
+      <link href="/html/aojiru/cd/08-01.html"/>
+      <url>/html/aojiru/cd/08-01.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/cd/08/千年幻想郷 ～ History of the Moon.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/08/Jacket.jpg"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
