@@ -79,7 +79,7 @@
   background-color: rgba(255, 255, 255, 0.05);
 }
 
-.toggle #toggle-content p li:hover {
+.toggle li:hover {
   color: #ffffff;
   background-color: rgba(255, 255, 255, 0.1);
   transform: translateX(5px);
