@@ -696,20 +696,6 @@
   </url>
   
   <url>
-    <loc>https://magstic.art/tags/%E3%82%88%E3%81%86%E3%81%8B/</loc>
-    <lastmod>2024-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://magstic.art/tags/%E9%9B%AA%E3%81%AE%E8%B6%B3%E8%B7%A1/</loc>
-    <lastmod>2024-12-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://magstic.art/tags/A-dash/</loc>
     <lastmod>2024-12-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -732,6 +718,20 @@
   
   <url>
     <loc>https://magstic.art/tags/Studio-A/</loc>
+    <lastmod>2024-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://magstic.art/tags/%E3%82%88%E3%81%86%E3%81%8B/</loc>
+    <lastmod>2024-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://magstic.art/tags/%E9%9B%AA%E3%81%AE%E8%B6%B3%E8%B7%A1/</loc>
     <lastmod>2024-12-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
