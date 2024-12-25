@@ -1,0 +1,48 @@
+/* 該CSS用於“參見”的TABLE美化 */
+.reference-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 20px 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--card-bg-color, #1a1a1a);
+}
+
+.reference-table td {
+  padding: 12px 16px;
+  color: var(--text-color, #e0e0e0);
+  border: none;
+}
+
+.reference-table tr {
+  border-bottom: 1px solid var(--border-color, rgba(255,255,255,0.1));
+}
+
+.reference-table tr:last-child {
+  border-bottom: none;
+}
+
+.reference-table tr:hover {
+  background-color: var(--card-hover-bg-color, rgba(255,255,255,0.05));
+  transition: background-color 0.2s ease;
+}
+
+.archive-link {
+  color: var(--text-dimmed, #888);
+  font-size: 0.9em;
+  margin-left: 10px;
+}
+
+.archive-link a {
+  color: var(--link-color, #7aa2f7);
+  text-decoration: none;
+}
+
+.archive-link a:hover {
+  text-decoration: underline;
+}
+
+.reference-table td:nth-child(1) { width: 60%; }
+.reference-table td:nth-child(2) { width: 20%; }
+.reference-table td:nth-child(3) { width: 20%; }
