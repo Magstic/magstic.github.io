@@ -68,7 +68,7 @@
   margin-bottom: 0px;
 }
 
-.toggle .toggle-content li {
+.toggle .toggle-content ol li {
   color: #e0e0e0;
   font-size: 14px;
   line-height: 1.8;
@@ -80,11 +80,38 @@
   background-color: rgba(255, 255, 255, 0.05);
 }
 
-.toggle li:hover {
+.toggle ol li:hover {
   color: #ffffff;
   background-color: rgba(255, 255, 255, 0.1);
   transform: translateX(5px);
   cursor: pointer;
+}
+
+.toggle .toggle-content ul li {
+  color: #e0e0e0;
+  font-size: 14px;
+  line-height: 1.8;
+  padding: 6px 10px;
+  margin: 4px 0;
+  list-style: disc;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.toggle ul li:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateX(5px);
+  cursor: pointer;
+}
+
+.toggle .toggle-content ol li .red-mark {
+  display: block;
+}
+
+.toggle .toggle-content ol li:has(.red-mark) {
+  background-color: rgba(255, 150, 150, 0.05);
 }
 
 .album-download {
