@@ -111,7 +111,7 @@
 }
 
 .toggle .toggle-content ol li:has(.red-mark) {
-  background-color: rgba(255, 150, 150, 0.05);
+  background-color: rgba(47, 255, 213, 0.05);
 }
 
 .album-download {
