@@ -114,6 +114,29 @@
   background-color: rgba(47, 255, 213, 0.05);
 }
 
+.toggle .toggle-content ol li .red-mark {
+  display: inline-block;
+  width: 100%;
+}
+
+.toggle .toggle-content ol li:has(> .red-mark) {
+  background-color: rgba(47, 255, 213, 0.05);
+}
+
+.toggle .toggle-content ol li ul {
+  margin-top: 5px;
+  padding-left: 20px;
+}
+
+.toggle .toggle-content ol li ul li {
+  background-color: rgba(255, 255, 255, 0.03);
+  margin-bottom: 2px;
+}
+
+.toggle .toggle-content ol li:has(> .red-mark) ul li {
+  background-color: rgba(47, 255, 213, 0.03);
+}
+
 .album-download {
   position: absolute;
   top: 0rem;
