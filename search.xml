@@ -8,7 +8,7 @@
       <link href="/2025/01/10/06/"/>
       <url>/2025/01/10/06/</url>
       
-        <content type="html"><![CDATA[<p>在 Word 下整理聊天訊息的規範。<br>訊息在拷貝至 Word 時，已經携帶一定的格式。<br>該方法適用於未使用 QQNT 資料庫的 QQ 或 TIM 版本。</p><style>/* 基础列表样式 */.lista ol {  counter-reset: list-counter;  margin: 1.5em 0;  padding-left: 2.5em;  line-height: 1.6;}/* 列表项样式 */.lista ol > li {  position: relative;  margin-bottom: 0.8em;  padding: 0.5em;  counter-increment: list-counter;  border-left: 2px solid transparent;}/* 内联代码块样式 */.lista li code {  background: #2d333b;  padding: 2px 6px;  border-radius: 3px;  color: #d19a66;}/* 嵌套列表样式 */.lista ol li ul {  margin: 0.5em 0;  padding-left: 1.5em;}.lista ol li ul li {  list-style-type: none;  position: relative;}/* 悬停效果 */.lista ol > li:hover {  background-color: #2d333b;  border-radius: 12px;  transition: all 0.2s ease;}</style><h2 id="基本規範"><a href="#基本規範" class="headerlink" title="基本規範"></a>基本規範</h2><h3 id="通用"><a href="#通用" class="headerlink" title="通用"></a>通用</h3><p>字號：五號<br>遵循訊息的原始格式。</p><h3 id="匿稱"><a href="#匿稱" class="headerlink" title="匿稱"></a>匿稱</h3><table><thead><tr><th>WORD</th><th>WPS文字</th></tr></thead><tbody><tr><td>中文 &#x2F; 西文字體：等綫<br>字形：加粗<br>字號：五號 &#x2F; 10.5<br>字體顔色：<br>A: R 201 G 138 B 218（C98ADA）<br>B: R 112 G 173 B 71（70AD47）<br>效果：All Off</td><td>中文 &#x2F; 西文字體：等綫<br>字形：加粗<br>字號：五號 &#x2F; 10.5<br>字體顔色：<br>A: R 201 G 138 B 218（C98ADA）<br>B: 112 G 173 B 71（70AD47）<br>效果：All Def</td></tr></tbody></table><p><strong>為何使用 WPS ？</strong><br>WPS 的大尺寸文件處理能力非常强大！<br>我在整理訊息的時候 Word 突然卡頓死亡，修復無果 : (<br>頁面 500 ，字數 160K ，這在過去只需等待十秒鐘便可加載完成。<br>啊啊，果然每次整理聊天訊息的時候，都是系統要重灌的時候呢（笑）</p><hr><div class = "lista"><h2 id="方案一：Word-Pdf"><a href="#方案一：Word-Pdf" class="headerlink" title="方案一：Word + Pdf"></a>方案一：Word + Pdf</h2><ol><li>聊天訊息拷貝至 Word；</li><li>使用 VBA 宏將 IMG 統一縮放至 <code>40%</code>；</li><li><code>Ctrl +C</code> 全選内容，設置字號為五號；</li><li>匿稱替換，格式為<code>^p匿稱 </code>，如 <code>^pMagstic </code>；<ul><li><code>^p</code> 為換行</li><li>匿稱後的空格為 <code>&amp;#160;</code></li><li>該轉換為匹配 常規訊息</li></ul></li><li>匿稱替換，格式為<code>匿稱 </code>，如 <code>Magstic </code>；<ul><li><code>^p</code> 為換行</li><li>匿稱後的空格為 <code>&amp;#32;</code></li><li>該轉換為匹配 訊息引用</li></ul></li><li>校對訊息的缺漏；<ul><li>卡片訊息使用 Link 替代</li><li>有效 &#x2F; 失效文件使用 截圖替代</li><li>失效 IMG 文件使用 Cache文件名追索並替換</li><li>縮放圖像以美化排版</li><li>未漫游的斷層訊息使用 QQMobile 的截圖</li><li>若以上訊息有缺失，則標注【LOST】</li></ul></li><li>設定文檔分欄為 2 ； </li><li>轉換為 Pdf ，和 Word 共同存儲。</li></ol><hr><h2 id="方案二：Word-Markdown"><a href="#方案二：Word-Markdown" class="headerlink" title="方案二：Word + Markdown"></a>方案二：Word + Markdown</h2><p>Word + Markdown 整理聊天訊息的規範。<br>結果上較為粗放，但提供了更高效的校對方式。<br>這亦是未來的個人備份聊天記錄的備選方案之一。</p><ol><li>聊天訊息拷貝至 Word；</li><li>使用 VBA 宏將 IMG 統一縮放至 <code>40%</code>；</li><li><code>Ctrl +C</code> 全選内容，設置字號為五號；</li><li>匿稱替換，格式為<code>^p匿稱 </code>，如 <code>^pMagstic </code>；<ul><li><code>^p</code> 為換行</li><li>匿稱後的空格為 <code>&amp;#160;</code></li></ul></li><li>匿稱替換，格式為<code>匿稱 </code>，如 <code>Magstic </code>；<ul><li><code>^p</code> 為換行</li><li>匿稱後的空格為 <code>&amp;#32;</code></li><li>該轉換為匹配 訊息引用</li></ul></li><li>校對卡片訊息和失效文件；<ul><li>卡片訊息使用 Link替代</li><li>有效 &#x2F; 失效文件使用 <code>【文件】Name.zip（12.34MB）</code> 替代</li><li>未漫游的斷層訊息使用 QQMobile 的截圖</li><li>若以上訊息有缺失，則標注【LOST】</li></ul></li><li>使用 Pandoc 將 Doc 轉為 Markdown，並使用 PowerShell 清理 Markdown 的無用標記；</li><li>使用 RAR 額外存檔媒體文件 ，和 Word 共同存儲。<ul><li>修復記錄：5%</li><li>壓縮方式：僅儲存</div></li></ul></li></ol><hr><h2 id="相關指令"><a href="#相關指令" class="headerlink" title="相關指令"></a>相關指令</h2><figure class="highlight vb"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Sub</span> ImgSize()</span><br><span class="line">    <span class="keyword">Dim</span> imgHeight <span class="keyword">As</span> <span class="type">Single</span></span><br><span class="line">    <span class="keyword">Dim</span> imgWidth <span class="keyword">As</span> <span class="type">Single</span></span><br><span class="line">    <span class="keyword">Dim</span> iShape <span class="keyword">As</span> InlineShape</span><br><span class="line">    <span class="keyword">Dim</span> n <span class="keyword">As</span> <span class="type">Single</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">&#x27; 設置縮放比例，0.5 為縮放至原圖的 50%。</span></span><br><span class="line">    n = <span class="number">0.5</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">For</span> <span class="keyword">Each</span> iShape <span class="keyword">In</span> ActiveDocument.InlineShapes</span><br><span class="line">        <span class="comment">&#x27; 鎖定寬高比</span></span><br><span class="line">        iShape.LockAspectRatio = msoTrue</span><br><span class="line">        </span><br><span class="line">        <span class="comment">&#x27; 獲取 IMG 寬高</span></span><br><span class="line">        imgHeight = iShape.Height</span><br><span class="line">        imgWidth = iShape.Width</span><br><span class="line">        </span><br><span class="line">        <span class="comment">&#x27; 調整 IMG 寬高</span></span><br><span class="line">        iShape.Height = n * imgHeight</span><br><span class="line">        iShape.Width = n * imgWidth</span><br><span class="line">    <span class="keyword">Next</span> iShape</span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure><figure class="highlight vb"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Sub</span> ImgSizeBatch()</span><br><span class="line">    <span class="keyword">Dim</span> docPath <span class="keyword">As</span> <span class="type">String</span></span><br><span class="line">    <span class="keyword">Dim</span> docName <span class="keyword">As</span> <span class="type">String</span></span><br><span class="line">    <span class="keyword">Dim</span> doc <span class="keyword">As</span> Document</span><br><span class="line">    <span class="keyword">Dim</span> imgHeight <span class="keyword">As</span> <span class="type">Single</span></span><br><span class="line">    <span class="keyword">Dim</span> imgWidth <span class="keyword">As</span> <span class="type">Single</span></span><br><span class="line">    <span class="keyword">Dim</span> iShape <span class="keyword">As</span> InlineShape</span><br><span class="line">    <span class="keyword">Dim</span> n <span class="keyword">As</span> <span class="type">Single</span></span><br><span class="line">    </span><br><span class="line">    n = <span class="number">0.4</span></span><br><span class="line">    </span><br><span class="line">    docPath = <span class="string">&quot;E:\File\2024\&quot;</span></span><br><span class="line">    docName = Dir(docPath &amp; <span class="string">&quot;*.docx&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">Do</span> <span class="keyword">While</span> docName &lt;&gt; <span class="string">&quot;&quot;</span></span><br><span class="line">        <span class="keyword">Set</span> doc = Documents.Open(docPath &amp; docName)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">For</span> <span class="keyword">Each</span> iShape <span class="keyword">In</span> doc.InlineShapes</span><br><span class="line">            iShape.LockAspectRatio = msoTrue</span><br><span class="line">            imgHeight = iShape.Height</span><br><span class="line">            imgWidth = iShape.Width</span><br><span class="line">            iShape.Height = n * imgHeight</span><br><span class="line">            iShape.Width = n * imgWidth</span><br><span class="line">        <span class="keyword">Next</span> iShape</span><br><span class="line">        </span><br><span class="line">        doc.SaveAs2 docPath &amp; docName</span><br><span class="line">        doc.Close</span><br><span class="line">        </span><br><span class="line">        docName = Dir()</span><br><span class="line">    <span class="keyword">Loop</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure><figure class="highlight ps1"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$successCount</span> = <span class="number">0</span></span><br><span class="line"><span class="variable">$errorCount</span> = <span class="number">0</span></span><br><span class="line"><span class="variable">$errorFiles</span> = <span class="selector-tag">@</span>()</span><br><span class="line"></span><br><span class="line"><span class="built_in">Write-Host</span> <span class="string">@&quot;</span></span><br><span class="line"><span class="string">本程式將執行以下操作:</span></span><br><span class="line"><span class="string">1. 掃描當前目錄下所有 MD 檔案</span></span><br><span class="line"><span class="string">2. 清理檔案中的寬高標記</span></span><br><span class="line"><span class="string">3. 移除所有反斜線</span></span><br><span class="line"><span class="string">4. 使用 UTF-8 BOM 編碼重新保存</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">是否繼續? (Y/N)</span></span><br><span class="line"><span class="string">&quot;@</span> <span class="literal">-ForegroundColor</span> Yellow</span><br><span class="line"></span><br><span class="line"><span class="variable">$response</span> = <span class="built_in">Read-Host</span></span><br><span class="line"><span class="keyword">if</span> (<span class="variable">$response</span>.ToUpper() <span class="operator">-ne</span> <span class="string">&#x27;Y&#x27;</span>) &#123;</span><br><span class="line">    <span class="built_in">Write-Host</span> <span class="string">&quot;操作已取消&quot;</span> <span class="literal">-ForegroundColor</span> Red</span><br><span class="line">    <span class="keyword">exit</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable">$mdFiles</span> = <span class="built_in">Get-ChildItem</span> <span class="literal">-Path</span> <span class="variable">$PSScriptRoot</span> <span class="literal">-Filter</span> <span class="string">&quot;*.md&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Write-Host</span> <span class="string">&quot;開始處理文件...&quot;</span> <span class="literal">-ForegroundColor</span> Cyan</span><br><span class="line"></span><br><span class="line"><span class="keyword">foreach</span> (<span class="variable">$file</span> <span class="keyword">in</span> <span class="variable">$mdFiles</span>) &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="built_in">Write-Host</span> <span class="string">&quot;正在處理：&quot;</span> <span class="variable">$file</span>.Name</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 使用UTF8編碼讀取文件</span></span><br><span class="line">        <span class="variable">$content</span> = <span class="built_in">Get-Content</span> <span class="literal">-Path</span> <span class="variable">$file</span>.FullName <span class="literal">-Raw</span> <span class="literal">-Encoding</span> UTF8</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 清理寬高標記</span></span><br><span class="line">        <span class="variable">$newContent</span> = <span class="variable">$content</span> <span class="operator">-replace</span> <span class="string">&#x27;&#123;width=&quot;[^&quot;]*&quot;\s*height=&quot;[^&quot;]*&quot;&#125;&#x27;</span>, <span class="string">&#x27;&#x27;</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 按行分割內容</span></span><br><span class="line">        <span class="variable">$lines</span> = <span class="variable">$newContent</span> <span class="operator">-split</span> <span class="string">&quot;`r`n|`r|`n&quot;</span></span><br><span class="line">        </span><br><span class="line">        <span class="variable">$processedLines</span> = <span class="variable">$lines</span> | <span class="built_in">ForEach-Object</span> &#123;</span><br><span class="line">            <span class="variable">$line</span> = <span class="variable">$_</span></span><br><span class="line">            </span><br><span class="line">            <span class="comment"># 清理行中所有的反斜線</span></span><br><span class="line">            <span class="variable">$line</span> = <span class="variable">$line</span> <span class="operator">-replace</span> <span class="string">&#x27;\\&#x27;</span>, <span class="string">&#x27;&#x27;</span></span><br><span class="line">            </span><br><span class="line">            <span class="variable">$line</span></span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 重新組合內容</span></span><br><span class="line">        <span class="variable">$finalContent</span> = <span class="variable">$processedLines</span> <span class="operator">-join</span> <span class="string">&quot;`n&quot;</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 使用UTF8-BOM編碼保存</span></span><br><span class="line">        [<span class="type">System.IO.File</span>]::WriteAllText(<span class="variable">$file</span>.FullName, <span class="variable">$finalContent</span>, [<span class="type">System.Text.Encoding</span>]::UTF8)</span><br><span class="line">        </span><br><span class="line">        <span class="variable">$successCount</span>++</span><br><span class="line">        <span class="built_in">Write-Host</span> <span class="string">&quot;成功處理：&quot;</span> <span class="variable">$file</span>.Name <span class="literal">-ForegroundColor</span> Green</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">catch</span> &#123;</span><br><span class="line">        <span class="variable">$errorCount</span>++</span><br><span class="line">        <span class="variable">$errorFiles</span> += <span class="variable">$file</span>.Name</span><br><span class="line">        <span class="built_in">Write-Host</span> <span class="string">&quot;處理失敗：&quot;</span> <span class="variable">$file</span>.Name <span class="literal">-ForegroundColor</span> Red</span><br><span class="line">        <span class="built_in">Write-Host</span> <span class="string">&quot;錯誤信息：&quot;</span> <span class="variable">$_</span>.Exception.Message <span class="literal">-ForegroundColor</span> Red</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Write-Host</span> <span class="string">&quot;`n處理完成！&quot;</span> <span class="literal">-ForegroundColor</span> Yellow</span><br><span class="line"><span class="built_in">Write-Host</span> <span class="string">&quot;成功處理文件數：<span class="variable">$successCount</span>&quot;</span> <span class="literal">-ForegroundColor</span> Green</span><br><span class="line"><span class="built_in">Write-Host</span> <span class="string">&quot;失敗文件數：<span class="variable">$errorCount</span>&quot;</span> <span class="literal">-ForegroundColor</span> Red</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (<span class="variable">$errorFiles</span>.Count <span class="operator">-gt</span> <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="built_in">Write-Host</span> <span class="string">&quot;`n失敗的文件列表：&quot;</span> <span class="literal">-ForegroundColor</span> Red</span><br><span class="line">    <span class="variable">$errorFiles</span> | <span class="built_in">ForEach-Object</span> &#123; <span class="built_in">Write-Host</span> <span class="string">&quot;- <span class="variable">$_</span>&quot;</span> <span class="literal">-ForegroundColor</span> Red &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Write-Host</span> <span class="string">&quot;`n按任意鍵退出...&quot;</span> <span class="literal">-ForegroundColor</span> Yellow</span><br><span class="line"><span class="variable">$null</span> = <span class="variable">$Host</span>.UI.RawUI.ReadKey(<span class="string">&quot;NoEcho,IncludeKeyDown&quot;</span>)</span><br></pre></td></tr></table></figure><hr><h2 id="茶後小敘"><a href="#茶後小敘" class="headerlink" title="茶後小敘"></a>茶後小敘</h2><p>個人一直在使用 TIM 3.4.8(22086) ，因此可以使用 <code>Ctrl + A</code> 全選消息管理器中的訊息。<br>在 QQNT 之後，這種方式已經無法使用。<br>現在個人使用的 TIM ，也已在 2025 年 <strong>無法離線漫游</strong> 聊天訊息。<br>我無法如 Geek 那般解密聊天資料庫，也無法時刻讓我的 PC 上的 TIM Online。<br>哈哈，更不必提舊版軟體時刻有被限制登入的風險。</p><p>不過幸運的是， QQNT 支援手動框選訊息，且可以拷貝！<br>凄涼的是拷貝出的文本沒有換行……啊哈……<br>我可以利用 PS1 命令匹配並換行嗎？這將是未來研究的問題。<br>這非常辛苦，不過爲了回憶留存，也無妨了。</p><p>現在有項目可以解密 QQNT 資料庫，但是校對始終是一大難題。<br>QQ 之中的訊息總會出現錯誤和缺漏，我 100% 確信。<br>在現有手段匱乏的情況下，我只能選擇這樣拙劣的方法。<br>文字替換其實也研究過 VBA 宏，只是無效……沒錯，那個 <code>&amp;#160;</code> 空格。<br>啊，就這樣吧。<br>我想我還有 180K 條訊息要整理呢 : )</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+        <content type="html"><![CDATA[<p>在 Word 下整理聊天訊息的規範。<br>訊息在拷貝至 Word 時，已經携帶一定的格式。<br>該方法適用於未使用 QQNT 資料庫的 QQ 或 TIM 版本。</p><style>/* 基础列表样式 */.lista ol {  counter-reset: list-counter;  margin: 1.5em 0;  padding-left: 2.5em;  line-height: 1.6;}/* 列表项样式 */.lista ol > li {  position: relative;  margin-bottom: 0.8em;  padding: 0.5em;  counter-increment: list-counter;  border-left: 2px solid transparent;}/* 内联代码块样式 */.lista li code {  background: #2d333b;  padding: 2px 6px;  border-radius: 3px;  color: #d19a66;}/* 嵌套列表样式 */.lista ol li ul {  margin: 0.5em 0;  padding-left: 1.5em;}.lista ol li ul li {  list-style-type: none;  position: relative;}/* 悬停效果 */.lista ol > li:hover {  background-color: #2d333b;  border-radius: 12px;  transition: all 0.2s ease;}</style><h2 id="基本規範"><a href="#基本規範" class="headerlink" title="基本規範"></a>基本規範</h2><h3 id="通用"><a href="#通用" class="headerlink" title="通用"></a>通用</h3><p>字號：五號<br>遵循訊息的原始格式。</p><h3 id="匿稱"><a href="#匿稱" class="headerlink" title="匿稱"></a>匿稱</h3><table><thead><tr><th>WORD</th><th>WPS文字</th></tr></thead><tbody><tr><td>中文 &#x2F; 西文字體：等綫<br>字形：加粗<br>字號：五號 &#x2F; 10.5<br>字體顔色：<br>A: R 201 G 138 B 218（C98ADA）<br>B: R 112 G 173 B 71（70AD47）<br>效果：All Off</td><td>中文 &#x2F; 西文字體：等綫<br>字形：加粗<br>字號：五號 &#x2F; 10.5<br>字體顔色：<br>A: R 201 G 138 B 218（C98ADA）<br>B: 112 G 173 B 71（70AD47）<br>效果：All Def</td></tr></tbody></table><p><strong>為何使用 WPS ？</strong><br>WPS 的大尺寸文件處理能力非常强大！<br>我在整理訊息的時候 Word 突然卡頓死亡，修復無果 : (<br>頁面 500 ，字數 160K ，這在過去只需等待十秒鐘便可加載完成。<br>啊啊，果然每次整理聊天訊息的時候，都是系統要重灌的時候呢（笑）</p><hr><div class = "lista"><h2 id="方案一：Word-Pdf"><a href="#方案一：Word-Pdf" class="headerlink" title="方案一：Word + Pdf"></a>方案一：Word + Pdf</h2><ol><li>聊天訊息拷貝至 Word；</li><li>使用 VBA 宏將 IMG 統一縮放至 <code>40%</code>；</li><li><code>Ctrl +C</code> 全選内容，設置字號為五號；</li><li>匿稱替換，格式為<code>^p匿稱 </code>，如 <code>^pMagstic </code>；<ul><li><code>^p</code> 為換行</li><li>匿稱後的空格為 <code>&amp;#160;</code></li><li>該轉換為匹配 常規訊息</li></ul></li><li>匿稱替換，格式為<code>匿稱 </code>，如 <code>Magstic </code>；<ul><li><code>^p</code> 為換行</li><li>匿稱後的空格為 <code>&amp;#32;</code></li><li>該轉換為匹配 訊息引用</li></ul></li><li>校對訊息的缺漏；<ul><li>卡片訊息使用 Link 替代</li><li>有效 &#x2F; 失效文件使用 截圖替代</li><li>失效 IMG 文件使用 Cache文件名追索並替換</li><li>縮放圖像以美化排版</li><li>未漫游的斷層訊息使用 QQMobile 的截圖</li><li>若以上訊息有缺失，則標注【LOST】</li></ul></li><li>設定文檔分欄為 2 ； </li><li>轉換為 Pdf ，和 Word 共同存儲。</li></ol><hr><h2 id="方案二：Word-Markdown"><a href="#方案二：Word-Markdown" class="headerlink" title="方案二：Word + Markdown"></a>方案二：Word + Markdown</h2><p>Word + Markdown 整理聊天訊息的規範。<br>結果上較為粗放，但提供了更高效的校對方式。<br>這亦是未來的個人備份聊天記錄的備選方案之一。</p><ol><li>聊天訊息拷貝至 Word；</li><li>使用 VBA 宏將 IMG 統一縮放至 <code>40%</code>；</li><li><code>Ctrl +C</code> 全選内容，設置字號為五號；</li><li>匿稱替換，格式為<code>^p匿稱 </code>，如 <code>^pMagstic </code>；<ul><li><code>^p</code> 為換行</li><li>匿稱後的空格為 <code>&amp;#160;</code></li></ul></li><li>匿稱替換，格式為<code>匿稱 </code>，如 <code>Magstic </code>；<ul><li><code>^p</code> 為換行</li><li>匿稱後的空格為 <code>&amp;#32;</code></li><li>該轉換為匹配 訊息引用</li></ul></li><li>校對卡片訊息和失效文件；<ul><li>卡片訊息使用 Link替代</li><li>有效 &#x2F; 失效文件使用 <code>【文件】Name.zip（12.34MB）</code> 替代</li><li>未漫游的斷層訊息使用 QQMobile 的截圖</li><li>若以上訊息有缺失，則標注【LOST】</li></ul></li><li>使用 Pandoc 將 Doc 轉為 Markdown，並使用 PowerShell 清理 Markdown 的無用標記；</li><li>使用 RAR 額外存檔媒體文件 ，和 Word 共同存儲。<ul><li>修復記錄：5%</li><li>壓縮方式：僅儲存</div></li></ul></li></ol><hr><h2 id="相關指令"><a href="#相關指令" class="headerlink" title="相關指令"></a>相關指令</h2><figure class="highlight vb"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Sub</span> ImgSize()</span><br><span class="line">    <span class="keyword">Dim</span> imgHeight <span class="keyword">As</span> <span class="type">Single</span></span><br><span class="line">    <span class="keyword">Dim</span> imgWidth <span class="keyword">As</span> <span class="type">Single</span></span><br><span class="line">    <span class="keyword">Dim</span> iShape <span class="keyword">As</span> InlineShape</span><br><span class="line">    <span class="keyword">Dim</span> n <span class="keyword">As</span> <span class="type">Single</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">&#x27; 設置縮放比例，0.5 為縮放至原圖的 50%。</span></span><br><span class="line">    n = <span class="number">0.5</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">For</span> <span class="keyword">Each</span> iShape <span class="keyword">In</span> ActiveDocument.InlineShapes</span><br><span class="line">        <span class="comment">&#x27; 鎖定寬高比</span></span><br><span class="line">        iShape.LockAspectRatio = msoTrue</span><br><span class="line">        </span><br><span class="line">        <span class="comment">&#x27; 獲取 IMG 寬高</span></span><br><span class="line">        imgHeight = iShape.Height</span><br><span class="line">        imgWidth = iShape.Width</span><br><span class="line">        </span><br><span class="line">        <span class="comment">&#x27; 調整 IMG 寬高</span></span><br><span class="line">        iShape.Height = n * imgHeight</span><br><span class="line">        iShape.Width = n * imgWidth</span><br><span class="line">    <span class="keyword">Next</span> iShape</span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure><figure class="highlight vb"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Sub</span> ImgSizeBatch()</span><br><span class="line">    <span class="keyword">Dim</span> docPath <span class="keyword">As</span> <span class="type">String</span></span><br><span class="line">    <span class="keyword">Dim</span> docName <span class="keyword">As</span> <span class="type">String</span></span><br><span class="line">    <span class="keyword">Dim</span> doc <span class="keyword">As</span> Document</span><br><span class="line">    <span class="keyword">Dim</span> imgHeight <span class="keyword">As</span> <span class="type">Single</span></span><br><span class="line">    <span class="keyword">Dim</span> imgWidth <span class="keyword">As</span> <span class="type">Single</span></span><br><span class="line">    <span class="keyword">Dim</span> iShape <span class="keyword">As</span> InlineShape</span><br><span class="line">    <span class="keyword">Dim</span> n <span class="keyword">As</span> <span class="type">Single</span></span><br><span class="line">    </span><br><span class="line">    n = <span class="number">0.4</span></span><br><span class="line">    </span><br><span class="line">    docPath = <span class="string">&quot;E:\File\2024\&quot;</span></span><br><span class="line">    docName = Dir(docPath &amp; <span class="string">&quot;*.docx&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">Do</span> <span class="keyword">While</span> docName &lt;&gt; <span class="string">&quot;&quot;</span></span><br><span class="line">        <span class="keyword">Set</span> doc = Documents.Open(docPath &amp; docName)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">For</span> <span class="keyword">Each</span> iShape <span class="keyword">In</span> doc.InlineShapes</span><br><span class="line">            iShape.LockAspectRatio = msoTrue</span><br><span class="line">            imgHeight = iShape.Height</span><br><span class="line">            imgWidth = iShape.Width</span><br><span class="line">            iShape.Height = n * imgHeight</span><br><span class="line">            iShape.Width = n * imgWidth</span><br><span class="line">        <span class="keyword">Next</span> iShape</span><br><span class="line">        </span><br><span class="line">        doc.SaveAs2 docPath &amp; docName</span><br><span class="line">        doc.Close</span><br><span class="line">        </span><br><span class="line">        docName = Dir()</span><br><span class="line">    <span class="keyword">Loop</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pandoc <span class="literal">-s</span> <span class="number">2023.04</span>.docx <span class="literal">-o</span> <span class="number">2023.04</span>.md <span class="literal">--extract-media</span>=<span class="number">2023.04</span> <span class="literal">--wrap</span>=none</span><br></pre></td></tr></table></figure><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$successCount</span> = <span class="number">0</span></span><br><span class="line"><span class="variable">$errorCount</span> = <span class="number">0</span></span><br><span class="line"><span class="variable">$errorFiles</span> = <span class="selector-tag">@</span>()</span><br><span class="line"></span><br><span class="line"><span class="built_in">Write-Host</span> <span class="string">@&quot;</span></span><br><span class="line"><span class="string">本程式將執行以下操作:</span></span><br><span class="line"><span class="string">1. 掃描當前目錄下所有 MD 檔案</span></span><br><span class="line"><span class="string">2. 清理檔案中的寬高標記</span></span><br><span class="line"><span class="string">3. 移除所有反斜線</span></span><br><span class="line"><span class="string">4. 使用 UTF-8 BOM 編碼重新保存</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">是否繼續? (Y/N)</span></span><br><span class="line"><span class="string">&quot;@</span> <span class="literal">-ForegroundColor</span> Yellow</span><br><span class="line"></span><br><span class="line"><span class="variable">$response</span> = <span class="built_in">Read-Host</span></span><br><span class="line"><span class="keyword">if</span> (<span class="variable">$response</span>.ToUpper() <span class="operator">-ne</span> <span class="string">&#x27;Y&#x27;</span>) &#123;</span><br><span class="line">    <span class="built_in">Write-Host</span> <span class="string">&quot;操作已取消&quot;</span> <span class="literal">-ForegroundColor</span> Red</span><br><span class="line">    <span class="keyword">exit</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable">$mdFiles</span> = <span class="built_in">Get-ChildItem</span> <span class="literal">-Path</span> <span class="variable">$PSScriptRoot</span> <span class="literal">-Filter</span> <span class="string">&quot;*.md&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Write-Host</span> <span class="string">&quot;開始處理文件...&quot;</span> <span class="literal">-ForegroundColor</span> Cyan</span><br><span class="line"></span><br><span class="line"><span class="keyword">foreach</span> (<span class="variable">$file</span> <span class="keyword">in</span> <span class="variable">$mdFiles</span>) &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="built_in">Write-Host</span> <span class="string">&quot;正在處理：&quot;</span> <span class="variable">$file</span>.Name</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 使用UTF8編碼讀取文件</span></span><br><span class="line">        <span class="variable">$content</span> = <span class="built_in">Get-Content</span> <span class="literal">-Path</span> <span class="variable">$file</span>.FullName <span class="literal">-Raw</span> <span class="literal">-Encoding</span> UTF8</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 清理寬高標記</span></span><br><span class="line">        <span class="variable">$newContent</span> = <span class="variable">$content</span> <span class="operator">-replace</span> <span class="string">&#x27;&#123;width=&quot;[^&quot;]*&quot;\s*height=&quot;[^&quot;]*&quot;&#125;&#x27;</span>, <span class="string">&#x27;&#x27;</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 按行分割內容</span></span><br><span class="line">        <span class="variable">$lines</span> = <span class="variable">$newContent</span> <span class="operator">-split</span> <span class="string">&quot;`r`n|`r|`n&quot;</span></span><br><span class="line">        </span><br><span class="line">        <span class="variable">$processedLines</span> = <span class="variable">$lines</span> | <span class="built_in">ForEach-Object</span> &#123;</span><br><span class="line">            <span class="variable">$line</span> = <span class="variable">$_</span></span><br><span class="line">            </span><br><span class="line">            <span class="comment"># 清理行中所有的反斜線</span></span><br><span class="line">            <span class="variable">$line</span> = <span class="variable">$line</span> <span class="operator">-replace</span> <span class="string">&#x27;\\&#x27;</span>, <span class="string">&#x27;&#x27;</span></span><br><span class="line">            </span><br><span class="line">            <span class="variable">$line</span></span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 重新組合內容</span></span><br><span class="line">        <span class="variable">$finalContent</span> = <span class="variable">$processedLines</span> <span class="operator">-join</span> <span class="string">&quot;`n&quot;</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 使用UTF8-BOM編碼保存</span></span><br><span class="line">        [<span class="type">System.IO.File</span>]::WriteAllText(<span class="variable">$file</span>.FullName, <span class="variable">$finalContent</span>, [<span class="type">System.Text.Encoding</span>]::UTF8)</span><br><span class="line">        </span><br><span class="line">        <span class="variable">$successCount</span>++</span><br><span class="line">        <span class="built_in">Write-Host</span> <span class="string">&quot;成功處理：&quot;</span> <span class="variable">$file</span>.Name <span class="literal">-ForegroundColor</span> Green</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">catch</span> &#123;</span><br><span class="line">        <span class="variable">$errorCount</span>++</span><br><span class="line">        <span class="variable">$errorFiles</span> += <span class="variable">$file</span>.Name</span><br><span class="line">        <span class="built_in">Write-Host</span> <span class="string">&quot;處理失敗：&quot;</span> <span class="variable">$file</span>.Name <span class="literal">-ForegroundColor</span> Red</span><br><span class="line">        <span class="built_in">Write-Host</span> <span class="string">&quot;錯誤信息：&quot;</span> <span class="variable">$_</span>.Exception.Message <span class="literal">-ForegroundColor</span> Red</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Write-Host</span> <span class="string">&quot;`n處理完成！&quot;</span> <span class="literal">-ForegroundColor</span> Yellow</span><br><span class="line"><span class="built_in">Write-Host</span> <span class="string">&quot;成功處理文件數：<span class="variable">$successCount</span>&quot;</span> <span class="literal">-ForegroundColor</span> Green</span><br><span class="line"><span class="built_in">Write-Host</span> <span class="string">&quot;失敗文件數：<span class="variable">$errorCount</span>&quot;</span> <span class="literal">-ForegroundColor</span> Red</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (<span class="variable">$errorFiles</span>.Count <span class="operator">-gt</span> <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="built_in">Write-Host</span> <span class="string">&quot;`n失敗的文件列表：&quot;</span> <span class="literal">-ForegroundColor</span> Red</span><br><span class="line">    <span class="variable">$errorFiles</span> | <span class="built_in">ForEach-Object</span> &#123; <span class="built_in">Write-Host</span> <span class="string">&quot;- <span class="variable">$_</span>&quot;</span> <span class="literal">-ForegroundColor</span> Red &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Write-Host</span> <span class="string">&quot;`n按任意鍵退出...&quot;</span> <span class="literal">-ForegroundColor</span> Yellow</span><br><span class="line"><span class="variable">$null</span> = <span class="variable">$Host</span>.UI.RawUI.ReadKey(<span class="string">&quot;NoEcho,IncludeKeyDown&quot;</span>)</span><br></pre></td></tr></table></figure><hr><h2 id="茶後小敘"><a href="#茶後小敘" class="headerlink" title="茶後小敘"></a>茶後小敘</h2><p>個人一直在使用 TIM 3.4.8(22086) ，因此可以使用 <code>Ctrl + A</code> 全選消息管理器中的訊息。<br>在 QQNT 之後，這種方式已經無法使用。<br>現在個人使用的 TIM ，也已在 2025 年 <strong>無法離線漫游</strong> 聊天訊息。<br>我無法如 Geek 那般解密聊天資料庫，也無法時刻讓我的 PC 上的 TIM Online。<br>哈哈，更不必提舊版軟體時刻有被限制登入的風險。</p><p>不過幸運的是， QQNT 支援手動框選訊息，且可以拷貝！<br>凄涼的是拷貝出的文本沒有換行……啊哈……<br>我可以利用 PS1 命令匹配並換行嗎？這將是未來研究的問題。<br>這非常辛苦，不過爲了回憶留存，也無妨了。</p><p>現在有項目可以解密 QQNT 資料庫，但是校對始終是一大難題。<br>QQ 之中的訊息總會出現錯誤和缺漏，我 100% 確信。<br>在現有手段匱乏的情況下，我只能選擇這樣拙劣的方法。<br>文字替換其實也研究過 VBA 宏，只是無效……沒錯，那個 <code>&amp;#160;</code> 空格。<br>啊，就這樣吧。<br>我想我還有 180K 條訊息要整理呢 : )</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
       
       <categories>
@@ -78,11 +78,11 @@
       
         <tags>
             
+            <tag> 同人懷古 </tag>
+            
             <tag> ようか </tag>
             
             <tag> 雪の足跡 </tag>
-            
-            <tag> 同人懷古 </tag>
             
         </tags>
       
@@ -132,11 +132,11 @@
       
         <tags>
             
-            <tag> 同人懷古 </tag>
-            
             <tag> 青汁 </tag>
             
             <tag> 白と黒の夢郷 </tag>
+            
+            <tag> 同人懷古 </tag>
             
         </tags>
       
@@ -173,6 +173,28 @@
     
     
     <entry>
+      <title>歸類</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>聆風</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>關於</title>
       <link href="/about/index.html"/>
       <url>/about/index.html</url>
@@ -184,9 +206,9 @@
     
     
     <entry>
-      <title>歸類</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>標簽</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
@@ -207,10 +229,10 @@
     
     <entry>
       <title></title>
-      <link href="/html/aojiru/chen12.html"/>
-      <url>/html/aojiru/chen12.html</url>
+      <link href="/html/aojiru/chen13.html"/>
+      <url>/html/aojiru/chen13.html</url>
       
-        <content type="html"><![CDATA[<!DOCTYPE html><html><head><meta charset="utf-8"><title>森</title><link rel="shortcut icon" href="https://magstic.top/Hand.jpg"></head>    <body>        <center>            <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/coll/chen12.jpg" width="800" />            <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/coll/chen12back.jpg" width="800" />        </center>    </body></html><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+        <content type="html"><![CDATA[<!DOCTYPE html><html><head><meta charset="utf-8"><title>黄昏</title><link rel="shortcut icon" href="https://magstic.top/Hand.jpg"></head>    <body>        <center>            <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/coll/chen13.jpg" width="800" />            <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/coll/chen13back.jpg" width="800" />        </center>    </body></html><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -228,154 +250,11 @@
     
     
     <entry>
-      <title>白と黒の夢郷-絵01</title>
-      <link href="/html/aojiru/art/art01.html"/>
-      <url>/html/aojiru/art/art01.html</url>
-      
-        <content type="html"><![CDATA[<div class="note default no-icon flat"><p><strong>頁面插畫數量：15</strong></p></div><div class="gallery">    <div class="fj-gallery lazyload data" data-rowHeight="180" data-limit="15">    <span class="gallery-data">[{"url":"https://magstic.top/Aojiru/name/001Alice1「ブクレシュティの人形師」.jpg","alt":"ブクレシュティの人形師"},{"url":"https://magstic.top/Aojiru/name/002Burchett_Report「只一人、幻想郷の内より飛んで来た女」.jpg","alt":"只一人、幻想郷の内より飛んで来た女"},{"url":"https://magstic.top/Aojiru/name/003烏帽子鳥.jpg","alt":"烏帽子鳥"},{"url":"https://magstic.top/Aojiru/name/004Sryinx.jpg","alt":"Sryinx"},{"url":"https://magstic.top/Aojiru/name/005Tyenn1「マヨヒガの黒猫」.jpg","alt":"マヨヒガの黒猫"},{"url":"https://magstic.top/Aojiru/name/006Tyenn3「鬼符「青鬼赤鬼」」.jpg","alt":"鬼符「青鬼赤鬼」"},{"url":"https://magstic.top/Aojiru/name/007Tyenn11「足元、気をつけな」.jpg","alt":"足元、気をつけな"},{"url":"https://magstic.top/Aojiru/name/008chen17「夏橙」.jpg","alt":"夏橙"},{"url":"https://magstic.top/Aojiru/name/009chen18「夏橙」.jpg","alt":"夏橙"},{"url":"https://magstic.top/Aojiru/name/010chrysanthemum「ぬこに小菊」.jpg","alt":"ぬこに小菊"},{"url":"https://magstic.top/Aojiru/name/011Spectral_Shard.jpg","alt":"Spectral_Shard"},{"url":"https://magstic.top/Aojiru/name/012Tyenn5「マヨヒガの林」.jpg","alt":"マヨヒガの林"},{"url":"https://magstic.top/Aojiru/name/013ciruno1「おてんば恋娘%E3%80%80チルノ」.jpg","alt":"おてんば恋娘　チルノ"},{"url":"https://magstic.top/Aojiru/name/014cirno2「チルノ」.jpg","alt":"チルノ"},{"url":"https://magstic.top/Aojiru/name/015Cirno3霜符「フロストコラムス」.jpg","alt":"霜符「フロストコラムス」"}]</span>    </div>    <button class="gallery-load-more"><span>載入更多</span><i class="fa-solid fa-arrow-down"></i></button>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>標簽</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title></title>
-      <link href="/html/aojiru/chen13.html"/>
-      <url>/html/aojiru/chen13.html</url>
+      <link href="/html/aojiru/chen12.html"/>
+      <url>/html/aojiru/chen12.html</url>
       
-        <content type="html"><![CDATA[<!DOCTYPE html><html><head><meta charset="utf-8"><title>黄昏</title><link rel="shortcut icon" href="https://magstic.top/Hand.jpg"></head>    <body>        <center>            <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/coll/chen13.jpg" width="800" />            <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/coll/chen13back.jpg" width="800" />        </center>    </body></html><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>白と黒の夢郷-絵03</title>
-      <link href="/html/aojiru/art/art03.html"/>
-      <url>/html/aojiru/art/art03.html</url>
-      
-        <content type="html"><![CDATA[<div class="note default no-icon flat"><p><strong>頁面插畫數量：15</strong></p></div><div class="gallery">    <div class="fj-gallery lazyload data" data-rowHeight="180" data-limit="15">    <span class="gallery-data">[{"url":"https://magstic.top/Aojiru/name/031Flandre3禁忌「レーヴァテイン」.jpg","alt":"禁忌「レーヴァテイン」"},{"url":"https://magstic.top/Aojiru/name/032Flandre4「禁弾「スターボウブレイク」」.jpg","alt":"禁弾「スターボウブレイク」"},{"url":"https://magstic.top/Aojiru/name/033Flandre5「禁弾「過去を刻む時計」」.jpg","alt":"禁弾「過去を刻む時計」"},{"url":"https://magstic.top/Aojiru/name/034Hidann「秘弾「そして誰もいなくなるか？」」.jpg","alt":"秘弾「そして誰もいなくなるか？」"},{"url":"https://magstic.top/Aojiru/name/035Flandre8「ＱＥＤ「４９５年の波紋」」.jpg","alt":"ＱＥＤ「４９５年の波紋」"},{"url":"https://magstic.top/Aojiru/name/036Flandre11「マ・メール・ロワ」.jpg","alt":"マ・メール・ロワ"},{"url":"https://magstic.top/Aojiru/name/037Flandre_gift『秘められし御伽の紅』.jpg","alt":"秘められし御伽の紅"},{"url":"https://magstic.top/Aojiru/name/038merupo「フランと人形の目」.jpg","alt":"フランと人形の目"},{"url":"https://magstic.top/Aojiru/name/039merupo「破壊衝動」.jpg","alt":"破壊衝動"},{"url":"https://magstic.top/Aojiru/name/040keine8「そして歴史は回帰する」.jpg","alt":"そして歴史は回帰する"},{"url":"https://magstic.top/Aojiru/name/041koakuma1「黒の牝鹿%E3%80%80小悪魔」.jpg","alt":"黒の牝鹿　小悪魔"},{"url":"https://magstic.top/Aojiru/name/042koakuma1「黒の牝鹿%E3%80%80小悪魔-2」.jpg","alt":"黒の牝鹿　小悪魔"},{"url":"https://magstic.top/Aojiru/name/043Letty1「白符「アンデュレイションレイ」」.jpg","alt":"白符「アンデュレイションレイ」"},{"url":"https://magstic.top/Aojiru/name/044mahoutukai1「霧雨%20魔理沙」.jpg","alt":"霧雨 魔理沙"},{"url":"https://magstic.top/Aojiru/name/045Marisa1「霧雨%20魔理沙」.jpg","alt":"霧雨 魔理沙"}]</span>    </div>    <button class="gallery-load-more"><span>載入更多</span><i class="fa-solid fa-arrow-down"></i></button>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>聆風</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>白と黒の夢郷-絵04</title>
-      <link href="/html/aojiru/art/art04.html"/>
-      <url>/html/aojiru/art/art04.html</url>
-      
-        <content type="html"><![CDATA[<div class="note default no-icon flat"><p><strong>頁面插畫數量：15</strong></p></div><div class="gallery">    <div class="fj-gallery lazyload data" data-rowHeight="180" data-limit="15">    <span class="gallery-data">[{"url":"https://magstic.top/Aojiru/name/046Carrion_Wind.jpg","alt":"Carrion Wind"},{"url":"https://magstic.top/Aojiru/name/047Rain「雨と毒人形」.jpg","alt":"雨と毒人形"},{"url":"https://magstic.top/Aojiru/name/048meirinn1「華人小娘、紅美鈴」.jpg","alt":"華人小娘、紅美鈴"},{"url":"https://magstic.top/Aojiru/name/049mairinn2「紅%20美鈴」.jpg","alt":"華人小娘、紅美鈴"},{"url":"https://magstic.top/Aojiru/name/050mokou1「時効「月のいはかさの呪い」」.jpg","alt":"時効「月のいはかさの呪い」"},{"url":"https://magstic.top/Aojiru/name/051mokou2「不死「火の鳥%E3%80%80-鳳翼天翔-」」.jpg","alt":"不死「火の鳥　-鳳翼天翔-」"},{"url":"https://magstic.top/Aojiru/name/052mokou3「藤原「滅罪寺院傷」」.jpg","alt":"藤原「滅罪寺院傷」"},{"url":"https://magstic.top/Aojiru/name/053mokou4「不死「徐福時空」」.jpg","alt":"不死「徐福時空」"},{"url":"https://magstic.top/Aojiru/name/054mokou5「滅罪「正直者の死」」.jpg","alt":"滅罪「正直者の死」"},{"url":"https://magstic.top/Aojiru/name/055mokou6「虚人「ウー」」.jpg","alt":"虚人「ウー」"},{"url":"https://magstic.top/Aojiru/name/056mokou7「不滅「フェニックスの尾」」.jpg","alt":"不滅「フェニックスの尾」"},{"url":"https://magstic.top/Aojiru/name/057mokou8「蓬莱「凱風快晴%E3%80%80-フジヤマヴォルケイノ-」」.jpg","alt":"蓬莱「凱風快晴　-フジヤマヴォルケイノ-」"},{"url":"https://magstic.top/Aojiru/name/058mokou9「パゼストバイフェニックス」.jpg","alt":"パゼストバイフェニックス"},{"url":"https://magstic.top/Aojiru/name/059mokou10「蓬莱人形」.jpg","alt":"蓬莱人形"},{"url":"https://magstic.top/Aojiru/name/060mokou11「インペリシャブルシューティング」.jpg","alt":"インペリシャブルシューティング"}]</span>    </div>    <button class="gallery-load-more"><span>載入更多</span><i class="fa-solid fa-arrow-down"></i></button>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>白と黒の夢郷-絵05</title>
-      <link href="/html/aojiru/art/art05.html"/>
-      <url>/html/aojiru/art/art05.html</url>
-      
-        <content type="html"><![CDATA[<div class="note default no-icon flat"><p><strong>頁面插畫數量：15</strong></p></div><div class="gallery">    <div class="fj-gallery lazyload data" data-rowHeight="180" data-limit="15">    <span class="gallery-data">[{"url":"https://magstic.top/Aojiru/name/061mokou12「リザレクション」.jpg","alt":"リザレクション"},{"url":"https://magstic.top/Aojiru/name/062Phoenix.jpg","alt":"Phoenix"},{"url":"https://magstic.top/Aojiru/name/063Mystia1「ミスティア・ローレライ」.jpg","alt":"ミスティア・ローレライ"},{"url":"https://magstic.top/Aojiru/name/064Flora's_Lesson「花のソルフェージュ」.jpg","alt":"花のソルフェージュ"},{"url":"https://magstic.top/Aojiru/name/065merupo「ミスティアとランプ」.jpg","alt":"ミスティアとランプ"},{"url":"https://magstic.top/Aojiru/name/066Patchouli2「とっておきの魔法、見せてあげるわ！」.jpg","alt":"とっておきの魔法、見せてあげるわ！"},{"url":"https://magstic.top/Aojiru/name/067Patchouli2「金＆水符「マーキュリポイズン」」.jpg","alt":"金＆水符「マーキュリポイズン」"},{"url":"https://magstic.top/Aojiru/name/068Royal_Flare「日輪のごとき」.jpg","alt":"日輪のごとき"},{"url":"https://magstic.top/Aojiru/name/069Lunasa1「ルナサ・プリズムリバー」.jpg","alt":"ルナサ・プリズムリバー"},{"url":"https://magstic.top/Aojiru/name/070Lyrica1「リリカ・プリズムリバー」.jpg","alt":"リリカ・プリズムリバー"},{"url":"https://magstic.top/Aojiru/name/071Merlin1「メルラン・プリズムリバー」.jpg","alt":"メルラン・プリズムリバー"},{"url":"https://magstic.top/Aojiru/name/072Prismriver1「レイラと三姉妹の追憶」.jpg","alt":"レイラと三姉妹の追憶"},{"url":"https://magstic.top/Aojiru/name/073Lunasa3「グァルネリ・デル・ジェス」.jpg","alt":"グァルネリ・デル・ジェス"},{"url":"https://magstic.top/Aojiru/name/074Lyrica「レイラズ・ラメントバス」.jpg","alt":"レイラズ・ラメントバス"},{"url":"https://magstic.top/Aojiru/name/075merupo「姉さんの呟き」.jpg","alt":"姉さんの呟き"}]</span>    </div>    <button class="gallery-load-more"><span>載入更多</span><i class="fa-solid fa-arrow-down"></i></button>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>白と黒の夢郷-絵06</title>
-      <link href="/html/aojiru/art/art06.html"/>
-      <url>/html/aojiru/art/art06.html</url>
-      
-        <content type="html"><![CDATA[<div class="note default no-icon flat"><p><strong>頁面插畫數量：15</strong></p></div><div class="gallery">    <div class="fj-gallery lazyload data" data-rowHeight="180" data-limit="15">    <span class="gallery-data">[{"url":"https://magstic.top/Aojiru/name/076Ran1「私は護衛でもあるわ」.jpg","alt":"私は護衛でもあるわ"},{"url":"https://magstic.top/Aojiru/name/077Ran2「式神「十二神将の宴」」.jpg","alt":"式神「十二神将の宴」"},{"url":"https://magstic.top/Aojiru/name/078Ran3「式輝「狐狸妖怪レーザー」」.jpg","alt":"式輝「狐狸妖怪レーザー」"},{"url":"https://magstic.top/Aojiru/name/079Ran5「幻神「飯綱権現降臨」」.jpg","alt":"幻神「飯綱権現降臨」"},{"url":"https://magstic.top/Aojiru/name/080Ran6「式神「憑依荼吉尼天」」.jpg","alt":"式神「憑依荼吉尼天」"},{"url":"https://magstic.top/Aojiru/name/081Ran8「三國抄」.jpg","alt":"三國抄"},{"url":"https://magstic.top/Aojiru/name/082miko31「博麗%20霊夢」.jpg","alt":"博麗 霊夢"},{"url":"https://magstic.top/Aojiru/name/083Reimu1「二色蓮花蝶」.jpg","alt":"二色蓮花蝶"},{"url":"https://magstic.top/Aojiru/name/084Reimu2「妖々夢の幕開」.jpg","alt":"妖々夢の幕開"},{"url":"https://magstic.top/Aojiru/name/085Reimu10「夏の日の幻想」.jpg","alt":"夏の日の幻想"},{"url":"https://magstic.top/Aojiru/name/086Ancient's.jpg","alt":"Ancient's"},{"url":"https://magstic.top/Aojiru/name/087Reimu「虹をつかみそこねた巫女」.jpg","alt":"虹をつかみそこねた巫女"},{"url":"https://magstic.top/Aojiru/name/088Reimu「虹をつかんだ巫女」.jpg","alt":"虹をつかんだ巫女"},{"url":"https://magstic.top/Aojiru/name/089Reimu6「二色蓮花蝶」.jpg","alt":"二色蓮花蝶"},{"url":"https://magstic.top/Aojiru/name/090Reimu9「博麗%20霊夢の結界」.jpg","alt":"博麗 霊夢の結界"}]</span>    </div>    <button class="gallery-load-more"><span>載入更多</span><i class="fa-solid fa-arrow-down"></i></button>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>白と黒の夢郷-絵07</title>
-      <link href="/html/aojiru/art/art07.html"/>
-      <url>/html/aojiru/art/art07.html</url>
-      
-        <content type="html"><![CDATA[<div class="note default no-icon flat"><p><strong>頁面插畫數量：15</strong></p></div><div class="gallery">    <div class="fj-gallery lazyload data" data-rowHeight="180" data-limit="15">    <span class="gallery-data">[{"url":"https://magstic.top/Aojiru/name/091Reimu12「霊夢の結界%20-伽羅色-」.jpg","alt":"霊夢の結界 -伽羅色-"},{"url":"https://magstic.top/Aojiru/name/092sakura「皆吉爽雨詠む」.jpg","alt":"皆吉爽雨詠む"},{"url":"https://magstic.top/Aojiru/name/093merupo「虹の枯れた巫女」.jpg","alt":"虹の枯れた巫女"},{"url":"https://magstic.top/Aojiru/name/094Reisen1「月兎%E3%80%80～%20ルナ・エンシェンツ」.jpg","alt":"月兎　～ ルナ・エンシェンツ"},{"url":"https://magstic.top/Aojiru/name/095Reisen「兎生きろ、蟹は死ね」.jpg","alt":"兎生きろ、蟹は死ね"},{"url":"https://magstic.top/Aojiru/name/096兎と人形.jpg","alt":"兎と人形"},{"url":"https://magstic.top/Aojiru/name/097Remilia1「永遠に紅い幼き月」.jpg","alt":"永遠に紅い幼き月"},{"url":"https://magstic.top/Aojiru/name/098Remilia1「紅い月を背」.jpg","alt":"紅い月を背"},{"url":"https://magstic.top/Aojiru/name/099Remilia2「運命を操る程度の能力」.jpg","alt":"運命を操る程度の能力"},{"url":"https://magstic.top/Aojiru/name/100ruumia11「闇の徘徊」.jpg","alt":"闇の徘徊"},{"url":"https://magstic.top/Aojiru/name/101Ruumia8「闇符「ディマーケイション」」.jpg","alt":"闇符「ディマーケイション」"},{"url":"https://magstic.top/Aojiru/name/102Ruumia10「食人鬼」.jpg","alt":"食人鬼"},{"url":"https://magstic.top/Aojiru/name/103merupo「ルーミアさんの憂鬱」.jpg","alt":"ルーミアさんの憂鬱"},{"url":"https://magstic.top/Aojiru/name/104Ruumia「常夜見の花」.jpg","alt":"常夜見の花"},{"url":"https://magstic.top/Aojiru/name/105Ruumia5「月符「ムーンライトレイ」」.jpg","alt":"月符「ムーンライトレイ」"}]</span>    </div>    <button class="gallery-load-more"><span>載入更多</span><i class="fa-solid fa-arrow-down"></i></button>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>白と黒の夢郷-絵08</title>
-      <link href="/html/aojiru/art/art08.html"/>
-      <url>/html/aojiru/art/art08.html</url>
-      
-        <content type="html"><![CDATA[<div class="note default no-icon flat"><p><strong>頁面插畫數量：15</strong></p></div><div class="gallery">    <div class="fj-gallery lazyload data" data-rowHeight="180" data-limit="15">    <span class="gallery-data">[{"url":"https://magstic.top/Aojiru/name/106Ruumia6「夜符「ナイトバード」」.jpg","alt":"夜符「ナイトバード」"},{"url":"https://magstic.top/Aojiru/name/107Ruumia9黄天月夜.jpg","alt":"黄天月夜"},{"url":"https://magstic.top/Aojiru/name/108sakuya1「瀟洒なメイド長」.jpg","alt":"瀟洒なメイド長"},{"url":"https://magstic.top/Aojiru/name/109sakuya2「十六夜%20咲夜」.jpg","alt":"十六夜 咲夜"},{"url":"https://magstic.top/Aojiru/name/110sakuya3「十六夜%20咲夜」.jpg","alt":"十六夜 咲夜"},{"url":"https://magstic.top/Aojiru/name/111Sakuya5「恐怖の片鱗」.jpg","alt":"恐怖の片鱗"},{"url":"https://magstic.top/Aojiru/name/112Key_of_Obedience.jpg","alt":"Key of Obedience"},{"url":"https://magstic.top/Aojiru/name/113Noisy_Silence.jpg","alt":"Noisy Silence"},{"url":"https://magstic.top/Aojiru/name/114Sakuya4「チャールズ・ウォーレン嘲笑」.jpg","alt":"チャールズ・ウォーレン嘲笑"},{"url":"https://magstic.top/Aojiru/name/115STORM_CAUSER.jpg","alt":"STORM CAUSER"},{"url":"https://magstic.top/Aojiru/name/116merupo「吐き気をもよおす邪悪兎」.jpg","alt":"吐き気をもよおす邪悪兎"},{"url":"https://magstic.top/Aojiru/name/117merupo「いたるところにいのちはそんざいするよ」.jpg","alt":"いたるところにいのちはそんざいするよ"},{"url":"https://magstic.top/Aojiru/name/118Wisp_Projector「夜草映える～Wisp%20Projector」.jpg","alt":"夜草映える～Wisp Projector"},{"url":"https://magstic.top/Aojiru/name/119Wriggle3「幻視の夜のリグル」.jpg","alt":"幻視の夜のリグル"},{"url":"https://magstic.top/Aojiru/name/120merupo「サイギョウジズ・ゴースト・リベレーター」.jpg","alt":"サイギョウジズ・ゴースト・リベレーター"}]</span>    </div>    <button class="gallery-load-more"><span>載入更多</span><i class="fa-solid fa-arrow-down"></i></button>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>白と黒の夢郷-絵09</title>
-      <link href="/html/aojiru/art/art09.html"/>
-      <url>/html/aojiru/art/art09.html</url>
-      
-        <content type="html"><![CDATA[<div class="note default no-icon flat"><p><strong>頁面插畫數量：15</strong></p></div><div class="gallery">    <div class="fj-gallery lazyload data" data-rowHeight="180" data-limit="15">    <span class="gallery-data">[{"url":"https://magstic.top/Aojiru/name/121merupo「サンダーゴッズ・ヴィガー」.jpg","alt":"サンダーゴッズ・ヴィガー"},{"url":"https://magstic.top/Aojiru/name/122Yukari1「予定された無秩序」.jpg","alt":"予定された無秩序"},{"url":"https://magstic.top/Aojiru/name/123Yukari5「ストレートとカーブの夢郷」.jpg","alt":"ストレートとカーブの夢郷"},{"url":"https://magstic.top/Aojiru/name/124Yukari7「禅寺に棲む妖蝶」.jpg","alt":"禅寺に棲む妖蝶"},{"url":"https://magstic.top/Aojiru/name/125Yukari8「二重黒死蝶」.jpg","alt":"二重黒死蝶"},{"url":"https://magstic.top/Aojiru/name/126Yukari11「生と死の境界」.jpg","alt":"生と死の境界"},{"url":"https://magstic.top/Aojiru/name/127Yukari12「弾幕結界」.jpg","alt":"弾幕結界"},{"url":"https://magstic.top/Aojiru/name/128Yukari15「み仏の%E3%80%80瑠璃の光の%E3%80%80花の寺」.jpg","alt":"み仏の　瑠璃の光の　花の寺"},{"url":"https://magstic.top/Aojiru/name/129Yukari20「夏の日の幻葬」.jpg","alt":"夏の日の幻葬"},{"url":"https://magstic.top/Aojiru/name/130merupo「千夜と一夜」.jpg","alt":"千夜と一夜"},{"url":"https://magstic.top/Aojiru/name/131Yukari17「紫の結界%E3%80%80－青藍－」.jpg","alt":"紫の結界　－青藍－"},{"url":"https://magstic.top/Aojiru/name/132Yuyuko1「西行寺%20幽々子」.jpg","alt":"西行寺 幽々子"},{"url":"https://magstic.top/Aojiru/name/133Yuyuko2「亡郷「亡我郷%20-宿罪-」」.jpg","alt":"亡郷「亡我郷 -宿罪-」"},{"url":"https://magstic.top/Aojiru/name/134Yuyuko3「亡舞「生者必滅の理%20-眩惑-」」.jpg","alt":"亡舞「生者必滅の理 -眩惑-」"},{"url":"https://magstic.top/Aojiru/name/135Yuyuko4「華霊「ディープルーティドバタフライ」」.jpg","alt":"華霊「ディープルーティドバタフライ」"}]</span>    </div>    <button class="gallery-load-more"><span>載入更多</span><i class="fa-solid fa-arrow-down"></i></button>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>白と黒の夢郷-絵10</title>
-      <link href="/html/aojiru/art/art10.html"/>
-      <url>/html/aojiru/art/art10.html</url>
-      
-        <content type="html"><![CDATA[<div class="note default no-icon flat"><p><strong>頁面插畫數量：23</strong></p></div><div class="gallery">    <div class="fj-gallery lazyload data" data-rowHeight="180" data-limit="7">    <span class="gallery-data">[{"url":"https://magstic.top/Aojiru/name/136Yuyuko5「幽曲「リポジトリ・オブ・ヒロカワ%20-幻霊-」」.jpg","alt":"幽曲「リポジトリ・オブ・ヒロカワ -幻霊-」"},{"url":"https://magstic.top/Aojiru/name/137Yuyuko6「桜符「完全なる墨染の桜%20-春眠-」」.jpg","alt":"桜符「完全なる墨染の桜 -春眠-」"},{"url":"https://magstic.top/Aojiru/name/138Yuyuko7「反魂蝶%20-八分咲-」.jpg","alt":"反魂蝶 -八分咲-"},{"url":"https://magstic.top/Aojiru/name/139Yuyuko9「桜奇談「260548」」.jpg","alt":"桜奇談「260548」"},{"url":"https://magstic.top/Aojiru/name/140Yuyuko10「十六桜」.jpg","alt":"十六桜"},{"url":"https://magstic.top/Aojiru/name/141keltusenn1「霊夢とレミリア」.jpg","alt":"霊夢とレミリア"},{"url":"https://magstic.top/Aojiru/name/142mikotomahoutukai「霊夢と魔理沙」.jpg","alt":"霊夢と魔理沙"},{"url":"https://magstic.top/Aojiru/name/143Conviction.jpg","alt":"Conviction"},{"url":"https://magstic.top/Aojiru/name/144KOTETSU.jpg","alt":"KOTETSU"},{"url":"https://magstic.top/Aojiru/name/145merupo「レティがあたいに授けてくれたスペルカードだァァーッ」.jpg","alt":"レティがあたいに授けてくれたスペルカードだァァーッ"},{"url":"https://magstic.top/Aojiru/name/146merupo「紫と霊夢」.jpg","alt":"紫と霊夢"},{"url":"https://magstic.top/Aojiru/name/147ikaruga1「斑鳩より森羅と篝」.jpg","alt":"斑鳩より森羅と篝"},{"url":"https://magstic.top/Aojiru/name/148taisa1「怒首領蜂%20大佐」.jpg","alt":"怒首領蜂 大佐"},{"url":"https://magstic.top/Aojiru/name/149koumakyouend1「紅魔鄉その後」.jpg","alt":"紅魔鄉その後"},{"url":"https://magstic.top/Aojiru/name/150koumakyouend2「紅魔鄉その後」.jpg","alt":"紅魔鄉その後"},{"url":"https://magstic.top/Aojiru/name/151koumakyouend4「紅魔鄉その後」.jpg","alt":"紅魔鄉その後"},{"url":"https://magstic.top/Aojiru/name/152yousonogo1「妖々夢その後%20-%20春風の夢」.jpg","alt":"妖々夢その後 - 春風の夢"},{"url":"https://magstic.top/Aojiru/name/153merupo_lumia「だーくぐろー＠ルーミア」.jpg","alt":"だーくぐろー"},{"url":"https://magstic.top/Aojiru/video/AIR-月童1.png","alt":"AIR-月童1.png"},{"url":"https://magstic.top/Aojiru/video/AIR-月童2.png","alt":"AIR-月童2.png"},{"url":"https://magstic.top/Aojiru/video/AIR-月童3.png","alt":"AIR-月童3.png"},{"url":"https://magstic.top/Aojiru/video/AIR-月童4.png","alt":"AIR-月童4.png"},{"url":"https://magstic.top/Aojiru/video/AIR-月童5.png","alt":"AIR-月童5.png"}]</span>    </div>    <button class="gallery-load-more"><span>載入更多</span><i class="fa-solid fa-arrow-down"></i></button>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>白と黒の夢郷-無名插畫</title>
-      <link href="/html/aojiru/art/nameless.html"/>
-      <url>/html/aojiru/art/nameless.html</url>
-      
-        <content type="html"><![CDATA[<div class="note default no-icon flat"><p><strong>頁面插畫數量：15</strong></p></div><div class="gallery">    <div class="fj-gallery lazyload data" data-rowHeight="180" data-limit="10">    <span class="gallery-data">[{"url":"https://magstic.top/Aojiru/nameless/Null01.jpg","alt":""},{"url":"https://magstic.top/Aojiru/nameless/Null02.jpg","alt":""},{"url":"https://magstic.top/Aojiru/nameless/Null03.jpg","alt":""},{"url":"https://magstic.top/Aojiru/nameless/Null04.jpg","alt":""},{"url":"https://magstic.top/Aojiru/nameless/Null05.jpg","alt":""},{"url":"https://magstic.top/Aojiru/nameless/Null06.jpg","alt":""},{"url":"https://magstic.top/Aojiru/nameless/Null07.jpg","alt":""},{"url":"https://magstic.top/Aojiru/nameless/Null08.jpg","alt":""},{"url":"https://magstic.top/Aojiru/nameless/Null09.jpg","alt":""},{"url":"https://magstic.top/Aojiru/nameless/Null10.jpg","alt":""},{"url":"https://magstic.top/Aojiru/nameless/Null11.jpg","alt":""},{"url":"https://magstic.top/Aojiru/nameless/Null12.jpg","alt":""},{"url":"https://magstic.top/Aojiru/nameless/Null13.jpg","alt":""},{"url":"https://magstic.top/Aojiru/nameless/Null14.jpg","alt":""},{"url":"https://magstic.top/Aojiru/nameless/Null15.jpg","alt":""}]</span>    </div>    <button class="gallery-load-more"><span>載入更多</span><i class="fa-solid fa-arrow-down"></i></button>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>白と黒の夢郷-未知插畫</title>
-      <link href="/html/aojiru/art/null.html"/>
-      <url>/html/aojiru/art/null.html</url>
-      
-        <content type="html"><![CDATA[<div class="note default no-icon flat"><p><strong>頁面插畫數量：21</strong></p></div><div class="gallery">    <div class="fj-gallery lazyload data" data-rowHeight="180" data-limit="8">    <span class="gallery-data">[{"url":"https://magstic.top/Aojiru/null/chen19.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/Cirno11.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/Flandre6.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/Flandre7.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/fuyufuyureimu.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/KAGUYA.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/keltusenn2.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/KOTETSU.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/lili.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/Lyrica2.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/Meiling4.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/Meiling5.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/Merlin1.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/merupo_wriggle.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/mystia14.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/ooona.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/patye1.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/Prismriver2.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/Reimu3.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/wriggle13.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/Yukari16.jpg","alt":""}]</span>    </div>    <button class="gallery-load-more"><span>載入更多</span><i class="fa-solid fa-arrow-down"></i></button>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+        <content type="html"><![CDATA[<!DOCTYPE html><html><head><meta charset="utf-8"><title>森</title><link rel="shortcut icon" href="https://magstic.top/Hand.jpg"></head>    <body>        <center>            <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/coll/chen12.jpg" width="800" />            <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/coll/chen12back.jpg" width="800" />        </center>    </body></html><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -393,22 +272,33 @@
     
     
     <entry>
-      <title>妖魔夜行</title>
-      <link href="/html/aojiru/cd/05-01.html"/>
-      <url>/html/aojiru/cd/05-01.html</url>
+      <title>運命のダークサイド</title>
+      <link href="/html/aojiru/cd/04.html"/>
+      <url>/html/aojiru/cd/04.html</url>
       
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/cd/05/妖魔夜行.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/05/Jacket.jpg"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/cd/04/運命のダークサイド.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/04/Jacket.jpg"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>白と黒の夢郷-絵02</title>
-      <link href="/html/aojiru/art/art02.html"/>
-      <url>/html/aojiru/art/art02.html</url>
+      <title>狂気の瞳 ～ Invisible Full Moon</title>
+      <link href="/html/aojiru/cd/02.html"/>
+      <url>/html/aojiru/cd/02.html</url>
       
-        <content type="html"><![CDATA[<div class="note default no-icon flat"><p><strong>頁面插畫數量：15</strong></p></div><div class="gallery">    <div class="fj-gallery lazyload data" data-rowHeight="180" data-limit="15">    <span class="gallery-data">[{"url":"https://magstic.top/Aojiru/name/016Cirno4「チルノ」.jpg","alt":"チルノ"},{"url":"https://magstic.top/Aojiru/name/017Cirno6「チルノ」.jpg","alt":"チルノ"},{"url":"https://magstic.top/Aojiru/name/018Cirno8雹符「ヘイルストーム」.jpg","alt":"雹符「ヘイルストーム」"},{"url":"https://magstic.top/Aojiru/name/019Cirno9凍符「パーフェクトフリーズ」.jpg","alt":"凍符「パーフェクトフリーズ」"},{"url":"https://magstic.top/Aojiru/name/020Cirno10雪符「ダイアモンドブリザード」.jpg","alt":"雪符「ダイアモンドブリザード」"},{"url":"https://magstic.top/Aojiru/name/021Harlequin_Crest「ハーレクイン・クレスト」.jpg","alt":"ハーレクイン・クレスト"},{"url":"https://magstic.top/Aojiru/name/022Memento_mori「氷精死を知る」.jpg","alt":"氷精死を知る"},{"url":"https://magstic.top/Aojiru/name/023merupo「チルノ」.jpg","alt":"チルノ"},{"url":"https://magstic.top/Aojiru/name/024merupo「向日葵に大勝利チルノ」.jpg","alt":"向日葵に大勝利チルノ"},{"url":"https://magstic.top/Aojiru/name/025daiyousei「湖上のおりこうさん」.jpg","alt":"湖上のおりこうさん"},{"url":"https://magstic.top/Aojiru/name/026Eirin5秘術「天文密葬法」.jpg","alt":"天文密葬法"},{"url":"https://magstic.top/Aojiru/name/027Eirin7「壺中の天地%E3%80%80脳内の宇宙」.jpg","alt":"壺中の天地　脳内の宇宙"},{"url":"https://magstic.top/Aojiru/name/028Flandre1「悪魔の妹」.jpg","alt":"悪魔の妹"},{"url":"https://magstic.top/Aojiru/name/029Flandre2「一緒に遊んでくれるのかしら？」.jpg","alt":"一緒に遊んでくれるのかしら？"},{"url":"https://magstic.top/Aojiru/name/030Flandre3「禁忌「フォーオブアカインド」」.jpg","alt":"禁忌「フォーオブアカインド」"}]</span>    </div>    <button class="gallery-load-more"><span>載入更多</span><i class="fa-solid fa-arrow-down"></i></button>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/cd/02/狂気の瞳 ～ Invisible Full Moon.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/02/Jacket.JPG"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>妖魔夜行</title>
+      <link href="/html/aojiru/cd/05-01.html"/>
+      <url>/html/aojiru/cd/05-01.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/cd/05/妖魔夜行.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/05/Jacket.jpg"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -437,55 +327,11 @@
     
     
     <entry>
-      <title>狂気の瞳 ～ Invisible Full Moon</title>
-      <link href="/html/aojiru/cd/02.html"/>
-      <url>/html/aojiru/cd/02.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/cd/02/狂気の瞳 ～ Invisible Full Moon.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/02/Jacket.JPG"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>赤より紅い夢</title>
-      <link href="/html/aojiru/cd/06-01.html"/>
-      <url>/html/aojiru/cd/06-01.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/cd/06/赤より紅い夢.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/06/Jacket.jpg"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>運命のダークサイド</title>
-      <link href="/html/aojiru/cd/04.html"/>
-      <url>/html/aojiru/cd/04.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/cd/04/運命のダークサイド.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/04/Jacket.jpg"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>妖々夢 ～ Snow or Cherry Petal</title>
       <link href="/html/aojiru/cd/07-01.html"/>
       <url>/html/aojiru/cd/07-01.html</url>
       
         <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/cd/07/妖々夢 ～ Snow or Cherry Petal.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/07/Jacket.jpg"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>ボーダーオブライフ</title>
-      <link href="/html/aojiru/cd/07-02.html"/>
-      <url>/html/aojiru/cd/07-02.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/cd/07/ボーダーオブライフ.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/07/Jacket.jpg"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -514,11 +360,22 @@
     
     
     <entry>
-      <title>Space Battle Ship 130 33KI</title>
-      <link href="/html/aojiru/other/33KI.html"/>
-      <url>/html/aojiru/other/33KI.html</url>
+      <title>赤より紅い夢</title>
+      <link href="/html/aojiru/cd/06-01.html"/>
+      <url>/html/aojiru/cd/06-01.html</url>
       
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/other/1%20rs9o.mp3" type="audio/mpeg"></audio><p>曲が既に絢爛豪華オケ調なのでHrの音域調整などを少々、例によって大音量でﾄﾞｿﾞｰ</p><p>後前回の銀銃戦艦に反応下さった方ありがとうございますです。<br>やっぱあの曲はシューターの方には人気高いですね実際名曲だけど。<br>5Aシーンをゲーセンでリアルタイムにプレイできたことは自分にも良き思い出。</p><p>さらに海老福さんとこでダイナマイトヘッディーピアノが来てるじゃあないの。<br>自分はトレジャーゲーに馴染んだのは銀銃以降の為未プレイですが…ｲｲ。</p><p>音源の都合で表現しきれなかった原曲のニュアンスを汲み取って再現する、かぁ。<br>そうだよなぁ…編曲の動機の一つであり理想の一つだよなぁ…と、<br>ちょっと考え込みながら耳を傾ける次第。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/cd/06/赤より紅い夢.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/06/Jacket.jpg"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>白と黒の夢郷-絵01</title>
+      <link href="/html/aojiru/art/art01.html"/>
+      <url>/html/aojiru/art/art01.html</url>
+      
+        <content type="html"><![CDATA[<div class="note default no-icon flat"><p><strong>頁面插畫數量：15</strong></p></div><div class="gallery">    <div class="fj-gallery lazyload data" data-rowHeight="180" data-limit="15">    <span class="gallery-data">[{"url":"https://magstic.top/Aojiru/name/001Alice1「ブクレシュティの人形師」.jpg","alt":"ブクレシュティの人形師"},{"url":"https://magstic.top/Aojiru/name/002Burchett_Report「只一人、幻想郷の内より飛んで来た女」.jpg","alt":"只一人、幻想郷の内より飛んで来た女"},{"url":"https://magstic.top/Aojiru/name/003烏帽子鳥.jpg","alt":"烏帽子鳥"},{"url":"https://magstic.top/Aojiru/name/004Sryinx.jpg","alt":"Sryinx"},{"url":"https://magstic.top/Aojiru/name/005Tyenn1「マヨヒガの黒猫」.jpg","alt":"マヨヒガの黒猫"},{"url":"https://magstic.top/Aojiru/name/006Tyenn3「鬼符「青鬼赤鬼」」.jpg","alt":"鬼符「青鬼赤鬼」"},{"url":"https://magstic.top/Aojiru/name/007Tyenn11「足元、気をつけな」.jpg","alt":"足元、気をつけな"},{"url":"https://magstic.top/Aojiru/name/008chen17「夏橙」.jpg","alt":"夏橙"},{"url":"https://magstic.top/Aojiru/name/009chen18「夏橙」.jpg","alt":"夏橙"},{"url":"https://magstic.top/Aojiru/name/010chrysanthemum「ぬこに小菊」.jpg","alt":"ぬこに小菊"},{"url":"https://magstic.top/Aojiru/name/011Spectral_Shard.jpg","alt":"Spectral_Shard"},{"url":"https://magstic.top/Aojiru/name/012Tyenn5「マヨヒガの林」.jpg","alt":"マヨヒガの林"},{"url":"https://magstic.top/Aojiru/name/013ciruno1「おてんば恋娘%E3%80%80チルノ」.jpg","alt":"おてんば恋娘　チルノ"},{"url":"https://magstic.top/Aojiru/name/014cirno2「チルノ」.jpg","alt":"チルノ"},{"url":"https://magstic.top/Aojiru/name/015Cirno3霜符「フロストコラムス」.jpg","alt":"霜符「フロストコラムス」"}]</span>    </div>    <button class="gallery-load-more"><span>載入更多</span><i class="fa-solid fa-arrow-down"></i></button>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -536,22 +393,121 @@
     
     
     <entry>
-      <title>プレインエイジア</title>
-      <link href="/html/aojiru/thc/01e8c.html"/>
-      <url>/html/aojiru/thc/01e8c.html</url>
+      <title>白と黒の夢郷-絵05</title>
+      <link href="/html/aojiru/art/art05.html"/>
+      <url>/html/aojiru/art/art05.html</url>
       
-        <content type="html"><![CDATA[<p><a href="https://magstic.top/Aojiru/music/thc/k.mp3"><strong>初版音頻</strong></a></p><audio controls><source src="https://magstic.top/Aojiru/music/thc/keinetheme_pianoconcerto_128.mp3" type="audio/mpeg"></audio><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+        <content type="html"><![CDATA[<div class="note default no-icon flat"><p><strong>頁面插畫數量：15</strong></p></div><div class="gallery">    <div class="fj-gallery lazyload data" data-rowHeight="180" data-limit="15">    <span class="gallery-data">[{"url":"https://magstic.top/Aojiru/name/061mokou12「リザレクション」.jpg","alt":"リザレクション"},{"url":"https://magstic.top/Aojiru/name/062Phoenix.jpg","alt":"Phoenix"},{"url":"https://magstic.top/Aojiru/name/063Mystia1「ミスティア・ローレライ」.jpg","alt":"ミスティア・ローレライ"},{"url":"https://magstic.top/Aojiru/name/064Flora's_Lesson「花のソルフェージュ」.jpg","alt":"花のソルフェージュ"},{"url":"https://magstic.top/Aojiru/name/065merupo「ミスティアとランプ」.jpg","alt":"ミスティアとランプ"},{"url":"https://magstic.top/Aojiru/name/066Patchouli2「とっておきの魔法、見せてあげるわ！」.jpg","alt":"とっておきの魔法、見せてあげるわ！"},{"url":"https://magstic.top/Aojiru/name/067Patchouli2「金＆水符「マーキュリポイズン」」.jpg","alt":"金＆水符「マーキュリポイズン」"},{"url":"https://magstic.top/Aojiru/name/068Royal_Flare「日輪のごとき」.jpg","alt":"日輪のごとき"},{"url":"https://magstic.top/Aojiru/name/069Lunasa1「ルナサ・プリズムリバー」.jpg","alt":"ルナサ・プリズムリバー"},{"url":"https://magstic.top/Aojiru/name/070Lyrica1「リリカ・プリズムリバー」.jpg","alt":"リリカ・プリズムリバー"},{"url":"https://magstic.top/Aojiru/name/071Merlin1「メルラン・プリズムリバー」.jpg","alt":"メルラン・プリズムリバー"},{"url":"https://magstic.top/Aojiru/name/072Prismriver1「レイラと三姉妹の追憶」.jpg","alt":"レイラと三姉妹の追憶"},{"url":"https://magstic.top/Aojiru/name/073Lunasa3「グァルネリ・デル・ジェス」.jpg","alt":"グァルネリ・デル・ジェス"},{"url":"https://magstic.top/Aojiru/name/074Lyrica「レイラズ・ラメントバス」.jpg","alt":"レイラズ・ラメントバス"},{"url":"https://magstic.top/Aojiru/name/075merupo「姉さんの呟き」.jpg","alt":"姉さんの呟き"}]</span>    </div>    <button class="gallery-load-more"><span>載入更多</span><i class="fa-solid fa-arrow-down"></i></button>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>Boss B</title>
-      <link href="/html/aojiru/other/BossB.html"/>
-      <url>/html/aojiru/other/BossB.html</url>
+      <title>ボーダーオブライフ</title>
+      <link href="/html/aojiru/cd/07-02.html"/>
+      <url>/html/aojiru/cd/07-02.html</url>
       
-        <content type="html"><![CDATA[<p>Music Lost</p><p>ボスの中のボスと言ったらこれかなぁということでスターフォックス64ボスを便乗上げ。<br>シューティングのボス曲とはすなわちどのようなものか？と問われればこの曲を挙げる。緊迫感とスピード感と締めの高揚感とどんなボスにも合う汎用性…全てが素晴らすい。<br>「アンドルフ様～ごめんちゃい！」の方のボス曲も諧謔味があって好きですがスタフォー64と言ったらやっぱこれですやね。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/cd/07/ボーダーオブライフ.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/07/Jacket.jpg"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>白と黒の夢郷-絵02</title>
+      <link href="/html/aojiru/art/art02.html"/>
+      <url>/html/aojiru/art/art02.html</url>
+      
+        <content type="html"><![CDATA[<div class="note default no-icon flat"><p><strong>頁面插畫數量：15</strong></p></div><div class="gallery">    <div class="fj-gallery lazyload data" data-rowHeight="180" data-limit="15">    <span class="gallery-data">[{"url":"https://magstic.top/Aojiru/name/016Cirno4「チルノ」.jpg","alt":"チルノ"},{"url":"https://magstic.top/Aojiru/name/017Cirno6「チルノ」.jpg","alt":"チルノ"},{"url":"https://magstic.top/Aojiru/name/018Cirno8雹符「ヘイルストーム」.jpg","alt":"雹符「ヘイルストーム」"},{"url":"https://magstic.top/Aojiru/name/019Cirno9凍符「パーフェクトフリーズ」.jpg","alt":"凍符「パーフェクトフリーズ」"},{"url":"https://magstic.top/Aojiru/name/020Cirno10雪符「ダイアモンドブリザード」.jpg","alt":"雪符「ダイアモンドブリザード」"},{"url":"https://magstic.top/Aojiru/name/021Harlequin_Crest「ハーレクイン・クレスト」.jpg","alt":"ハーレクイン・クレスト"},{"url":"https://magstic.top/Aojiru/name/022Memento_mori「氷精死を知る」.jpg","alt":"氷精死を知る"},{"url":"https://magstic.top/Aojiru/name/023merupo「チルノ」.jpg","alt":"チルノ"},{"url":"https://magstic.top/Aojiru/name/024merupo「向日葵に大勝利チルノ」.jpg","alt":"向日葵に大勝利チルノ"},{"url":"https://magstic.top/Aojiru/name/025daiyousei「湖上のおりこうさん」.jpg","alt":"湖上のおりこうさん"},{"url":"https://magstic.top/Aojiru/name/026Eirin5秘術「天文密葬法」.jpg","alt":"天文密葬法"},{"url":"https://magstic.top/Aojiru/name/027Eirin7「壺中の天地%E3%80%80脳内の宇宙」.jpg","alt":"壺中の天地　脳内の宇宙"},{"url":"https://magstic.top/Aojiru/name/028Flandre1「悪魔の妹」.jpg","alt":"悪魔の妹"},{"url":"https://magstic.top/Aojiru/name/029Flandre2「一緒に遊んでくれるのかしら？」.jpg","alt":"一緒に遊んでくれるのかしら？"},{"url":"https://magstic.top/Aojiru/name/030Flandre3「禁忌「フォーオブアカインド」」.jpg","alt":"禁忌「フォーオブアカインド」"}]</span>    </div>    <button class="gallery-load-more"><span>載入更多</span><i class="fa-solid fa-arrow-down"></i></button>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>白と黒の夢郷-絵04</title>
+      <link href="/html/aojiru/art/art04.html"/>
+      <url>/html/aojiru/art/art04.html</url>
+      
+        <content type="html"><![CDATA[<div class="note default no-icon flat"><p><strong>頁面插畫數量：15</strong></p></div><div class="gallery">    <div class="fj-gallery lazyload data" data-rowHeight="180" data-limit="15">    <span class="gallery-data">[{"url":"https://magstic.top/Aojiru/name/046Carrion_Wind.jpg","alt":"Carrion Wind"},{"url":"https://magstic.top/Aojiru/name/047Rain「雨と毒人形」.jpg","alt":"雨と毒人形"},{"url":"https://magstic.top/Aojiru/name/048meirinn1「華人小娘、紅美鈴」.jpg","alt":"華人小娘、紅美鈴"},{"url":"https://magstic.top/Aojiru/name/049mairinn2「紅%20美鈴」.jpg","alt":"華人小娘、紅美鈴"},{"url":"https://magstic.top/Aojiru/name/050mokou1「時効「月のいはかさの呪い」」.jpg","alt":"時効「月のいはかさの呪い」"},{"url":"https://magstic.top/Aojiru/name/051mokou2「不死「火の鳥%E3%80%80-鳳翼天翔-」」.jpg","alt":"不死「火の鳥　-鳳翼天翔-」"},{"url":"https://magstic.top/Aojiru/name/052mokou3「藤原「滅罪寺院傷」」.jpg","alt":"藤原「滅罪寺院傷」"},{"url":"https://magstic.top/Aojiru/name/053mokou4「不死「徐福時空」」.jpg","alt":"不死「徐福時空」"},{"url":"https://magstic.top/Aojiru/name/054mokou5「滅罪「正直者の死」」.jpg","alt":"滅罪「正直者の死」"},{"url":"https://magstic.top/Aojiru/name/055mokou6「虚人「ウー」」.jpg","alt":"虚人「ウー」"},{"url":"https://magstic.top/Aojiru/name/056mokou7「不滅「フェニックスの尾」」.jpg","alt":"不滅「フェニックスの尾」"},{"url":"https://magstic.top/Aojiru/name/057mokou8「蓬莱「凱風快晴%E3%80%80-フジヤマヴォルケイノ-」」.jpg","alt":"蓬莱「凱風快晴　-フジヤマヴォルケイノ-」"},{"url":"https://magstic.top/Aojiru/name/058mokou9「パゼストバイフェニックス」.jpg","alt":"パゼストバイフェニックス"},{"url":"https://magstic.top/Aojiru/name/059mokou10「蓬莱人形」.jpg","alt":"蓬莱人形"},{"url":"https://magstic.top/Aojiru/name/060mokou11「インペリシャブルシューティング」.jpg","alt":"インペリシャブルシューティング"}]</span>    </div>    <button class="gallery-load-more"><span>載入更多</span><i class="fa-solid fa-arrow-down"></i></button>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>白と黒の夢郷-絵03</title>
+      <link href="/html/aojiru/art/art03.html"/>
+      <url>/html/aojiru/art/art03.html</url>
+      
+        <content type="html"><![CDATA[<div class="note default no-icon flat"><p><strong>頁面插畫數量：15</strong></p></div><div class="gallery">    <div class="fj-gallery lazyload data" data-rowHeight="180" data-limit="15">    <span class="gallery-data">[{"url":"https://magstic.top/Aojiru/name/031Flandre3禁忌「レーヴァテイン」.jpg","alt":"禁忌「レーヴァテイン」"},{"url":"https://magstic.top/Aojiru/name/032Flandre4「禁弾「スターボウブレイク」」.jpg","alt":"禁弾「スターボウブレイク」"},{"url":"https://magstic.top/Aojiru/name/033Flandre5「禁弾「過去を刻む時計」」.jpg","alt":"禁弾「過去を刻む時計」"},{"url":"https://magstic.top/Aojiru/name/034Hidann「秘弾「そして誰もいなくなるか？」」.jpg","alt":"秘弾「そして誰もいなくなるか？」"},{"url":"https://magstic.top/Aojiru/name/035Flandre8「ＱＥＤ「４９５年の波紋」」.jpg","alt":"ＱＥＤ「４９５年の波紋」"},{"url":"https://magstic.top/Aojiru/name/036Flandre11「マ・メール・ロワ」.jpg","alt":"マ・メール・ロワ"},{"url":"https://magstic.top/Aojiru/name/037Flandre_gift『秘められし御伽の紅』.jpg","alt":"秘められし御伽の紅"},{"url":"https://magstic.top/Aojiru/name/038merupo「フランと人形の目」.jpg","alt":"フランと人形の目"},{"url":"https://magstic.top/Aojiru/name/039merupo「破壊衝動」.jpg","alt":"破壊衝動"},{"url":"https://magstic.top/Aojiru/name/040keine8「そして歴史は回帰する」.jpg","alt":"そして歴史は回帰する"},{"url":"https://magstic.top/Aojiru/name/041koakuma1「黒の牝鹿%E3%80%80小悪魔」.jpg","alt":"黒の牝鹿　小悪魔"},{"url":"https://magstic.top/Aojiru/name/042koakuma1「黒の牝鹿%E3%80%80小悪魔-2」.jpg","alt":"黒の牝鹿　小悪魔"},{"url":"https://magstic.top/Aojiru/name/043Letty1「白符「アンデュレイションレイ」」.jpg","alt":"白符「アンデュレイションレイ」"},{"url":"https://magstic.top/Aojiru/name/044mahoutukai1「霧雨%20魔理沙」.jpg","alt":"霧雨 魔理沙"},{"url":"https://magstic.top/Aojiru/name/045Marisa1「霧雨%20魔理沙」.jpg","alt":"霧雨 魔理沙"}]</span>    </div>    <button class="gallery-load-more"><span>載入更多</span><i class="fa-solid fa-arrow-down"></i></button>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>白と黒の夢郷-絵06</title>
+      <link href="/html/aojiru/art/art06.html"/>
+      <url>/html/aojiru/art/art06.html</url>
+      
+        <content type="html"><![CDATA[<div class="note default no-icon flat"><p><strong>頁面插畫數量：15</strong></p></div><div class="gallery">    <div class="fj-gallery lazyload data" data-rowHeight="180" data-limit="15">    <span class="gallery-data">[{"url":"https://magstic.top/Aojiru/name/076Ran1「私は護衛でもあるわ」.jpg","alt":"私は護衛でもあるわ"},{"url":"https://magstic.top/Aojiru/name/077Ran2「式神「十二神将の宴」」.jpg","alt":"式神「十二神将の宴」"},{"url":"https://magstic.top/Aojiru/name/078Ran3「式輝「狐狸妖怪レーザー」」.jpg","alt":"式輝「狐狸妖怪レーザー」"},{"url":"https://magstic.top/Aojiru/name/079Ran5「幻神「飯綱権現降臨」」.jpg","alt":"幻神「飯綱権現降臨」"},{"url":"https://magstic.top/Aojiru/name/080Ran6「式神「憑依荼吉尼天」」.jpg","alt":"式神「憑依荼吉尼天」"},{"url":"https://magstic.top/Aojiru/name/081Ran8「三國抄」.jpg","alt":"三國抄"},{"url":"https://magstic.top/Aojiru/name/082miko31「博麗%20霊夢」.jpg","alt":"博麗 霊夢"},{"url":"https://magstic.top/Aojiru/name/083Reimu1「二色蓮花蝶」.jpg","alt":"二色蓮花蝶"},{"url":"https://magstic.top/Aojiru/name/084Reimu2「妖々夢の幕開」.jpg","alt":"妖々夢の幕開"},{"url":"https://magstic.top/Aojiru/name/085Reimu10「夏の日の幻想」.jpg","alt":"夏の日の幻想"},{"url":"https://magstic.top/Aojiru/name/086Ancient's.jpg","alt":"Ancient's"},{"url":"https://magstic.top/Aojiru/name/087Reimu「虹をつかみそこねた巫女」.jpg","alt":"虹をつかみそこねた巫女"},{"url":"https://magstic.top/Aojiru/name/088Reimu「虹をつかんだ巫女」.jpg","alt":"虹をつかんだ巫女"},{"url":"https://magstic.top/Aojiru/name/089Reimu6「二色蓮花蝶」.jpg","alt":"二色蓮花蝶"},{"url":"https://magstic.top/Aojiru/name/090Reimu9「博麗%20霊夢の結界」.jpg","alt":"博麗 霊夢の結界"}]</span>    </div>    <button class="gallery-load-more"><span>載入更多</span><i class="fa-solid fa-arrow-down"></i></button>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>白と黒の夢郷-絵08</title>
+      <link href="/html/aojiru/art/art08.html"/>
+      <url>/html/aojiru/art/art08.html</url>
+      
+        <content type="html"><![CDATA[<div class="note default no-icon flat"><p><strong>頁面插畫數量：15</strong></p></div><div class="gallery">    <div class="fj-gallery lazyload data" data-rowHeight="180" data-limit="15">    <span class="gallery-data">[{"url":"https://magstic.top/Aojiru/name/106Ruumia6「夜符「ナイトバード」」.jpg","alt":"夜符「ナイトバード」"},{"url":"https://magstic.top/Aojiru/name/107Ruumia9黄天月夜.jpg","alt":"黄天月夜"},{"url":"https://magstic.top/Aojiru/name/108sakuya1「瀟洒なメイド長」.jpg","alt":"瀟洒なメイド長"},{"url":"https://magstic.top/Aojiru/name/109sakuya2「十六夜%20咲夜」.jpg","alt":"十六夜 咲夜"},{"url":"https://magstic.top/Aojiru/name/110sakuya3「十六夜%20咲夜」.jpg","alt":"十六夜 咲夜"},{"url":"https://magstic.top/Aojiru/name/111Sakuya5「恐怖の片鱗」.jpg","alt":"恐怖の片鱗"},{"url":"https://magstic.top/Aojiru/name/112Key_of_Obedience.jpg","alt":"Key of Obedience"},{"url":"https://magstic.top/Aojiru/name/113Noisy_Silence.jpg","alt":"Noisy Silence"},{"url":"https://magstic.top/Aojiru/name/114Sakuya4「チャールズ・ウォーレン嘲笑」.jpg","alt":"チャールズ・ウォーレン嘲笑"},{"url":"https://magstic.top/Aojiru/name/115STORM_CAUSER.jpg","alt":"STORM CAUSER"},{"url":"https://magstic.top/Aojiru/name/116merupo「吐き気をもよおす邪悪兎」.jpg","alt":"吐き気をもよおす邪悪兎"},{"url":"https://magstic.top/Aojiru/name/117merupo「いたるところにいのちはそんざいするよ」.jpg","alt":"いたるところにいのちはそんざいするよ"},{"url":"https://magstic.top/Aojiru/name/118Wisp_Projector「夜草映える～Wisp%20Projector」.jpg","alt":"夜草映える～Wisp Projector"},{"url":"https://magstic.top/Aojiru/name/119Wriggle3「幻視の夜のリグル」.jpg","alt":"幻視の夜のリグル"},{"url":"https://magstic.top/Aojiru/name/120merupo「サイギョウジズ・ゴースト・リベレーター」.jpg","alt":"サイギョウジズ・ゴースト・リベレーター"}]</span>    </div>    <button class="gallery-load-more"><span>載入更多</span><i class="fa-solid fa-arrow-down"></i></button>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>白と黒の夢郷-絵07</title>
+      <link href="/html/aojiru/art/art07.html"/>
+      <url>/html/aojiru/art/art07.html</url>
+      
+        <content type="html"><![CDATA[<div class="note default no-icon flat"><p><strong>頁面插畫數量：15</strong></p></div><div class="gallery">    <div class="fj-gallery lazyload data" data-rowHeight="180" data-limit="15">    <span class="gallery-data">[{"url":"https://magstic.top/Aojiru/name/091Reimu12「霊夢の結界%20-伽羅色-」.jpg","alt":"霊夢の結界 -伽羅色-"},{"url":"https://magstic.top/Aojiru/name/092sakura「皆吉爽雨詠む」.jpg","alt":"皆吉爽雨詠む"},{"url":"https://magstic.top/Aojiru/name/093merupo「虹の枯れた巫女」.jpg","alt":"虹の枯れた巫女"},{"url":"https://magstic.top/Aojiru/name/094Reisen1「月兎%E3%80%80～%20ルナ・エンシェンツ」.jpg","alt":"月兎　～ ルナ・エンシェンツ"},{"url":"https://magstic.top/Aojiru/name/095Reisen「兎生きろ、蟹は死ね」.jpg","alt":"兎生きろ、蟹は死ね"},{"url":"https://magstic.top/Aojiru/name/096兎と人形.jpg","alt":"兎と人形"},{"url":"https://magstic.top/Aojiru/name/097Remilia1「永遠に紅い幼き月」.jpg","alt":"永遠に紅い幼き月"},{"url":"https://magstic.top/Aojiru/name/098Remilia1「紅い月を背」.jpg","alt":"紅い月を背"},{"url":"https://magstic.top/Aojiru/name/099Remilia2「運命を操る程度の能力」.jpg","alt":"運命を操る程度の能力"},{"url":"https://magstic.top/Aojiru/name/100ruumia11「闇の徘徊」.jpg","alt":"闇の徘徊"},{"url":"https://magstic.top/Aojiru/name/101Ruumia8「闇符「ディマーケイション」」.jpg","alt":"闇符「ディマーケイション」"},{"url":"https://magstic.top/Aojiru/name/102Ruumia10「食人鬼」.jpg","alt":"食人鬼"},{"url":"https://magstic.top/Aojiru/name/103merupo「ルーミアさんの憂鬱」.jpg","alt":"ルーミアさんの憂鬱"},{"url":"https://magstic.top/Aojiru/name/104Ruumia「常夜見の花」.jpg","alt":"常夜見の花"},{"url":"https://magstic.top/Aojiru/name/105Ruumia5「月符「ムーンライトレイ」」.jpg","alt":"月符「ムーンライトレイ」"}]</span>    </div>    <button class="gallery-load-more"><span>載入更多</span><i class="fa-solid fa-arrow-down"></i></button>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>白と黒の夢郷-絵09</title>
+      <link href="/html/aojiru/art/art09.html"/>
+      <url>/html/aojiru/art/art09.html</url>
+      
+        <content type="html"><![CDATA[<div class="note default no-icon flat"><p><strong>頁面插畫數量：15</strong></p></div><div class="gallery">    <div class="fj-gallery lazyload data" data-rowHeight="180" data-limit="15">    <span class="gallery-data">[{"url":"https://magstic.top/Aojiru/name/121merupo「サンダーゴッズ・ヴィガー」.jpg","alt":"サンダーゴッズ・ヴィガー"},{"url":"https://magstic.top/Aojiru/name/122Yukari1「予定された無秩序」.jpg","alt":"予定された無秩序"},{"url":"https://magstic.top/Aojiru/name/123Yukari5「ストレートとカーブの夢郷」.jpg","alt":"ストレートとカーブの夢郷"},{"url":"https://magstic.top/Aojiru/name/124Yukari7「禅寺に棲む妖蝶」.jpg","alt":"禅寺に棲む妖蝶"},{"url":"https://magstic.top/Aojiru/name/125Yukari8「二重黒死蝶」.jpg","alt":"二重黒死蝶"},{"url":"https://magstic.top/Aojiru/name/126Yukari11「生と死の境界」.jpg","alt":"生と死の境界"},{"url":"https://magstic.top/Aojiru/name/127Yukari12「弾幕結界」.jpg","alt":"弾幕結界"},{"url":"https://magstic.top/Aojiru/name/128Yukari15「み仏の%E3%80%80瑠璃の光の%E3%80%80花の寺」.jpg","alt":"み仏の　瑠璃の光の　花の寺"},{"url":"https://magstic.top/Aojiru/name/129Yukari20「夏の日の幻葬」.jpg","alt":"夏の日の幻葬"},{"url":"https://magstic.top/Aojiru/name/130merupo「千夜と一夜」.jpg","alt":"千夜と一夜"},{"url":"https://magstic.top/Aojiru/name/131Yukari17「紫の結界%E3%80%80－青藍－」.jpg","alt":"紫の結界　－青藍－"},{"url":"https://magstic.top/Aojiru/name/132Yuyuko1「西行寺%20幽々子」.jpg","alt":"西行寺 幽々子"},{"url":"https://magstic.top/Aojiru/name/133Yuyuko2「亡郷「亡我郷%20-宿罪-」」.jpg","alt":"亡郷「亡我郷 -宿罪-」"},{"url":"https://magstic.top/Aojiru/name/134Yuyuko3「亡舞「生者必滅の理%20-眩惑-」」.jpg","alt":"亡舞「生者必滅の理 -眩惑-」"},{"url":"https://magstic.top/Aojiru/name/135Yuyuko4「華霊「ディープルーティドバタフライ」」.jpg","alt":"華霊「ディープルーティドバタフライ」"}]</span>    </div>    <button class="gallery-load-more"><span>載入更多</span><i class="fa-solid fa-arrow-down"></i></button>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>白と黒の夢郷-無名插畫</title>
+      <link href="/html/aojiru/art/nameless.html"/>
+      <url>/html/aojiru/art/nameless.html</url>
+      
+        <content type="html"><![CDATA[<div class="note default no-icon flat"><p><strong>頁面插畫數量：15</strong></p></div><div class="gallery">    <div class="fj-gallery lazyload data" data-rowHeight="180" data-limit="10">    <span class="gallery-data">[{"url":"https://magstic.top/Aojiru/nameless/Null01.jpg","alt":""},{"url":"https://magstic.top/Aojiru/nameless/Null02.jpg","alt":""},{"url":"https://magstic.top/Aojiru/nameless/Null03.jpg","alt":""},{"url":"https://magstic.top/Aojiru/nameless/Null04.jpg","alt":""},{"url":"https://magstic.top/Aojiru/nameless/Null05.jpg","alt":""},{"url":"https://magstic.top/Aojiru/nameless/Null06.jpg","alt":""},{"url":"https://magstic.top/Aojiru/nameless/Null07.jpg","alt":""},{"url":"https://magstic.top/Aojiru/nameless/Null08.jpg","alt":""},{"url":"https://magstic.top/Aojiru/nameless/Null09.jpg","alt":""},{"url":"https://magstic.top/Aojiru/nameless/Null10.jpg","alt":""},{"url":"https://magstic.top/Aojiru/nameless/Null11.jpg","alt":""},{"url":"https://magstic.top/Aojiru/nameless/Null12.jpg","alt":""},{"url":"https://magstic.top/Aojiru/nameless/Null13.jpg","alt":""},{"url":"https://magstic.top/Aojiru/nameless/Null14.jpg","alt":""},{"url":"https://magstic.top/Aojiru/nameless/Null15.jpg","alt":""}]</span>    </div>    <button class="gallery-load-more"><span>載入更多</span><i class="fa-solid fa-arrow-down"></i></button>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>白と黒の夢郷-絵10</title>
+      <link href="/html/aojiru/art/art10.html"/>
+      <url>/html/aojiru/art/art10.html</url>
+      
+        <content type="html"><![CDATA[<div class="note default no-icon flat"><p><strong>頁面插畫數量：23</strong></p></div><div class="gallery">    <div class="fj-gallery lazyload data" data-rowHeight="180" data-limit="7">    <span class="gallery-data">[{"url":"https://magstic.top/Aojiru/name/136Yuyuko5「幽曲「リポジトリ・オブ・ヒロカワ%20-幻霊-」」.jpg","alt":"幽曲「リポジトリ・オブ・ヒロカワ -幻霊-」"},{"url":"https://magstic.top/Aojiru/name/137Yuyuko6「桜符「完全なる墨染の桜%20-春眠-」」.jpg","alt":"桜符「完全なる墨染の桜 -春眠-」"},{"url":"https://magstic.top/Aojiru/name/138Yuyuko7「反魂蝶%20-八分咲-」.jpg","alt":"反魂蝶 -八分咲-"},{"url":"https://magstic.top/Aojiru/name/139Yuyuko9「桜奇談「260548」」.jpg","alt":"桜奇談「260548」"},{"url":"https://magstic.top/Aojiru/name/140Yuyuko10「十六桜」.jpg","alt":"十六桜"},{"url":"https://magstic.top/Aojiru/name/141keltusenn1「霊夢とレミリア」.jpg","alt":"霊夢とレミリア"},{"url":"https://magstic.top/Aojiru/name/142mikotomahoutukai「霊夢と魔理沙」.jpg","alt":"霊夢と魔理沙"},{"url":"https://magstic.top/Aojiru/name/143Conviction.jpg","alt":"Conviction"},{"url":"https://magstic.top/Aojiru/name/144KOTETSU.jpg","alt":"KOTETSU"},{"url":"https://magstic.top/Aojiru/name/145merupo「レティがあたいに授けてくれたスペルカードだァァーッ」.jpg","alt":"レティがあたいに授けてくれたスペルカードだァァーッ"},{"url":"https://magstic.top/Aojiru/name/146merupo「紫と霊夢」.jpg","alt":"紫と霊夢"},{"url":"https://magstic.top/Aojiru/name/147ikaruga1「斑鳩より森羅と篝」.jpg","alt":"斑鳩より森羅と篝"},{"url":"https://magstic.top/Aojiru/name/148taisa1「怒首領蜂%20大佐」.jpg","alt":"怒首領蜂 大佐"},{"url":"https://magstic.top/Aojiru/name/149koumakyouend1「紅魔鄉その後」.jpg","alt":"紅魔鄉その後"},{"url":"https://magstic.top/Aojiru/name/150koumakyouend2「紅魔鄉その後」.jpg","alt":"紅魔鄉その後"},{"url":"https://magstic.top/Aojiru/name/151koumakyouend4「紅魔鄉その後」.jpg","alt":"紅魔鄉その後"},{"url":"https://magstic.top/Aojiru/name/152yousonogo1「妖々夢その後%20-%20春風の夢」.jpg","alt":"妖々夢その後 - 春風の夢"},{"url":"https://magstic.top/Aojiru/name/153merupo_lumia「だーくぐろー＠ルーミア」.jpg","alt":"だーくぐろー"},{"url":"https://magstic.top/Aojiru/video/AIR-月童1.png","alt":"AIR-月童1.png"},{"url":"https://magstic.top/Aojiru/video/AIR-月童2.png","alt":"AIR-月童2.png"},{"url":"https://magstic.top/Aojiru/video/AIR-月童3.png","alt":"AIR-月童3.png"},{"url":"https://magstic.top/Aojiru/video/AIR-月童4.png","alt":"AIR-月童4.png"},{"url":"https://magstic.top/Aojiru/video/AIR-月童5.png","alt":"AIR-月童5.png"}]</span>    </div>    <button class="gallery-load-more"><span>載入更多</span><i class="fa-solid fa-arrow-down"></i></button>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -569,11 +525,33 @@
     
     
     <entry>
-      <title>海の見える街</title>
-      <link href="/html/aojiru/other/Ocean.html"/>
-      <url>/html/aojiru/other/Ocean.html</url>
+      <title>Boss B</title>
+      <link href="/html/aojiru/other/BossB.html"/>
+      <url>/html/aojiru/other/BossB.html</url>
       
-        <content type="html"><![CDATA[<p>Music Lost</p><p>そーいや去年は千尋でしたな、ということでここらをチョイス。<br>魔女つながりでもありますが。しかし良い旋律ですわね。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+        <content type="html"><![CDATA[<p>Music Lost</p><p>ボスの中のボスと言ったらこれかなぁということでスターフォックス64ボスを便乗上げ。<br>シューティングのボス曲とはすなわちどのようなものか？と問われればこの曲を挙げる。緊迫感とスピード感と締めの高揚感とどんなボスにも合う汎用性…全てが素晴らすい。<br>「アンドルフ様～ごめんちゃい！」の方のボス曲も諧謔味があって好きですがスタフォー64と言ったらやっぱこれですやね。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Space Battle Ship 130 33KI</title>
+      <link href="/html/aojiru/other/33KI.html"/>
+      <url>/html/aojiru/other/33KI.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/other/1%20rs9o.mp3" type="audio/mpeg"></audio><p>曲が既に絢爛豪華オケ調なのでHrの音域調整などを少々、例によって大音量でﾄﾞｿﾞｰ</p><p>後前回の銀銃戦艦に反応下さった方ありがとうございますです。<br>やっぱあの曲はシューターの方には人気高いですね実際名曲だけど。<br>5Aシーンをゲーセンでリアルタイムにプレイできたことは自分にも良き思い出。</p><p>さらに海老福さんとこでダイナマイトヘッディーピアノが来てるじゃあないの。<br>自分はトレジャーゲーに馴染んだのは銀銃以降の為未プレイですが…ｲｲ。</p><p>音源の都合で表現しきれなかった原曲のニュアンスを汲み取って再現する、かぁ。<br>そうだよなぁ…編曲の動機の一つであり理想の一つだよなぁ…と、<br>ちょっと考え込みながら耳を傾ける次第。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>仏鉄塊</title>
+      <link href="/html/aojiru/other/Ikaruga3o.html"/>
+      <url>/html/aojiru/other/Ikaruga3o.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/ikaruga/Ikaruga3o.mp3" type="audio/mpeg"></audio><p><strong>仏鉄塊</strong><br>質実剛健、余計な音はいらぬとばかりにストイックな白黒ボス曲。<br>いつも以上の劣化編曲ですがコレでもかなり気合入れましたよホント。<br>（この曲に限らず斑鳩の音楽については語りだすと百万言でも足らずなので自重。<br>原曲聴いたこと無いという方はアーケードなり移植作なりで味わって下さい、是非に是非に）</p><p><strong>烏帽子鳥</strong><br>アーケードで斑鳩が稼動してこのかた浅見さんとの戦闘回数は一万回に迫りますが、<br>いざ描く段となると何も観察して無いことに気付かされて俺しょんぼり。<br>というわけで斑鳩新書見ながら作業…うーむ出来上がってみるとデザイン全然違う…。<br>機械を正確に描ける人はスゲーですねと痛感した今日この頃。<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/name/003%E7%83%8F%E5%B8%BD%E5%AD%90%E9%B3%A5.jpg" alt="烏帽子鳥"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -591,11 +569,11 @@
     
     
     <entry>
-      <title>楽しみを希う心</title>
-      <link href="/html/aojiru/other/Heart_Asks.html"/>
-      <url>/html/aojiru/other/Heart_Asks.html</url>
+      <title>白と黒の夢郷-未知插畫</title>
+      <link href="/html/aojiru/art/null.html"/>
+      <url>/html/aojiru/art/null.html</url>
       
-        <content type="html"><![CDATA[<p>Music Lost</p><p>新PC導入記念にピアノ曲の中のピアノ曲を一つ。中盤テンポもたり気味だけどｷﾆｼﾅｲ！</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+        <content type="html"><![CDATA[<div class="note default no-icon flat"><p><strong>頁面插畫數量：21</strong></p></div><div class="gallery">    <div class="fj-gallery lazyload data" data-rowHeight="180" data-limit="8">    <span class="gallery-data">[{"url":"https://magstic.top/Aojiru/null/chen19.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/Cirno11.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/Flandre6.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/Flandre7.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/fuyufuyureimu.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/KAGUYA.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/keltusenn2.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/KOTETSU.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/lili.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/Lyrica2.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/Meiling4.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/Meiling5.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/Merlin1.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/merupo_wriggle.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/mystia14.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/ooona.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/patye1.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/Prismriver2.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/Reimu3.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/wriggle13.jpg","alt":""},{"url":"https://magstic.top/Aojiru/null/Yukari16.jpg","alt":""}]</span>    </div>    <button class="gallery-load-more"><span>載入更多</span><i class="fa-solid fa-arrow-down"></i></button>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -607,6 +585,39 @@
       <url>/html/aojiru/other/Raimei.html</url>
       
         <content type="html"><![CDATA[<p>Music Lost</p><p>ああ19XX自分も大好きですよ＆1942JSがまともに流通するよう祈願で一ループでっち上げ。<br>主旋律が白玉過ぎるんでピアノでまともにやろうとしたら分散和音編曲とかが妥当なんでしょうがまあ軽くということで。</p><p>他にもサンチョペドロを筆頭に名曲ぞろいだし、音楽と演出の連動も優れたSTGなんですが。<br>ネームエントリーを時間切れまで粘ってもED曲が途中で切れるのはいただけねーぞカプコンさん…。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>海の見える街</title>
+      <link href="/html/aojiru/other/Ocean.html"/>
+      <url>/html/aojiru/other/Ocean.html</url>
+      
+        <content type="html"><![CDATA[<p>Music Lost</p><p>そーいや去年は千尋でしたな、ということでここらをチョイス。<br>魔女つながりでもありますが。しかし良い旋律ですわね。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>井戸（仮）</title>
+      <link href="/html/aojiru/other/Well.html"/>
+      <url>/html/aojiru/other/Well.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/other/4%20well.mp3" type="audio/mpeg"></audio><p>実際あの編成だとピアノの役目…。</p><p>ね　ん　が　ん　のでもないけどGSSV2.0ｷﾀので色々試す。<br>感覚的には昔のに近いらしいですけどね、とりあえず組ませる時リバーブに困った。</p><p>原曲の方は改めて昔のハドソンはレベル高いなーと驚愕の極み。<br>ドラえもんの魔境編第二ステージとか何なのあの旋律変態じゃないの?</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>楽しみを希う心</title>
+      <link href="/html/aojiru/other/Heart_Asks.html"/>
+      <url>/html/aojiru/other/Heart_Asks.html</url>
+      
+        <content type="html"><![CDATA[<p>Music Lost</p><p>新PC導入記念にピアノ曲の中のピアノ曲を一つ。中盤テンポもたり気味だけどｷﾆｼﾅｲ！</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -635,17 +646,6 @@
     
     
     <entry>
-      <title>仏鉄塊</title>
-      <link href="/html/aojiru/other/Ikaruga3o.html"/>
-      <url>/html/aojiru/other/Ikaruga3o.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/ikaruga/Ikaruga3o.mp3" type="audio/mpeg"></audio><p><strong>仏鉄塊</strong><br>質実剛健、余計な音はいらぬとばかりにストイックな白黒ボス曲。<br>いつも以上の劣化編曲ですがコレでもかなり気合入れましたよホント。<br>（この曲に限らず斑鳩の音楽については語りだすと百万言でも足らずなので自重。<br>原曲聴いたこと無いという方はアーケードなり移植作なりで味わって下さい、是非に是非に）</p><p><strong>烏帽子鳥</strong><br>アーケードで斑鳩が稼動してこのかた浅見さんとの戦闘回数は一万回に迫りますが、<br>いざ描く段となると何も観察して無いことに気付かされて俺しょんぼり。<br>というわけで斑鳩新書見ながら作業…うーむ出来上がってみるとデザイン全然違う…。<br>機械を正確に描ける人はスゲーですねと痛感した今日この頃。<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/name/003%E7%83%8F%E5%B8%BD%E5%AD%90%E9%B3%A5.jpg" alt="烏帽子鳥"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Boss B</title>
       <link href="/html/aojiru/other/sf26ps.html"/>
       <url>/html/aojiru/other/sf26ps.html</url>
@@ -657,55 +657,11 @@
     
     
     <entry>
-      <title>スパークマン</title>
-      <link href="/html/aojiru/other/r3sp.html"/>
-      <url>/html/aojiru/other/r3sp.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/other/5%20r3sp.mp3" type="audio/mpeg"></audio><p>2ワイリー前半を抜かせばシリーズではこの曲が一番好きですかね。<br>（匿名の方どうもです、不慮の死にでも遭わない限り絶対にまたやりますよ～）</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>井戸（仮）</title>
-      <link href="/html/aojiru/other/Well.html"/>
-      <url>/html/aojiru/other/Well.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/other/4%20well.mp3" type="audio/mpeg"></audio><p>実際あの編成だとピアノの役目…。</p><p>ね　ん　が　ん　のでもないけどGSSV2.0ｷﾀので色々試す。<br>感覚的には昔のに近いらしいですけどね、とりあえず組ませる時リバーブに困った。</p><p>原曲の方は改めて昔のハドソンはレベル高いなーと驚愕の極み。<br>ドラえもんの魔境編第二ステージとか何なのあの旋律変態じゃないの?</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>ツェペシュの幼き末裔</title>
-      <link href="/html/aojiru/tho/03k12o.html"/>
-      <url>/html/aojiru/tho/03k12o.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/tho/03%20k12o.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/k12oback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>おてんば恋娘</title>
       <link href="/html/aojiru/tho/02k5o.html"/>
       <url>/html/aojiru/tho/02k5o.html</url>
       
         <content type="html"><![CDATA[<p><a href="https://magstic.top/Aojiru/music/tho/cirnotheme_sinfonietta_128.mp3"><strong>初版音頻</strong></a></p><audio controls><source src="https://magstic.top/Aojiru/music/tho/02%20k5o.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/k5oback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>U.N.オーエンは彼女なのか？</title>
-      <link href="/html/aojiru/tho/05k15o.html"/>
-      <url>/html/aojiru/tho/05k15o.html</url>
-      
-        <content type="html"><![CDATA[<p><a href="https://magstic.top/Aojiru/music/tho/U.N.ownhakanozyonanoka.mid">輕觸下載MIDI源文件</a></p><p>（SC-8850推奨）東方紅魔郷より。<br>ZUN氏のセンスが感じられる曲名です。<br>自分の脳内でフランドールとは地下礼拝所で戦っている、というイメージがあるので、<br>それにあわせて厳かに。聖戦ならぬ聖弾幕ごっこ。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -734,11 +690,11 @@
     
     
     <entry>
-      <title>千年幻想郷　～ History of the Moon</title>
-      <link href="/html/aojiru/tho/09e14o.html"/>
-      <url>/html/aojiru/tho/09e14o.html</url>
+      <title>ツェペシュの幼き末裔</title>
+      <link href="/html/aojiru/tho/03k12o.html"/>
+      <url>/html/aojiru/tho/03k12o.html</url>
       
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/tho/09%20e14o.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/e14oback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/tho/03%20k12o.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/k12oback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -756,44 +712,33 @@
     
     
     <entry>
+      <title>スパークマン</title>
+      <link href="/html/aojiru/other/r3sp.html"/>
+      <url>/html/aojiru/other/r3sp.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/other/5%20r3sp.mp3" type="audio/mpeg"></audio><p>2ワイリー前半を抜かせばシリーズではこの曲が一番好きですかね。<br>（匿名の方どうもです、不慮の死にでも遭わない限り絶対にまたやりますよ～）</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>千年幻想郷　～ History of the Moon</title>
+      <link href="/html/aojiru/tho/09e14o.html"/>
+      <url>/html/aojiru/tho/09e14o.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/tho/09%20e14o.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/e14oback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>狂気の瞳　～ Invisible Full Moon</title>
       <link href="/html/aojiru/tho/08e12o.html"/>
       <url>/html/aojiru/tho/08e12o.html</url>
       
         <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/tho/08%20reisentheme_sinfonietta_128.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/e12oback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>フラワリングナイト</title>
-      <link href="/html/aojiru/tho/16ka4o.html"/>
-      <url>/html/aojiru/tho/16ka4o.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/tho/16%20ka4o.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/ka4oback.jpg"></p><p>お蔵出し。久しぶりにプレイしたら原曲テンポ速過ぎﾜﾛﾀ　花は音楽だけ聴くというのが難しいから脳内テンポとズレがあたかも知れない。<br>特にタイミングによってはレベル2チャージ自転車操業でケツに火がついてる状況なので聴いてる余裕ナッシング、<br>音楽室は長時間再生してるとPC巻き込んで操作不可になるんで如何ともし難い…俺だけか？俺だけ花に嫌われてるのか～？</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>さくらさくら　～ Japanize Dream...</title>
-      <link href="/html/aojiru/tho/15y20o.html"/>
-      <url>/html/aojiru/tho/15y20o.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/tho/15%20y20o.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/y20oback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>永遠の巫女</title>
-      <link href="/html/aojiru/thp/00r2ps.html"/>
-      <url>/html/aojiru/thp/00r2ps.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/thp/00%20r2ps.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/r2psback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -811,6 +756,28 @@
     
     
     <entry>
+      <title>さくらさくら　～ Japanize Dream...</title>
+      <link href="/html/aojiru/tho/15y20o.html"/>
+      <url>/html/aojiru/tho/15y20o.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/tho/15%20y20o.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/y20oback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>フラワリングナイト</title>
+      <link href="/html/aojiru/tho/16ka4o.html"/>
+      <url>/html/aojiru/tho/16ka4o.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/tho/16%20ka4o.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/ka4oback.jpg"></p><p>お蔵出し。久しぶりにプレイしたら原曲テンポ速過ぎﾜﾛﾀ　花は音楽だけ聴くというのが難しいから脳内テンポとズレがあたかも知れない。<br>特にタイミングによってはレベル2チャージ自転車操業でケツに火がついてる状況なので聴いてる余裕ナッシング、<br>音楽室は長時間再生してるとPC巻き込んで操作不可になるんで如何ともし難い…俺だけか？俺だけ花に嫌われてるのか～？</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>信仰は儚き人間の為に</title>
       <link href="/html/aojiru/tho/17f11o.html"/>
       <url>/html/aojiru/tho/17f11o.html</url>
@@ -822,11 +789,154 @@
     
     
     <entry>
+      <title>永遠の巫女</title>
+      <link href="/html/aojiru/ths/01r2pd.html"/>
+      <url>/html/aojiru/ths/01r2pd.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/ths/1%20r2pd.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/r2pdback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>二色蓮花蝶　～ Ancients</title>
+      <link href="/html/aojiru/ths/02s18pd.html"/>
+      <url>/html/aojiru/ths/02s18pd.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/ths/2%20s18pd.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/s18pdback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>U.N.オーエンは彼女なのか？</title>
+      <link href="/html/aojiru/tho/05k15o.html"/>
+      <url>/html/aojiru/tho/05k15o.html</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://magstic.top/Aojiru/music/tho/U.N.ownhakanozyonanoka.mid">輕觸下載MIDI源文件</a></p><p>（SC-8850推奨）東方紅魔郷より。<br>ZUN氏のセンスが感じられる曲名です。<br>自分の脳内でフランドールとは地下礼拝所で戦っている、というイメージがあるので、<br>それにあわせて厳かに。聖戦ならぬ聖弾幕ごっこ。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>おてんば恋娘</title>
+      <link href="/html/aojiru/ths/05k5ss.html"/>
+      <url>/html/aojiru/ths/05k5ss.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/ths/5%20k5ss.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/k5ssback.jpg"></p><p>Vc二本編成がスタンダードなんでしょうが、まぁ。<br>クリズシもピアノ編入オケあたりでやりたいですわね。ティンパニﾄﾞｺﾄﾞｺﾃﾞﾃﾞﾝﾃﾞﾝ</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>蠢々秋月　～ Mooned Insect</title>
+      <link href="/html/aojiru/ths/07e3pq.html"/>
+      <url>/html/aojiru/ths/07e3pq.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/ths/7%20e3pq.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/e3pqback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>もう歌しか聞こえない</title>
+      <link href="/html/aojiru/ths/08e5sq.html"/>
+      <url>/html/aojiru/ths/08e5sq.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/ths/8%20e5sq.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/e5sqback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ブクレシュティの人形師</title>
+      <link href="/html/aojiru/ths/06y6pq.html"/>
+      <url>/html/aojiru/ths/06y6pq.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/ths/6%20y6pq.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/y6pqback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>プレインエイジア</title>
+      <link href="/html/aojiru/thc/01e8c.html"/>
+      <url>/html/aojiru/thc/01e8c.html</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://magstic.top/Aojiru/music/thc/k.mp3"><strong>初版音頻</strong></a></p><audio controls><source src="https://magstic.top/Aojiru/music/thc/keinetheme_pianoconcerto_128.mp3" type="audio/mpeg"></audio><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>永遠の巫女</title>
+      <link href="/html/aojiru/thp/00r2ps.html"/>
+      <url>/html/aojiru/thp/00r2ps.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/thp/00%20r2ps.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/r2psback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>月時計　～ ルナ・ダイアル</title>
       <link href="/html/aojiru/thp/03k11ps.html"/>
       <url>/html/aojiru/thp/03k11ps.html</url>
       
         <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/thp/3%20k11ps.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/k11psback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>広有射怪鳥事　～ Till When?</title>
+      <link href="/html/aojiru/thp/05y11ps.html"/>
+      <url>/html/aojiru/thp/05y11ps.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/thp/5%20y11ps.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/y11psback.jpg"></p><p><strong>サンダーゴッズ・ヴィガー</strong><br>何で俺が雷神を描くと高木ブーになるのはどうして？<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/name/121merupo%E3%80%8C%E3%82%B5%E3%83%B3%E3%83%80%E3%83%BC%E3%82%B4%E3%83%83%E3%82%BA%E3%83%BB%E3%83%B4%E3%82%A3%E3%82%AC%E3%83%BC%E3%80%8D.jpg" alt="サンダーゴッズ・ヴィガー"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>幽霊楽団　～ Phantom Ensemble</title>
+      <link href="/html/aojiru/thp/04y9ps.html"/>
+      <url>/html/aojiru/thp/04y9ps.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/thp/4%20y9ps.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/y9psback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>もう歌しか聞こえない</title>
+      <link href="/html/aojiru/thp/06e5ps.html"/>
+      <url>/html/aojiru/thp/06e5ps.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/thp/6%20e5ps.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/e5psback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>アルティメットトゥルース</title>
+      <link href="/html/aojiru/thp/07y12ps.html"/>
+      <url>/html/aojiru/thp/07y12ps.html</url>
+      
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/thp/7%20y12ps.mp3" type="audio/mpeg"></audio><p>アーチ状の旋律は桜の海の上を飛翔するイメージで追加しました。いよいよラスボスまであと一歩、レッツプレイ！<br>…などと普通にコメントするしかない普通な編曲ですが原曲は華やかさと幽寂さが混じる良い曲だと思いますよ、ふがっふ。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -849,50 +959,6 @@
       <url>/html/aojiru/thp/02k9ps.html</url>
       
         <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/thp/2%20k9ps.mp3" type="audio/mpeg"></audio><p>というわけで魔法少女達の百年祭といいたいところだが諸事情でこっちです。<br>やっぱこういう私魔女だけど今までの氷精とか門番とか氷精とは一味違うZEという強敵オーラプンプンな曲がないとね。<br>ゲームの流れが引き締まると言いましょうか。</p><p><strong>日輪のごとき</strong><br>久々にEXやってパターン忘却から憤死というのもひとつの流れとなっている昨今ですが、<br>さすがにロイヤルフレアの避けパターン忘れてたときは脳の老化を嘆きましたよええ。<br>第二波は左端から抜けるのが定石でしたねー、と自分のリプ見て賢さが1ポイントあがった！<br>しかしホーミング巫女でクリャンベリーに根気良く付き合ってるわ過去の俺…。<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/name/068Royal_Flare%E3%80%8C%E6%97%A5%E8%BC%AA%E3%81%AE%E3%81%94%E3%81%A8%E3%81%8D%E3%80%8D.jpg" alt="日輪のごとき"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>幽霊楽団　～ Phantom Ensemble</title>
-      <link href="/html/aojiru/thp/04y9ps.html"/>
-      <url>/html/aojiru/thp/04y9ps.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/thp/4%20y9ps.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/y9psback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>広有射怪鳥事　～ Till When?</title>
-      <link href="/html/aojiru/thp/05y11ps.html"/>
-      <url>/html/aojiru/thp/05y11ps.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/thp/5%20y11ps.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/y11psback.jpg"></p><p><strong>サンダーゴッズ・ヴィガー</strong><br>何で俺が雷神を描くと高木ブーになるのはどうして？<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/name/121merupo%E3%80%8C%E3%82%B5%E3%83%B3%E3%83%80%E3%83%BC%E3%82%B4%E3%83%83%E3%82%BA%E3%83%BB%E3%83%B4%E3%82%A3%E3%82%AC%E3%83%BC%E3%80%8D.jpg" alt="サンダーゴッズ・ヴィガー"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>アルティメットトゥルース</title>
-      <link href="/html/aojiru/thp/07y12ps.html"/>
-      <url>/html/aojiru/thp/07y12ps.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/thp/7%20y12ps.mp3" type="audio/mpeg"></audio><p>アーチ状の旋律は桜の海の上を飛翔するイメージで追加しました。いよいよラスボスまであと一歩、レッツプレイ！<br>…などと普通にコメントするしかない普通な編曲ですが原曲は華やかさと幽寂さが混じる良い曲だと思いますよ、ふがっふ。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>もう歌しか聞こえない</title>
-      <link href="/html/aojiru/thp/06e5ps.html"/>
-      <url>/html/aojiru/thp/06e5ps.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/thp/6%20e5ps.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/e5psback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -932,55 +998,11 @@
     
     
     <entry>
-      <title>ポイズンボディ　～ Forsaken Doll</title>
-      <link href="/html/aojiru/thp/13ka12ps.html"/>
-      <url>/html/aojiru/thp/13ka12ps.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/thp/13%20Poison_p_e.mp3" type="audio/mpeg"></audio><p>まあそんな嘆息を吐きつつもメディスンピアノなぞ。<br>習作ということにてひねりなし男でｽﾝﾏｾﾝ コレはなんちゃって音程スライドですが、弦かティンパニかトロンボーンを駆使して妖しい歪みを演出するのが正解なんでしょうか。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>二色蓮花蝶　～ Ancients</title>
-      <link href="/html/aojiru/thp/16s18ps.html"/>
-      <url>/html/aojiru/thp/16s18ps.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/thp/neerurennkatyou.mp3" type="audio/mpeg"></audio><p>秋霜玉より。<br>途中蓬莱人形風味なフレーズが入りますが、こんな流れだったな、と参考にした程度です。<br>正確な耳コピはまったく行っておりません。<br>最初の段階では静と動の差が大きい「二色」な曲でしたが、EX霊夢の激しさをもっと出そうと今のような形に。<br>ピアノのための蓮花蝶ではなく、蓮花蝶のためのピアノといったところでしょうか。<br>勿論、1人で弾けるような代物ではありません。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>亡き王女の為のセプテット</title>
-      <link href="/html/aojiru/thp/14k13ps.html"/>
-      <url>/html/aojiru/thp/14k13ps.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/thp/nakiouzyonotamenoseputeltuto.mp3" type="audio/mpeg"></audio><p>東方紅魔郷より。<br>パヴァーヌは好きなので、タイトルを知ったときはニヤリとしてしまいました。<br>恐らくZUN氏の曲の中では最もピアノ向けではないかと。<br>そう考えている為、構成には手をつけずただただ感情を込めて。<br>後半のアドリブ部分ですが…捏造で済みません。<br>メロが取れたら改正しようと思います。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>ツェペシュの幼き末裔</title>
       <link href="/html/aojiru/thp/15k12ps.html"/>
       <url>/html/aojiru/thp/15k12ps.html</url>
       
         <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/thp/tuepesyunoosanakimatuei.mp3" type="audio/mpeg"></audio><p>東方紅魔郷より。<br>ZUN氏が作曲された中では最も好きな曲です。<br>原曲とは微妙に離れ、かつ別物でもないやや中途半端な出来ですが。<br>セプテットの前奏曲的な位置づけなので、余り長くするのもどうかと思い1ループで切りました。<br>いつもは5分くらい弾いています。この旋律は飽きません…自分だけ？</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>永遠の巫女</title>
-      <link href="/html/aojiru/ths/01r2pd.html"/>
-      <url>/html/aojiru/ths/01r2pd.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/ths/1%20r2pd.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/r2pdback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -998,55 +1020,33 @@
     
     
     <entry>
-      <title>おてんば恋娘</title>
-      <link href="/html/aojiru/ths/05k5ss.html"/>
-      <url>/html/aojiru/ths/05k5ss.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/ths/5%20k5ss.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/k5ssback.jpg"></p><p>Vc二本編成がスタンダードなんでしょうが、まぁ。<br>クリズシもピアノ編入オケあたりでやりたいですわね。ティンパニﾄﾞｺﾄﾞｺﾃﾞﾃﾞﾝﾃﾞﾝ</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>二色蓮花蝶　～ Ancients</title>
-      <link href="/html/aojiru/ths/02s18pd.html"/>
-      <url>/html/aojiru/ths/02s18pd.html</url>
+      <link href="/html/aojiru/thp/16s18ps.html"/>
+      <url>/html/aojiru/thp/16s18ps.html</url>
       
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/ths/2%20s18pd.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/s18pdback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>蠢々秋月　～ Mooned Insect</title>
-      <link href="/html/aojiru/ths/07e3pq.html"/>
-      <url>/html/aojiru/ths/07e3pq.html</url>
-      
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/ths/7%20e3pq.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/e3pqback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/thp/neerurennkatyou.mp3" type="audio/mpeg"></audio><p>秋霜玉より。<br>途中蓬莱人形風味なフレーズが入りますが、こんな流れだったな、と参考にした程度です。<br>正確な耳コピはまったく行っておりません。<br>最初の段階では静と動の差が大きい「二色」な曲でしたが、EX霊夢の激しさをもっと出そうと今のような形に。<br>ピアノのための蓮花蝶ではなく、蓮花蝶のためのピアノといったところでしょうか。<br>勿論、1人で弾けるような代物ではありません。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>もう歌しか聞こえない</title>
-      <link href="/html/aojiru/ths/08e5sq.html"/>
-      <url>/html/aojiru/ths/08e5sq.html</url>
+      <title>ポイズンボディ　～ Forsaken Doll</title>
+      <link href="/html/aojiru/thp/13ka12ps.html"/>
+      <url>/html/aojiru/thp/13ka12ps.html</url>
       
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/ths/8%20e5sq.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/e5sqback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/thp/13%20Poison_p_e.mp3" type="audio/mpeg"></audio><p>まあそんな嘆息を吐きつつもメディスンピアノなぞ。<br>習作ということにてひねりなし男でｽﾝﾏｾﾝ コレはなんちゃって音程スライドですが、弦かティンパニかトロンボーンを駆使して妖しい歪みを演出するのが正解なんでしょうか。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>ブクレシュティの人形師</title>
-      <link href="/html/aojiru/ths/06y6pq.html"/>
-      <url>/html/aojiru/ths/06y6pq.html</url>
+      <title>亡き王女の為のセプテット</title>
+      <link href="/html/aojiru/thp/14k13ps.html"/>
+      <url>/html/aojiru/thp/14k13ps.html</url>
       
-        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/ths/6%20y6pq.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/y6pqback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+        <content type="html"><![CDATA[<audio controls><source src="https://magstic.top/Aojiru/music/thp/nakiouzyonotamenoseputeltuto.mp3" type="audio/mpeg"></audio><p>東方紅魔郷より。<br>パヴァーヌは好きなので、タイトルを知ったときはニヤリとしてしまいました。<br>恐らくZUN氏の曲の中では最もピアノ向けではないかと。<br>そう考えている為、構成には手をつけずただただ感情を込めて。<br>後半のアドリブ部分ですが…捏造で済みません。<br>メロが取れたら改正しようと思います。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
