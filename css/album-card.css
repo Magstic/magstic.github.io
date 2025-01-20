@@ -1,0 +1,182 @@
+.album-card {
+  background: #2a2a2a;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  color: #e1e1e1;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.album-main {
+  display: flex;
+  gap: 20px;
+  position: relative;
+}
+
+.album-cover {
+  flex: 0 0 30%;
+}
+
+.album-cover img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.album-info {
+  flex: 1;
+}
+
+.album-title {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #fff;
+  font-weight :bold;
+}
+
+.album-meta {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #bbb;
+}
+
+.meta-left, .meta-right {
+  flex: 1;
+}
+
+.album-meta span {
+  color: #9ecbff;
+}
+
+.album-desc {
+  padding: 15px 20px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 6px;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #bbb;
+}
+
+#article-container p {
+  margin: 0;
+}
+
+.album-card .toggle {
+  margin-bottom: 0px;
+}
+
+.toggle .toggle-content ol li {
+  color: #e0e0e0;
+  font-size: 14px;
+  line-height: 1.8;
+  padding: 6px 10px;
+  margin: 4px 0;
+  list-style: decimal;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.toggle ol li:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateX(5px);
+  cursor: pointer;
+}
+
+.toggle .toggle-content ul li {
+  color: #e0e0e0;
+  font-size: 14px;
+  line-height: 1.8;
+  padding: 6px 10px;
+  margin: 4px 0;
+  list-style: disc;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.toggle ul li:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateX(5px);
+  cursor: pointer;
+}
+
+.toggle .toggle-content ol li .red-mark {
+  display: block;
+}
+
+.toggle .toggle-content ol li:has(.red-mark) {
+  background-color: rgba(47, 255, 213, 0.05);
+}
+
+.toggle .toggle-content ol li .red-mark {
+  display: inline-block;
+  width: 100%;
+}
+
+.toggle .toggle-content ol li:has(> .red-mark) {
+  background-color: rgba(47, 255, 213, 0.05);
+}
+
+.toggle .toggle-content ol li ul {
+  margin-top: 5px;
+  padding-left: 20px;
+}
+
+.toggle .toggle-content ol li ul li {
+  background-color: rgba(255, 255, 255, 0.03);
+  margin-bottom: 2px;
+}
+
+.toggle .toggle-content ol li:has(> .red-mark) ul li {
+  background-color: rgba(47, 255, 213, 0.03);
+}
+
+.album-download {
+  position: absolute;
+  top: 0rem;
+  right: 0.5rem;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.album-download:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 768px) {
+  .album-main {
+    flex-direction: column;
+    gap: 0px;
+  }
+  
+  .album-cover {
+    flex: 0 0 100%;
+    margin-bottom: 0px;
+  }
+  .album-title {
+    margin-bottom: 10px;
+}
+
+  .album-card .toggle {
+    margin-top: 10px;
+}
+
+  .album-download {
+    display: none;
+  }
+}
