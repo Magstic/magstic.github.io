@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://magstic.art/about/index.html</loc>
+    
+    <lastmod>2025-04-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://magstic.art/2025/04/16/09/</loc>
     
     <lastmod>2025-04-15</lastmod>
@@ -488,15 +497,6 @@
   </url>
   
   <url>
-    <loc>https://magstic.art/about/index.html</loc>
-    
-    <lastmod>2024-02-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://magstic.art/html/aojiru/tho/05k15o.html</loc>
     
     <lastmod>2024-02-05</lastmod>
@@ -741,20 +741,6 @@
   </url>
   
   <url>
-    <loc>https://magstic.art/tags/%E3%82%88%E3%81%86%E3%81%8B/</loc>
-    <lastmod>2025-04-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://magstic.art/tags/%E9%9B%AA%E3%81%AE%E8%B6%B3%E8%B7%A1/</loc>
-    <lastmod>2025-04-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://magstic.art/tags/A-dash/</loc>
     <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
@@ -777,6 +763,20 @@
   
   <url>
     <loc>https://magstic.art/tags/Studio-A/</loc>
+    <lastmod>2025-04-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://magstic.art/tags/%E3%82%88%E3%81%86%E3%81%8B/</loc>
+    <lastmod>2025-04-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://magstic.art/tags/%E9%9B%AA%E3%81%AE%E8%B6%B3%E8%B7%A1/</loc>
     <lastmod>2025-04-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
