@@ -1,0 +1,270 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>JAR 在 Nokia 上的異常處理 | Wind Dream</title><meta name="author" content="Magstic"><meta name="copyright" content="Magstic"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="前奏有時，我們在模擬器上體驗 JAR 遊戲，難免會覺得玻璃觸摸之貧瘠。這時，你會不會想起過去使用 Nokia 的搓按鍵的『嘎嘣脆』爽感呢？歷經求仙問道，翻新踩坑，最終你獲得了某台性能優秀的二手 S60V3 FP2 裝置。在運行 JAR 檔的過程中，你卻發現了各種異常情況？  在開始前，您必須掌握以下技巧：  基本的檔案編輯能力 基本理解檔案路徑的概念 使用壓縮工具 解包&amp;打包 JAR">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAR 在 Nokia 上的異常處理">
+<meta property="og:url" content="https://magstic.art/2025/04/16/09/index.html">
+<meta property="og:site_name" content="Wind Dream">
+<meta property="og:description" content="前奏有時，我們在模擬器上體驗 JAR 遊戲，難免會覺得玻璃觸摸之貧瘠。這時，你會不會想起過去使用 Nokia 的搓按鍵的『嘎嘣脆』爽感呢？歷經求仙問道，翻新踩坑，最終你獲得了某台性能優秀的二手 S60V3 FP2 裝置。在運行 JAR 檔的過程中，你卻發現了各種異常情況？  在開始前，您必須掌握以下技巧：  基本的檔案編輯能力 基本理解檔案路徑的概念 使用壓縮工具 解包&amp;打包 JAR">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://magstic.top/Aojiru/name/052mokou3%E3%80%8C%E8%97%A4%E5%8E%9F%E3%80%8C%E6%BB%85%E7%BD%AA%E5%AF%BA%E9%99%A2%E5%82%B7%E3%80%8D%E3%80%8D.jpg">
+<meta property="article:published_time" content="2025-04-15T16:34:28.000Z">
+<meta property="article:modified_time" content="2025-04-15T08:11:21.435Z">
+<meta property="article:author" content="Magstic">
+<meta property="article:tag" content="J2ME">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://magstic.top/Aojiru/name/052mokou3%E3%80%8C%E8%97%A4%E5%8E%9F%E3%80%8C%E6%BB%85%E7%BD%AA%E5%AF%BA%E9%99%A2%E5%82%B7%E3%80%8D%E3%80%8D.jpg"><link rel="shortcut icon" href="https://magstic.art/images/avatar.jpg"><link rel="canonical" href="https://magstic.art/2025/04/16/09/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":0,"unescape":false,"languages":{"hits_empty":"找不到您查詢的內容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":120},
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支援'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '剛剛',
+    min: '分鐘前',
+    hour: '小時前',
+    day: '天前',
+    month: '個月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'JAR 在 Nokia 上的異常處理',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-04-15 08:11:21'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/universe.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://magstic.art/images/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">3</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 歸類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-paper-plane"></i><span> 關於</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-light fa-earth-americas"></i><span> 聆風</span></a></div><div class="menus_item"><a class="site-page" href="/message/"><i class="fa-fw fas fa-shoe-prints"></i><span> 足跡</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Wind Dream"><span class="site-name">Wind Dream</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-search fa-fw"></i><span> 搜尋</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 歸類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-paper-plane"></i><span> 關於</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-light fa-earth-americas"></i><span> 聆風</span></a></div><div class="menus_item"><a class="site-page" href="/message/"><i class="fa-fw fas fa-shoe-prints"></i><span> 足跡</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">JAR 在 Nokia 上的異常處理</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">發表於</span><time class="post-meta-date-created" datetime="2025-04-15T16:34:28.000Z" title="發表於 2025-04-15 16:34:28">2025-04-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新於</span><time class="post-meta-date-updated" datetime="2025-04-15T08:11:21.435Z" title="更新於 2025-04-15 08:11:21">2025-04-15</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%A1%B5%E5%B0%81/">塵封</a></span></div><div class="meta-secondline"></div></div></div><article class="post-content" id="article-container"><div class = "lista">
+
+<h2 id="前奏"><a href="#前奏" class="headerlink" title="前奏"></a>前奏</h2><p><em>有時，我們在模擬器上體驗 JAR 遊戲，難免會覺得玻璃觸摸之貧瘠。<br>這時，你會不會想起過去使用 Nokia 的搓按鍵的『嘎嘣脆』爽感呢？<br>歷經求仙問道，翻新踩坑，最終你獲得了某台性能優秀的二手 S60V3 FP2 裝置。<br>在運行 JAR 檔的過程中，你卻發現了各種異常情況？</em></p>
+<hr>
+<p><strong>在開始前，您必須掌握以下技巧：</strong></p>
+<ul>
+<li>基本的檔案編輯能力</li>
+<li>基本理解檔案路徑的概念</li>
+<li>使用壓縮工具 解包&amp;打包 JAR</li>
+</ul>
+<p><strong>在開始前，您必須確認以下問題：</strong></p>
+<ul>
+<li>使用最適合 JAR 運行的 S60V3 FP2 系統</li>
+<li>裝置的 <strong>性能</strong>&amp;<strong>兼容</strong> 匹配所下載的 JAR 檔</li>
+</ul>
+<p>如果確認無誤，那麽便開始正題。</p>
+<hr>
+<h2 id="JAR-檔無效（JAR-文件无效）"><a href="#JAR-檔無效（JAR-文件无效）" class="headerlink" title="JAR 檔無效（JAR 文件无效）"></a>JAR 檔無效（JAR 文件无效）</h2><h3 id="打開-JAR-時，提示『JAR-檔無效』"><a href="#打開-JAR-時，提示『JAR-檔無效』" class="headerlink" title="打開 JAR 時，提示『JAR 檔無效』"></a>打開 JAR 時，提示『JAR 檔無效』</h3><p>如果該 JAR 在 VM 上可正常執行，那麽便是 <code>MANIFEST.MF</code> 檔的 <strong>編碼</strong> 所致。<br>使用文本編輯工具，打開 <code>MANIFEST.MF</code> 檔，選擇編碼為 <code>UTF-8</code>，然後保存並重新打包。</p>
+<p>如果該 JAR 在 VM 上不可正常執行，那麽基本上是 JAR 檔損壞。<br>這時 <strong>重新下載該 JAR</strong> 或是 <strong>尋找該 JAR 的其他版本</strong> 會很有幫助。</p>
+<h3 id="安裝-JAR-至-70-時，提示『JAR-檔無效』"><a href="#安裝-JAR-至-70-時，提示『JAR-檔無效』" class="headerlink" title="安裝 JAR 至 70%時，提示『JAR 檔無效』"></a>安裝 JAR 至 70%時，提示『JAR 檔無效』</h3><p>如果該 JAR 在 VM 上可正常執行，那麽便是 <code>MANIFEST.MF</code> 檔的 <strong>内容</strong> 所致。<br>該情況缺乏足量的樣本，這裡便淺顯地以《<a target="_blank" rel="noopener" href="https://magstic.top/Sitemedia/OldPhone/%E7%A9%BA%E8%89%B2%E5%AD%A3%E8%8A%82.jar">戀愛主義-空色季節</a>》為例。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">Manifest-Version:</span> <span class="number">1.0</span></span><br><span class="line"><span class="attr">MIDlet-Vendor:</span> <span class="string">GemmyPlanet</span></span><br><span class="line"><span class="attr">MIDlet-Version:</span> <span class="number">1.0</span><span class="number">.0</span></span><br><span class="line"><span class="attr">MIDlet-1:</span> <span class="string">恋爱主义-空色的季节,/i.png,Renai_MIDlet</span></span><br><span class="line"><span class="attr">MicroEdition-Configuration:</span> <span class="string">CLDC-1.0</span></span><br><span class="line"><span class="attr">MIDlet-Permissions-opt:</span> <span class="string">javax.microedition.io.Connector.socket</span></span><br><span class="line"><span class="attr">MIDlet-Icon:</span> <span class="string">/i.png</span></span><br><span class="line"><span class="attr">MIDlet-Name:</span> <span class="string">恋爱主义-空色的季节</span></span><br><span class="line"><span class="attr">MicroEdition-Profile:</span> <span class="string">MIDP-2.0</span></span><br><span class="line"><span class="attr">MIDlet-Permissions:</span> <span class="string">javax.microedition.io.Connector.http</span></span><br></pre></td></tr></table></figure>
+
+<p><code>MIDlet-Permissions-opt</code> 表示可選的權限，而 <strong>Nokia 基本不允許安裝請求 <code>socket</code> 權限的未簽章 MIDlet</strong>，即便是 <code>Opt（可選權限）</code>。</p>
+<p>我們將該行刪除，並保存 <code>MANIFEST.MF</code> 為 <code>UTF-8</code> 編碼即可。</p>
+<hr>
+<h2 id="JAR-在安裝後，無法打開或閃退"><a href="#JAR-在安裝後，無法打開或閃退" class="headerlink" title="JAR 在安裝後，無法打開或閃退"></a>JAR 在安裝後，無法打開或閃退</h2><p>在該情況下，安裝 JAR 後，系統會彈出『安裝完成』，而非打開應用的選項卡。<br>如果該 JAR 在 VM 上可正常執行，那麽便是 <code>MANIFEST.MF</code> 檔的 <strong>内容</strong> 所致。</p>
+<p>該處以 華娛無線（CWA）的《<a target="_blank" rel="noopener" href="https://magstic.top/Sitemedia/OldPhone/%E6%B0%B4%E6%B5%92.jar">水滸</a>》為例。<br><em>Tip: 這并非推薦，而是 CWA 的遊戲是此類異常的重災區。</em></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">MIDlet-Icon:</span> <span class="string">/a.png</span></span><br><span class="line"><span class="attr">MIDlet-1:</span> <span class="string">水浒-华娱版,</span> <span class="string">/a.png,</span> <span class="string">src.GameMIDlet</span></span><br><span class="line"><span class="attr">MIDlet-Description:</span> <span class="string">这是一款拥有华丽战斗风格和眩目必杀技系统的格斗游戏,N73系列</span></span><br><span class="line"><span class="attr">MIDlet-Name:</span> <span class="string">水浒-华娱版</span></span><br><span class="line"><span class="attr">MIDlet-Vendor:</span> <span class="string">华娱无线</span></span><br><span class="line"><span class="attr">MIDlet-Version:</span> <span class="number">1.0</span></span><br><span class="line"><span class="attr">MicroEdition-Configuration:</span> <span class="string">CLDC-1.0</span></span><br><span class="line"><span class="attr">MicroEdition-Profile:</span> <span class="string">MIDP-1.0</span></span><br><span class="line"><span class="attr">palnum:</span> <span class="number">0008</span></span><br></pre></td></tr></table></figure>
+
+<p>該 <code>MANIFEST.MF</code> 檔的修改點在於 **<code>MIDlet-Vendor</code>**。<br>若 <strong><code>MIDlet-Vendor</code></strong> 的填入大於三個漢字，則會觸發該情況。</p>
+<p>我們將該行修改為 <code>MIDlet-Vendor: CWA</code>，並保存 <code>MANIFEST.MF</code> 為 <code>UTF-8</code> 編碼即可。<br><em>Tip: 修改為『華娛』亦可，但我的經驗是『使用英文可以更好規避異常』。</em></p>
+<hr>
+<h2 id="授權失敗（授权失败）"><a href="#授權失敗（授权失败）" class="headerlink" title="授權失敗（授权失败）"></a>授權失敗（授权失败）</h2><p>這類 JAR 檔，在解包後均有一個特殊的路徑：**<code>./com/nokia</code>**。<br>代表性的樣本檔為 『<a target="_blank" rel="noopener" href="https://magstic.top/Sitemedia/OldPhone/MeBoy-F.jar">MeBoy-F.jar</a>』和 『<a target="_blank" rel="noopener" href="https://magstic.top/Sitemedia/OldPhone/%E6%B4%9B%E5%9F%8E%E5%AF%86%E6%8E%A2-%E8%BF%BD%E5%87%BB%E8%B5%9B%E8%BD%A6.jar">洛城密探之追击赛车.jar</a>』。</p>
+<p>解決方式亦非常簡單：移除 <code>Nokia</code> 資料夾之後，重新打包即可。</p>
+<hr>
+<h2 id="資料權限請求頻繁（文件权限请求频繁）"><a href="#資料權限請求頻繁（文件权限请求频繁）" class="headerlink" title="資料權限請求頻繁（文件权限请求频繁）"></a>資料權限請求頻繁（文件权限请求频繁）</h2><p>這并非異常，而是 Nokia 對 JAR 檔存在嚴格的權限管理。<br>在解決之前，我們需要破解手機，攻略自尋。如果某一天破解教程絕跡，或許也會貼在這裡。</p>
+<p>在破解後，桌面上會有一個名為『RomPatcher(深度破解)』的軟體。</p>
+<ol>
+<li>在 RomPatcher 中開啟 <code>Install Server RP+</code>；</li>
+<li>安裝『<a target="_blank" rel="noopener" href="https://magstic.top/Sitemedia/OldPhone/C2Z%E8%A3%9C%E4%B8%81%E7%94%9F%E6%88%90%E5%99%A8.sisx">C2Z 補丁生成器.sisx</a>』，生成『c2z.rmp』；</li>
+<li>下載『<a target="_blank" rel="noopener" href="https://magstic.top/Sitemedia/OldPhone/Java%E6%AC%8A%E9%99%90%E8%A3%9C%E4%B8%81%20For%20C2Z.zip">JAVA權限補丁</a>』，解壓至 <code>C://system/data/midp2/security/policy</code>；</li>
+<li>移動『c2z.rmp』至 <code>C://patches</code>，並在 RomPatcher 中開啟 <code>c2z</code>；</li>
+<li>程式管理 - 安裝應用程式 -【程式名】- 設定- 讀取&amp;修改用戶資料 - 長期允許。</li>
+</ol>
+<p>現在，我們可以自由地在 JAR 軟體中讀寫本地資料。</p>
+<hr>
+<h2 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h2><p>這篇貼文是意料之外的……實際上，我已經有四年沒有玩 Symbian 了。<br>創作動機的話，是因為最近有閑，心血來潮想把玩手中的機器。But……我也遭遇了一個相同的問題……更糟的是，我几乎把 Symbian 的玩機心得忘了個精光。</p>
+<p>網路上查詢到的結果，也都是無用的。我只能憑藉記憶摸索，最終總結出了這篇貼文，基本均為普遍性的問題。一些情況過於個例（如《精靈仙境》只能在特定系統時間運行 ），不再多費筆墨。</p>
+<p>我相信它不完美，但我相信對搜索而來的你絕對有用……大概。<br>貼文的搜索權重在『JAR』和『Nokia』上，真的能被搜索到嗎……至少，我屏蔽了 Baidu。</p>
+<p>如果有更多異常情況，歡迎留下你的足跡 : )</p>
+</div>
+
+<style>
+#article-container {
+    font-size: 1.0rem;
+    letter-spacing: 1.6px;
+}
+</style><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script></article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/J2ME/">J2ME</a></div><div class="post_share"><div class="social-share" data-image="https://magstic.top/Aojiru/name/052mokou3%E3%80%8C%E8%97%A4%E5%8E%9F%E3%80%8C%E6%BB%85%E7%BD%AA%E5%AF%BA%E9%99%A2%E5%82%B7%E3%80%8D%E3%80%8D.jpg" data-sites="facebook,twitter"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2025/04/11/08/" title="東方同人曲個人向 Top.100"><img class="cover" src="https://magstic.top/Aojiru/name/144KOTETSU.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">東方同人曲個人向 Top.100</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 評論</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://magstic.art/images/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Magstic</div><div class="author-info__description">聆听自然之風</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">3</div></a></div><a id="card-info-btn" href="mailto:mastic.cn@gmail.com" rel="external nofollow noreferrer"><i class="fab fa-google"></i><span>Gmail</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">資料庫維護完畢，<br>請清理本站快取和Cookie。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目錄</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E5%A5%8F"><span class="toc-number">1.</span> <span class="toc-text">前奏</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JAR-%E6%AA%94%E7%84%A1%E6%95%88%EF%BC%88JAR-%E6%96%87%E4%BB%B6%E6%97%A0%E6%95%88%EF%BC%89"><span class="toc-number">2.</span> <span class="toc-text">JAR 檔無效（JAR 文件无效）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%93%E9%96%8B-JAR-%E6%99%82%EF%BC%8C%E6%8F%90%E7%A4%BA%E3%80%8EJAR-%E6%AA%94%E7%84%A1%E6%95%88%E3%80%8F"><span class="toc-number">2.1.</span> <span class="toc-text">打開 JAR 時，提示『JAR 檔無效』</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%9D-JAR-%E8%87%B3-70-%E6%99%82%EF%BC%8C%E6%8F%90%E7%A4%BA%E3%80%8EJAR-%E6%AA%94%E7%84%A1%E6%95%88%E3%80%8F"><span class="toc-number">2.2.</span> <span class="toc-text">安裝 JAR 至 70%時，提示『JAR 檔無效』</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JAR-%E5%9C%A8%E5%AE%89%E8%A3%9D%E5%BE%8C%EF%BC%8C%E7%84%A1%E6%B3%95%E6%89%93%E9%96%8B%E6%88%96%E9%96%83%E9%80%80"><span class="toc-number">3.</span> <span class="toc-text">JAR 在安裝後，無法打開或閃退</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%88%E6%AC%8A%E5%A4%B1%E6%95%97%EF%BC%88%E6%8E%88%E6%9D%83%E5%A4%B1%E8%B4%A5%EF%BC%89"><span class="toc-number">4.</span> <span class="toc-text">授權失敗（授权失败）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B3%87%E6%96%99%E6%AC%8A%E9%99%90%E8%AB%8B%E6%B1%82%E9%A0%BB%E7%B9%81%EF%BC%88%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E8%AF%B7%E6%B1%82%E9%A2%91%E7%B9%81%EF%BC%89"><span class="toc-number">5.</span> <span class="toc-text">資料權限請求頻繁（文件权限请求频繁）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%B5%90"><span class="toc-number">6.</span> <span class="toc-text">小結</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/04/16/09/" title="JAR 在 Nokia 上的異常處理"><img src="https://magstic.top/Aojiru/name/052mokou3%E3%80%8C%E8%97%A4%E5%8E%9F%E3%80%8C%E6%BB%85%E7%BD%AA%E5%AF%BA%E9%99%A2%E5%82%B7%E3%80%8D%E3%80%8D.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JAR 在 Nokia 上的異常處理"/></a><div class="content"><a class="title" href="/2025/04/16/09/" title="JAR 在 Nokia 上的異常處理">JAR 在 Nokia 上的異常處理</a><time datetime="2025-04-15T16:34:28.000Z" title="發表於 2025-04-15 16:34:28">2025-04-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/04/11/08/" title="東方同人曲個人向 Top.100"><img src="https://magstic.top/Aojiru/name/144KOTETSU.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="東方同人曲個人向 Top.100"/></a><div class="content"><a class="title" href="/2025/04/11/08/" title="東方同人曲個人向 Top.100">東方同人曲個人向 Top.100</a><time datetime="2025-04-10T16:34:28.000Z" title="發表於 2025-04-10 16:34:28">2025-04-10</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By Magstic</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="閱讀模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="單欄和雙欄切換"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="設定"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目錄"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直達評論"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到頂部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://windream.netlify.app/.netlify/functions/twikoo',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://windream.netlify.app/.netlify/functions/twikoo',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.textContent = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜尋</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  資料庫載入中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜尋文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
