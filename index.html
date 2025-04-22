@@ -9,13 +9,13 @@
 <meta property="article:author" content="Magstic">
 <meta property="article:tag" content="Wind Dream,Magstic,Touhou,同人,Doujin,同人音樂">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://magstic.art/images/avatar.jpg"><link rel="shortcut icon" href="https://magstic.art/images/avatar.jpg"><link rel="canonical" href="https://magstic.art/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+<meta name="twitter:image" content="https://magstic.art/images/avatar.jpg"><link rel="shortcut icon" href="https://magstic.art/images/avatar.jpg"><link rel="canonical" href="https://magstic.art/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
   root: '/',
   algolia: undefined,
   localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":0,"unescape":false,"languages":{"hits_empty":"找不到您查詢的內容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
   translate: undefined,
   noticeOutdate: undefined,
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":120},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":120},
   copy: {
     success: '複製成功',
     error: '複製錯誤',
@@ -36,11 +36,9 @@
   copyright: undefined,
   lightbox: 'fancybox',
   Snackbar: undefined,
-  source: {
-    justifiedGallery: {
-      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
-      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
-    }
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '載入更多'
   },
   isPhotoFigcaption: true,
   islazyload: true,
@@ -56,85 +54,78 @@
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2025-04-21 14:59:26'
-}</script><noscript><style type="text/css">
-  #nav {
-    opacity: 1
-  }
-  .justified-gallery img {
-    opacity: 1
-  }
-
-  #recent-posts time,
-  #post-meta time {
-    display: inline !important
-  }
-</style></noscript><script>(win=>{
-    win.saveToLocal = {
-      set: function setWithExpiry(key, value, ttl) {
-        if (ttl === 0) return
-        const now = new Date()
-        const expiryDay = ttl * 86400000
-        const item = {
-          value: value,
-          expiry: now.getTime() + expiryDay,
+  postUpdate: '2025-04-22 03:59:47'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
         }
-        localStorage.setItem(key, JSON.stringify(item))
-      },
-
-      get: function getWithExpiry(key) {
-        const itemStr = localStorage.getItem(key)
-
-        if (!itemStr) {
-          return undefined
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
         }
-        const item = JSON.parse(itemStr)
-        const now = new Date()
 
-        if (now.getTime() > item.expiry) {
-          localStorage.removeItem(key)
-          return undefined
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
         }
-        return item.value
-      }
-    }
-  
-    win.getScript = url => new Promise((resolve, reject) => {
-      const script = document.createElement('script')
-      script.src = url
-      script.async = true
-      script.onerror = reject
-      script.onload = script.onreadystatechange = function() {
-        const loadState = this.readyState
-        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-        script.onload = script.onreadystatechange = null
-        resolve()
-      }
-      document.head.appendChild(script)
-    })
-  
-    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
-      const link = document.createElement('link')
-      link.rel = 'stylesheet'
-      link.href = url
-      if (id) link.id = id
-      link.onerror = reject
-      link.onload = link.onreadystatechange = function() {
-        const loadState = this.readyState
-        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-        link.onload = link.onreadystatechange = null
-        resolve()
-      }
-      document.head.appendChild(link)
-    })
-  
-      win.activateDarkMode = function () {
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
         document.documentElement.setAttribute('data-theme', 'dark')
         if (document.querySelector('meta[name="theme-color"]') !== null) {
           document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
         }
       }
-      win.activateLightMode = function () {
+      win.activateLightMode = () => {
         document.documentElement.setAttribute('data-theme', 'light')
         if (document.querySelector('meta[name="theme-color"]') !== null) {
           document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
@@ -142,9 +133,9 @@
       }
       const t = saveToLocal.get('theme')
     
-          if (t === 'dark') activateDarkMode()
-          else if (t === 'light') activateLightMode()
-        
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
       const asideStatus = saveToLocal.get('aside-status')
       if (asideStatus !== undefined) {
         if (asideStatus === 'hide') {
@@ -154,12 +145,12 @@
         }
       }
     
-    const detectApple = () => {
-      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-        document.documentElement.classList.add('apple')
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
       }
-    }
-    detectApple()
+      detectApple()
     })(window)</script><link rel="stylesheet" href="/css/universe.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://magstic.art/images/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">3</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 歸類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-paper-plane"></i><span> 關於</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-light fa-earth-americas"></i><span> 聆風</span></a></div><div class="menus_item"><a class="site-page" href="/message/"><i class="fa-fw fas fa-shoe-prints"></i><span> 足跡</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Wind Dream"><span class="site-name">Wind Dream</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-search fa-fw"></i><span> 搜尋</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 歸類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-paper-plane"></i><span> 關於</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-light fa-earth-americas"></i><span> 聆風</span></a></div><div class="menus_item"><a class="site-page" href="/message/"><i class="fa-fw fas fa-shoe-prints"></i><span> 足跡</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2025/04/22/10/" title="在 RetroArch 上遊玩 JAR 的心得"><img class="post-bg" src="https://magstic.top/Aojiru/name/052mokou3%E3%80%8C%E8%97%A4%E5%8E%9F%E3%80%8C%E6%BB%85%E7%BD%AA%E5%AF%BA%E9%99%A2%E5%82%B7%E3%80%8D%E3%80%8D.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="在 RetroArch 上遊玩 JAR 的心得"></a></div><div class="recent-post-info"><a class="article-title" href="/2025/04/22/10/" title="在 RetroArch 上遊玩 JAR 的心得">在 RetroArch 上遊玩 JAR 的心得</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2025-04-21T22:59:28.000Z" title="發表於 2025-04-21 22:59:28">2025-04-21</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%A1%B5%E5%B0%81/">塵封</a></span></div><div class="content">
 FreeJ2ME-Plus 是一個適用於 RetroArch 的 J2ME 核心，由 FreeJ2ME Fork 而來。相比於 J2ME-Loader 等成熟的專案，FJ-Plus 的兼容性依然有待提升。但因 AShiningRay 先生對這個專案的忠實維護，使得這個專案幾乎每隔一段時間，就有令人驚嘆的改進。現在，我決定寫下這篇貼文，來介紹如何在 RetroArch 上執行 J2ME 核心。
 
@@ -169,15 +160,16 @@ FreeJ2ME-Plus 是一個適用於 RetroArch 的 J2ME 核心，由 FreeJ2ME Fork �
 老遊戲的支援偏弱
 3D 支援極弱
 無 AMR 媒體支援
-無中文輸入法[^1]
-部分簡訊操作可能失敗[^2]
+無中文輸入法[1]
+部分簡訊操作可能失敗[2]
 ……優勢
 最棒的著色器支援
 靈活的配置檔管理
 自訂 SF2 音源
-自訂字型[^3]
+自訂字型[3]
 
-[^1]: 為了確保 FJ-Plus 的跨軟體性（AWT&#x2F;Libretro&#x2F;SDL2），未來可能也不會支 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2025/04/16/09/" title="JAR 在 Nokia 上的異常處理"><img class="post-bg" src="https://magstic.top/Aojiru/name/052mokou3%E3%80%8C%E8%97%A4%E5%8E%9F%E3%80%8C%E6%BB%85%E7%BD%AA%E5%AF%BA%E9%99%A2%E5%82%B7%E3%80%8D%E3%80%8D.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JAR 在 Nokia 上的異常處理"></a></div><div class="recent-post-info"><a class="article-title" href="/2025/04/16/09/" title="JAR 在 Nokia 上的異常處理">JAR 在 Nokia 上的異常處理</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2025-04-15T16:34:28.000Z" title="發表於 2025-04-15 16:34:28">2025-04-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%A1%B5%E5%B0%81/">塵封</a></span></div><div class="content">
+
+準備環境系統：Windows &#x2F; Linux[4]環境：Adoptium OpenJRE 8[5]硬體：RetroAr ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2025/04/16/09/" title="JAR 在 Nokia 上的異常處理"><img class="post-bg" src="https://magstic.top/Aojiru/name/052mokou3%E3%80%8C%E8%97%A4%E5%8E%9F%E3%80%8C%E6%BB%85%E7%BD%AA%E5%AF%BA%E9%99%A2%E5%82%B7%E3%80%8D%E3%80%8D.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JAR 在 Nokia 上的異常處理"></a></div><div class="recent-post-info"><a class="article-title" href="/2025/04/16/09/" title="JAR 在 Nokia 上的異常處理">JAR 在 Nokia 上的異常處理</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2025-04-15T16:34:28.000Z" title="發表於 2025-04-15 16:34:28">2025-04-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%A1%B5%E5%B0%81/">塵封</a></span></div><div class="content">
 
 前奏有時，我們在模擬器上體驗 JAR 遊戲，難免會覺得玻璃觸摸之貧瘠。這時，你會不會想起過去使用 Nokia 的搓按鍵的『嘎嘣脆』爽感呢？歷經求仙問道，翻新踩坑，最終你獲得了某台性能優秀的二手 S60V3 FP2 裝置。在運行 JAR 檔的過程中，你卻發現了各種異常情況？
 
@@ -327,4 +319,4 @@ Yohka is the master of the Doujin circle “雪の足跡” and is active in the
 
  ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/05/11/01/" title="新的開始"><img class="post-bg" src="https://magstic.top/Aojiru/name/047Rain「雨と毒人形」.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="新的開始"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/05/11/01/" title="新的開始">新的開始</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">發表於</span><time datetime="2023-05-11T06:37:31.000Z" title="發表於 2023-05-11 06:37:31">2023-05-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%BF%83%E9%A2%A8/">心風</a></span></div><div class="content">Hi，這裡是Magstic，這是我的新站點。源站點因伺服器故障棄之，我十分遺憾。資料庫雖有備份，伺服器之無常亦惹人心煩。這個站點架設於Github，穩定性相信遠勝於前者。
 接下來的行動？CD文章并無價值，不會花時間去整理。整理的重心會放置在青汁的紀念頁面中。在此之前，我想需要學習一些Hexo的知識？嘛，就這樣。
-</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://magstic.art/images/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Magstic</div><div class="author-info__description">聆听自然之風</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">3</div></a></div><a id="card-info-btn" href="mailto:mastic.cn@gmail.com" rel="external nofollow noreferrer"><i class="fab fa-google"></i><span>Gmail</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">資料庫維護完畢，<br>請清理本站快取和Cookie。</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/04/22/10/" title="在 RetroArch 上遊玩 JAR 的心得"><img src="https://magstic.top/Aojiru/name/052mokou3%E3%80%8C%E8%97%A4%E5%8E%9F%E3%80%8C%E6%BB%85%E7%BD%AA%E5%AF%BA%E9%99%A2%E5%82%B7%E3%80%8D%E3%80%8D.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="在 RetroArch 上遊玩 JAR 的心得"/></a><div class="content"><a class="title" href="/2025/04/22/10/" title="在 RetroArch 上遊玩 JAR 的心得">在 RetroArch 上遊玩 JAR 的心得</a><time datetime="2025-04-21T22:59:28.000Z" title="發表於 2025-04-21 22:59:28">2025-04-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/04/16/09/" title="JAR 在 Nokia 上的異常處理"><img src="https://magstic.top/Aojiru/name/052mokou3%E3%80%8C%E8%97%A4%E5%8E%9F%E3%80%8C%E6%BB%85%E7%BD%AA%E5%AF%BA%E9%99%A2%E5%82%B7%E3%80%8D%E3%80%8D.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JAR 在 Nokia 上的異常處理"/></a><div class="content"><a class="title" href="/2025/04/16/09/" title="JAR 在 Nokia 上的異常處理">JAR 在 Nokia 上的異常處理</a><time datetime="2025-04-15T16:34:28.000Z" title="發表於 2025-04-15 16:34:28">2025-04-15</time></div></div></div></div><div class="card-widget Links" id="Links"><div class="item-headline"><i class="fa-solid fa-link"></i><span>連結</span></div><div class="item-content"><a target="_blank" rel="noopener external nofollow noreferrer" href="https://altneuland.net">アルトノイラント</a><br><a target="_blank" rel="noopener external nofollow noreferrer" href="https://bloak.github.io/touhou_piano_library/index.html">Touhou Piano Library</a><br><a target="_blank" rel="noopener external nofollow noreferrer" href="http://abab.dip.jp/">海老福落雷電解研究所</a></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By Magstic</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="hide-aside-btn" type="button" title="單欄和雙欄切換"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="go-up" type="button" title="回到頂部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"></div><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜尋</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  資料庫載入中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜尋文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
+</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://magstic.art/images/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Magstic</div><div class="author-info__description">聆听自然之風</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">3</div></a></div><a id="card-info-btn" href="mailto:mastic.cn@gmail.com" rel="external nofollow noreferrer"><i class="fab fa-google"></i><span>Gmail</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">資料庫維護完畢，<br>請清理本站快取和Cookie。</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/04/22/10/" title="在 RetroArch 上遊玩 JAR 的心得"><img src="https://magstic.top/Aojiru/name/052mokou3%E3%80%8C%E8%97%A4%E5%8E%9F%E3%80%8C%E6%BB%85%E7%BD%AA%E5%AF%BA%E9%99%A2%E5%82%B7%E3%80%8D%E3%80%8D.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="在 RetroArch 上遊玩 JAR 的心得"/></a><div class="content"><a class="title" href="/2025/04/22/10/" title="在 RetroArch 上遊玩 JAR 的心得">在 RetroArch 上遊玩 JAR 的心得</a><time datetime="2025-04-21T22:59:28.000Z" title="發表於 2025-04-21 22:59:28">2025-04-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/04/16/09/" title="JAR 在 Nokia 上的異常處理"><img src="https://magstic.top/Aojiru/name/052mokou3%E3%80%8C%E8%97%A4%E5%8E%9F%E3%80%8C%E6%BB%85%E7%BD%AA%E5%AF%BA%E9%99%A2%E5%82%B7%E3%80%8D%E3%80%8D.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JAR 在 Nokia 上的異常處理"/></a><div class="content"><a class="title" href="/2025/04/16/09/" title="JAR 在 Nokia 上的異常處理">JAR 在 Nokia 上的異常處理</a><time datetime="2025-04-15T16:34:28.000Z" title="發表於 2025-04-15 16:34:28">2025-04-15</time></div></div></div></div><div class="card-widget Links" id="Links"><div class="item-headline"><i class="fa-solid fa-link"></i><span>連結</span></div><div class="item-content"><a target="_blank" rel="noopener external nofollow noreferrer" href="https://altneuland.net">アルトノイラント</a><br><a target="_blank" rel="noopener external nofollow noreferrer" href="https://bloak.github.io/touhou_piano_library/index.html">Touhou Piano Library</a><br><a target="_blank" rel="noopener external nofollow noreferrer" href="http://abab.dip.jp/">海老福落雷電解研究所</a></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By Magstic</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主題 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="hide-aside-btn" type="button" title="單欄和雙欄切換"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="go-up" type="button" title="返回頂部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"></div><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜尋</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  資料庫載入中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜尋文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

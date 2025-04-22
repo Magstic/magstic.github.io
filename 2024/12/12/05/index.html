@@ -15,13 +15,13 @@
 <meta property="article:tag" content="なみへい">
 <meta property="article:tag" content="Studio A&#39;">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://magstic.top/StudioA/Ragnarok%20Online%20Piano%20Arrange[%E3%83%97%E3%83%AC%E3%82%B9%E7%89%88].jpg"><link rel="shortcut icon" href="https://magstic.art/images/avatar.jpg"><link rel="canonical" href="https://magstic.art/2024/12/12/05/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+<meta name="twitter:image" content="https://magstic.top/StudioA/Ragnarok%20Online%20Piano%20Arrange[%E3%83%97%E3%83%AC%E3%82%B9%E7%89%88].jpg"><link rel="shortcut icon" href="https://magstic.art/images/avatar.jpg"><link rel="canonical" href="https://magstic.art/2024/12/12/05/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
   root: '/',
   algolia: undefined,
   localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":0,"unescape":false,"languages":{"hits_empty":"找不到您查詢的內容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
   translate: undefined,
   noticeOutdate: undefined,
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":120},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":120},
   copy: {
     success: '複製成功',
     error: '複製錯誤',
@@ -42,11 +42,9 @@
   copyright: undefined,
   lightbox: 'fancybox',
   Snackbar: undefined,
-  source: {
-    justifiedGallery: {
-      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
-      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
-    }
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '載入更多'
   },
   isPhotoFigcaption: true,
   islazyload: true,
@@ -63,84 +61,77 @@
   isHighlightShrink: false,
   isToc: true,
   postUpdate: '2025-03-30 13:18:42'
-}</script><noscript><style type="text/css">
-  #nav {
-    opacity: 1
-  }
-  .justified-gallery img {
-    opacity: 1
-  }
-
-  #recent-posts time,
-  #post-meta time {
-    display: inline !important
-  }
-</style></noscript><script>(win=>{
-    win.saveToLocal = {
-      set: function setWithExpiry(key, value, ttl) {
-        if (ttl === 0) return
-        const now = new Date()
-        const expiryDay = ttl * 86400000
-        const item = {
-          value: value,
-          expiry: now.getTime() + expiryDay,
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
         }
-        localStorage.setItem(key, JSON.stringify(item))
-      },
-
-      get: function getWithExpiry(key) {
-        const itemStr = localStorage.getItem(key)
-
-        if (!itemStr) {
-          return undefined
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
         }
-        const item = JSON.parse(itemStr)
-        const now = new Date()
 
-        if (now.getTime() > item.expiry) {
-          localStorage.removeItem(key)
-          return undefined
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
         }
-        return item.value
-      }
-    }
-  
-    win.getScript = url => new Promise((resolve, reject) => {
-      const script = document.createElement('script')
-      script.src = url
-      script.async = true
-      script.onerror = reject
-      script.onload = script.onreadystatechange = function() {
-        const loadState = this.readyState
-        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-        script.onload = script.onreadystatechange = null
-        resolve()
-      }
-      document.head.appendChild(script)
-    })
-  
-    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
-      const link = document.createElement('link')
-      link.rel = 'stylesheet'
-      link.href = url
-      if (id) link.id = id
-      link.onerror = reject
-      link.onload = link.onreadystatechange = function() {
-        const loadState = this.readyState
-        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-        link.onload = link.onreadystatechange = null
-        resolve()
-      }
-      document.head.appendChild(link)
-    })
-  
-      win.activateDarkMode = function () {
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
         document.documentElement.setAttribute('data-theme', 'dark')
         if (document.querySelector('meta[name="theme-color"]') !== null) {
           document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
         }
       }
-      win.activateLightMode = function () {
+      win.activateLightMode = () => {
         document.documentElement.setAttribute('data-theme', 'light')
         if (document.querySelector('meta[name="theme-color"]') !== null) {
           document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
@@ -148,9 +139,9 @@
       }
       const t = saveToLocal.get('theme')
     
-          if (t === 'dark') activateDarkMode()
-          else if (t === 'light') activateLightMode()
-        
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
       const asideStatus = saveToLocal.get('aside-status')
       if (asideStatus !== undefined) {
         if (asideStatus === 'hide') {
@@ -160,13 +151,13 @@
         }
       }
     
-    const detectApple = () => {
-      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-        document.documentElement.classList.add('apple')
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
       }
-    }
-    detectApple()
-    })(window)</script><link rel="stylesheet" href="/css/universe.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://magstic.art/images/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">3</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 歸類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-paper-plane"></i><span> 關於</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-light fa-earth-americas"></i><span> 聆風</span></a></div><div class="menus_item"><a class="site-page" href="/message/"><i class="fa-fw fas fa-shoe-prints"></i><span> 足跡</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Wind Dream"><span class="site-name">Wind Dream</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-search fa-fw"></i><span> 搜尋</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 歸類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-paper-plane"></i><span> 關於</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-light fa-earth-americas"></i><span> 聆風</span></a></div><div class="menus_item"><a class="site-page" href="/message/"><i class="fa-fw fas fa-shoe-prints"></i><span> 足跡</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">Studio A'，來自 B+</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">發表於</span><time class="post-meta-date-created" datetime="2024-12-11T20:36:49.000Z" title="發表於 2024-12-11 20:36:49">2024-12-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新於</span><time class="post-meta-date-updated" datetime="2025-03-30T13:18:42.987Z" title="更新於 2025-03-30 13:18:42">2025-03-30</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E9%9B%A8%E8%91%89/">雨葉</a></span></div><div class="meta-secondline"></div></div></div><article class="post-content" id="article-container"><link rel="stylesheet" href="/css/music-list.css" type="text/css"><link rel="stylesheet" href="/css/see-also.css" type="text/css"><link rel="stylesheet" href="/css/album-card.css" type="text/css"><div class="note warning flat"><p>該 Post 由多方資料整理而來。<br>如有謬誤或缺漏，請透過電子郵件聯絡我，萬分感謝。</p>
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/universe.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://magstic.art/images/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">3</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 歸類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-paper-plane"></i><span> 關於</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-light fa-earth-americas"></i><span> 聆風</span></a></div><div class="menus_item"><a class="site-page" href="/message/"><i class="fa-fw fas fa-shoe-prints"></i><span> 足跡</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Wind Dream"><span class="site-name">Wind Dream</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-search fa-fw"></i><span> 搜尋</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 歸類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-paper-plane"></i><span> 關於</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-light fa-earth-americas"></i><span> 聆風</span></a></div><div class="menus_item"><a class="site-page" href="/message/"><i class="fa-fw fas fa-shoe-prints"></i><span> 足跡</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">Studio A'，來自 B+</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">發表於</span><time class="post-meta-date-created" datetime="2024-12-11T20:36:49.000Z" title="發表於 2024-12-11 20:36:49">2024-12-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新於</span><time class="post-meta-date-updated" datetime="2025-03-30T13:18:42.987Z" title="更新於 2025-03-30 13:18:42">2025-03-30</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E9%9B%A8%E8%91%89/">雨葉</a></span></div><div class="meta-secondline"></div></div></div><article class="post-content" id="article-container"><link rel="stylesheet" href="/css/see-also.css" type="text/css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" href="/css/album-card.css" type="text/css"><div class="note warning flat"><p>該 Post 由多方資料整理而來。<br>如有謬誤或缺漏，請透過電子郵件聯絡我，萬分感謝。</p>
 </div>
 <blockquote>
 <p><em><strong>社團：Studio A’<br>主催：B+<br>型別：協作<br>領域：同人音樂<br>狀態：休止</strong></em></p>
@@ -175,11 +166,11 @@
 </div>
 
 <hr>
-<h2 id="簡介："><a href="#簡介：" class="headerlink" title="簡介："></a><em><strong>簡介：</strong></em></h2><div class="tabs" id="text"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#text-1">CN</button></li><li class="tab"><button type="button" data-href="#text-2">EN</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="text-1"><blockquote>
+<h2 id="簡介："><a href="#簡介：" class="headerlink" title="簡介："></a><em><strong>簡介：</strong></em></h2><div class="tabs" id="text"><ul class="nav-tabs"><button type="button" class="tab  active" data-href="text-1">CN</button><button type="button" class="tab " data-href="text-2">EN</button></ul><div class="tab-contents"><div class="tab-item-content active" id="text-1"><blockquote>
 <p>Studio A’ 成立於 2001 年 10 月，由 B+ 組織發起，A-dash 擔任主編曲。主要進行《仙境傳説》、KEY社 以及 Leaf社 等 GAME MUSIC 的同人改編。<br><br>社團音樂風格主要分為鋼琴與金屬。鋼琴方面，多使用簡單的和弦以突出旋律的抒情性，偶爾也使用柔和的氛圍音營造憂鬱感；金屬方面，則是透過富有感染力的實錄電吉他，並搭配合成器混音來創造強烈的情感張力。<br><br>2006年，Studio A’在發佈最後一張 CD 《TirNanorg 青空の下の日々》後，便逐漸因A-dash的淡出走向解散。2012 年，A-Dash 和 Namihei 組建了 ANastasia ，接管了 Studio A’ 的同人音樂活動。<br><br>2018年，隨著 Namihei 的淡出，ANastasia的同人活動也陷入停滯。事實上，ANastasia 在 2012 年起始便逐漸被 Dangerous Mezashi Cat 所吸收，2012 年末的《東方交戦劇》是最後記錄 ANastasia 的同人作品。<br><br>2019年，B+ 計劃復活 Studio A’，但由於内部和外部的雙重矛盾，StudioA’ Reboot 最終在年底徹底走向終結。</p>
-</blockquote><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="text-2"><blockquote>
+</blockquote></div><div class="tab-item-content" id="text-2"><blockquote>
 <p>Studio A’ was founded in October 2001, with B+ as the organizer and A-dash as the main arranger. They primarily focused on creating doujin  arrangements of game music from titles like Ragnarok Online, as well as games by KEY and Leaf.<br><br>The circle’s musical style can be broken down into two main categories: piano and metal. For their piano pieces, they often used simple chord progressions to highlight the lyrical melodies, occasionally incorporating soft ambient sounds to create a melancholic atmosphere. As for  metal tracks, they achieved intense emotional impact through powerful live-recorded electric guitar parts combined with synthesizer mixing.<br><br>In 2006, following the release of their final CD “TirNanorg 青空の下の日々”, Studio A’ gradually dissolved due to A-dash’s withdrawal from the scene. In 2012, A-Dash and Namihei formed ANastasia, which took over Studio A’ is doujin music activities.<br><br>By 2018, ANastasia’s doujin activities stagnated following Namihei’s gradual departure. In fact, ANastasia had been progressively absorbed into Dangerous Mezashi Cat since its inception in 2012. The last appearance of the ANastasia name was in “東方冥異伝” (2023).<br>In 2019, B+ planned to revive Studio A’, but due to both internal conflicts and external pressures, StudioA’ Reboot ultimately came to a definitive end by the close of that year.</p>
-</blockquote><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>
+</blockquote></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
 
 <hr>
 <h2 id="社員："><a href="#社員：" class="headerlink" title="社員："></a><em><strong>社員：</strong></em></h2><h3 id="Studio-A’"><a href="#Studio-A’" class="headerlink" title="Studio A’"></a><strong>Studio A’</strong></h3><blockquote>
@@ -222,7 +213,7 @@
 
     <div class="album-card">
       <div class="album-main">
-       <div class="album-download"><i class="fa-solid fa-link-slash"></i></div>
+       <div class="album-download"><i class="fa-solid fa-xmark"></i></div>
         <div class="album-cover">
           <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/KANON%20Piano%20Arrange.jpg">
         </div>
@@ -265,7 +256,7 @@
 
     <div class="album-card">
       <div class="album-main">
-       <div class="album-download"><i class="fa-solid fa-link-slash"></i></div>
+       <div class="album-download"><i class="fa-solid fa-xmark"></i></div>
         <div class="album-cover">
           <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/AIR%20Piano%20arrange%20ver.1.jpg">
         </div>
@@ -296,7 +287,7 @@
 
     <div class="album-card">
       <div class="album-main">
-       <div class="album-download"><i class="fa-solid fa-link-slash"></i></div>
+       <div class="album-download"><i class="fa-solid fa-xmark"></i></div>
         <div class="album-cover">
           <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/AIR%20Piano%20arrange%20ver.2.jpg">
         </div>
@@ -369,7 +360,7 @@
 
     <div class="album-card">
       <div class="album-main">
-       <div class="album-download"><i class="fa-solid fa-link-slash"></i></div>
+       <div class="album-download"><i class="fa-solid fa-xmark"></i></div>
         <div class="album-cover">
           <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/Healing%20Heart.jpg">
         </div>
@@ -498,7 +489,7 @@
 
     <div class="album-card">
       <div class="album-main">
-       <div class="album-download"><i class="fa-solid fa-link-slash"></i></div>
+       <div class="album-download"><i class="fa-solid fa-xmark"></i></div>
         <div class="album-cover">
           <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/Romancing%20Kanon[1人ジャケット版].jpg">
         </div>
@@ -756,7 +747,7 @@
 
     <div class="album-card">
       <div class="album-main">
-       <div class="album-download"><i class="fa-solid fa-link-slash"></i></div>
+       <div class="album-download"><i class="fa-solid fa-xmark"></i></div>
         <div class="album-cover">
           <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/Ragnarok%20Online%20Piano%20Arrange[試聽版].jpg">
         </div>
@@ -791,7 +782,7 @@
 
     <div class="album-card">
       <div class="album-main">
-       <div class="album-download"><i class="fa-solid fa-link-slash"></i></div>
+       <div class="album-download"><i class="fa-solid fa-xmark"></i></div>
         <div class="album-cover">
           <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/Ragnarok%20Online%20Piano%20Arrange[CD-R版].jpg">
         </div>
@@ -1198,214 +1189,18 @@
 <hr>
 <h3 id="Guest"><a href="#Guest" class="headerlink" title="Guest"></a><strong>Guest</strong></h3><p>該部分著重於 Studio A’ 的主編曲 A-dash。<br>毫無疑問，這是一個天坑，不論 A-dash 是否是以 Studio A’ 的名義。<br>該 List 以倒序的方式進行編撰，以便於實時更新：<a href="/html/studioa/studioa"><strong>Studio A’ Guest</strong></a><br>本頁面因篇幅所限，該節僅限個人對其部分作品的整理和感想。<br>個人情緒的成分較多，請謹慎閲讀。<br><strong>*若作品在五年内發佈且有購買 LINK，則不提供下載方式。</strong></p>
 <h4 id="鋼琴編曲"><a href="#鋼琴編曲" class="headerlink" title="鋼琴編曲"></a>鋼琴編曲</h4><p>較於他的金屬編曲，他的鋼琴編曲可以說少之又少。<br>若只統計他 Guest 的 CD ，那麽 Piano 有 <code>12</code> 首，且均為東方編曲。<br>他的鋼琴編曲極具辨識度，尤其是每首改編中出現的即興 SOLO，賦予安寧的曲調無盡的觸動。</p>
-<div class="music-list-card"><div class="music-list-title">Track List</div><div class="music-list-content collapsed">
-        <div class="song-item">
-          <span class="song-title">天空の悲恋歌</span>
-          
-            <a href="https://music.youtube.com/watch?v=GqvehXsEjN4&si=NkT5NWdL64mP-El2" class="youtube-link" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-youtube"></i>
-            </a>
-          
-        </div>
-      
-        <div class="song-item">
-          <span class="song-title">Blue Tears Night</span>
-          
-            <a href="https://music.youtube.com/watch?v=kB8nFMxjg5g&si=-7P6Glmsb-B-s6yg" class="youtube-link" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-youtube"></i>
-            </a>
-          
-        </div>
-      
-        <div class="song-item">
-          <span class="song-title">夜明けの空、小さな願い</span>
-          
-            <a href="https://music.youtube.com/watch?v=liiw_u3yb84&si=lSfhPHiwZUZee4Zy" class="youtube-link" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-youtube"></i>
-            </a>
-          
-        </div>
-      
-        <div class="song-item">
-          <span class="song-title">レトロスペクティブ京都</span>
-          
-            <a href="https://music.youtube.com/watch?v=DK-tRPj0Btg&si=tVVprSVvD4PKYP8d" class="youtube-link" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-youtube"></i>
-            </a>
-          
-        </div>
-      
-        <div class="song-item">
-          <span class="song-title">信仰は儚き人間の為に</span>
-          
-            <a href="https://music.youtube.com/watch?v=SA9ailyrVpY&si=HNJ4EnvQbqsZhj5J" class="youtube-link" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-youtube"></i>
-            </a>
-          
-        </div>
-      
-        <div class="song-item">
-          <span class="song-title">キャプテン・ムラサ</span>
-          
-            <a href="https://music.youtube.com/watch?v=iVv2cz8CzNc&si=GmO8LryMEaPR-E5V" class="youtube-link" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-youtube"></i>
-            </a>
-          
-        </div>
-      
-        <div class="song-item">
-          <span class="song-title">渡る者の途絶えた橋</span>
-          
-            <a href="https://music.youtube.com/watch?v=kjrOOIUkUno&si=NNE3QFf3TaCI2mrq" class="youtube-link" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-youtube"></i>
-            </a>
-          
-        </div>
-      
-        <div class="song-item">
-          <span class="song-title">もう歌しか闻こえない</span>
-          
-            <a href="https://music.youtube.com/watch?v=gdKyJ1UGzEQ&si=7LMVhAbjlyOIkJrm" class="youtube-link" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-youtube"></i>
-            </a>
-          
-        </div>
-      
-        <div class="song-item">
-          <span class="song-title">アリスマエステラ</span>
-          
-            <a href="https://music.youtube.com/watch?v=YS9J9MvNUJI&si=sf6k3UasJhHIJeq_" class="youtube-link" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-youtube"></i>
-            </a>
-          
-        </div>
-      
-        <div class="song-item">
-          <span class="song-title">神々が恋した幻想郷</span>
-          
-            <a href="https://music.youtube.com/watch?v=HmXu8ZA8Be8&si=EMBzXD6fk7YpMYhx" class="youtube-link" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-youtube"></i>
-            </a>
-          
-        </div>
-      
-        <div class="song-item">
-          <span class="song-title">東の国の眠らない夜</span>
-          
-            <a href="https://music.youtube.com/watch?v=9C3WWYHZYkc&si=qa2HDOzijdbdLUN1" class="youtube-link" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-youtube"></i>
-            </a>
-          
-        </div>
-      
-        <div class="song-item">
-          <span class="song-title">散りゆく花</span>
-          
-            <a href="https://music.youtube.com/watch?v=C10XnW7GACw&si=aC5H6RTFVfMJdQir" class="youtube-link" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-youtube"></i>
-            </a>
-          
-        </div>
-      </div>
-      <button class="toggle-button" onclick="
-        const content = this.previousElementSibling;
-        const isCollapsed = content.classList.contains('collapsed');
-        content.classList.toggle('collapsed');
-        this.textContent = isCollapsed ? '收起列表' : '展开更多';
-      ">展开更多</button>
-    </div>
+<div class="music-list-card"><div class="music-list-content"><div class="song-item">天空の悲恋歌 https://music.youtube.com/watch?v=GqvehXsEjN4&si=NkT5NWdL64mP-El2</div><div class="song-item">Blue Tears Night https://music.youtube.com/watch?v=kB8nFMxjg5g&si=-7P6Glmsb-B-s6yg</div><div class="song-item">夜明けの空、小さな願い https://music.youtube.com/watch?v=liiw_u3yb84&si=lSfhPHiwZUZee4Zy</div><div class="song-item">レトロスペクティブ京都 https://music.youtube.com/watch?v=DK-tRPj0Btg&si=tVVprSVvD4PKYP8d</div><div class="song-item">信仰は儚き人間の為に https://music.youtube.com/watch?v=SA9ailyrVpY&si=HNJ4EnvQbqsZhj5J</div><div class="song-item">キャプテン・ムラサ https://music.youtube.com/watch?v=iVv2cz8CzNc&si=GmO8LryMEaPR-E5V</div><div class="song-item">渡る者の途絶えた橋 https://music.youtube.com/watch?v=kjrOOIUkUno&si=NNE3QFf3TaCI2mrq</div><div class="song-item">もう歌しか闻こえない https://music.youtube.com/watch?v=gdKyJ1UGzEQ&si=7LMVhAbjlyOIkJrm</div><div class="song-item">アリスマエステラ https://music.youtube.com/watch?v=YS9J9MvNUJI&si=sf6k3UasJhHIJeq_</div><div class="song-item">神々が恋した幻想郷 https://music.youtube.com/watch?v=HmXu8ZA8Be8&si=EMBzXD6fk7YpMYhx</div><div class="song-item">東の国の眠らない夜 https://music.youtube.com/watch?v=9C3WWYHZYkc&si=qa2HDOzijdbdLUN1</div><div class="song-item">散りゆく花 https://music.youtube.com/watch?v=C10XnW7GACw&si=aC5H6RTFVfMJdQir</div></div></div>
 
 <p><strong>SOLO 考據</strong><br>信仰は儚き人間の為に（3:20 —— 《鶺鴒女神 OP》）<br>もう歌しか闻こえない （3:02 —— 《甲賀忍法帖（甲賀忍法帖 OP）》）<br>夜明けの空、小さな願い（5:32 —— 《innocent starter（魔法少女リリカルなのは OP）》）<br>レトロスペクティブ京都（4:48 —— 《ヒカリ（いぬかみっ! OP）》）<br>東の国の眠らない夜（0:30 —— 《果てしなき大海原（FINAL FANTASY Ⅲ）》）</p>
 <hr>
 <h4 id="金屬編曲"><a href="#金屬編曲" class="headerlink" title="金屬編曲"></a>金屬編曲</h4><p>金屬是他的主要編曲風格，且基本都是和 Namihei 合作完成的。<br>因其數量繁多，這裡也只能展示冰山一角。<br>鋼琴的柔情、合成器的激烈，以及電吉他的高亢……使得他的編曲情感飽滿，曲終淚下。</p>
-<div class="music-list-card"><div class="music-list-title">Track List</div><div class="music-list-content">
-        <div class="song-item">
-          <span class="song-title">風の循環 〜 Wind Tour</span>
-          
-            <a href="https://music.youtube.com/watch?v=oD_cSAE6Z1U&si=-G2MxgxwSaqvrurG" class="youtube-link" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-youtube"></i>
-            </a>
-          
-        </div>
-      
-        <div class="song-item">
-          <span class="song-title">Endress Train</span>
-          
-            <a href="https://music.youtube.com/watch?v=d2wbw_16M6c&si=W8ss0rSkxJUvFCAa" class="youtube-link" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-youtube"></i>
-            </a>
-          
-        </div>
-      
-        <div class="song-item">
-          <span class="song-title">狂った月時計</span>
-          
-            <a href="https://music.youtube.com/watch?v=G7q3jjTvqdY&si=gjVfSuE1tP-BWTgS" class="youtube-link" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-youtube"></i>
-            </a>
-          
-        </div>
-      </div></div>
+<div class="music-list-card"><div class="music-list-content"><div class="song-item">風の循環 〜 Wind Tour https://music.youtube.com/watch?v=oD_cSAE6Z1U&si=-G2MxgxwSaqvrurG</div><div class="song-item">Endress Train https://music.youtube.com/watch?v=d2wbw_16M6c&si=W8ss0rSkxJUvFCAa</div><div class="song-item">狂った月時計 https://music.youtube.com/watch?v=G7q3jjTvqdY&si=gjVfSuE1tP-BWTgS</div></div></div>
 
 <h4 id="電子編曲"><a href="#電子編曲" class="headerlink" title="電子編曲"></a>電子編曲</h4><p>電子編曲和金屬編曲之間的的分界點通常是指“電吉他的有無”。<br>我并非專業人士，這一部分就隨意貼一些代表性的編曲。<br>夢幻或是激烈？他的電子系編曲可以是多種多樣的。</p>
-<div class="music-list-card"><div class="music-list-title">Track List</div><div class="music-list-content">
-        <div class="song-item">
-          <span class="song-title">Peaceful</span>
-          
-            <a href="https://music.youtube.com/watch?v=M1fX5yHQG9o&si=cS2qa1SMEJfCROdi" class="youtube-link" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-youtube"></i>
-            </a>
-          
-        </div>
-      
-        <div class="song-item">
-          <span class="song-title">魂の花 〜 Another Dream...</span>
-          
-            <a href="https://music.youtube.com/watch?v=j5TT3df3B38&si=tPqUFoyZhYmZbKm1" class="youtube-link" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-youtube"></i>
-            </a>
-          
-        </div>
-      
-        <div class="song-item">
-          <span class="song-title">星空のセレナーデ</span>
-          
-            <a href="https://music.youtube.com/watch?v=D0WYLrz8TbQ&si=qDxkEonS4NWirru3" class="youtube-link" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-youtube"></i>
-            </a>
-          
-        </div>
-      </div></div>
+<div class="music-list-card"><div class="music-list-content"><div class="song-item">Peaceful https://music.youtube.com/watch?v=M1fX5yHQG9o&si=cS2qa1SMEJfCROdi</div><div class="song-item">魂の花 〜 Another Dream... https://music.youtube.com/watch?v=j5TT3df3B38&si=tPqUFoyZhYmZbKm1</div><div class="song-item">星空のセレナーデ https://music.youtube.com/watch?v=D0WYLrz8TbQ&si=qDxkEonS4NWirru3</div></div></div>
 
 <h4 id="協奏編曲"><a href="#協奏編曲" class="headerlink" title="協奏編曲"></a>協奏編曲</h4><p>若無特殊説明，這裡的協奏編曲一般是指他和 TAM 的合作。<br>兩人都是即興演出，這亦導致大部分作品的整體質量並不太好。<br>即便如此，它們依舊別有風味。</p>
-<div class="music-list-card"><div class="music-list-title">Track List</div><div class="music-list-content">
-        <div class="song-item">
-          <span class="song-title">レトロスペクティブ京都</span>
-          
-            <a href="https://music.youtube.com/watch?v=t2PnLW43WcI&si=n43deg9zWifVcfR8" class="youtube-link" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-youtube"></i>
-            </a>
-          
-        </div>
-      
-        <div class="song-item">
-          <span class="song-title">Haruhi God knows...</span>
-          
-            <a href="https://music.youtube.com/watch?v=fjZOL4C0oVo&si=p0dwz2ov-jLIaftE" class="youtube-link" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-youtube"></i>
-            </a>
-          
-        </div>
-      
-        <div class="song-item">
-          <span class="song-title">天空の悲恋歌</span>
-          
-            <a href="https://music.youtube.com/watch?v=hzTUNHwm2Tk&si=sYvorJoGlR7zb9k-" class="youtube-link" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-youtube"></i>
-            </a>
-          
-        </div>
-      </div></div>
+<div class="music-list-card"><div class="music-list-content"><div class="song-item">レトロスペクティブ京都 https://music.youtube.com/watch?v=t2PnLW43WcI&si=n43deg9zWifVcfR8</div><div class="song-item">Haruhi God knows... https://music.youtube.com/watch?v=fjZOL4C0oVo&si=p0dwz2ov-jLIaftE</div><div class="song-item">天空の悲恋歌 https://music.youtube.com/watch?v=hzTUNHwm2Tk&si=sYvorJoGlR7zb9k-</div></div></div>
 
 <hr>
 <h3 id="影片"><a href="#影片" class="headerlink" title="影片"></a>影片</h3><p>A-dash 入鏡的影片基本均為和 TAM 演出時的錄影。<br>大部分演出影片都被 TAM 放入了 CD 中，部分影片甚至被 DVD 化。<br>現在，我們只能在 Niconico 上檢索欣賞它們。<br>至於獨立影片，A-dash 有一個不為人知的 Nico 賬戶。近年亦創建了自己的 Youtube。<br>他在線下演奏的合作影片可以在他的 X 上找到，如果時間足夠久遠，該列表會添加它們。</p>
@@ -1515,18 +1310,7 @@ Everyone associated with StudioA', regardless of who you are.
     font-size: 1.05rem;
     letter-spacing: 1.1px;
 }
-</style><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script></article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%90%8C%E4%BA%BA%E6%87%B7%E5%8F%A4/">同人懷古</a><a class="post-meta__tags" href="/tags/A-dash/">A-dash</a><a class="post-meta__tags" href="/tags/B/">B+</a><a class="post-meta__tags" href="/tags/%E3%81%AA%E3%81%BF%E3%81%B8%E3%81%84/">なみへい</a><a class="post-meta__tags" href="/tags/Studio-A/">Studio A'</a></div><div class="post_share"><div class="social-share" data-image="https://magstic.top/StudioA/Ragnarok%20Online%20Piano%20Arrange[プレス版].jpg" data-sites="facebook,twitter"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2025/01/10/06/" title="QQ 訊息歸檔規範"><img class="cover" src="https://magstic.top/Aojiru/name/144KOTETSU.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">QQ 訊息歸檔規範</div></div></a></div><div class="next-post pull-right"><a href="/2024/06/07/04/" title="雪の足跡，來自ようか"><img class="cover" src="https://magstic.top/Yohka/image/topimg.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">雪の足跡，來自ようか</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相關推薦</span></div><div class="relatedPosts-list"><div><a href="/2023/05/11/02/" title="白と黒の夢郷，來自青汁"><img class="cover" src="https://magstic.top/Aojiru/coll/reimu11.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-11</div><div class="title">白と黒の夢郷，來自青汁</div></div></a></div><div><a href="/2024/06/07/04/" title="雪の足跡，來自ようか"><img class="cover" src="https://magstic.top/Yohka/image/topimg.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-06-06</div><div class="title">雪の足跡，來自ようか</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 評論</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://magstic.art/images/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Magstic</div><div class="author-info__description">聆听自然之風</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">3</div></a></div><a id="card-info-btn" href="mailto:mastic.cn@gmail.com" rel="external nofollow noreferrer"><i class="fab fa-google"></i><span>Gmail</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">資料庫維護完畢，<br>請清理本站快取和Cookie。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目錄</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B0%A1%E4%BB%8B%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">簡介：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A4%BE%E5%93%A1%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">社員：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Studio-A%E2%80%99"><span class="toc-number">2.1.</span> <span class="toc-text">Studio A’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ANastasia"><span class="toc-number">2.2.</span> <span class="toc-text">ANastasia</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#StudioA%E2%80%99-Reboot"><span class="toc-number">2.3.</span> <span class="toc-text">StudioA’ Reboot</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B0%A1%E4%BB%8B"><span class="toc-number">2.4.</span> <span class="toc-text">簡介</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%9C%E5%93%81%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">作品：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Studio-A%E2%80%99-1"><span class="toc-number">3.1.</span> <span class="toc-text">Studio A’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ANastasia-1"><span class="toc-number">3.2.</span> <span class="toc-text">ANastasia</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#StudioA%E2%80%99-Reboot-1"><span class="toc-number">3.3.</span> <span class="toc-text">StudioA’ Reboot</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Guest"><span class="toc-number">3.4.</span> <span class="toc-text">Guest</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%8B%BC%E7%90%B4%E7%B7%A8%E6%9B%B2"><span class="toc-number">3.4.1.</span> <span class="toc-text">鋼琴編曲</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%87%91%E5%B1%AC%E7%B7%A8%E6%9B%B2"><span class="toc-number">3.4.2.</span> <span class="toc-text">金屬編曲</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9B%BB%E5%AD%90%E7%B7%A8%E6%9B%B2"><span class="toc-number">3.4.3.</span> <span class="toc-text">電子編曲</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%94%E5%A5%8F%E7%B7%A8%E6%9B%B2"><span class="toc-number">3.4.4.</span> <span class="toc-text">協奏編曲</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%B1%E7%89%87"><span class="toc-number">3.5.</span> <span class="toc-text">影片</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%B3%B4%E8%AC%9D%EF%BC%9A"><span class="toc-number">4.</span> <span class="toc-text">鳴謝：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%83%E8%A6%8B%EF%BC%9A"><span class="toc-number">5.</span> <span class="toc-text">參見：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%98%E6%96%B9%E8%B3%87%E6%96%99"><span class="toc-number">5.1.</span> <span class="toc-text">官方資料</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%8A%E5%AE%98%E6%96%B9%E8%B3%87%E6%96%99"><span class="toc-number">5.2.</span> <span class="toc-text">半官方資料</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B0%91%E9%96%93%E8%B3%87%E6%96%99"><span class="toc-number">5.3.</span> <span class="toc-text">民間資料</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/04/22/10/" title="在 RetroArch 上遊玩 JAR 的心得"><img src="https://magstic.top/Aojiru/name/052mokou3%E3%80%8C%E8%97%A4%E5%8E%9F%E3%80%8C%E6%BB%85%E7%BD%AA%E5%AF%BA%E9%99%A2%E5%82%B7%E3%80%8D%E3%80%8D.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="在 RetroArch 上遊玩 JAR 的心得"/></a><div class="content"><a class="title" href="/2025/04/22/10/" title="在 RetroArch 上遊玩 JAR 的心得">在 RetroArch 上遊玩 JAR 的心得</a><time datetime="2025-04-21T22:59:28.000Z" title="發表於 2025-04-21 22:59:28">2025-04-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/04/16/09/" title="JAR 在 Nokia 上的異常處理"><img src="https://magstic.top/Aojiru/name/052mokou3%E3%80%8C%E8%97%A4%E5%8E%9F%E3%80%8C%E6%BB%85%E7%BD%AA%E5%AF%BA%E9%99%A2%E5%82%B7%E3%80%8D%E3%80%8D.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JAR 在 Nokia 上的異常處理"/></a><div class="content"><a class="title" href="/2025/04/16/09/" title="JAR 在 Nokia 上的異常處理">JAR 在 Nokia 上的異常處理</a><time datetime="2025-04-15T16:34:28.000Z" title="發表於 2025-04-15 16:34:28">2025-04-15</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By Magstic</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="閱讀模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="單欄和雙欄切換"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="設定"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目錄"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直達評論"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到頂部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(()=>{
-  const init = () => {
-    twikoo.init(Object.assign({
-      el: '#twikoo-wrap',
-      envId: 'https://windream.netlify.app/.netlify/functions/twikoo',
-      region: '',
-      onCommentLoaded: function () {
-        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
-      }
-    }, null))
-  }
-
+</style><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script></article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%90%8C%E4%BA%BA%E6%87%B7%E5%8F%A4/">同人懷古</a><a class="post-meta__tags" href="/tags/A-dash/">A-dash</a><a class="post-meta__tags" href="/tags/B/">B+</a><a class="post-meta__tags" href="/tags/%E3%81%AA%E3%81%BF%E3%81%B8%E3%81%84/">なみへい</a><a class="post-meta__tags" href="/tags/Studio-A/">Studio A'</a></div><div class="post_share"><div class="social-share" data-image="https://magstic.top/StudioA/Ragnarok%20Online%20Piano%20Arrange[プレス版].jpg" data-sites="facebook,twitter"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2025/01/10/06/" title="QQ 訊息歸檔規範"><img class="cover" src="https://magstic.top/Aojiru/name/144KOTETSU.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">QQ 訊息歸檔規範</div></div></a></div><div class="next-post pull-right"><a href="/2024/06/07/04/" title="雪の足跡，來自ようか"><img class="cover" src="https://magstic.top/Yohka/image/topimg.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">雪の足跡，來自ようか</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相關推薦</span></div><div class="relatedPosts-list"><div><a href="/2023/05/11/02/" title="白と黒の夢郷，來自青汁"><img class="cover" src="https://magstic.top/Aojiru/coll/reimu11.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-11</div><div class="title">白と黒の夢郷，來自青汁</div></div></a></div><div><a href="/2024/06/07/04/" title="雪の足跡，來自ようか"><img class="cover" src="https://magstic.top/Yohka/image/topimg.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-06-06</div><div class="title">雪の足跡，來自ようか</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 評論</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://magstic.art/images/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Magstic</div><div class="author-info__description">聆听自然之風</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">3</div></a></div><a id="card-info-btn" href="mailto:mastic.cn@gmail.com" rel="external nofollow noreferrer"><i class="fab fa-google"></i><span>Gmail</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">資料庫維護完畢，<br>請清理本站快取和Cookie。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目錄</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B0%A1%E4%BB%8B%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">簡介：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A4%BE%E5%93%A1%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">社員：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Studio-A%E2%80%99"><span class="toc-number">2.1.</span> <span class="toc-text">Studio A’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ANastasia"><span class="toc-number">2.2.</span> <span class="toc-text">ANastasia</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#StudioA%E2%80%99-Reboot"><span class="toc-number">2.3.</span> <span class="toc-text">StudioA’ Reboot</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B0%A1%E4%BB%8B"><span class="toc-number">2.4.</span> <span class="toc-text">簡介</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%9C%E5%93%81%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">作品：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Studio-A%E2%80%99-1"><span class="toc-number">3.1.</span> <span class="toc-text">Studio A’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ANastasia-1"><span class="toc-number">3.2.</span> <span class="toc-text">ANastasia</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#StudioA%E2%80%99-Reboot-1"><span class="toc-number">3.3.</span> <span class="toc-text">StudioA’ Reboot</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Guest"><span class="toc-number">3.4.</span> <span class="toc-text">Guest</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%8B%BC%E7%90%B4%E7%B7%A8%E6%9B%B2"><span class="toc-number">3.4.1.</span> <span class="toc-text">鋼琴編曲</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%87%91%E5%B1%AC%E7%B7%A8%E6%9B%B2"><span class="toc-number">3.4.2.</span> <span class="toc-text">金屬編曲</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9B%BB%E5%AD%90%E7%B7%A8%E6%9B%B2"><span class="toc-number">3.4.3.</span> <span class="toc-text">電子編曲</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%94%E5%A5%8F%E7%B7%A8%E6%9B%B2"><span class="toc-number">3.4.4.</span> <span class="toc-text">協奏編曲</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%B1%E7%89%87"><span class="toc-number">3.5.</span> <span class="toc-text">影片</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%B3%B4%E8%AC%9D%EF%BC%9A"><span class="toc-number">4.</span> <span class="toc-text">鳴謝：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%83%E8%A6%8B%EF%BC%9A"><span class="toc-number">5.</span> <span class="toc-text">參見：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%98%E6%96%B9%E8%B3%87%E6%96%99"><span class="toc-number">5.1.</span> <span class="toc-text">官方資料</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%8A%E5%AE%98%E6%96%B9%E8%B3%87%E6%96%99"><span class="toc-number">5.2.</span> <span class="toc-text">半官方資料</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B0%91%E9%96%93%E8%B3%87%E6%96%99"><span class="toc-number">5.3.</span> <span class="toc-text">民間資料</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/04/22/10/" title="在 RetroArch 上遊玩 JAR 的心得"><img src="https://magstic.top/Aojiru/name/052mokou3%E3%80%8C%E8%97%A4%E5%8E%9F%E3%80%8C%E6%BB%85%E7%BD%AA%E5%AF%BA%E9%99%A2%E5%82%B7%E3%80%8D%E3%80%8D.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="在 RetroArch 上遊玩 JAR 的心得"/></a><div class="content"><a class="title" href="/2025/04/22/10/" title="在 RetroArch 上遊玩 JAR 的心得">在 RetroArch 上遊玩 JAR 的心得</a><time datetime="2025-04-21T22:59:28.000Z" title="發表於 2025-04-21 22:59:28">2025-04-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/04/16/09/" title="JAR 在 Nokia 上的異常處理"><img src="https://magstic.top/Aojiru/name/052mokou3%E3%80%8C%E8%97%A4%E5%8E%9F%E3%80%8C%E6%BB%85%E7%BD%AA%E5%AF%BA%E9%99%A2%E5%82%B7%E3%80%8D%E3%80%8D.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JAR 在 Nokia 上的異常處理"/></a><div class="content"><a class="title" href="/2025/04/16/09/" title="JAR 在 Nokia 上的異常處理">JAR 在 Nokia 上的異常處理</a><time datetime="2025-04-15T16:34:28.000Z" title="發表於 2025-04-15 16:34:28">2025-04-15</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By Magstic</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主題 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="閱讀模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="單欄和雙欄切換"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="設定"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目錄"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直達評論"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="返回頂部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
   const getCount = () => {
     const countELement = document.getElementById('twikoo-count')
     if(!countELement) return
@@ -1535,32 +1319,35 @@ Everyone associated with StudioA', regardless of who you are.
       region: '',
       urls: [window.location.pathname],
       includeReply: false
-    }).then(function (res) {
+    }).then(res => {
       countELement.textContent = res[0].count
-    }).catch(function (err) {
-      console.error(err);
-    });
+    }).catch(err => {
+      console.error(err)
+    })
   }
 
-  const runFn = () => {
-    init()
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://windream.netlify.app/.netlify/functions/twikoo',
+      region: '',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+
     
   }
 
   const loadTwikoo = () => {
-    if (typeof twikoo === 'object') {
-      setTimeout(runFn,0)
-      return
-    } 
-    getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(runFn)
+    if (typeof twikoo === 'object') setTimeout(init,0)
+    else getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(init)
   }
 
   if ('Twikoo' === 'Twikoo' || !false) {
     if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
     else loadTwikoo()
   } else {
-    window.loadOtherComment = () => {
-      loadTwikoo()
-    }
+    window.loadOtherComment = loadTwikoo
   }
-})()</script></div><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜尋</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  資料庫載入中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜尋文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
+})()</script></div><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜尋</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  資料庫載入中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜尋文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
