@@ -3422,7 +3422,7 @@ h1.page-title + .tag-cloud-list {
 }
 #footer {
   position: relative;
-  background-color: #49b1f5;
+  background-color: rgba(255,255,255,0);
   background-attachment: scroll;
   background-position: bottom;
   background-size: cover;
