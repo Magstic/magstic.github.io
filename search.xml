@@ -203,11 +203,11 @@
       
         <tags>
             
-            <tag> 同人懷古 </tag>
-            
             <tag> ようか </tag>
             
             <tag> 雪の足跡 </tag>
+            
+            <tag> 同人懷古 </tag>
             
         </tags>
       
@@ -257,11 +257,11 @@
       
         <tags>
             
+            <tag> 同人懷古 </tag>
+            
             <tag> 青汁 </tag>
             
             <tag> 白と黒の夢郷 </tag>
-            
-            <tag> 同人懷古 </tag>
             
         </tags>
       
@@ -309,11 +309,11 @@
     
     
     <entry>
-      <title>關於</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title>標簽</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>你好，我是 Magstic，『Wind Dream』管理人。<br>這裡主要上載一些塵封的歷史記憶，同人作品中的蒙塵事物會被記錄。</p><p>意義？我想僅僅是出於對個人的一份懷思。<br>網際網路時代，每個人的資料只不過是虛無縹緲的數字資訊。<br>媒體的便捷與易逝，無時無刻都在將人心拉入未知的淵藪。</p><p>記憶是生命的質料。若此刻不去記錄，來日或許只能面對空白的螢幕惆悵。<br>這個站點作為網際網路的一部分，或許亦會隨時死亡。<br>不過，我相信『永遠』。</p><p>—— Magstic，2022.01.03</p><p><strong>关於管理</strong><br>法隱自命，空耦度世。<br>疲於社交，憊於囚籠。<br>偽善自樂，虛妄永遠。<br>粗人一介，莫問何故。</p><p><strong>关於站點</strong><br>過去基於Emlog Pro，現為Hexo。</p><p><strong>聯絡方式</strong><br>E-Mail：<a href="mailto:mastic.cn@gmail.com">mastic.cn@gmail.com</a></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -331,22 +331,11 @@
     
     
     <entry>
-      <title></title>
-      <link href="/html/aojiru/chen12.html"/>
-      <url>/html/aojiru/chen12.html</url>
+      <title>關於</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><!DOCTYPE html><html><head><meta charset="utf-8"><title>森</title><link rel="shortcut icon" href="https://magstic.top/Hand.jpg"></head>    <body>        <center>            <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/coll/chen12.jpg" width="800" />            <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/coll/chen12back.jpg" width="800" />        </center>    </body></html><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>標簽</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>你好，我是 Magstic，『Wind Dream』管理人。<br>這裡主要上載一些塵封的歷史記憶，同人作品中的蒙塵事物會被記錄。</p><p>意義？我想僅僅是出於對個人的一份懷思。<br>網際網路時代，每個人的資料只不過是虛無縹緲的數字資訊。<br>媒體的便捷與易逝，無時無刻都在將人心拉入未知的淵藪。</p><p>記憶是生命的質料。若此刻不去記錄，來日或許只能面對空白的螢幕惆悵。<br>這個站點作為網際網路的一部分，或許亦會隨時死亡。<br>不過，我相信『永遠』。</p><p>—— Magstic，2022.01.03</p><p><strong>关於管理</strong><br>法隱自命，空耦度世。<br>疲於社交，憊於囚籠。<br>偽善自樂，虛妄永遠。<br>粗人一介，莫問何故。</p><p><strong>关於站點</strong><br>過去基於Emlog Pro，現為Hexo。</p><p><strong>聯絡方式</strong><br>E-Mail：<a href="mailto:mastic.cn@gmail.com">mastic.cn@gmail.com</a></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -365,10 +354,10 @@
     
     <entry>
       <title></title>
-      <link href="/html/aojiru/chen16.html"/>
-      <url>/html/aojiru/chen16.html</url>
+      <link href="/html/aojiru/chen12.html"/>
+      <url>/html/aojiru/chen12.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><!DOCTYPE html><html><head><meta charset="utf-8"><title>那由多を刻む樹</title><link rel="shortcut icon" href="https://magstic.top/Hand.jpg"></head>    <body>        <center>            <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/coll/chen16a.jpg" width="800" />            <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/coll/chen16b.jpg" width="800" />            <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/coll/chen16c.jpg" width="800" />            <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/coll/chen16d.jpg" width="800" />            <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/coll/chen16e.jpg" width="800" />            <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/coll/chen16back.jpg" width="800" />        </center>    </body></html><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><!DOCTYPE html><html><head><meta charset="utf-8"><title>森</title><link rel="shortcut icon" href="https://magstic.top/Hand.jpg"></head>    <body>        <center>            <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/coll/chen12.jpg" width="800" />            <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/coll/chen12back.jpg" width="800" />        </center>    </body></html><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -387,21 +376,21 @@
     
     <entry>
       <title></title>
-      <link href="/html/aojiru/chen13.html"/>
-      <url>/html/aojiru/chen13.html</url>
+      <link href="/html/aojiru/chen16.html"/>
+      <url>/html/aojiru/chen16.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><!DOCTYPE html><html><head><meta charset="utf-8"><title>黄昏</title><link rel="shortcut icon" href="https://magstic.top/Hand.jpg"></head>    <body>        <center>            <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/coll/chen13.jpg" width="800" />            <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/coll/chen13back.jpg" width="800" />        </center>    </body></html><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><!DOCTYPE html><html><head><meta charset="utf-8"><title>那由多を刻む樹</title><link rel="shortcut icon" href="https://magstic.top/Hand.jpg"></head>    <body>        <center>            <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/coll/chen16a.jpg" width="800" />            <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/coll/chen16b.jpg" width="800" />            <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/coll/chen16c.jpg" width="800" />            <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/coll/chen16d.jpg" width="800" />            <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/coll/chen16e.jpg" width="800" />            <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/coll/chen16back.jpg" width="800" />        </center>    </body></html><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>白と黒の夢郷-絵02</title>
-      <link href="/html/aojiru/art/art02.html"/>
-      <url>/html/aojiru/art/art02.html</url>
+      <title></title>
+      <link href="/html/aojiru/chen13.html"/>
+      <url>/html/aojiru/chen13.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><div class="note default no-icon flat"><p><strong>頁面插畫數量：15</strong></p></div><div class="gallery-container" data-type="data" data-button="true">      <div class="gallery-data">[{"url":"https://magstic.top/Aojiru/name/016Cirno4「チルノ」.jpg","alt":"チルノ"},{"url":"https://magstic.top/Aojiru/name/017Cirno6「チルノ」.jpg","alt":"チルノ"},{"url":"https://magstic.top/Aojiru/name/018Cirno8雹符「ヘイルストーム」.jpg","alt":"雹符「ヘイルストーム」"},{"url":"https://magstic.top/Aojiru/name/019Cirno9凍符「パーフェクトフリーズ」.jpg","alt":"凍符「パーフェクトフリーズ」"},{"url":"https://magstic.top/Aojiru/name/020Cirno10雪符「ダイアモンドブリザード」.jpg","alt":"雪符「ダイアモンドブリザード」"},{"url":"https://magstic.top/Aojiru/name/021Harlequin_Crest「ハーレクイン・クレスト」.jpg","alt":"ハーレクイン・クレスト"},{"url":"https://magstic.top/Aojiru/name/022Memento_mori「氷精死を知る」.jpg","alt":"氷精死を知る"},{"url":"https://magstic.top/Aojiru/name/023merupo「チルノ」.jpg","alt":"チルノ"},{"url":"https://magstic.top/Aojiru/name/024merupo「向日葵に大勝利チルノ」.jpg","alt":"向日葵に大勝利チルノ"},{"url":"https://magstic.top/Aojiru/name/025daiyousei「湖上のおりこうさん」.jpg","alt":"湖上のおりこうさん"},{"url":"https://magstic.top/Aojiru/name/026Eirin5秘術「天文密葬法」.jpg","alt":"天文密葬法"},{"url":"https://magstic.top/Aojiru/name/027Eirin7「壺中の天地%E3%80%80脳内の宇宙」.jpg","alt":"壺中の天地　脳内の宇宙"},{"url":"https://magstic.top/Aojiru/name/028Flandre1「悪魔の妹」.jpg","alt":"悪魔の妹"},{"url":"https://magstic.top/Aojiru/name/029Flandre2「一緒に遊んでくれるのかしら？」.jpg","alt":"一緒に遊んでくれるのかしら？"},{"url":"https://magstic.top/Aojiru/name/030Flandre3「禁忌「フォーオブアカインド」」.jpg","alt":"禁忌「フォーオブアカインド」"}]</div>      <div class="gallery-items">      </div>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><!DOCTYPE html><html><head><meta charset="utf-8"><title>黄昏</title><link rel="shortcut icon" href="https://magstic.top/Hand.jpg"></head>    <body>        <center>            <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/coll/chen13.jpg" width="800" />            <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/coll/chen13back.jpg" width="800" />        </center>    </body></html><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -413,6 +402,17 @@
       <url>/html/aojiru/art/art01.html</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><div class="note default no-icon flat"><p><strong>頁面插畫數量：15</strong></p></div><div class="gallery-container" data-type="data" data-button="true">      <div class="gallery-data">[{"url":"https://magstic.top/Aojiru/name/001Alice1「ブクレシュティの人形師」.jpg","alt":"ブクレシュティの人形師"},{"url":"https://magstic.top/Aojiru/name/002Burchett_Report「只一人、幻想郷の内より飛んで来た女」.jpg","alt":"只一人、幻想郷の内より飛んで来た女"},{"url":"https://magstic.top/Aojiru/name/003烏帽子鳥.jpg","alt":"烏帽子鳥"},{"url":"https://magstic.top/Aojiru/name/004Sryinx.jpg","alt":"Sryinx"},{"url":"https://magstic.top/Aojiru/name/005Tyenn1「マヨヒガの黒猫」.jpg","alt":"マヨヒガの黒猫"},{"url":"https://magstic.top/Aojiru/name/006Tyenn3「鬼符「青鬼赤鬼」」.jpg","alt":"鬼符「青鬼赤鬼」"},{"url":"https://magstic.top/Aojiru/name/007Tyenn11「足元、気をつけな」.jpg","alt":"足元、気をつけな"},{"url":"https://magstic.top/Aojiru/name/008chen17「夏橙」.jpg","alt":"夏橙"},{"url":"https://magstic.top/Aojiru/name/009chen18「夏橙」.jpg","alt":"夏橙"},{"url":"https://magstic.top/Aojiru/name/010chrysanthemum「ぬこに小菊」.jpg","alt":"ぬこに小菊"},{"url":"https://magstic.top/Aojiru/name/011Spectral_Shard.jpg","alt":"Spectral_Shard"},{"url":"https://magstic.top/Aojiru/name/012Tyenn5「マヨヒガの林」.jpg","alt":"マヨヒガの林"},{"url":"https://magstic.top/Aojiru/name/013ciruno1「おてんば恋娘%E3%80%80チルノ」.jpg","alt":"おてんば恋娘　チルノ"},{"url":"https://magstic.top/Aojiru/name/014cirno2「チルノ」.jpg","alt":"チルノ"},{"url":"https://magstic.top/Aojiru/name/015Cirno3霜符「フロストコラムス」.jpg","alt":"霜符「フロストコラムス」"}]</div>      <div class="gallery-items">      </div>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>白と黒の夢郷-絵02</title>
+      <link href="/html/aojiru/art/art02.html"/>
+      <url>/html/aojiru/art/art02.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><div class="note default no-icon flat"><p><strong>頁面插畫數量：15</strong></p></div><div class="gallery-container" data-type="data" data-button="true">      <div class="gallery-data">[{"url":"https://magstic.top/Aojiru/name/016Cirno4「チルノ」.jpg","alt":"チルノ"},{"url":"https://magstic.top/Aojiru/name/017Cirno6「チルノ」.jpg","alt":"チルノ"},{"url":"https://magstic.top/Aojiru/name/018Cirno8雹符「ヘイルストーム」.jpg","alt":"雹符「ヘイルストーム」"},{"url":"https://magstic.top/Aojiru/name/019Cirno9凍符「パーフェクトフリーズ」.jpg","alt":"凍符「パーフェクトフリーズ」"},{"url":"https://magstic.top/Aojiru/name/020Cirno10雪符「ダイアモンドブリザード」.jpg","alt":"雪符「ダイアモンドブリザード」"},{"url":"https://magstic.top/Aojiru/name/021Harlequin_Crest「ハーレクイン・クレスト」.jpg","alt":"ハーレクイン・クレスト"},{"url":"https://magstic.top/Aojiru/name/022Memento_mori「氷精死を知る」.jpg","alt":"氷精死を知る"},{"url":"https://magstic.top/Aojiru/name/023merupo「チルノ」.jpg","alt":"チルノ"},{"url":"https://magstic.top/Aojiru/name/024merupo「向日葵に大勝利チルノ」.jpg","alt":"向日葵に大勝利チルノ"},{"url":"https://magstic.top/Aojiru/name/025daiyousei「湖上のおりこうさん」.jpg","alt":"湖上のおりこうさん"},{"url":"https://magstic.top/Aojiru/name/026Eirin5秘術「天文密葬法」.jpg","alt":"天文密葬法"},{"url":"https://magstic.top/Aojiru/name/027Eirin7「壺中の天地%E3%80%80脳内の宇宙」.jpg","alt":"壺中の天地　脳内の宇宙"},{"url":"https://magstic.top/Aojiru/name/028Flandre1「悪魔の妹」.jpg","alt":"悪魔の妹"},{"url":"https://magstic.top/Aojiru/name/029Flandre2「一緒に遊んでくれるのかしら？」.jpg","alt":"一緒に遊んでくれるのかしら？"},{"url":"https://magstic.top/Aojiru/name/030Flandre3「禁忌「フォーオブアカインド」」.jpg","alt":"禁忌「フォーオブアカインド」"}]</div>      <div class="gallery-items">      </div>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -441,11 +441,11 @@
     
     
     <entry>
-      <title>白と黒の夢郷-絵07</title>
-      <link href="/html/aojiru/art/art07.html"/>
-      <url>/html/aojiru/art/art07.html</url>
+      <title>白と黒の夢郷-絵04</title>
+      <link href="/html/aojiru/art/art04.html"/>
+      <url>/html/aojiru/art/art04.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><div class="note default no-icon flat"><p><strong>頁面插畫數量：15</strong></p></div><div class="gallery-container" data-type="data" data-button="true">      <div class="gallery-data">[{"url":"https://magstic.top/Aojiru/name/091Reimu12「霊夢の結界%20-伽羅色-」.jpg","alt":"霊夢の結界 -伽羅色-"},{"url":"https://magstic.top/Aojiru/name/092sakura「皆吉爽雨詠む」.jpg","alt":"皆吉爽雨詠む"},{"url":"https://magstic.top/Aojiru/name/093merupo「虹の枯れた巫女」.jpg","alt":"虹の枯れた巫女"},{"url":"https://magstic.top/Aojiru/name/094Reisen1「月兎%E3%80%80～%20ルナ・エンシェンツ」.jpg","alt":"月兎　～ ルナ・エンシェンツ"},{"url":"https://magstic.top/Aojiru/name/095Reisen「兎生きろ、蟹は死ね」.jpg","alt":"兎生きろ、蟹は死ね"},{"url":"https://magstic.top/Aojiru/name/096兎と人形.jpg","alt":"兎と人形"},{"url":"https://magstic.top/Aojiru/name/097Remilia1「永遠に紅い幼き月」.jpg","alt":"永遠に紅い幼き月"},{"url":"https://magstic.top/Aojiru/name/098Remilia1「紅い月を背」.jpg","alt":"紅い月を背"},{"url":"https://magstic.top/Aojiru/name/099Remilia2「運命を操る程度の能力」.jpg","alt":"運命を操る程度の能力"},{"url":"https://magstic.top/Aojiru/name/100ruumia11「闇の徘徊」.jpg","alt":"闇の徘徊"},{"url":"https://magstic.top/Aojiru/name/101Ruumia8「闇符「ディマーケイション」」.jpg","alt":"闇符「ディマーケイション」"},{"url":"https://magstic.top/Aojiru/name/102Ruumia10「食人鬼」.jpg","alt":"食人鬼"},{"url":"https://magstic.top/Aojiru/name/103merupo「ルーミアさんの憂鬱」.jpg","alt":"ルーミアさんの憂鬱"},{"url":"https://magstic.top/Aojiru/name/104Ruumia「常夜見の花」.jpg","alt":"常夜見の花"},{"url":"https://magstic.top/Aojiru/name/105Ruumia5「月符「ムーンライトレイ」」.jpg","alt":"月符「ムーンライトレイ」"}]</div>      <div class="gallery-items">      </div>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><div class="note default no-icon flat"><p><strong>頁面插畫數量：15</strong></p></div><div class="gallery-container" data-type="data" data-button="true">      <div class="gallery-data">[{"url":"https://magstic.top/Aojiru/name/046Carrion_Wind.jpg","alt":"Carrion Wind"},{"url":"https://magstic.top/Aojiru/name/047Rain「雨と毒人形」.jpg","alt":"雨と毒人形"},{"url":"https://magstic.top/Aojiru/name/048meirinn1「華人小娘、紅美鈴」.jpg","alt":"華人小娘、紅美鈴"},{"url":"https://magstic.top/Aojiru/name/049mairinn2「紅%20美鈴」.jpg","alt":"華人小娘、紅美鈴"},{"url":"https://magstic.top/Aojiru/name/050mokou1「時効「月のいはかさの呪い」」.jpg","alt":"時効「月のいはかさの呪い」"},{"url":"https://magstic.top/Aojiru/name/051mokou2「不死「火の鳥%E3%80%80-鳳翼天翔-」」.jpg","alt":"不死「火の鳥　-鳳翼天翔-」"},{"url":"https://magstic.top/Aojiru/name/052mokou3「藤原「滅罪寺院傷」」.jpg","alt":"藤原「滅罪寺院傷」"},{"url":"https://magstic.top/Aojiru/name/053mokou4「不死「徐福時空」」.jpg","alt":"不死「徐福時空」"},{"url":"https://magstic.top/Aojiru/name/054mokou5「滅罪「正直者の死」」.jpg","alt":"滅罪「正直者の死」"},{"url":"https://magstic.top/Aojiru/name/055mokou6「虚人「ウー」」.jpg","alt":"虚人「ウー」"},{"url":"https://magstic.top/Aojiru/name/056mokou7「不滅「フェニックスの尾」」.jpg","alt":"不滅「フェニックスの尾」"},{"url":"https://magstic.top/Aojiru/name/057mokou8「蓬莱「凱風快晴%E3%80%80-フジヤマヴォルケイノ-」」.jpg","alt":"蓬莱「凱風快晴　-フジヤマヴォルケイノ-」"},{"url":"https://magstic.top/Aojiru/name/058mokou9「パゼストバイフェニックス」.jpg","alt":"パゼストバイフェニックス"},{"url":"https://magstic.top/Aojiru/name/059mokou10「蓬莱人形」.jpg","alt":"蓬莱人形"},{"url":"https://magstic.top/Aojiru/name/060mokou11「インペリシャブルシューティング」.jpg","alt":"インペリシャブルシューティング"}]</div>      <div class="gallery-items">      </div>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -463,22 +463,22 @@
     
     
     <entry>
-      <title>白と黒の夢郷-絵08</title>
-      <link href="/html/aojiru/art/art08.html"/>
-      <url>/html/aojiru/art/art08.html</url>
+      <title>白と黒の夢郷-絵07</title>
+      <link href="/html/aojiru/art/art07.html"/>
+      <url>/html/aojiru/art/art07.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><div class="note default no-icon flat"><p><strong>頁面插畫數量：15</strong></p></div><div class="gallery-container" data-type="data" data-button="true">      <div class="gallery-data">[{"url":"https://magstic.top/Aojiru/name/106Ruumia6「夜符「ナイトバード」」.jpg","alt":"夜符「ナイトバード」"},{"url":"https://magstic.top/Aojiru/name/107Ruumia9黄天月夜.jpg","alt":"黄天月夜"},{"url":"https://magstic.top/Aojiru/name/108sakuya1「瀟洒なメイド長」.jpg","alt":"瀟洒なメイド長"},{"url":"https://magstic.top/Aojiru/name/109sakuya2「十六夜%20咲夜」.jpg","alt":"十六夜 咲夜"},{"url":"https://magstic.top/Aojiru/name/110sakuya3「十六夜%20咲夜」.jpg","alt":"十六夜 咲夜"},{"url":"https://magstic.top/Aojiru/name/111Sakuya5「恐怖の片鱗」.jpg","alt":"恐怖の片鱗"},{"url":"https://magstic.top/Aojiru/name/112Key_of_Obedience.jpg","alt":"Key of Obedience"},{"url":"https://magstic.top/Aojiru/name/113Noisy_Silence.jpg","alt":"Noisy Silence"},{"url":"https://magstic.top/Aojiru/name/114Sakuya4「チャールズ・ウォーレン嘲笑」.jpg","alt":"チャールズ・ウォーレン嘲笑"},{"url":"https://magstic.top/Aojiru/name/115STORM_CAUSER.jpg","alt":"STORM CAUSER"},{"url":"https://magstic.top/Aojiru/name/116merupo「吐き気をもよおす邪悪兎」.jpg","alt":"吐き気をもよおす邪悪兎"},{"url":"https://magstic.top/Aojiru/name/117merupo「いたるところにいのちはそんざいするよ」.jpg","alt":"いたるところにいのちはそんざいするよ"},{"url":"https://magstic.top/Aojiru/name/118Wisp_Projector「夜草映える～Wisp%20Projector」.jpg","alt":"夜草映える～Wisp Projector"},{"url":"https://magstic.top/Aojiru/name/119Wriggle3「幻視の夜のリグル」.jpg","alt":"幻視の夜のリグル"},{"url":"https://magstic.top/Aojiru/name/120merupo「サイギョウジズ・ゴースト・リベレーター」.jpg","alt":"サイギョウジズ・ゴースト・リベレーター"}]</div>      <div class="gallery-items">      </div>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><div class="note default no-icon flat"><p><strong>頁面插畫數量：15</strong></p></div><div class="gallery-container" data-type="data" data-button="true">      <div class="gallery-data">[{"url":"https://magstic.top/Aojiru/name/091Reimu12「霊夢の結界%20-伽羅色-」.jpg","alt":"霊夢の結界 -伽羅色-"},{"url":"https://magstic.top/Aojiru/name/092sakura「皆吉爽雨詠む」.jpg","alt":"皆吉爽雨詠む"},{"url":"https://magstic.top/Aojiru/name/093merupo「虹の枯れた巫女」.jpg","alt":"虹の枯れた巫女"},{"url":"https://magstic.top/Aojiru/name/094Reisen1「月兎%E3%80%80～%20ルナ・エンシェンツ」.jpg","alt":"月兎　～ ルナ・エンシェンツ"},{"url":"https://magstic.top/Aojiru/name/095Reisen「兎生きろ、蟹は死ね」.jpg","alt":"兎生きろ、蟹は死ね"},{"url":"https://magstic.top/Aojiru/name/096兎と人形.jpg","alt":"兎と人形"},{"url":"https://magstic.top/Aojiru/name/097Remilia1「永遠に紅い幼き月」.jpg","alt":"永遠に紅い幼き月"},{"url":"https://magstic.top/Aojiru/name/098Remilia1「紅い月を背」.jpg","alt":"紅い月を背"},{"url":"https://magstic.top/Aojiru/name/099Remilia2「運命を操る程度の能力」.jpg","alt":"運命を操る程度の能力"},{"url":"https://magstic.top/Aojiru/name/100ruumia11「闇の徘徊」.jpg","alt":"闇の徘徊"},{"url":"https://magstic.top/Aojiru/name/101Ruumia8「闇符「ディマーケイション」」.jpg","alt":"闇符「ディマーケイション」"},{"url":"https://magstic.top/Aojiru/name/102Ruumia10「食人鬼」.jpg","alt":"食人鬼"},{"url":"https://magstic.top/Aojiru/name/103merupo「ルーミアさんの憂鬱」.jpg","alt":"ルーミアさんの憂鬱"},{"url":"https://magstic.top/Aojiru/name/104Ruumia「常夜見の花」.jpg","alt":"常夜見の花"},{"url":"https://magstic.top/Aojiru/name/105Ruumia5「月符「ムーンライトレイ」」.jpg","alt":"月符「ムーンライトレイ」"}]</div>      <div class="gallery-items">      </div>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>白と黒の夢郷-絵04</title>
-      <link href="/html/aojiru/art/art04.html"/>
-      <url>/html/aojiru/art/art04.html</url>
+      <title>白と黒の夢郷-絵08</title>
+      <link href="/html/aojiru/art/art08.html"/>
+      <url>/html/aojiru/art/art08.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><div class="note default no-icon flat"><p><strong>頁面插畫數量：15</strong></p></div><div class="gallery-container" data-type="data" data-button="true">      <div class="gallery-data">[{"url":"https://magstic.top/Aojiru/name/046Carrion_Wind.jpg","alt":"Carrion Wind"},{"url":"https://magstic.top/Aojiru/name/047Rain「雨と毒人形」.jpg","alt":"雨と毒人形"},{"url":"https://magstic.top/Aojiru/name/048meirinn1「華人小娘、紅美鈴」.jpg","alt":"華人小娘、紅美鈴"},{"url":"https://magstic.top/Aojiru/name/049mairinn2「紅%20美鈴」.jpg","alt":"華人小娘、紅美鈴"},{"url":"https://magstic.top/Aojiru/name/050mokou1「時効「月のいはかさの呪い」」.jpg","alt":"時効「月のいはかさの呪い」"},{"url":"https://magstic.top/Aojiru/name/051mokou2「不死「火の鳥%E3%80%80-鳳翼天翔-」」.jpg","alt":"不死「火の鳥　-鳳翼天翔-」"},{"url":"https://magstic.top/Aojiru/name/052mokou3「藤原「滅罪寺院傷」」.jpg","alt":"藤原「滅罪寺院傷」"},{"url":"https://magstic.top/Aojiru/name/053mokou4「不死「徐福時空」」.jpg","alt":"不死「徐福時空」"},{"url":"https://magstic.top/Aojiru/name/054mokou5「滅罪「正直者の死」」.jpg","alt":"滅罪「正直者の死」"},{"url":"https://magstic.top/Aojiru/name/055mokou6「虚人「ウー」」.jpg","alt":"虚人「ウー」"},{"url":"https://magstic.top/Aojiru/name/056mokou7「不滅「フェニックスの尾」」.jpg","alt":"不滅「フェニックスの尾」"},{"url":"https://magstic.top/Aojiru/name/057mokou8「蓬莱「凱風快晴%E3%80%80-フジヤマヴォルケイノ-」」.jpg","alt":"蓬莱「凱風快晴　-フジヤマヴォルケイノ-」"},{"url":"https://magstic.top/Aojiru/name/058mokou9「パゼストバイフェニックス」.jpg","alt":"パゼストバイフェニックス"},{"url":"https://magstic.top/Aojiru/name/059mokou10「蓬莱人形」.jpg","alt":"蓬莱人形"},{"url":"https://magstic.top/Aojiru/name/060mokou11「インペリシャブルシューティング」.jpg","alt":"インペリシャブルシューティング"}]</div>      <div class="gallery-items">      </div>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><div class="note default no-icon flat"><p><strong>頁面插畫數量：15</strong></p></div><div class="gallery-container" data-type="data" data-button="true">      <div class="gallery-data">[{"url":"https://magstic.top/Aojiru/name/106Ruumia6「夜符「ナイトバード」」.jpg","alt":"夜符「ナイトバード」"},{"url":"https://magstic.top/Aojiru/name/107Ruumia9黄天月夜.jpg","alt":"黄天月夜"},{"url":"https://magstic.top/Aojiru/name/108sakuya1「瀟洒なメイド長」.jpg","alt":"瀟洒なメイド長"},{"url":"https://magstic.top/Aojiru/name/109sakuya2「十六夜%20咲夜」.jpg","alt":"十六夜 咲夜"},{"url":"https://magstic.top/Aojiru/name/110sakuya3「十六夜%20咲夜」.jpg","alt":"十六夜 咲夜"},{"url":"https://magstic.top/Aojiru/name/111Sakuya5「恐怖の片鱗」.jpg","alt":"恐怖の片鱗"},{"url":"https://magstic.top/Aojiru/name/112Key_of_Obedience.jpg","alt":"Key of Obedience"},{"url":"https://magstic.top/Aojiru/name/113Noisy_Silence.jpg","alt":"Noisy Silence"},{"url":"https://magstic.top/Aojiru/name/114Sakuya4「チャールズ・ウォーレン嘲笑」.jpg","alt":"チャールズ・ウォーレン嘲笑"},{"url":"https://magstic.top/Aojiru/name/115STORM_CAUSER.jpg","alt":"STORM CAUSER"},{"url":"https://magstic.top/Aojiru/name/116merupo「吐き気をもよおす邪悪兎」.jpg","alt":"吐き気をもよおす邪悪兎"},{"url":"https://magstic.top/Aojiru/name/117merupo「いたるところにいのちはそんざいするよ」.jpg","alt":"いたるところにいのちはそんざいするよ"},{"url":"https://magstic.top/Aojiru/name/118Wisp_Projector「夜草映える～Wisp%20Projector」.jpg","alt":"夜草映える～Wisp Projector"},{"url":"https://magstic.top/Aojiru/name/119Wriggle3「幻視の夜のリグル」.jpg","alt":"幻視の夜のリグル"},{"url":"https://magstic.top/Aojiru/name/120merupo「サイギョウジズ・ゴースト・リベレーター」.jpg","alt":"サイギョウジズ・ゴースト・リベレーター"}]</div>      <div class="gallery-items">      </div>    </div><p><strong>illustration From Aojiru.</strong></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -529,11 +529,132 @@
     
     
     <entry>
-      <title>狂気の瞳 ～ Invisible Full Moon</title>
-      <link href="/html/aojiru/cd/02.html"/>
-      <url>/html/aojiru/cd/02.html</url>
+      <title>Boss B</title>
+      <link href="/html/aojiru/other/BossB.html"/>
+      <url>/html/aojiru/other/BossB.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/cd/02/狂気の瞳 ～ Invisible Full Moon.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/02/Jacket.JPG"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Music Lost</p><p>ボスの中のボスと言ったらこれかなぁということでスターフォックス64ボスを便乗上げ。<br>シューティングのボス曲とはすなわちどのようなものか？と問われればこの曲を挙げる。緊迫感とスピード感と締めの高揚感とどんなボスにも合う汎用性…全てが素晴らすい。<br>「アンドルフ様～ごめんちゃい！」の方のボス曲も諧謔味があって好きですがスタフォー64と言ったらやっぱこれですやね。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Space Battle Ship 130 33KI</title>
+      <link href="/html/aojiru/other/33KI.html"/>
+      <url>/html/aojiru/other/33KI.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/other/1%20rs9o.mp3" type="audio/mpeg"></audio><p>曲が既に絢爛豪華オケ調なのでHrの音域調整などを少々、例によって大音量でﾄﾞｿﾞｰ</p><p>後前回の銀銃戦艦に反応下さった方ありがとうございますです。<br>やっぱあの曲はシューターの方には人気高いですね実際名曲だけど。<br>5Aシーンをゲーセンでリアルタイムにプレイできたことは自分にも良き思い出。</p><p>さらに海老福さんとこでダイナマイトヘッディーピアノが来てるじゃあないの。<br>自分はトレジャーゲーに馴染んだのは銀銃以降の為未プレイですが…ｲｲ。</p><p>音源の都合で表現しきれなかった原曲のニュアンスを汲み取って再現する、かぁ。<br>そうだよなぁ…編曲の動機の一つであり理想の一つだよなぁ…と、<br>ちょっと考え込みながら耳を傾ける次第。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>恐いのは最初だけよ</title>
+      <link href="/html/aojiru/other/Catastrophe.html"/>
+      <url>/html/aojiru/other/Catastrophe.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/other/6%20Catastrophe.mp3" type="audio/mpeg"></audio><p>リメイクTO、改良点と改悪点がせめぎあって微妙な感じ。最初は改善点ばかり目につきますがはてさて。<br>音楽は曲そのものより使い方が改悪多しな観。オズマ戦やバルバス戦でｽﾞｺｰと来て空中庭園は曲不統一とか納得いきませぬ。</p><p>で正式名称はCatastropheというらしい恐いのは最初だけよですが、蒼穹三面を彷彿とさせるソーファーシーラーがかっけーですね。<br>青空が映える水たまりを横目にヴァイスが駆ける映像と合わせて非常に印象的でTOに留まらずSFCのゲーム中屈指の名場面と言えましょう。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>楽しみを希う心</title>
+      <link href="/html/aojiru/other/Heart_Asks.html"/>
+      <url>/html/aojiru/other/Heart_Asks.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Music Lost</p><p>新PC導入記念にピアノ曲の中のピアノ曲を一つ。中盤テンポもたり気味だけどｷﾆｼﾅｲ！</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>海の見える街</title>
+      <link href="/html/aojiru/other/Ocean.html"/>
+      <url>/html/aojiru/other/Ocean.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Music Lost</p><p>そーいや去年は千尋でしたな、ということでここらをチョイス。<br>魔女つながりでもありますが。しかし良い旋律ですわね。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>OMEGA ～ 聖戦</title>
+      <link href="/html/aojiru/other/Omega.html"/>
+      <url>/html/aojiru/other/Omega.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Music Lost</p><p>旧約のアレ聴いたときはスピーカー蛾ぶっ壊れたのかと思いましたでさぁええ。<br>携帯版では曲そのものが削除されてるらしいしつくづく扱いの悪い名曲ですわ…。</p><p>ひなんじょさん、しおりさんどーもです。リグルが可愛すぎて俺もう我慢できｎ</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>失われた楽園</title>
+      <link href="/html/aojiru/other/Paradise_Lost.html"/>
+      <url>/html/aojiru/other/Paradise_Lost.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Music Lost</p><p>今年は痛快冒険劇天空の城ラピュタより、大樹墓碑の前などで流れる曲ですな。<br>ソロでも弾きやすく美しい良い曲なんですが大抵感想は「綺麗な曲だね、ナウシカ？」な罠。<br>まーナウシカテーマと似てる&amp;ラピュタと言えば君を乗せてなんだろうけどこの諦念…。<br>（あんま関係無い余談ながら今さらGGSCｷﾀｰ、その音に俺うっとり）</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>仏鉄塊</title>
+      <link href="/html/aojiru/other/Ikaruga3o.html"/>
+      <url>/html/aojiru/other/Ikaruga3o.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/ikaruga/Ikaruga3o.mp3" type="audio/mpeg"></audio><p><strong>仏鉄塊</strong><br>質実剛健、余計な音はいらぬとばかりにストイックな白黒ボス曲。<br>いつも以上の劣化編曲ですがコレでもかなり気合入れましたよホント。<br>（この曲に限らず斑鳩の音楽については語りだすと百万言でも足らずなので自重。<br>原曲聴いたこと無いという方はアーケードなり移植作なりで味わって下さい、是非に是非に）</p><p><strong>烏帽子鳥</strong><br>アーケードで斑鳩が稼動してこのかた浅見さんとの戦闘回数は一万回に迫りますが、<br>いざ描く段となると何も観察して無いことに気付かされて俺しょんぼり。<br>というわけで斑鳩新書見ながら作業…うーむ出来上がってみるとデザイン全然違う…。<br>機械を正確に描ける人はスゲーですねと痛感した今日この頃。<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/name/003%E7%83%8F%E5%B8%BD%E5%AD%90%E9%B3%A5.jpg" alt="烏帽子鳥"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>雷鳴</title>
+      <link href="/html/aojiru/other/Raimei.html"/>
+      <url>/html/aojiru/other/Raimei.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Music Lost</p><p>ああ19XX自分も大好きですよ＆1942JSがまともに流通するよう祈願で一ループでっち上げ。<br>主旋律が白玉過ぎるんでピアノでまともにやろうとしたら分散和音編曲とかが妥当なんでしょうがまあ軽くということで。</p><p>他にもサンチョペドロを筆頭に名曲ぞろいだし、音楽と演出の連動も優れたSTGなんですが。<br>ネームエントリーを時間切れまで粘ってもED曲が途中で切れるのはいただけねーぞカプコンさん…。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>井戸（仮）</title>
+      <link href="/html/aojiru/other/Well.html"/>
+      <url>/html/aojiru/other/Well.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/other/4%20well.mp3" type="audio/mpeg"></audio><p>実際あの編成だとピアノの役目…。</p><p>ね　ん　が　ん　のでもないけどGSSV2.0ｷﾀので色々試す。<br>感覚的には昔のに近いらしいですけどね、とりあえず組ませる時リバーブに困った。</p><p>原曲の方は改めて昔のハドソンはレベル高いなーと驚愕の極み。<br>ドラえもんの魔境編第二ステージとか何なのあの旋律変態じゃないの?</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Legendary Wings</title>
+      <link href="/html/aojiru/other/Wings.html"/>
+      <url>/html/aojiru/other/Wings.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/other/3%20tf5lw.mp3" type="audio/mpeg"></audio><p>原曲1:29の部分がこの曲のキモだと、私はそうおもいますよ。<br>III一面テーマを歌い上げた後のあの解放！かっけーなぁんもー</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Boss B</title>
+      <link href="/html/aojiru/other/sf26ps.html"/>
+      <url>/html/aojiru/other/sf26ps.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Music Lost</p><p>ボスの中のボスと言ったらこれかなぁということでスターフォックス64ボスを便乗上げ。<br>シューティングのボス曲とはすなわちどのようなものか？と問われればこの曲を挙げる。緊迫感とスピード感と締めの高揚感とどんなボスにも合う汎用性…全てが素晴らすい。<br>「アンドルフ様～ごめんちゃい！」の方のボス曲も諧謔味があって好きですがスタフォー64と言ったらやっぱこれですやね。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -551,11 +672,11 @@
     
     
     <entry>
-      <title>運命のダークサイド</title>
-      <link href="/html/aojiru/cd/04.html"/>
-      <url>/html/aojiru/cd/04.html</url>
+      <title>狂気の瞳 ～ Invisible Full Moon</title>
+      <link href="/html/aojiru/cd/02.html"/>
+      <url>/html/aojiru/cd/02.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/cd/04/運命のダークサイド.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/04/Jacket.jpg"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/cd/02/狂気の瞳 ～ Invisible Full Moon.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/02/Jacket.JPG"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -573,11 +694,22 @@
     
     
     <entry>
-      <title>フラワリングナイト</title>
-      <link href="/html/aojiru/cd/05-02.html"/>
-      <url>/html/aojiru/cd/05-02.html</url>
+      <title>スパークマン</title>
+      <link href="/html/aojiru/other/r3sp.html"/>
+      <url>/html/aojiru/other/r3sp.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/cd/05/フラワリングナイト.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/05/Jacket.jpg"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/other/5%20r3sp.mp3" type="audio/mpeg"></audio><p>2ワイリー前半を抜かせばシリーズではこの曲が一番好きですかね。<br>（匿名の方どうもです、不慮の死にでも遭わない限り絶対にまたやりますよ～）</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>運命のダークサイド</title>
+      <link href="/html/aojiru/cd/04.html"/>
+      <url>/html/aojiru/cd/04.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/cd/04/運命のダークサイド.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/04/Jacket.jpg"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -595,11 +727,11 @@
     
     
     <entry>
-      <title>明治十七年の上海アリス</title>
-      <link href="/html/aojiru/cd/06-02.html"/>
-      <url>/html/aojiru/cd/06-02.html</url>
+      <title>フラワリングナイト</title>
+      <link href="/html/aojiru/cd/05-02.html"/>
+      <url>/html/aojiru/cd/05-02.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/cd/06/明治十七年の上海アリス.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/06/Jacket.jpg"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/cd/05/フラワリングナイト.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/05/Jacket.jpg"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -611,6 +743,17 @@
       <url>/html/aojiru/cd/06-01.html</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/cd/06/赤より紅い夢.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/06/Jacket.jpg"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>明治十七年の上海アリス</title>
+      <link href="/html/aojiru/cd/06-02.html"/>
+      <url>/html/aojiru/cd/06-02.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/cd/06/明治十七年の上海アリス.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/06/Jacket.jpg"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -639,17 +782,6 @@
     
     
     <entry>
-      <title>東方妖怪小町</title>
-      <link href="/html/aojiru/cd/08-02.html"/>
-      <url>/html/aojiru/cd/08-02.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/cd/08/東方妖怪小町.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/08/Jacket.jpg"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>千年幻想郷 ～ History of the Moon</title>
       <link href="/html/aojiru/cd/08-01.html"/>
       <url>/html/aojiru/cd/08-01.html</url>
@@ -661,132 +793,11 @@
     
     
     <entry>
-      <title>Space Battle Ship 130 33KI</title>
-      <link href="/html/aojiru/other/33KI.html"/>
-      <url>/html/aojiru/other/33KI.html</url>
+      <title>東方妖怪小町</title>
+      <link href="/html/aojiru/cd/08-02.html"/>
+      <url>/html/aojiru/cd/08-02.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/other/1%20rs9o.mp3" type="audio/mpeg"></audio><p>曲が既に絢爛豪華オケ調なのでHrの音域調整などを少々、例によって大音量でﾄﾞｿﾞｰ</p><p>後前回の銀銃戦艦に反応下さった方ありがとうございますです。<br>やっぱあの曲はシューターの方には人気高いですね実際名曲だけど。<br>5Aシーンをゲーセンでリアルタイムにプレイできたことは自分にも良き思い出。</p><p>さらに海老福さんとこでダイナマイトヘッディーピアノが来てるじゃあないの。<br>自分はトレジャーゲーに馴染んだのは銀銃以降の為未プレイですが…ｲｲ。</p><p>音源の都合で表現しきれなかった原曲のニュアンスを汲み取って再現する、かぁ。<br>そうだよなぁ…編曲の動機の一つであり理想の一つだよなぁ…と、<br>ちょっと考え込みながら耳を傾ける次第。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Boss B</title>
-      <link href="/html/aojiru/other/BossB.html"/>
-      <url>/html/aojiru/other/BossB.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Music Lost</p><p>ボスの中のボスと言ったらこれかなぁということでスターフォックス64ボスを便乗上げ。<br>シューティングのボス曲とはすなわちどのようなものか？と問われればこの曲を挙げる。緊迫感とスピード感と締めの高揚感とどんなボスにも合う汎用性…全てが素晴らすい。<br>「アンドルフ様～ごめんちゃい！」の方のボス曲も諧謔味があって好きですがスタフォー64と言ったらやっぱこれですやね。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>恐いのは最初だけよ</title>
-      <link href="/html/aojiru/other/Catastrophe.html"/>
-      <url>/html/aojiru/other/Catastrophe.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/other/6%20Catastrophe.mp3" type="audio/mpeg"></audio><p>リメイクTO、改良点と改悪点がせめぎあって微妙な感じ。最初は改善点ばかり目につきますがはてさて。<br>音楽は曲そのものより使い方が改悪多しな観。オズマ戦やバルバス戦でｽﾞｺｰと来て空中庭園は曲不統一とか納得いきませぬ。</p><p>で正式名称はCatastropheというらしい恐いのは最初だけよですが、蒼穹三面を彷彿とさせるソーファーシーラーがかっけーですね。<br>青空が映える水たまりを横目にヴァイスが駆ける映像と合わせて非常に印象的でTOに留まらずSFCのゲーム中屈指の名場面と言えましょう。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>海の見える街</title>
-      <link href="/html/aojiru/other/Ocean.html"/>
-      <url>/html/aojiru/other/Ocean.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Music Lost</p><p>そーいや去年は千尋でしたな、ということでここらをチョイス。<br>魔女つながりでもありますが。しかし良い旋律ですわね。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>仏鉄塊</title>
-      <link href="/html/aojiru/other/Ikaruga3o.html"/>
-      <url>/html/aojiru/other/Ikaruga3o.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/ikaruga/Ikaruga3o.mp3" type="audio/mpeg"></audio><p><strong>仏鉄塊</strong><br>質実剛健、余計な音はいらぬとばかりにストイックな白黒ボス曲。<br>いつも以上の劣化編曲ですがコレでもかなり気合入れましたよホント。<br>（この曲に限らず斑鳩の音楽については語りだすと百万言でも足らずなので自重。<br>原曲聴いたこと無いという方はアーケードなり移植作なりで味わって下さい、是非に是非に）</p><p><strong>烏帽子鳥</strong><br>アーケードで斑鳩が稼動してこのかた浅見さんとの戦闘回数は一万回に迫りますが、<br>いざ描く段となると何も観察して無いことに気付かされて俺しょんぼり。<br>というわけで斑鳩新書見ながら作業…うーむ出来上がってみるとデザイン全然違う…。<br>機械を正確に描ける人はスゲーですねと痛感した今日この頃。<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/name/003%E7%83%8F%E5%B8%BD%E5%AD%90%E9%B3%A5.jpg" alt="烏帽子鳥"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>楽しみを希う心</title>
-      <link href="/html/aojiru/other/Heart_Asks.html"/>
-      <url>/html/aojiru/other/Heart_Asks.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Music Lost</p><p>新PC導入記念にピアノ曲の中のピアノ曲を一つ。中盤テンポもたり気味だけどｷﾆｼﾅｲ！</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>失われた楽園</title>
-      <link href="/html/aojiru/other/Paradise_Lost.html"/>
-      <url>/html/aojiru/other/Paradise_Lost.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Music Lost</p><p>今年は痛快冒険劇天空の城ラピュタより、大樹墓碑の前などで流れる曲ですな。<br>ソロでも弾きやすく美しい良い曲なんですが大抵感想は「綺麗な曲だね、ナウシカ？」な罠。<br>まーナウシカテーマと似てる&amp;ラピュタと言えば君を乗せてなんだろうけどこの諦念…。<br>（あんま関係無い余談ながら今さらGGSCｷﾀｰ、その音に俺うっとり）</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>OMEGA ～ 聖戦</title>
-      <link href="/html/aojiru/other/Omega.html"/>
-      <url>/html/aojiru/other/Omega.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Music Lost</p><p>旧約のアレ聴いたときはスピーカー蛾ぶっ壊れたのかと思いましたでさぁええ。<br>携帯版では曲そのものが削除されてるらしいしつくづく扱いの悪い名曲ですわ…。</p><p>ひなんじょさん、しおりさんどーもです。リグルが可愛すぎて俺もう我慢できｎ</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>井戸（仮）</title>
-      <link href="/html/aojiru/other/Well.html"/>
-      <url>/html/aojiru/other/Well.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/other/4%20well.mp3" type="audio/mpeg"></audio><p>実際あの編成だとピアノの役目…。</p><p>ね　ん　が　ん　のでもないけどGSSV2.0ｷﾀので色々試す。<br>感覚的には昔のに近いらしいですけどね、とりあえず組ませる時リバーブに困った。</p><p>原曲の方は改めて昔のハドソンはレベル高いなーと驚愕の極み。<br>ドラえもんの魔境編第二ステージとか何なのあの旋律変態じゃないの?</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>雷鳴</title>
-      <link href="/html/aojiru/other/Raimei.html"/>
-      <url>/html/aojiru/other/Raimei.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Music Lost</p><p>ああ19XX自分も大好きですよ＆1942JSがまともに流通するよう祈願で一ループでっち上げ。<br>主旋律が白玉過ぎるんでピアノでまともにやろうとしたら分散和音編曲とかが妥当なんでしょうがまあ軽くということで。</p><p>他にもサンチョペドロを筆頭に名曲ぞろいだし、音楽と演出の連動も優れたSTGなんですが。<br>ネームエントリーを時間切れまで粘ってもED曲が途中で切れるのはいただけねーぞカプコンさん…。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Legendary Wings</title>
-      <link href="/html/aojiru/other/Wings.html"/>
-      <url>/html/aojiru/other/Wings.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/other/3%20tf5lw.mp3" type="audio/mpeg"></audio><p>原曲1:29の部分がこの曲のキモだと、私はそうおもいますよ。<br>III一面テーマを歌い上げた後のあの解放！かっけーなぁんもー</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>スパークマン</title>
-      <link href="/html/aojiru/other/r3sp.html"/>
-      <url>/html/aojiru/other/r3sp.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/other/5%20r3sp.mp3" type="audio/mpeg"></audio><p>2ワイリー前半を抜かせばシリーズではこの曲が一番好きですかね。<br>（匿名の方どうもです、不慮の死にでも遭わない限り絶対にまたやりますよ～）</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/cd/08/東方妖怪小町.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/cd/08/Jacket.jpg"></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -804,44 +815,11 @@
     
     
     <entry>
-      <title>Boss B</title>
-      <link href="/html/aojiru/other/sf26ps.html"/>
-      <url>/html/aojiru/other/sf26ps.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Music Lost</p><p>ボスの中のボスと言ったらこれかなぁということでスターフォックス64ボスを便乗上げ。<br>シューティングのボス曲とはすなわちどのようなものか？と問われればこの曲を挙げる。緊迫感とスピード感と締めの高揚感とどんなボスにも合う汎用性…全てが素晴らすい。<br>「アンドルフ様～ごめんちゃい！」の方のボス曲も諧謔味があって好きですがスタフォー64と言ったらやっぱこれですやね。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>おてんば恋娘</title>
       <link href="/html/aojiru/tho/02k5o.html"/>
       <url>/html/aojiru/tho/02k5o.html</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><a href="https://magstic.top/Aojiru/music/tho/cirnotheme_sinfonietta_128.mp3"><strong>初版音頻</strong></a></p><audio controls><source src="https://magstic.top/Aojiru/music/tho/02%20k5o.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/k5oback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>クリスタライズシルバー</title>
-      <link href="/html/aojiru/tho/06y3o.html"/>
-      <url>/html/aojiru/tho/06y3o.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/tho/06%20y3o.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/y3oback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>U.N.オーエンは彼女なのか？</title>
-      <link href="/html/aojiru/tho/05k15o.html"/>
-      <url>/html/aojiru/tho/05k15o.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><a href="https://magstic.top/Aojiru/music/tho/U.N.ownhakanozyonanoka.mid">輕觸下載MIDI源文件</a></p><p>（SC-8850推奨）東方紅魔郷より。<br>ZUN氏のセンスが感じられる曲名です。<br>自分の脳内でフランドールとは地下礼拝所で戦っている、というイメージがあるので、<br>それにあわせて厳かに。聖戦ならぬ聖弾幕ごっこ。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -859,11 +837,33 @@
     
     
     <entry>
+      <title>クリスタライズシルバー</title>
+      <link href="/html/aojiru/tho/06y3o.html"/>
+      <url>/html/aojiru/tho/06y3o.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/tho/06%20y3o.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/y3oback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>狂気の瞳　～ Invisible Full Moon</title>
       <link href="/html/aojiru/tho/08e12o.html"/>
       <url>/html/aojiru/tho/08e12o.html</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/tho/08%20reisentheme_sinfonietta_128.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/e12oback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>U.N.オーエンは彼女なのか？</title>
+      <link href="/html/aojiru/tho/05k15o.html"/>
+      <url>/html/aojiru/tho/05k15o.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><a href="https://magstic.top/Aojiru/music/tho/U.N.ownhakanozyonanoka.mid">輕觸下載MIDI源文件</a></p><p>（SC-8850推奨）東方紅魔郷より。<br>ZUN氏のセンスが感じられる曲名です。<br>自分の脳内でフランドールとは地下礼拝所で戦っている、というイメージがあるので、<br>それにあわせて厳かに。聖戦ならぬ聖弾幕ごっこ。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -892,17 +892,6 @@
     
     
     <entry>
-      <title>さくらさくら　～ Japanize Dream...</title>
-      <link href="/html/aojiru/tho/15y20o.html"/>
-      <url>/html/aojiru/tho/15y20o.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/tho/15%20y20o.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/y20oback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>少女幻葬　～ Necro-Fantasy</title>
       <link href="/html/aojiru/tho/14y16o.html"/>
       <url>/html/aojiru/tho/14y16o.html</url>
@@ -925,88 +914,22 @@
     
     
     <entry>
+      <title>さくらさくら　～ Japanize Dream...</title>
+      <link href="/html/aojiru/tho/15y20o.html"/>
+      <url>/html/aojiru/tho/15y20o.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/tho/15%20y20o.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/y20oback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>信仰は儚き人間の為に</title>
       <link href="/html/aojiru/tho/17f11o.html"/>
       <url>/html/aojiru/tho/17f11o.html</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/tho/17%20f11o.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/f11oback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>永遠の巫女</title>
-      <link href="/html/aojiru/ths/01r2pd.html"/>
-      <url>/html/aojiru/ths/01r2pd.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/ths/1%20r2pd.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/r2pdback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>プレインエイジア</title>
-      <link href="/html/aojiru/thc/01e8c.html"/>
-      <url>/html/aojiru/thc/01e8c.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><a href="https://magstic.top/Aojiru/music/thc/k.mp3"><strong>初版音頻</strong></a></p><audio controls><source src="https://magstic.top/Aojiru/music/thc/keinetheme_pianoconcerto_128.mp3" type="audio/mpeg"></audio><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>二色蓮花蝶　～ Ancients</title>
-      <link href="/html/aojiru/ths/02s18pd.html"/>
-      <url>/html/aojiru/ths/02s18pd.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/ths/2%20s18pd.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/s18pdback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>おてんば恋娘</title>
-      <link href="/html/aojiru/ths/05k5ss.html"/>
-      <url>/html/aojiru/ths/05k5ss.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/ths/5%20k5ss.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/k5ssback.jpg"></p><p>Vc二本編成がスタンダードなんでしょうが、まぁ。<br>クリズシもピアノ編入オケあたりでやりたいですわね。ティンパニﾄﾞｺﾄﾞｺﾃﾞﾃﾞﾝﾃﾞﾝ</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>ブクレシュティの人形師</title>
-      <link href="/html/aojiru/ths/06y6pq.html"/>
-      <url>/html/aojiru/ths/06y6pq.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/ths/6%20y6pq.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/y6pqback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>蠢々秋月　～ Mooned Insect</title>
-      <link href="/html/aojiru/ths/07e3pq.html"/>
-      <url>/html/aojiru/ths/07e3pq.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/ths/7%20e3pq.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/e3pqback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>もう歌しか聞こえない</title>
-      <link href="/html/aojiru/ths/08e5sq.html"/>
-      <url>/html/aojiru/ths/08e5sq.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/ths/8%20e5sq.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/e5sqback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -1057,33 +980,11 @@
     
     
     <entry>
-      <title>幽霊楽団　～ Phantom Ensemble</title>
-      <link href="/html/aojiru/thp/04y9ps.html"/>
-      <url>/html/aojiru/thp/04y9ps.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/thp/4%20y9ps.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/y9psback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>広有射怪鳥事　～ Till When?</title>
       <link href="/html/aojiru/thp/05y11ps.html"/>
       <url>/html/aojiru/thp/05y11ps.html</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/thp/5%20y11ps.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/y11psback.jpg"></p><p><strong>サンダーゴッズ・ヴィガー</strong><br>何で俺が雷神を描くと高木ブーになるのはどうして？<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/name/121merupo%E3%80%8C%E3%82%B5%E3%83%B3%E3%83%80%E3%83%BC%E3%82%B4%E3%83%83%E3%82%BA%E3%83%BB%E3%83%B4%E3%82%A3%E3%82%AC%E3%83%BC%E3%80%8D.jpg" alt="サンダーゴッズ・ヴィガー"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>もう歌しか聞こえない</title>
-      <link href="/html/aojiru/thp/06e5ps.html"/>
-      <url>/html/aojiru/thp/06e5ps.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/thp/6%20e5ps.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/e5psback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -1112,11 +1013,22 @@
     
     
     <entry>
-      <title>竹取飛翔　～ Lunatic Princess</title>
-      <link href="/html/aojiru/thp/09e15ps.html"/>
-      <url>/html/aojiru/thp/09e15ps.html</url>
+      <title>もう歌しか聞こえない</title>
+      <link href="/html/aojiru/thp/06e5ps.html"/>
+      <url>/html/aojiru/thp/06e5ps.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/thp/9%20e15ps.mp3" type="audio/mpeg"></audio><p>ラスボス曲としては千年幻想郷がこの上無いほどラスボスしてるのでこちらはロマンティックageて特化してみましたよ。<br>原曲や諸アレンジに比べて鈍重ですが要所ではbrillanteに逝きましょう…でもやっぱ冒頭は原曲同様ｷﾘｯと始めるべきだったかなぁ。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/thp/6%20e5ps.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/e5psback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>幽霊楽団　～ Phantom Ensemble</title>
+      <link href="/html/aojiru/thp/04y9ps.html"/>
+      <url>/html/aojiru/thp/04y9ps.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/thp/4%20y9ps.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/y9psback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -1134,22 +1046,33 @@
     
     
     <entry>
-      <title>亡き王女の為のセプテット</title>
-      <link href="/html/aojiru/thp/14k13ps.html"/>
-      <url>/html/aojiru/thp/14k13ps.html</url>
+      <title>ポイズンボディ　～ Forsaken Doll</title>
+      <link href="/html/aojiru/thp/13ka12ps.html"/>
+      <url>/html/aojiru/thp/13ka12ps.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/thp/nakiouzyonotamenoseputeltuto.mp3" type="audio/mpeg"></audio><p>東方紅魔郷より。<br>パヴァーヌは好きなので、タイトルを知ったときはニヤリとしてしまいました。<br>恐らくZUN氏の曲の中では最もピアノ向けではないかと。<br>そう考えている為、構成には手をつけずただただ感情を込めて。<br>後半のアドリブ部分ですが…捏造で済みません。<br>メロが取れたら改正しようと思います。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/thp/13%20Poison_p_e.mp3" type="audio/mpeg"></audio><p>まあそんな嘆息を吐きつつもメディスンピアノなぞ。<br>習作ということにてひねりなし男でｽﾝﾏｾﾝ コレはなんちゃって音程スライドですが、弦かティンパニかトロンボーンを駆使して妖しい歪みを演出するのが正解なんでしょうか。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>ポイズンボディ　～ Forsaken Doll</title>
-      <link href="/html/aojiru/thp/13ka12ps.html"/>
-      <url>/html/aojiru/thp/13ka12ps.html</url>
+      <title>竹取飛翔　～ Lunatic Princess</title>
+      <link href="/html/aojiru/thp/09e15ps.html"/>
+      <url>/html/aojiru/thp/09e15ps.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/thp/13%20Poison_p_e.mp3" type="audio/mpeg"></audio><p>まあそんな嘆息を吐きつつもメディスンピアノなぞ。<br>習作ということにてひねりなし男でｽﾝﾏｾﾝ コレはなんちゃって音程スライドですが、弦かティンパニかトロンボーンを駆使して妖しい歪みを演出するのが正解なんでしょうか。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/thp/9%20e15ps.mp3" type="audio/mpeg"></audio><p>ラスボス曲としては千年幻想郷がこの上無いほどラスボスしてるのでこちらはロマンティックageて特化してみましたよ。<br>原曲や諸アレンジに比べて鈍重ですが要所ではbrillanteに逝きましょう…でもやっぱ冒頭は原曲同様ｷﾘｯと始めるべきだったかなぁ。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>亡き王女の為のセプテット</title>
+      <link href="/html/aojiru/thp/14k13ps.html"/>
+      <url>/html/aojiru/thp/14k13ps.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/thp/nakiouzyonotamenoseputeltuto.mp3" type="audio/mpeg"></audio><p>東方紅魔郷より。<br>パヴァーヌは好きなので、タイトルを知ったときはニヤリとしてしまいました。<br>恐らくZUN氏の曲の中では最もピアノ向けではないかと。<br>そう考えている為、構成には手をつけずただただ感情を込めて。<br>後半のアドリブ部分ですが…捏造で済みません。<br>メロが取れたら改正しようと思います。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
@@ -1183,6 +1106,83 @@
       <url>/html/aojiru/thp/17y10ps.html</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Music Lost</p><p>サクッと一ループ。真面目に練れば実に映える曲だと思います。誰かやれ。</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>永遠の巫女</title>
+      <link href="/html/aojiru/ths/01r2pd.html"/>
+      <url>/html/aojiru/ths/01r2pd.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/ths/1%20r2pd.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/r2pdback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>プレインエイジア</title>
+      <link href="/html/aojiru/thc/01e8c.html"/>
+      <url>/html/aojiru/thc/01e8c.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><a href="https://magstic.top/Aojiru/music/thc/k.mp3"><strong>初版音頻</strong></a></p><audio controls><source src="https://magstic.top/Aojiru/music/thc/keinetheme_pianoconcerto_128.mp3" type="audio/mpeg"></audio><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>二色蓮花蝶　～ Ancients</title>
+      <link href="/html/aojiru/ths/02s18pd.html"/>
+      <url>/html/aojiru/ths/02s18pd.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/ths/2%20s18pd.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/s18pdback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>おてんば恋娘</title>
+      <link href="/html/aojiru/ths/05k5ss.html"/>
+      <url>/html/aojiru/ths/05k5ss.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/ths/5%20k5ss.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/k5ssback.jpg"></p><p>Vc二本編成がスタンダードなんでしょうが、まぁ。<br>クリズシもピアノ編入オケあたりでやりたいですわね。ティンパニﾄﾞｺﾄﾞｺﾃﾞﾃﾞﾝﾃﾞﾝ</p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>蠢々秋月　～ Mooned Insect</title>
+      <link href="/html/aojiru/ths/07e3pq.html"/>
+      <url>/html/aojiru/ths/07e3pq.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/ths/7%20e3pq.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/e3pqback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ブクレシュティの人形師</title>
+      <link href="/html/aojiru/ths/06y6pq.html"/>
+      <url>/html/aojiru/ths/06y6pq.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/ths/6%20y6pq.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/y6pqback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>もう歌しか聞こえない</title>
+      <link href="/html/aojiru/ths/08e5sq.html"/>
+      <url>/html/aojiru/ths/08e5sq.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><audio controls><source src="https://magstic.top/Aojiru/music/ths/8%20e5sq.mp3" type="audio/mpeg"></audio><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/Aojiru/music/back/e5sqback.jpg"></p><p>illustration &amp; Music<br>來自Aojiru.</p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
