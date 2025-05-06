@@ -1,106 +1,48 @@
-.album-card {
-  background: #2a2a2a;
-  border-radius: 8px;
-  padding: 20px;
-  margin: 20px 0;
-  color: #e1e1e1;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  border: 1px solid rgba(255,255,255,0.1);
-}
-
-.album-main {
-  display: flex;
-  gap: 20px;
-}
-
-.album-cover {
-  flex: 0 0 30%;
-}
-
-.album-cover img {
+/* 該CSS用於“參見”的TABLE美化 */
+.reference-table {
   width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 20px 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--card-bg-color, #1a1a1a);
 }
 
-.album-info {
-  flex: 1;
+.reference-table td {
+  padding: 12px 16px;
+  color: var(--text-color, #e0e0e0);
+  border: none;
 }
 
-.album-title {
-  font-size: 24px;
-  margin-bottom: 15px;
-  color: #fff;
-  font-weight :bold;
+.reference-table tr {
+  border-bottom: 1px solid var(--border-color, rgba(255,255,255,0.1));
 }
 
-.album-meta {
-  display: flex;
-  gap: 40px;
-  margin-bottom: 20px;
-  font-size: 16px;
-  color: #bbb;
+.reference-table tr:last-child {
+  border-bottom: none;
 }
 
-.meta-left, .meta-right {
-  flex: 1;
+.reference-table tr:hover {
+  background-color: var(--card-hover-bg-color, rgba(255,255,255,0.05));
+  transition: background-color 0.2s ease;
 }
 
-.album-meta span {
-  color: #9ecbff;
+.archive-link {
+  color: var(--text-dimmed, #888);
+  font-size: 0.9em;
+  margin-left: 10px;
 }
 
-.album-desc {
-  padding: 15px 20px;
-  background: rgba(255,255,255,0.05);
-  border-radius: 6px;
-  font-size: 14px;
-  line-height: 1.8;
-  color: #bbb;
+.archive-link a {
+  color: var(--link-color, #7aa2f7);
+  text-decoration: none;
 }
 
-#article-container p {
-  margin: 0;
+.archive-link a:hover {
+  text-decoration: underline;
 }
 
-.album-card .toggle {
-  margin-bottom: 0px;
-}
-
-.toggle .toggle-content li {
-  color: #e0e0e0;
-  font-size: 14px;
-  line-height: 1.8;
-  padding: 6px 10px;
-  margin: 4px 0;
-  list-style: decimal;
-  transition: all 0.2s ease;
-  border-radius: 4px;
-  background-color: rgba(255, 255, 255, 0.05);
-}
-
-.toggle li:hover {
-  color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.1);
-  transform: translateX(5px);
-  cursor: pointer;
-}
-
-@media screen and (max-width: 768px) {
-  .album-main {
-    flex-direction: column;
-    gap: 0px;
-  }
-  
-  .album-cover {
-    flex: 0 0 100%;
-    margin-bottom: 0px;
-  }
-  .album-title {
-    margin-bottom: 10px;
-}
-
-  .album-card .toggle {
-    margin-top: 10px;
-}
-}
+.reference-table td:nth-child(1) { width: 60%; }
+.reference-table td:nth-child(2) { width: 20%; }
+.reference-table td:nth-child(3) { width: 20%; }

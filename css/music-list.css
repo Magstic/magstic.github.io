@@ -1,39 +1,83 @@
 .music-list-card {
-  background: linear-gradient(135deg, #f6f8f9 0%, #e5ebee 100%);
-  border-radius: 16px;
-  padding: 2px;
-  margin: 20px 0;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .music-list-content {
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-  border-radius: 14px;
-  padding: 20px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
 
 .song-item {
-  padding: 12px 15px;
-  margin: 8px 0;
+  padding: 0.8rem 1.2rem;
+  background: rgba(0, 0, 0, 0.03);
   border-radius: 8px;
-  color: #3a4149;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.03);
   position: relative;
-  background: linear-gradient(to right, rgba(255,255,255,0.8), rgba(255,255,255,0.4));
+  justify-content: space-between; /* 使标题和YouTube图标左右对齐 */
+}
+
+.song-title {
+  flex: 1; /* 让标题占据剩余空间 */
+  margin-right: 1rem; /* 与YouTube图标保持间距 */
+}
+
+.youtube-link {
+  color: #ff0000; /* YouTube 红色 */
+  font-size: 1.2rem;
+  text-decoration: none;
+  opacity: 0.8;
+  flex-shrink: 0; /* 防止图标被压缩 */
+}
+
+.youtube-link:hover {
+  opacity: 1;
 }
 
 .song-item:hover {
-  transform: translateX(5px);
-  background: linear-gradient(to right, rgba(233, 236, 239, 0.8), rgba(233, 236, 239, 0.4));
+  background: rgba(0, 0, 0, 0.06);
 }
 
-.song-item:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 15px;
-  right: 15px;
-  height: 1px;
-  background: linear-gradient(to right, rgba(0,0,0,0.05), transparent);
+.music-list-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-color, #d4d4d4);
+  margin-bottom: 1rem;
+  padding-bottom: 0.1rem;
+  border-bottom: 1px solid var(--primary-color, #43484c);
+  opacity: 0.9;
+}
+
+.song-item::before {
+  content: '♪';
+  margin-right: 10px;
+  color: var(--primary-color, #1890ff);
+  opacity: 0.6;
+}
+
+.music-list-content.collapsed .song-item:nth-child(n+6) {
+  display: none;
+}
+
+.music-list-card .toggle-button {
+  width: 100%;
+  text-align: center;
+  padding: 8px;
+  margin-top: 10px;
+  background: transparent;
+  border: none;
+  color: var(--primary-color, #1890ff);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.music-list-card .toggle-button:hover {
+  opacity: 0.8;
 }
