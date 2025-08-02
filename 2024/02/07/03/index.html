@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="zh-TW" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Hexo 部署小記 | Wind Dream</title><meta name="author" content="Magstic"><meta name="copyright" content="Magstic"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="序曲：在 Emlog 經歷數次伺服器死亡之後，我開始尋找穩定性高的方案。我將目光看向了純靜態頁面的 Hexo，可以免卻 SQL資料庫 管理的繁瑣。不過，Git 是什麽？我該如何部署？這些特殊名詞如何去理解？這些，都是一道道難題。現在距離 Hexo 建站之初已有半年之久，我將盡力去回憶每一處過程並記錄。當然，這不是教學。 準備：若不隨意更改核心軟體的安裝路徑，便可避免許多未知的錯誤。Node.js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo 部署小記">
-<meta property="og:url" content="https://magstic.art/2024/02/07/03/index.html">
+<meta property="og:url" content="https://magstic.art/2024/02/07/03/">
 <meta property="og:site_name" content="Wind Dream">
 <meta property="og:description" content="序曲：在 Emlog 經歷數次伺服器死亡之後，我開始尋找穩定性高的方案。我將目光看向了純靜態頁面的 Hexo，可以免卻 SQL資料庫 管理的繁瑣。不過，Git 是什麽？我該如何部署？這些特殊名詞如何去理解？這些，都是一道道難題。現在距離 Hexo 建站之初已有半年之久，我將盡力去回憶每一處過程並記錄。當然，這不是教學。 準備：若不隨意更改核心軟體的安裝路徑，便可避免許多未知的錯誤。Node.js">
 <meta property="og:locale" content="zh_TW">
@@ -11,7 +11,7 @@
 <meta property="article:author" content="Magstic">
 <meta property="article:tag" content="瑣記">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://magstic.top/Aojiru/name/092sakura%E3%80%8C%E7%9A%86%E5%90%89%E7%88%BD%E9%9B%A8%E8%A9%A0%E3%82%80%E3%80%8D.jpg"><link rel="shortcut icon" href="https://magstic.art/images/avatar.jpg"><link rel="canonical" href="https://magstic.art/2024/02/07/03/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+<meta name="twitter:image" content="https://magstic.top/Aojiru/name/092sakura%E3%80%8C%E7%9A%86%E5%90%89%E7%88%BD%E9%9B%A8%E8%A9%A0%E3%82%80%E3%80%8D.jpg"><link rel="shortcut icon" href="https://magstic.art/images/avatar.jpg"><link rel="canonical" href="https://magstic.art/2024/02/07/03/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
   root: '/',
   algolia: undefined,
   localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":0,"unescape":false,"languages":{"hits_empty":"找不到您查詢的內容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
