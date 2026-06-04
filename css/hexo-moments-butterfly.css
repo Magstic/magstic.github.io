@@ -20,8 +20,8 @@
 
 .moments-home-card {
   position: relative;
-  overflow: hidden;
   isolation: isolate;
+  z-index: 1;
   margin-bottom: 20px;
   padding: 1.7rem 1.85rem;
   border-radius: 8px;
@@ -36,6 +36,7 @@
   position: absolute;
   inset: 0;
   z-index: 0;
+  border-radius: inherit;
   opacity: 0;
   pointer-events: none;
   background-image: var(--moments-home-feature-overlay), var(--moments-home-card-bg-image);
@@ -48,6 +49,11 @@
 
 .moments-home-card:hover {
   box-shadow: var(--card-hover-box-shadow);
+}
+
+.moments-home-card:hover,
+.moments-home-card:focus-within {
+  z-index: 4;
 }
 
 .moments-home-card__header {
@@ -860,6 +866,7 @@
   }
 
   .moments-home-card--with-image {
+    overflow: hidden;
     background:
       radial-gradient(circle at top right, rgba(255, 255, 255, 0.1), transparent 28%),
       var(--moments-home-feature-shell);
