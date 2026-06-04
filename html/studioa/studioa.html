@@ -11,16 +11,105 @@
 <meta property="article:author" content="Magstic">
 <meta property="article:tag" content="Wind Dream,Magstic,Touhou,同人,Doujin,同人音樂">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://magstic.art/images/avatar.jpg"><link rel="shortcut icon" href="https://magstic.art/images/avatar.jpg"><link rel="canonical" href="https://magstic.art/html/studioa/studioa"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+<meta name="twitter:image" content="https://magstic.art/images/avatar.jpg"><script type="application/ld+json"></script><link rel="shortcut icon" href="https://magstic.art/images/avatar.jpg"><link rel="canonical" href="https://magstic.art/html/studioa/studioa"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
   root: '/',
   algolia: undefined,
-  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":0,"unescape":false,"languages":{"hits_empty":"找不到您查詢的內容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":0,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"找不到符合您查詢的內容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
   translate: undefined,
-  noticeOutdate: undefined,
-  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":120},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
   copy: {
     success: '複製成功',
-    error: '複製錯誤',
+    error: '複製失敗',
     noSupport: '瀏覽器不支援'
   },
   relativeDate: {
@@ -43,7 +132,7 @@
     buttonText: '載入更多'
   },
   isPhotoFigcaption: true,
-  islazyload: true,
+  islazyloadPlugin: true,
   isAnchor: false,
   percent: {
     toc: true,
@@ -52,108 +141,10 @@
   autoDarkmode: false
 }</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
   title: 'Studio A\' Guest',
-  isPost: false,
-  isHome: false,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2025-03-30 09:52:46'
-}</script><script>(win=>{
-      win.saveToLocal = {
-        set: (key, value, ttl) => {
-          if (ttl === 0) return
-          const now = Date.now()
-          const expiry = now + ttl * 86400000
-          const item = {
-            value,
-            expiry
-          }
-          localStorage.setItem(key, JSON.stringify(item))
-        },
-      
-        get: key => {
-          const itemStr = localStorage.getItem(key)
-      
-          if (!itemStr) {
-            return undefined
-          }
-          const item = JSON.parse(itemStr)
-          const now = Date.now()
-      
-          if (now > item.expiry) {
-            localStorage.removeItem(key)
-            return undefined
-          }
-          return item.value
-        }
-      }
-    
-      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
-        const script = document.createElement('script')
-        script.src = url
-        script.async = true
-        script.onerror = reject
-        script.onload = script.onreadystatechange = function() {
-          const loadState = this.readyState
-          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-          script.onload = script.onreadystatechange = null
-          resolve()
-        }
-
-        Object.keys(attr).forEach(key => {
-          script.setAttribute(key, attr[key])
-        })
-
-        document.head.appendChild(script)
-      })
-    
-      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
-        const link = document.createElement('link')
-        link.rel = 'stylesheet'
-        link.href = url
-        if (id) link.id = id
-        link.onerror = reject
-        link.onload = link.onreadystatechange = function() {
-          const loadState = this.readyState
-          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-          link.onload = link.onreadystatechange = null
-          resolve()
-        }
-        document.head.appendChild(link)
-      })
-    
-      win.activateDarkMode = () => {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      win.activateLightMode = () => {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
-      const t = saveToLocal.get('theme')
-    
-        if (t === 'dark') activateDarkMode()
-        else if (t === 'light') activateLightMode()
-      
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        if (asideStatus === 'hide') {
-          document.documentElement.classList.add('hide-aside')
-        } else {
-          document.documentElement.classList.remove('hide-aside')
-        }
-      }
-    
-      const detectApple = () => {
-        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-          document.documentElement.classList.add('apple')
-        }
-      }
-      detectApple()
-    })(window)</script><link rel="stylesheet" href="/css/custom.css"><!-- hexo injector head_end start --><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hint.css@2.7.0/hint.min.css"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 8.1.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://magstic.art/images/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">貼文</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">3</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 歸類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-paper-plane"></i><span> 關於</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-light fa-earth-americas"></i><span> 聆風</span></a></div><div class="menus_item"><a class="site-page" href="/message/"><i class="fa-fw fas fa-shoe-prints"></i><span> 足跡</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Wind Dream"><span class="site-name">Wind Dream</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-search fa-fw"></i><span> 搜尋</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 歸類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-paper-plane"></i><span> 關於</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-light fa-earth-americas"></i><span> 聆風</span></a></div><div class="menus_item"><a class="site-page" href="/message/"><i class="fa-fw fas fa-shoe-prints"></i><span> 足跡</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="page"><h1 class="page-title">Studio A' Guest</h1><div id="article-container"><link rel="stylesheet" href="/css/album-card.css" type="text/css"><div class = "lista">
+  pageType: 'page'
+}</script><link rel="stylesheet" href="/css/custom.css"><!-- hexo injector head_end start --><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hint.css@2.7.0/hint.min.css"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 8.1.2"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://magstic.art/images/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 歸類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-paper-plane"></i><span> 關於</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-light fa-earth-americas"></i><span> 聆風</span></a></div><div class="menus_item"><a class="site-page" href="/message/"><i class="fa-fw fas fa-shoe-prints"></i><span> 足跡</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Wind Dream</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜尋</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 歸類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-paper-plane"></i><span> 關於</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-light fa-earth-americas"></i><span> 聆風</span></a></div><div class="menus_item"><a class="site-page" href="/message/"><i class="fa-fw fas fa-shoe-prints"></i><span> 足跡</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">Studio A' Guest</h1></header><main class="layout" id="content-inner"><div id="page"><div class="page-title">Studio A' Guest</div><div class="container" id="article-container"><link rel="stylesheet" href="/css/album-card.css" type="text/css"><div class = "lista">
 本頁面未整理 Dangerous Mezashi Cat 的作品。
 
 <p>您可以在 VGMDB 的 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://vgmdb.net/artist/56663">Akira Sakai</a> 頁面尋找 <code>DMCD</code> 前綴的 CD。</p>
@@ -172,7 +163,7 @@
       <div class="album-main">
        <a href="https://www.dlsite.com/home/work/=/product_id/RJ01280820.html" rel="external nofollow noreferrer" target="_blank" class="album-download"><i class="fa-solid fa-cart-shopping"></i></a>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/SaKURa-東方癒歌奏%20睡(2)-.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/SaKURa-東方癒歌奏%20睡(2)-.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">KuRENAi-東方癒歌奏 睡(2)-</p>
@@ -231,7 +222,7 @@
       <div class="album-main">
        <a href="https://www.dlsite.com/home/work/=/product_id/RJ01187049.html" rel="external nofollow noreferrer" target="_blank" class="album-download"><i class="fa-solid fa-cart-shopping"></i></a>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/KuRENAi-東方癒歌奏%20睡①-.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/KuRENAi-東方癒歌奏%20睡①-.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">KuRENAi-東方癒歌奏 睡(1)-</p>
@@ -291,7 +282,7 @@
       <div class="album-main">
        <a href="https://tamusic.booth.pm/items/2503892" rel="external nofollow noreferrer" target="_blank" class="album-download"><i class="fa-solid fa-file-circle-question"></i></a>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/TAM3-0169.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/TAM3-0169.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">FF VIOLIN VI</p>
@@ -350,7 +341,7 @@
       <div class="album-main">
        <a href="https://downloads.khinsider.com/game-soundtracks/album/empire-of-chu-2-princess-original-soundtrack-2018" rel="external nofollow noreferrer" target="_blank" class="album-download"><i class="fa-solid fa-cloud-arrow-down"></i></a>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/CHT-02.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/CHT-02.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">厨二姫の帝国</p>
@@ -413,7 +404,7 @@
       <div class="album-main">
        <a href="https://downloads.khinsider.com/game-soundtracks/album/akiyume-kukuru-sound-track-2016" rel="external nofollow noreferrer" target="_blank" class="album-download"><i class="fa-solid fa-cloud-arrow-down"></i></a>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/SNKY-07-T.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/SNKY-07-T.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">あきゆめくくる</p>
@@ -478,7 +469,7 @@
       <div class="album-main">
        <a href="https://booth.pm/ja/items/5805884" rel="external nofollow noreferrer" target="_blank" class="album-download"><i class="fa-solid fa-file-circle-question"></i></a>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/YHCD-0001.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/YHCD-0001.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">ゆるふわ秋冬帖</p>
@@ -524,7 +515,7 @@
       <div class="album-main">
        <a href="https://soundcloud.com/yuka_lro/emery_xfdemo" rel="external nofollow noreferrer" target="_blank" class="album-download"><i class="fa-solid fa-file-circle-question"></i></a>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/emery.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/emery.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">emery</p>
@@ -579,7 +570,7 @@
       <div class="album-main">
        <div class="album-download"><i class="fa-solid fa-xmark"></i></div>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/AlstroemeriA.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/AlstroemeriA.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">AlstroemeriA</p>
@@ -649,7 +640,7 @@
       <div class="album-main">
        <a href="https://vk.com/wall-60027733_17482" rel="external nofollow noreferrer" target="_blank" class="album-download"><i class="fa-solid fa-file-circle-question"></i></a>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/MagicalCannedMusic.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/MagicalCannedMusic.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">Magical Canned Music</p>
@@ -720,7 +711,7 @@
       <div class="album-main">
        <a href="https://downloads.khinsider.com/game-soundtracks/album/pulltop-vocal-collection-2-uta-no-kanzume-2" rel="external nofollow noreferrer" target="_blank" class="album-download"><i class="fa-solid fa-cloud-arrow-down"></i></a>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/WILL-277.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/WILL-277.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">うたのかんづめ2</p>
@@ -789,7 +780,7 @@
       <div class="album-main">
        <a href="https://downloads.khinsider.com/game-soundtracks/album/ff-violin-ii-final-fantastic-violin-2-2011" rel="external nofollow noreferrer" target="_blank" class="album-download"><i class="fa-solid fa-cloud-arrow-down"></i></a>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/FFVIOLIN2.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/FFVIOLIN2.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">FF VIOLIN II</p>
@@ -846,7 +837,7 @@
       <div class="album-main">
        <div class="album-download"><i class="fa-solid fa-xmark"></i></div>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/Metamorphose.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/Metamorphose.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">Metamorphose</p>
@@ -941,7 +932,7 @@
       <div class="album-main">
        <a href="https://downloads.khinsider.com/game-soundtracks/album/ff-violin-final-fantastic-violin-2010" rel="external nofollow noreferrer" target="_blank" class="album-download"><i class="fa-solid fa-cloud-arrow-down"></i></a>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/FFVIOLIN1.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/FFVIOLIN1.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">FF VIOLIN</p>
@@ -1013,7 +1004,7 @@
       <div class="album-main">
        <a href="https://doujinstyle.com/?p=page&type=1&id=1619" rel="external nofollow noreferrer" target="_blank" class="album-download"><i class="fa-solid fa-cloud-arrow-down"></i></a>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/GODMOTHER.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/GODMOTHER.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">GODMOTHER</p>
@@ -1072,7 +1063,7 @@
       <div class="album-main">
        <div class="album-download"><i class="fa-solid fa-xmark"></i></div>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/Rockside.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/Rockside.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">ROCKSIDE</p>
@@ -1126,7 +1117,7 @@
       <div class="album-main">
        <a href="https://doujinstyle.com/?p=page&type=1&id=2535" rel="external nofollow noreferrer" target="_blank" class="album-download"><i class="fa-solid fa-cloud-arrow-down"></i></a>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/TAM3-0059.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/TAM3-0059.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">東方四重奏2</p>
@@ -1176,7 +1167,7 @@
       <div class="album-main">
        <a href="https://doujinstyle.com/?p=page&type=1&id=2546" rel="external nofollow noreferrer" target="_blank" class="album-download"><i class="fa-solid fa-cloud-arrow-down"></i></a>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/Kwaidan.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/Kwaidan.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">ピアノのための東方夜想曲集「Kwaidan」</p>
@@ -1227,7 +1218,7 @@
       <div class="album-main">
        <a href="https://doujinstyle.com/?p=page&type=1&id=2515" rel="external nofollow noreferrer" target="_blank" class="album-download"><i class="fa-solid fa-cloud-arrow-down"></i></a>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/絢櫻祭4.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/絢櫻祭4.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">台湾LIVE ～東方絢櫻祭4～</p>
@@ -1291,7 +1282,7 @@
       <div class="album-main">
        <a href="https://doujinstyle.com/?p=page&type=1&id=2534" rel="external nofollow noreferrer" target="_blank" class="album-download"><i class="fa-solid fa-cloud-arrow-down"></i></a>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/TAM3-0052.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/TAM3-0052.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">東方四重奏</p>
@@ -1347,7 +1338,7 @@
       <div class="album-main">
        <a href="https://nyaa.si/view/80742" rel="external nofollow noreferrer" target="_blank" class="album-download"><i class="fa-solid fa-file-circle-question"></i></a>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/GlobalGirlsGeneration.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/GlobalGirlsGeneration.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">Global Girls Generation</p>
@@ -1481,7 +1472,7 @@
       <div class="album-main">
        <a href="https://doujinstyle.com/?p=page&type=1&id=2536" rel="external nofollow noreferrer" target="_blank" class="album-download"><i class="fa-solid fa-cloud-arrow-down"></i></a>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/TAM3-0047.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/TAM3-0047.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">Air Violin</p>
@@ -1515,7 +1506,6 @@
 <li>Farewell song</li>
 <li>青空</li>
 </ol>
-<p>	</p>
 </div></details>
 <details class="toggle" style="border: 1px solid #303030"><summary class="toggle-button" style="background-color: #303030;color: white">Cast and Staff</summary><div class="toggle-content"><ul>
 <li>01.TAM×五条下位（SYNC.ART’S）&#x2F; 歌：美里（Misty）</li>
@@ -1542,7 +1532,7 @@
       <div class="album-main">
        <a href="https://doujinstyle.com/?p=page&type=1&id=2544" rel="external nofollow noreferrer" target="_blank" class="album-download"><i class="fa-solid fa-cloud-arrow-down"></i></a>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/Shangri-La.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/Shangri-La.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">ピアノのための東方夜想曲集「Shangri－La」</p>
@@ -1593,7 +1583,7 @@
       <div class="album-main">
        <a href="https://doujinstyle.com/?p=page&type=1&id=1223" rel="external nofollow noreferrer" target="_blank" class="album-download"><i class="fa-solid fa-cloud-arrow-down"></i></a>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/SCAPEGOAT.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/SCAPEGOAT.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">Scape Goat</p>
@@ -1653,7 +1643,7 @@
       <div class="album-main">
        <a href="https://doujinstyle.com/?p=page&type=1&id=2494" rel="external nofollow noreferrer" target="_blank" class="album-download"><i class="fa-solid fa-cloud-arrow-down"></i></a>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/TAM3-0032.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/TAM3-0032.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">第6回TAMUSICコンサート</p>
@@ -1702,7 +1692,7 @@
       <div class="album-main">
        <a href="https://doujinstyle.com/?p=page&type=1&id=5285" rel="external nofollow noreferrer" target="_blank" class="album-download"><i class="fa-solid fa-cloud-arrow-down"></i></a>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/Spirit.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/Spirit.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">ピアノのための東方夜想曲集「Spirit」</p>
@@ -1753,7 +1743,7 @@
       <div class="album-main">
        <a href="下載" target="_blank" class="album-download"><i class="fa-solid fa-file-circle-question"></i></a>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/	TAM3-0029.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/	TAM3-0029.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">音盤文々⑨</p>
@@ -1828,7 +1818,7 @@
       <div class="album-main">
        <a href="https://doujinstyle.com/?p=page&type=1&id=1222" rel="external nofollow noreferrer" target="_blank" class="album-download"><i class="fa-solid fa-cloud-arrow-down"></i></a>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/WitchCraft.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/WitchCraft.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">Witch Craft</p>
@@ -1886,7 +1876,7 @@
       <div class="album-main">
        <a href="https://downloads.khinsider.com/game-soundtracks/album/touhou-boss-arrange-album-2-rpg-battle-arrange-2007" rel="external nofollow noreferrer" target="_blank" class="album-download"><i class="fa-solid fa-cloud-arrow-down"></i></a>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/HKMP-OTO22.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/HKMP-OTO22.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">東方ボスアレンジアルバム 2</p>
@@ -1956,7 +1946,7 @@
       <div class="album-main">
        <div class="album-download"><i class="fa-solid fa-xmark"></i></div>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/Claymore.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/Claymore.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">Claymore</p>
@@ -2035,7 +2025,7 @@
       <div class="album-main">
        <a href="https://doujinstyle.com/?p=page&type=1&id=1221" rel="external nofollow noreferrer" target="_blank" class="album-download"><i class="fa-solid fa-cloud-arrow-down"></i></a>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/CatHolic.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/CatHolic.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">CatHolic</p>
@@ -2098,7 +2088,7 @@
       <div class="album-main">
        <div class="album-download"><i class="fa-solid fa-xmark"></i></div>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/TAM3-0019.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/TAM3-0019.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">第5回TAMUSICコンサート～東方編～</p>
@@ -2152,7 +2142,7 @@
       <div class="album-main">
        <a href="https://downloads.khinsider.com/game-soundtracks/album/5th-tamusic-concert-key-compilation" rel="external nofollow noreferrer" target="_blank" class="album-download"><i class="fa-solid fa-cloud-arrow-down"></i></a>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/TAM3-0018.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/TAM3-0018.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">第5回TAMUSICコンサート～key編～</p>
@@ -2204,7 +2194,7 @@
       <div class="album-main">
        <a href="https://doujinstyle.com/?p=page&type=1&id=2525" rel="external nofollow noreferrer" target="_blank" class="album-download"><i class="fa-solid fa-cloud-arrow-down"></i></a>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/TAM3-0009.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/TAM3-0009.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">東方まんがまつり　音盤文々。Ⅱ</p>
@@ -2270,7 +2260,7 @@
       <div class="album-main">
        <div class="album-download"><i class="fa-solid fa-xmark"></i></div>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/WANDERINGS2.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/WANDERINGS2.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">WANDERINGS II</p>
@@ -2336,7 +2326,7 @@
       <div class="album-main">
        <div class="album-download"><i class="fa-solid fa-xmark"></i></div>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/WILL-159.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/WILL-159.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">遥かに仰ぎ、麗しの SoundTrack</p>
@@ -2412,7 +2402,7 @@
       <div class="album-main">
        <a href="https://downloads.khinsider.com/game-soundtracks/album/time-limit-momentary-2006" rel="external nofollow noreferrer" target="_blank" class="album-download"><i class="fa-solid fa-cloud-arrow-down"></i></a>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/TimeLimitM.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/TimeLimitM.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">Time Limit〜Momentary〜</p>
@@ -2472,7 +2462,7 @@
       <div class="album-main">
        <a href="https://doujinstyle.com/?p=page&type=1&id=2499" rel="external nofollow noreferrer" target="_blank" class="album-download"><i class="fa-solid fa-cloud-arrow-down"></i></a>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/TAM3-0005.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/TAM3-0005.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">key classics KANON version</p>
@@ -2505,7 +2495,6 @@
 <li>Last regrets</li>
 <li>風の辿り着く場所</li>
 </ol>
-<p>	</p>
 </div></details>
 <details class="toggle" style="border: 1px solid #303030"><summary class="toggle-button" style="background-color: #303030;color: white">Cast and Staff</summary><div class="toggle-content"><ul>
 <li>バイオリン：TAM</li>
@@ -2522,7 +2511,7 @@
       <div class="album-main">
        <div class="album-download"><i class="fa-solid fa-xmark"></i></div>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/銀色の三日月1.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/銀色の三日月1.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">銀色の三日月I</p>
@@ -2556,7 +2545,6 @@
 <li>Neo ChosenOnes</li>
 <li>howling silver wolf</li>
 </ol>
-<p>	</p>
 </div></details>
 <details class="toggle" style="border: 1px solid #303030"><summary class="toggle-button" style="background-color: #303030;color: white">Cast and Staff</summary><div class="toggle-content"><ul>
 <li>A’(Studio A’) Tr.01 04</li>
@@ -2584,7 +2572,7 @@
       <div class="album-main">
        <div class="album-download"><i class="fa-solid fa-xmark"></i></div>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/TAM3-0004.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/TAM3-0004.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">東方バイオリン２</p>
@@ -2637,7 +2625,7 @@
       <div class="album-main">
        <a href="https://doujinstyle.com/?p=page&type=1&id=2556" rel="external nofollow noreferrer" target="_blank" class="album-download"><i class="fa-solid fa-cloud-arrow-down"></i></a>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/東方子守唄.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/東方子守唄.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">東方子守唄</p>
@@ -2685,7 +2673,7 @@
       <div class="album-main">
        <div class="album-download"><i class="fa-solid fa-xmark"></i></div>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/TAM3-0002.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/TAM3-0002.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">東方バイオリン１</p>
@@ -2739,7 +2727,7 @@
       <div class="album-main">
        <a href="https://downloads.khinsider.com/game-soundtracks/album/ibara-remix-tracks" rel="external nofollow noreferrer" target="_blank" class="album-download"><i class="fa-solid fa-cloud-arrow-down"></i></a>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/INCD-0111.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/INCD-0111.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">THE LUNATIC: IBARA REMIX TRACKS</p>
@@ -2785,7 +2773,7 @@
       <div class="album-main">
        <a href="https://downloads.khinsider.com/game-soundtracks/album/windage-2006" rel="external nofollow noreferrer" target="_blank" class="album-download"><i class="fa-solid fa-cloud-arrow-down"></i></a>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/WindAge.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/WindAge.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">Wind Age</p>
@@ -2851,7 +2839,7 @@
       <div class="album-main">
        <a href="https://doujinstyle.com/?p=page&type=1&id=2524" rel="external nofollow noreferrer" target="_blank" class="album-download"><i class="fa-solid fa-cloud-arrow-down"></i></a>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/TAM3-0001.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/TAM3-0001.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">東方まんがまつり 音盤文々。</p>
@@ -2906,7 +2894,7 @@
       <div class="album-main">
        <div class="album-download"><i class="fa-solid fa-xmark"></i></div>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/WILL-147O.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/WILL-147O.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">プリンセスワルツ SoundTrack</p>
@@ -2982,7 +2970,7 @@
       <div class="album-main">
        <div class="album-download"><i class="fa-solid fa-xmark"></i></div>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/AbsoluteArea.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/AbsoluteArea.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">Absolute Area</p>
@@ -3124,7 +3112,7 @@
       <div class="album-main">
        <div class="album-download"><i class="fa-solid fa-xmark"></i></div>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/%E6%9D%B1%E6%96%B9%E3%81%BE%E3%82%93%E3%81%8C%E3%81%BE%E3%81%A4%E3%82%8A%20%E7%94%9F%E6%BC%94%E5%A5%8F%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E6%9B%B2%20%2318.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/%E6%9D%B1%E6%96%B9%E3%81%BE%E3%82%93%E3%81%8C%E3%81%BE%E3%81%A4%E3%82%8A%20%E7%94%9F%E6%BC%94%E5%A5%8F%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E6%9B%B2%20%2318.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">東方まんがまつり 生演奏プログラム曲 #18</p>
@@ -3170,7 +3158,7 @@
       <div class="album-main">
        <div class="album-download"><i class="fa-solid fa-xmark"></i></div>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/ViolinCollaboration.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/ViolinCollaboration.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">ＴＡＭコラボＢＥＳＴ01</p>
@@ -3204,7 +3192,6 @@
 <li>   汐	</li>
 <li>   鳥の詩</li>
 </ol>
-<p>	</p>
 </div></details>
 <details class="toggle" style="border: 1px solid #303030"><summary class="toggle-button" style="background-color: #303030;color: white">Cast and Staff</summary><div class="toggle-content"><ul>
 <li>01 From AIR &#x2F; Composition: Shinji Orito &#x2F; Performance: k.kuroya</li>
@@ -3231,7 +3218,7 @@
       <div class="album-main">
        <div class="album-download"><i class="fa-solid fa-xmark"></i></div>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/BrokenThunder.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/BrokenThunder.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">Broken Thunder</p>
@@ -3360,7 +3347,7 @@
       <div class="album-main">
        <div class="album-download"><i class="fa-solid fa-xmark"></i></div>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/TacNote.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/TacNote.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">Tac-Note</p>
@@ -3453,7 +3440,7 @@
       <div class="album-main">
        <a href="https://downloads.khinsider.com/game-soundtracks/album/borderline-2005" rel="external nofollow noreferrer" target="_blank" class="album-download"><i class="fa-solid fa-cloud-arrow-down"></i></a>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/BorderLine.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/BorderLine.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">Border Line</p>
@@ -3512,7 +3499,7 @@
       <div class="album-main">
        <a href="https://downloads.khinsider.com/game-soundtracks/album/reverie-2005" rel="external nofollow noreferrer" target="_blank" class="album-download"><i class="fa-solid fa-cloud-arrow-down"></i></a>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/Reverie.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/Reverie.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">Reverie</p>
@@ -3569,7 +3556,7 @@
       <div class="album-main">
        <div class="album-download"><i class="fa-solid fa-xmark"></i></div>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/Will-130TU.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/Will-130TU.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">あやかしびと Soundtrack</p>
@@ -3629,7 +3616,7 @@
       <div class="album-main">
        <a href="https://downloads.khinsider.com/game-soundtracks/album/hanekun-no-yu-utu-original-sound-track-2005" rel="external nofollow noreferrer" target="_blank" class="album-download"><i class="fa-solid fa-cloud-arrow-down"></i></a>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/YU-UTU.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/YU-UTU.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">羽くんの憂鬱</p>
@@ -3687,7 +3674,7 @@
       <div class="album-main">
        <div class="album-download"><i class="fa-solid fa-xmark"></i></div>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/PU-D003.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/PU-D003.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">お願いお星さま Soundtrack</p>
@@ -3724,7 +3711,6 @@
 <li>Starseeker</li>
 <li>Christmas for stars</li>
 </ol>
-<p>	</p>
 </div></details>
 <details class="toggle" style="border: 1px solid #303030"><summary class="toggle-button" style="background-color: #303030;color: white">Cast and Staff</summary><div class="toggle-content"><ul>
 <li>Composed by Harumi Shiina: 4~6, 8, 10, 11, 13, 14</li>
@@ -3756,7 +3742,7 @@
       <div class="album-main">
        <a href="https://4otaku.org/blog/mu/2287.html" rel="external nofollow noreferrer" target="_blank" class="album-download"><i class="fa-solid fa-file-circle-question"></i></a>
         <div class="album-cover">
-          <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/ROV5T3.jpg">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://magstic.top/StudioA/guest/ROV5T3.jpg">
         </div>
         <div class="album-info">
           <p class="album-title">RAGNAROK FAN DISC Vol.5</p>
@@ -3808,7 +3794,10 @@
 </div></details>
       </div>
     </div>
-  <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 評論</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://magstic.art/images/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Magstic</div><div class="author-info__description">聆听自然之風</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">貼文</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">3</div></a></div><a id="card-info-btn" href="mailto:mastic.cn@gmail.com" rel="external nofollow noreferrer"><i class="fab fa-google"></i><span>Gmail</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Wind Dream，休憩之所。<br>本站在 2025.05.06 啟用閲讀統計。</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/05/26/14/" title="鍵山雛 BOT 開發手記"><img src="https://magstic.top/Aojiru/name/092sakura「皆吉爽雨詠む」.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="鍵山雛 BOT 開發手記"/></a><div class="content"><a class="title" href="/2026/05/26/14/" title="鍵山雛 BOT 開發手記">鍵山雛 BOT 開發手記</a><time datetime="2026-05-25T19:56:28.000Z" title="發表於 2026-05-25 19:56:28">2026-05-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/01/09/13/" title="東方氷幻鏡，來自 L-Garden"><img src="https://magstic.top/Sitemedia/J2ME/MirrorsTale/jacket.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="東方氷幻鏡，來自 L-Garden"/></a><div class="content"><a class="title" href="/2026/01/09/13/" title="東方氷幻鏡，來自 L-Garden">東方氷幻鏡，來自 L-Garden</a><time datetime="2026-01-08T19:15:28.000Z" title="發表於 2026-01-08 19:15:28">2026-01-08</time></div></div></div></div><div class="card-widget Links" id="Links"><div class="item-headline"><i class="fa-solid fa-link"></i><span>連結</span></div><div class="item-content"><a target="_blank" rel="noopener external nofollow noreferrer" href="https://altneuland.net">アルトノイラント</a><br><a target="_blank" rel="noopener external nofollow noreferrer" href="https://bloak.github.io/touhou_piano_library/index.html">Touhou Piano Library</a><br><a target="_blank" rel="noopener external nofollow noreferrer" href="http://abab.dip.jp/">海老福落雷電解研究所</a></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2026 By Magstic</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="hide-aside-btn" type="button" title="單欄和雙欄切換"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><a id="to_comment" href="#post-comment" title="直達評論"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="返回頂部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+  <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 評論</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://magstic.art/images/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Magstic</div><div class="author-info-description">聆听自然之風</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">3</div></a></div><a id="card-info-btn" href="mailto:mastic.cn@gmail.com" rel="external nofollow noreferrer"><i class="fab fa-google"></i><span>Gmail</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Wind Dream，休憩之所。<br>本站在 2025.05.06 啟用閲讀統計。</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/05/26/14/" title="鍵山雛 BOT 開發手記"><img src="https://magstic.top/Aojiru/name/092sakura「皆吉爽雨詠む」.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="鍵山雛 BOT 開發手記"/></a><div class="content"><a class="title" href="/2026/05/26/14/" title="鍵山雛 BOT 開發手記">鍵山雛 BOT 開發手記</a><time datetime="2026-05-25T19:56:28.000Z" title="發表於 2026-05-25 19:56:28">2026-05-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/01/09/13/" title="東方氷幻鏡，來自 L-Garden"><img src="https://magstic.top/Sitemedia/J2ME/MirrorsTale/jacket.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="東方氷幻鏡，來自 L-Garden"/></a><div class="content"><a class="title" href="/2026/01/09/13/" title="東方氷幻鏡，來自 L-Garden">東方氷幻鏡，來自 L-Garden</a><time datetime="2026-01-08T19:15:28.000Z" title="發表於 2026-01-08 19:15:28">2026-01-08</time></div></div></div></div><div class="card-widget Links" id="Links"><div class="item-headline"><i class="fa-solid fa-link"></i><span>連結</span></div><div class="item-content"><a target="_blank" rel="noopener external nofollow noreferrer" href="https://altneuland.net">アルトノイラント</a><br><a target="_blank" rel="noopener external nofollow noreferrer" href="https://bloak.github.io/touhou_piano_library/index.html">Touhou Piano Library</a><br><a target="_blank" rel="noopener external nofollow noreferrer" href="https://abab.mydns.jp/">海老福落雷電解研究所</a></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2020 - 2026 By Magstic</span><span class="framework-info"><span>Framework </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="hide-aside-btn" type="button" title="單欄和雙欄切換"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><a id="to_comment" href="#post-comment" title="前往評論"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到頂端"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
   const getCount = () => {
     const countELement = document.getElementById('twikoo-count')
     if(!countELement) return
@@ -3824,22 +3813,38 @@
     })
   }
 
-  const init = () => {
-    twikoo.init(Object.assign({
-      el: '#twikoo-wrap',
+  const init = (el = document, path = location.pathname) => {
+    twikoo.init({
+      el: el.querySelector('#twikoo-wrap'),
       envId: 'https://windream.netlify.app/.netlify/functions/twikoo',
       region: '',
       onCommentLoaded: () => {
         btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
-      }
-    }, null))
+      },
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
 
     
+
+    isShuoshuo && (window.shuoshuoComment.destroyTwikoo = () => {
+      if (el.children.length) {
+        el.innerHTML = ''
+        el.classList.add('no-comment')
+      }
+    })
   }
 
-  const loadTwikoo = () => {
-    if (typeof twikoo === 'object') setTimeout(init,0)
-    else getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(init)
+  const loadTwikoo = (el, path) => {
+    if (typeof twikoo === 'object') setTimeout(() => init(el, path), 0)
+    else btf.getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(() => init(el, path))
+  }
+
+  if (isShuoshuo) {
+    'Twikoo' === 'Twikoo'
+      ? window.shuoshuoComment = { loadComment: loadTwikoo }
+      : window.loadOtherComment = loadTwikoo
+    return
   }
 
   if ('Twikoo' === 'Twikoo' || !false) {
@@ -3848,4 +3853,4 @@
   } else {
     window.loadOtherComment = loadTwikoo
   }
-})()</script></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜尋</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  資料庫載入中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜尋文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
+})()</script></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜尋</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  資料載入中</span></div><div class="local-search-input"><input placeholder="搜尋文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
