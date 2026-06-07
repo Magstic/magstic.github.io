@@ -59,7 +59,12 @@ code,
   #article-container blockquote,
   #article-container .note-content,
   #article-container table {
-    font-size: 0.98rem;
-    line-height: 1.85;
+    font-size: 1.03rem;
+    line-height: 1.88;
+  }
+
+  #article-container p,
+  #article-container li {
+    letter-spacing: 0.012em;
   }
 }
