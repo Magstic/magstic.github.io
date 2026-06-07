@@ -68,3 +68,9 @@ code,
     letter-spacing: 0.012em;
   }
 }
+
+#article-container img {
+  display: block;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
