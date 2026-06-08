@@ -423,17 +423,6 @@
     
     
     <entry>
-      <title>關於</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
-      
-        <content type="html"><![CDATA[<p>『妳相信永遠麽？』</p><p>人之肉體，並非永恆不滅，故一笑而過。<br>人之精神，並非永恆不變，故永遠執拗。</p><p>在這份『執拗』之間，我還是我嗎？我是否已經被異化？</p><p>無人所知。</p><p>不過，我依然相信『永遠』。</p><p>—— Magstic，2026.06.01</p><hr><p>你好，我是 Magstic，『Wind Dream』管理人。<br>這裡主要上載一些塵封的歷史記憶，同人作品中的蒙塵事物會被記錄。</p><p>意義？我想僅僅是出於對個人的一份懷思。<br>網際網路時代，每個人的資料只不過是虛無縹緲的數字資訊。<br>媒體的便捷與易逝，無時無刻都在將人心拉入未知的淵藪。</p><p>記憶是生命的質料。若此刻不去記錄，來日或許只能面對空白的螢幕惆悵。<br>這個站點作為網際網路的一部分，或許亦會隨時死亡。<br>不過，我相信『永遠』。</p><p>—— Magstic，2022.01.03</p><hr><p><strong>管理</strong><br>法隱自命，空耦度世。<br>疲於觥籌，憊於囚籠。<br>偽善自樂，虛妄永遠。<br>粗人一介，浮沉人世。</p><p><strong>站點</strong><br>過去基於 Emlog，現為 Hexo。</p><p><strong>聯絡</strong><br>E-Mail：<a href="mailto:&#x6d;&#x61;&#115;&#116;&#105;&#x63;&#46;&#99;&#110;&#x40;&#103;&#109;&#97;&#x69;&#108;&#46;&#x63;&#111;&#x6d;">mastic.cn@gmail.com</a></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>歸類</title>
       <link href="/categories/index.html"/>
       <url>/categories/index.html</url>
@@ -450,6 +439,17 @@
       <url>/css/custom.css</url>
       
         <content type="html"><![CDATA[#article-container,#article-container p,#article-container li,#article-container blockquote,#article-container .note-content,#article-container .highlight figcaption,#article-container table {  font-family:    "Noto Sans TC", "Source Han Sans TC", "PingFang TC",    "Microsoft JhengHei", "Segoe UI", sans-serif;  font-size: 1rem;  font-weight: 500;  line-height: 1.9;}#article-container p,#article-container li {  letter-spacing: 0.015em;}code,kbd,pre,pre code,#article-container .highlight,#article-container .highlight pre,#article-container .code-block {  font-family:    "Cascadia Code", "JetBrains Mono", Consolas, "Liberation Mono", monospace;}code,#article-container code {  font-size: 0.92em;}#footer,#footer-wrap,#footer::before,#footer-wrap::before {  background: transparent !important;  background-color: transparent !important;  box-shadow: none !important;}#aside-content .avatar-img img,#aside-content .avatar-img img:hover {  transform: none !important;}#aside-content .avatar-img img {  transition: filter 375ms ease-in 0.2s !important;}@media screen and (max-width: 900px) {  #article-container,  #article-container p,  #article-container li,  #article-container blockquote,  #article-container .note-content,  #article-container table {    font-size: 1.03rem;    line-height: 1.88;  }  #article-container p,  #article-container li {    letter-spacing: 0.012em;  }}#article-container img {  display: block;  margin-left: 0 !important;  margin-right: auto !important;}]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>關於</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
+      
+        <content type="html"><![CDATA[<p>『妳相信永遠麽？』</p><p>人之肉體，並非永恆不滅，故一笑而過。<br>人之精神，並非永恆不變，故永遠執拗。</p><p>在這份『執拗』之間，我還是我嗎？我是否已經被異化？</p><p>無人所知。</p><p>不過，我依然相信『永遠』。</p><p>—— Magstic，2026.06.01</p><hr><p>你好，我是 Magstic，『Wind Dream』管理人。<br>這裡主要上載一些塵封的歷史記憶，同人作品中的蒙塵事物會被記錄。</p><p>意義？我想僅僅是出於對個人的一份懷思。<br>網際網路時代，每個人的資料只不過是虛無縹緲的數字資訊。<br>媒體的便捷與易逝，無時無刻都在將人心拉入未知的淵藪。</p><p>記憶是生命的質料。若此刻不去記錄，來日或許只能面對空白的螢幕惆悵。<br>這個站點作為網際網路的一部分，或許亦會隨時死亡。<br>不過，我相信『永遠』。</p><p>—— Magstic，2022.01.03</p><hr><p><strong>管理</strong><br>法隱自命，空耦度世。<br>疲於觥籌，憊於囚籠。<br>偽善自樂，虛妄永遠。<br>粗人一介，浮沉人世。</p><p><strong>站點</strong><br>過去基於 Emlog，現為 Hexo。</p><p><strong>聯絡</strong><br>E-Mail：<a href="mailto:&#109;&#97;&#x73;&#116;&#105;&#99;&#46;&#99;&#x6e;&#x40;&#x67;&#109;&#x61;&#105;&#108;&#46;&#x63;&#111;&#x6d;">mastic.cn@gmail.com</a></p><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       
     </entry>
     
