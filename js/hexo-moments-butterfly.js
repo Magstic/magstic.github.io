@@ -2,6 +2,117 @@
 
 (function() {
   const CALENDAR_CLOSE_DELAY = 200;
+  const DEFAULT_TODAY_LABEL = '今日';
+  const DEFAULT_YESTERDAY_LABEL = '昨日';
+
+  function pad(value) {
+    return String(value).padStart(2, '0');
+  }
+
+  function parseMomentDateTime(value) {
+    const matched = String(value || '').trim().match(
+      /^(\d{4})-(\d{2})-(\d{2})[T\s](\d{2}):(\d{2})(?::(\d{2}))?$/
+    );
+
+    if (!matched) {
+      return null;
+    }
+
+    return {
+      year: Number(matched[1]),
+      month: Number(matched[2]),
+      day: Number(matched[3]),
+      hour: Number(matched[4]),
+      minute: Number(matched[5]),
+      second: Number(matched[6] || 0)
+    };
+  }
+
+  function getCurrentDateParts(timeZone) {
+    try {
+      if (timeZone) {
+        const formatter = new Intl.DateTimeFormat('en-CA', {
+          timeZone,
+          year: 'numeric',
+          month: '2-digit',
+          day: '2-digit'
+        });
+        const parts = formatter.formatToParts(new Date());
+        const values = {};
+
+        parts.forEach(function(part) {
+          if (part.type === 'year' || part.type === 'month' || part.type === 'day') {
+            values[part.type] = Number(part.value);
+          }
+        });
+
+        if (values.year && values.month && values.day) {
+          return values;
+        }
+      }
+    } catch (error) {
+      void error;
+    }
+
+    const now = new Date();
+
+    return {
+      year: now.getFullYear(),
+      month: now.getMonth() + 1,
+      day: now.getDate()
+    };
+  }
+
+  function formatAbsoluteMoment(parts) {
+    return `${parts.year}-${pad(parts.month)}-${pad(parts.day)} ${pad(parts.hour)}:${pad(parts.minute)}`;
+  }
+
+  function formatMonthDayMoment(parts) {
+    return `${pad(parts.month)}-${pad(parts.day)} ${pad(parts.hour)}:${pad(parts.minute)}`;
+  }
+
+  function formatRelativeMoment(parts, currentParts, mode, labels) {
+    const dayDiff = Math.round(
+      (Date.UTC(currentParts.year, currentParts.month - 1, currentParts.day) -
+        Date.UTC(parts.year, parts.month - 1, parts.day)) / 86400000
+    );
+    const timeLabel = `${pad(parts.hour)}:${pad(parts.minute)}`;
+
+    if (dayDiff === 0) {
+      return `${labels.today} ${timeLabel}`;
+    }
+
+    if (dayDiff === 1) {
+      return `${labels.yesterday} ${timeLabel}`;
+    }
+
+    if (mode === 'home' && parts.year !== currentParts.year) {
+      return formatAbsoluteMoment(parts);
+    }
+
+    return formatMonthDayMoment(parts);
+  }
+
+  function refreshRelativeTime(element) {
+    if (!element) {
+      return;
+    }
+
+    const mode = element.dataset.momentMode;
+    const dateParts = parseMomentDateTime(element.getAttribute('datetime'));
+
+    if (!mode || !dateParts) {
+      return;
+    }
+
+    const currentParts = getCurrentDateParts(element.dataset.momentTimezone || '');
+    const labels = {
+      today: element.dataset.momentToday || DEFAULT_TODAY_LABEL,
+      yesterday: element.dataset.momentYesterday || DEFAULT_YESTERDAY_LABEL
+    };
+
+    element.textContent = formatRelativeMoment(dateParts, currentParts, mode, labels);
+  }
 
   function activateYear(panel, targetYear) {
     if (!panel || !targetYear) {
@@ -123,6 +234,10 @@
 
   function init(root) {
     const scope = root && root.querySelectorAll ? root : document;
+
+    scope.querySelectorAll('[data-moment-mode]').forEach(function(timeElement) {
+      refreshRelativeTime(timeElement);
+    });
 
     scope.querySelectorAll('.moments-calendar').forEach(function(calendar) {
       bindCalendar(calendar);
