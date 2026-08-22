@@ -2,15 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://magstic.art/html/aojiru/chen16</loc>
-    
-    <lastmod>2026-08-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://magstic.art/html/aojiru/chen12</loc>
     
     <lastmod>2026-08-22</lastmod>
@@ -21,6 +12,15 @@
   
   <url>
     <loc>https://magstic.art/html/aojiru/chen13</loc>
+    
+    <lastmod>2026-08-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://magstic.art/html/aojiru/chen16</loc>
     
     <lastmod>2026-08-22</lastmod>
     
